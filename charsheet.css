@@ -154,6 +154,138 @@ footer {
   border: 2px solid var(--border);
 }
 
+/*--------------------- Tabbed Panels --------------------*/
+.charsheet div.actionPanel {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+.charsheet div.panelHeader {
+  height: 20px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid var(--separator);
+  z-index: 1;
+}
+
+.charsheet button.tab1 {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 3px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab2 {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 3px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab3 {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 3px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab4 {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 3px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+
+.charsheet div.panel-attack,
+.charsheet div.panel-move,
+.charsheet div.panel-defend,
+.charsheet div.panel-misc {
+  margin-top: 2px;
+  display: none;
+}
+
+/* show the selected archetype and style the active button */
+.charsheet input.action-toggle { display: none; }
+
+.charsheet input.action-toggle[value="attack"] ~ div .panel-attack { display: block; }
+.charsheet input.action-toggle[value="attack"] ~ div button.tab1 { border-bottom: 1px solid var(--page); }
+
+.charsheet input.action-toggle[value="move"] ~ div .panel-move { display: block; }
+.charsheet input.action-toggle[value="move"] ~ div button.tab2 { border-bottom: 1px solid var(--page); }
+
+.charsheet input.action-toggle[value="defend"] ~ div .panel-defend { display: block; }
+.charsheet input.action-toggle[value="defend"] ~ div button.tab3 { border-bottom: 1px solid var(--page); }
+
+.charsheet input.action-toggle[value="misc"] ~ div .panel-misc { display: block; }
+.charsheet input.action-toggle[value="misc"] ~ div button.tab4 { border-bottom: 1px solid var(--page); }
+
+
 /*----------------- Text & Input styling -----------------*/
 
 @import url("https://fonts.googleapis.com/css?family=Baskerville&display=swap");
@@ -181,12 +313,11 @@ footer {
 .charsheet hr.line {
   width: 100%;
   height: 1px;
-  margin: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 0px;
-  padding-right: 0px;
-  border-bottom: 1px solid var(--separator);
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-top: 1px dotted var(--separator);
   background-color: var(--page);
 }
 
