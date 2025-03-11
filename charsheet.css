@@ -20,7 +20,7 @@ main {
 /*----------------- GENERAL CSS ------------------*/
 
 :root {
-  --header: #ff8088;
+  --header: #d08088;
   --page: #ffe8d0; 
   --separator: #c0a080;
   --border: black; 
@@ -267,23 +267,25 @@ footer {
 .charsheet div.panel-defend,
 .charsheet div.panel-misc {
   margin-top: 2px;
-  display: none;
 }
+
 
 /* show the selected archetype and style the active button */
 .charsheet input.action-toggle { display: none; }
 
-.charsheet input.action-toggle[value="attack"] ~ div .panel-attack { display: block; }
-.charsheet input.action-toggle[value="attack"] ~ div button.tab1 { border-bottom: 1px solid var(--page); }
+.charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
+.charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
+.charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
+.charsheet .action-toggle:not([value="misc"]) ~ div .panel-misc {
+    display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
+}
 
-.charsheet input.action-toggle[value="move"] ~ div .panel-move { display: block; }
-.charsheet input.action-toggle[value="move"] ~ div button.tab2 { border-bottom: 1px solid var(--page); }
-
-.charsheet input.action-toggle[value="defend"] ~ div .panel-defend { display: block; }
-.charsheet input.action-toggle[value="defend"] ~ div button.tab3 { border-bottom: 1px solid var(--page); }
-
-.charsheet input.action-toggle[value="misc"] ~ div .panel-misc { display: block; }
-.charsheet input.action-toggle[value="misc"] ~ div button.tab4 { border-bottom: 1px solid var(--page); }
+.charsheet .action-toggle[value="attack"] ~ div button.tab1,
+.charsheet .action-toggle[value="move"] ~ div button.tab2,
+.charsheet .action-toggle[value="defend"] ~ div button.tab3,
+.charsheet .action-toggle[value="misc"] ~ div button.tab4 {
+  border-bottom: 1px solid var(--page);
+}
 
 
 /*----------------- Text & Input styling -----------------*/
@@ -353,16 +355,17 @@ footer {
   font-style: bold;
   color: var(--text); 
 }
+.charsheet label.damage {
+  text-align: right;
+  font-size: 13px;
+  color: var(--text); 
+}
 
 .charsheet select.dropdown {
   margin: 1px 1px;
   height: 25px;
   background-color: var(--input);
   border: 1px solid var(--border);
-}
-
-.charsheet input.readonly {
-  background-color: var(--page);
 }
 
 .charsheet input.level {
@@ -448,8 +451,14 @@ footer {
   font-style: bold;
   font-size: 14px;
   padding: 0px 2px;
-  background-color: var(--input);
   border-radius: 50%;
+  color: var(--text);
+  background-color: var(--input);
+  border: 2px solid var(--border);
+}
+.charsheet input.mod:read-only {
+  color: var(--text);
+  background-color: var(--page);
   border: 2px solid var(--border);
 }
 
@@ -538,7 +547,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w120 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 120px;
   height: 25px;
@@ -546,7 +555,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w140 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 140px;
   height: 25px;
@@ -554,7 +563,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w160 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 160px;
   height: 25px;
@@ -562,7 +571,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w180 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 180px !important;
   height: 25px;
@@ -570,7 +579,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w200 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 200px !important;
   height: 25px;
@@ -578,7 +587,7 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w220 {
-  text-align: left;
+  text-align: center;
   margin: 1px 1px;
   width: 220px !important;
   height: 25px;
@@ -586,10 +595,31 @@ footer {
   border: 1px solid var(--border);
 }
 .charsheet input.w240 {
+  text-align: center;
+  margin: 1px 1px;
+  width: 240px !important;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet input.w220l {
+  text-align: left;
+  margin: 1px 1px;
+  width: 220px !important;
+  height: 25px;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w240l {
   text-align: left;
   margin: 1px 1px;
   width: 240px !important;
   height: 25px;
+  font-size: 16px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -645,7 +675,7 @@ footer {
 
 .charsheet button.attack[type="roll"]{
   width: 27px;
-  height: 24px;
+  height: 21px;
   padding: 1px 2px;
   margin: 2px 4px;
   border-radius: 15%;
