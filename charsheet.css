@@ -1,0 +1,647 @@
+/*----------------- Main Layout ------------------*/
+
+/* A CSS Grid example using "grid-template-areas"
+  https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas
+*/
+main {
+  display: grid;
+  width:  900px;
+  height: 720px;
+  grid-gap: 0px;
+  grid-template-columns: 200px 200px 200px 300px;
+  grid-template-rows: 70px 160px 160px 310px 20px;
+  grid-template-areas:"hdr hdr hdr lvl"
+                      "str dex con sit"
+                      "int wis cha sit"
+                      "inv inv inv fea"
+                      "ftr ftr ftr ftr";
+}
+
+/*----------------- GENERAL CSS ------------------*/
+
+:root {
+  --header: #ff8088;
+  --page: #ffe8d0; 
+  --separator: #c0a080;
+  --border: black; 
+  --input: white;
+  --text: black;
+}
+
+section {
+    padding: 5px;
+    border-style: solid; 
+}
+
+
+/* CSS Flexbox styling, used for adjusting how content inside section behaves */
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nowrap {
+  display: flex; /* inline-block; */
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.thin {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.f-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/*------------- Section-specific CSS -------------*/
+
+.header {
+  grid-area: hdr;
+  flex-direction: row;
+  background-color: var(--header);
+  white-space: pre nowrap;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-left: 2px solid var(--border);
+  border-right: 2px solid transparent;
+}
+
+.level {
+  grid-area: lvl;
+  flex-direction: row;
+  white-space: pre nowrap;
+  background-color: var(--header);
+  border-top-right-radius: 50px;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  border-left: 2px solid transparent;
+}
+
+.situation {
+  grid-area: sit;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-right: 2px solid var(--border);
+}
+
+.str {
+  grid-area: str;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-left: 2px solid var(--border);
+}
+.dex {
+  grid-area: dex;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+}
+.con {
+  grid-area: con;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+}
+.int {
+  grid-area: int;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-left: 2px solid var(--border);
+}
+.wis {
+  grid-area: wis;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+}
+.cha {
+  grid-area: cha;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+}
+
+.feats {
+  grid-area: fea;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-right: 2px solid var(--border);
+}
+
+.power .repcontainer[data-groupname="repeating_power"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_power"] .repitem{
+  margin: 4px 0px;
+}
+
+.inventory {
+  grid-area: inv;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-left: 2px solid var(--border);
+}
+
+footer {
+  grid-area: ftr;
+  background-color: var(--header);
+  border: 2px solid var(--border);
+}
+
+/*----------------- Text & Input styling -----------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Baskerville&display=swap");
+
+
+/* these are for overwriting default CSS that comes from Roll20 */
+
+.charsheet * {
+  font-family: "Baskerville";
+}
+
+.charsheet h3 {
+  text-align: center;
+}
+
+.charsheet hr.space {
+  width: 95%;
+  height: 1px;
+  margin: 1px;
+  padding: 1px;
+  border: 1px transparent;
+  background-color: var(--page);
+}
+
+.charsheet hr.line {
+  width: 100%;
+  height: 1px;
+  margin: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-bottom: 1px solid var(--separator);
+  background-color: var(--page);
+}
+
+.charsheet label {
+  margin: 3px;
+  padding: 3px 0 0 0;
+  color: var(--text); 
+}
+.charsheet label.ability {
+  font-size: 18px;
+  font-style: bold;
+  color: var(--text); 
+}
+.charsheet label.mod {
+  font-size: 18px;
+  color: var(--text); 
+}
+.charsheet label.save {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text); 
+}
+.charsheet label.skill {
+  font-size: 15px;
+  color: var(--text); 
+}
+.charsheet label.action {
+  font-size: 13px;
+  color: var(--text); 
+}
+.charsheet label.attack {
+  font-size: 18px;
+  font-style: bold;
+  color: var(--text); 
+}
+
+.charsheet select.dropdown {
+  margin: 1px 1px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet input.readonly {
+  background-color: var(--page);
+}
+
+.charsheet input.level {
+  text-align: center;
+  margin: 1px 1px;
+  width: 50px;
+  height: 50px;
+  font-family: arial;
+  font-style: black;
+  font-size: 27px;
+  background-color: var(--input);
+  border-top-right-radius: 75%;
+  border: 3px solid var(--border);
+}
+
+.charsheet input.ability {
+  text-align: center;
+  margin: 1px 1px;
+  width: 30px;
+  height: 30px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 18px;
+  padding: 0px 3px;
+  background-color: var(--input);
+  border-bottom-right-radius: 15%;
+  border: 3px solid var(--border);
+}
+
+.charsheet input.attack {
+  text-align: center;
+  margin: 1px 1px;
+  width: 36px;
+  height: 30px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  background-color: var(--input);
+  border-radius: 25%;
+  border: 3px solid var(--border);
+}
+
+.charsheet input.defense {
+  text-align: center;
+  margin: 1px 1px;
+  width: 30px;
+  height: 30px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  background-color: var(--input);
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 3px solid green;
+  background-color: #e0fff0;
+}
+
+.charsheet input.dv {
+  text-align: center;
+  margin: 2px 4px;
+  width: 24px;
+  height: 24px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 1px solid green;
+  background-color: #e0fff0;
+}
+
+.charsheet input.mod {
+  text-align: center;
+  margin: 1px 1px;
+  width: 25px;
+  height: 25px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  background-color: var(--input);
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.charsheet input.save {
+  text-align: center;
+  margin: 1px 1px;
+  width: 30px;
+  height: 25px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  background-color: var(--input);
+  border: 2px solid var(--border);
+  border-radius: 25%;
+}
+.charsheet input.skill {
+  text-align: center;
+  margin: 1px 1px;
+  width: 30px;
+  height: 25px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 14px;
+  padding: 0px 2px;
+  background-color: var(--input);
+  border-radius: 25%;
+  border: 2px solid var(--border);
+}
+
+.charsheet input.hp {
+  text-align: center;
+  margin: 1px 1px;
+  width: 25px;
+  height: 18px;
+  background-color: var(--input);
+  border: 2px solid var(--border);
+}
+.charsheet input.wounds {
+  text-align: center;
+  margin: 1px 1px;
+  width: 20px;
+  height: 18px;
+  background-color: var(--input);
+  border: 2px solid var(--border);
+}
+.charsheet input.conditions {
+  text-align: center;
+  margin: 1px 1px;
+  width: 185px;
+  height: 18px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet input.w40 {
+  text-align: center;
+  margin: 1px 1px;
+  width: 40px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w60 {
+  text-align: center;
+  margin: 1px 1px;
+  width: 60px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w80 {
+  text-align: center;
+  margin: 1px 1px;
+  width: 80px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w100 {
+  text-align: center;
+  margin: 1px 1px;
+  width: 100px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w120 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 120px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w140 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 140px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w160 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 160px;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w180 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 180px !important;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w200 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 200px !important;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w220 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 220px !important;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w240 {
+  text-align: left;
+  margin: 1px 1px;
+  width: 240px !important;
+  height: 25px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet input.round[type="checkbox"] {
+  width: 35px;
+  height: 25px;
+  padding: 5px;
+  background-color: var(--input);
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  margin: 2px solid var(--input);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.charsheet input.round:checked {
+    background-color: green;
+}
+
+.charsheet button[type="roll"] {
+  width: 21px;
+  height: 18px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.charsheet button.save[type="roll"] {
+  width: 21px;
+  height: 18px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 2px solid blue;
+}
+
+.charsheet button.skill[type="roll"]{
+  width: 21px;
+  height: 18px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 50%;
+  border: 2px solid green;
+}
+
+.charsheet button.attack[type="roll"]{
+  width: 27px;
+  height: 24px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 15%;
+  border: 2px solid red;
+}
+
+.charsheet button.damage[type="roll"]{
+  width: 21px;
+  height: 18px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+.charsheet input[type="number"]{
+  text-align: right;
+  margin: 2px 4px;
+}
+
+.charsheet input[type="text"]{
+  margin: 2px 4px;
+  border: 1px solid var(--border);
+}
+
+.charsheet textarea {
+  width: 95%;
+  height: 85%;
+}
+
+/*------------------------------------*\
+  #ROLL TEMPLATES
+\*------------------------------------*/
+
+/* SKILL ROLLS */
+
+.sheet-rolltemplate-rolls {
+  font-family: "Lexend";
+}
+.sheet-rolltemplate-rolls .sheet-container {
+  border: 3px solid black;
+  border-radius: 3px;
+}
+.sheet-rolltemplate-rolls .sheet-header {
+  background-color: var(--header-bg-color, #21a835);
+  color: var(--header-text-color, #FFF);
+  text-align: left;
+  text-transform: capitalize;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+.sheet-rolltemplate-rolls .sheet-title,
+.sheet-rolltemplate-rolls .sheet-name {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.sheet-rolltemplate-rolls .sheet-subtitle {
+  font-size: 1em;
+}
+.sheet-rolltemplate-rolls .sheet-container {
+  --header-bg-color: #21a835;
+  --header-text-color: #FFF;
+}
+
+.sheet-rolltemplate-rolls .sheet-content {
+  display: grid;
+  background: #FFF;
+  grid-template-columns: auto auto;
+  line-height: 1.4em;
+}
+.sheet-rolltemplate-rolls .sheet-content > div {
+  padding: 5px;
+}
+.sheet-rolltemplate-rolls .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+.sheet-rolltemplate-rolls .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-rolls .sheet-content :nth-child(4n) {
+  background: #EEE;
+}
+
+/* ATTACKS */
+.sheet-rolltemplate-attacks {
+  font-family: "Lexend";
+}
+.sheet-rolltemplate-attacks .sheet-container {
+  border: 3px solid black;
+  border-radius: 3px;
+}
+.sheet-rolltemplate-attacks .sheet-header {
+  background-color: var(--header-bg-color, #a83521);
+  color: var(--header-text-color, #FFF);
+  text-align: left;
+  text-transform: capitalize;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+.sheet-rolltemplate-attacks .sheet-title,
+.sheet-rolltemplate-attacks .sheet-name {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.sheet-rolltemplate-attacks .sheet-subtitle {
+  font-size: 1em;
+}
+.sheet-rolltemplate-attacks .sheet-container {
+  --header-bg-color: #a83521;
+  --header-text-color: #FFF;
+}
+
+.sheet-rolltemplate-attacks .sheet-content {
+  display: grid;
+  background: #FFF;
+  grid-template-columns: auto auto;
+  line-height: 1.4em;
+}
+.sheet-rolltemplate-attacks .sheet-content > div {
+  padding: 5px;
+}
+.sheet-rolltemplate-attacks .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+.sheet-rolltemplate-attacks .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-attacks .sheet-content :nth-child(4n) {
+  background: #EEE;
+}
