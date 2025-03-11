@@ -50,14 +50,13 @@
       </div>    
       <div class="panel-attack">
         <div class="f-row nowrap">
-          <label class="ability">Weapon Attacks</label>
+          <label class="ability">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
           <input name="attr_attack" class="attack">
         </div>
         <div>
           <div class="f-row nowrap">
-            <button class="attack" type="roll" name="roll_attack1" value="@{attack1_action}">
-            </button>
-            <input name="attr_weapon1" list="weapons" type="text" class="w220">
+            <button class="attack" type="roll" name="roll_attack1" value="@{attack1_action}"></button>
+            <input name="attr_weapon1" class="w220l">
             <input name="attr_accuracy1" class="mod">
           </div>
           <div class="f-row nowrap">
@@ -65,9 +64,7 @@
 	         value="&{template:rolls} {{subtitle=Parry: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry1}+@{attack}[parry] ]]}}"></button>
             <input name="attr_parry1" class="mod">
             <label class="action">Parry</label>
-            <label class="action">/</label>
-            <label class="action">Damage</label>
-            <input name="attr_damage1" class="w80">
+            <input name="attr_damage1" class="w120">
             <button class="damage" type="roll" name="roll_damage1" 
   	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}"></button>
           </div>
@@ -75,9 +72,8 @@
         <hr class="space">
         <div>
           <div class="f-row nowrap">
-            <button class="attack" type="roll" name="roll_attack2" value="@{attack2_action}">
-            </button>
-            <input name="attr_weapon2" list="weapons" type="text" class="w220">
+            <button class="attack" type="roll" name="roll_attack2" value="@{attack2_action}"></button>
+            <input name="attr_weapon2" class="w220l">
             <input name="attr_accuracy2" class="mod">
           </div>
           <div class="f-row nowrap">
@@ -85,9 +81,7 @@
 	         value="&{template:rolls} {{subtitle=Parry: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button>
             <input name="attr_parry2" class="mod">
             <label class="action">Parry</label>
-            <label class="action">/</label>
-            <label class="action">Damage</label>
-            <input name="attr_damage2" class="w80">
+            <input name="attr_damage2" class="w120">
             <button class="damage" type="roll" name="roll_damage2" 
   	         value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}"></button>
           </div>
@@ -111,7 +105,7 @@
     <div class="f-row nowrap">
       <input name="attr_strength" class="ability">
       <label class="ability">Strength</label>
-      <input name="attr_str" class="mod readonly">
+      <input name="attr_str" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_athletics" 
@@ -139,7 +133,7 @@
     <div class="f-row nowrap">
       <input name="attr_dexterity" class="ability">
       <label class="ability">Dexterity</label>
-      <input name="attr_dex" class="mod readonly">
+      <input name="attr_dex" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_reflex" 
@@ -171,7 +165,7 @@
     <div class="f-row nowrap">
       <input name="attr_constitution" class="ability">
       <label class="ability">Constitution</label>
-      <input name="attr_con" class="mod readonly">
+      <input name="attr_con" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_fortitude" 
@@ -206,7 +200,7 @@
     <div class="f-row nowrap">
       <input name="attr_intelligence" class="ability">
       <label class="ability">Intelligence</label>
-      <input name="attr_int" class="mod readonly">
+      <input name="attr_int" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_deduction" 
@@ -239,7 +233,7 @@
     <div class="f-row nowrap">
       <input name="attr_wisdom" class="ability">
       <label class="ability">Wisdom</label>
-      <input name="attr_wis" class="mod readonly">
+      <input name="attr_wis" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_perception" 
@@ -272,7 +266,7 @@
     <div class="f-row nowrap">
       <input name="attr_charisma" class="ability">
       <label class="ability">Charisma</label>
-      <input name="attr_cha" class="mod readonly">
+      <input name="attr_cha" class="mod" readonly>
     </div>
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_willpower" 
