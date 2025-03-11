@@ -40,52 +40,69 @@
       <input name="attr_armor" type="text" class="w160">      
       <input name="attr_defense" class="defense">
     </div>
-    <hr class="space">
-    <hr class="space">
-    <hr class="line">
-    <div class="f-row nowrap">
-      <label class="ability">Weapon Attacks</label>
-      <input name="attr_attack" class="attack">
-    </div>
-    <div>
-      <div class="f-row nowrap">
-        <button class="attack" type="roll" name="roll_attack1" value="@{attack1_action}">
-        </button>
-        <input name="attr_weapon1" list="weapons" type="text" class="w220">
-        <input name="attr_accuracy1" class="mod">
-      </div>
-      <div class="f-row nowrap">
-        <button class="save" type="roll" name="roll_parry1" 
-	  value="&{template:rolls} {{subtitle=Parry: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry1}+@{attack}[parry] ]]}}"></button>
-        <input name="attr_parry1" class="mod">
-        <label class="action">Parry</label>
-        <label class="action">/</label>
-        <label class="action">Damage</label>
-        <input name="attr_damage1" class="w80">
-        <button class="damage" type="roll" name="roll_damage1" 
-  	  value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}"></button>
-      </div>
-    </div>
-    <hr class="space">
-    <div>
-      <div class="f-row nowrap">
-        <button class="attack" type="roll" name="roll_attack2" value="@{attack2_action}">
-        </button>
-        <input name="attr_weapon2" list="weapons" type="text" class="w220">
-        <input name="attr_accuracy2" class="mod">
-      </div>
-      <div class="f-row nowrap">
-        <button class="save" type="roll" name="roll_parry2" 
-	  value="&{template:rolls} {{subtitle=Parry: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button>
-        <input name="attr_parry2" class="mod">
-        <label class="action">Parry</label>
-        <label class="action">/</label>
-        <label class="action">Damage</label>
-        <input name="attr_damage2" class="w80">
-        <button class="damage" type="roll" name="roll_damage2" 
-  	  value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}"></button>
-      </div>
-    </div>
+    <input type="hidden" name="attr_actiontab" class="action-toggle">
+    <div class="actionPanel">
+      <div class="panelHeader">
+          <button class="tab1" type="action" name="act_attack">Attack</button>
+          <button class="tab2" type="action" name="act_move">Move</button>
+          <button class="tab3" type="action" name="act_defend">Defend</button>
+          <button class="tab4" type="action" name="act_misc">Misc</button>
+      </div>    
+      <div class="panel-attack">
+        <div class="f-row nowrap">
+          <label class="ability">Weapon Attacks</label>
+          <input name="attr_attack" class="attack">
+        </div>
+        <div>
+          <div class="f-row nowrap">
+            <button class="attack" type="roll" name="roll_attack1" value="@{attack1_action}">
+            </button>
+            <input name="attr_weapon1" list="weapons" type="text" class="w220">
+            <input name="attr_accuracy1" class="mod">
+          </div>
+          <div class="f-row nowrap">
+            <button class="save" type="roll" name="roll_parry1"  
+	         value="&{template:rolls} {{subtitle=Parry: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry1}+@{attack}[parry] ]]}}"></button>
+            <input name="attr_parry1" class="mod">
+            <label class="action">Parry</label>
+            <label class="action">/</label>
+            <label class="action">Damage</label>
+            <input name="attr_damage1" class="w80">
+            <button class="damage" type="roll" name="roll_damage1" 
+  	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}"></button>
+          </div>
+        </div>
+        <hr class="space">
+        <div>
+          <div class="f-row nowrap">
+            <button class="attack" type="roll" name="roll_attack2" value="@{attack2_action}">
+            </button>
+            <input name="attr_weapon2" list="weapons" type="text" class="w220">
+            <input name="attr_accuracy2" class="mod">
+          </div>
+          <div class="f-row nowrap">
+            <button class="save" type="roll" name="roll_parry2" 
+	         value="&{template:rolls} {{subtitle=Parry: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button>
+            <input name="attr_parry2" class="mod">
+            <label class="action">Parry</label>
+            <label class="action">/</label>
+            <label class="action">Damage</label>
+            <input name="attr_damage2" class="w80">
+            <button class="damage" type="roll" name="roll_damage2" 
+  	         value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}"></button>
+          </div>
+        </div>
+      </div panel-attack>
+      <div class="panel-move">
+          <span>MOVE PANEL</span>
+      </div panel-move>
+      <div class="panel-defend">
+          <span>DEFEND PANEL</span>
+      </div panel-defend>
+      <div class="panel-misc">
+          <span>MISC PANEL</span>
+      </div panel-misc>
+    </div actionPanel>
 
   </section>
 
@@ -434,6 +451,14 @@
             "mods": ["str", "wis"],
             "size": "medium" }
     ];
+
+    const actionTabs = ["attack", "move", "defend", "misc"];
+    actionTabs.forEach(tab => {
+        on(`clicked:${tab}`, function() {
+            console.log("  clicked " + tab);
+            setAttrs({ actiontab: tab });
+        });
+    });
 
  //abilities.forEach(ability => { on("change:"+ability, function() { updatemod(ability); }); });
 
