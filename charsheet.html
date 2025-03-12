@@ -1,26 +1,87 @@
 <main>
-  <section class="header f-row">
-    <label>Name:&nbsp;<input name="attr_character_name" type="text"></label><br>
-    <label>Race:&nbsp;<input name="attr_race" list="race" type="text" class="w100"></label>
+  <section class="head">
+    <div class="f-row">
+      <label>Name:</label>
+      <span><input name="attr_character_name" class="w320l"></span>
+    </div>
+    <div class="f-row nowrap">
+      <label>Race:</label>
+      <span><input name="attr_race" class="w120"></span>
+      <label>Bonuses:</label>
+      <span><input name="attr_race_max" class="w120"></span>
+    </div>
   </section>
 
+  <section class="builder">
+  </section>
+  
   <section class="level f-row nowrap">
-    <label>Class:&nbsp;<input name="attr_class" list="class" type="text" class="w120"></label>
-    <label>Level:&nbsp;<input name="attr_level" class="level" ></label>
+    <span>
+      <select name="attr_class" class="cclass">
+        <option value="knight">Knight</option>
+        <option value="martial artist">Martial Artist</option>
+        <option value="berserker">Berserker</option>
+        <option value="thief">Thief</option>
+        <option value="alchemist">Alchemist</option>
+        <option value="bard">Bard</option>
+        <option value="wizard">Wizard</option>
+        <option value="cleric">Cleric</option>
+        <option value="druid">Druid</option>
+      </select>
+    </span>
+    <span>
+      <input name="attr_level" class="level" >
+    </span>
   </section>
 
   <section class="situation f-col nowrap">
+   <div class="f-row nowrap">
+    <label class="ability"><span name="attr_l3feat"></span></label>
+    <input name="attr_power" class="attack"><span style="font-size: 18px; font-style: bold;"><b>&nbsp;/&nbsp;</b></span><input name="attr_power_max" class="attack">
+   </div>
+   <input type="hidden" name="attr_situation" class="situation-toggle">
+  <div class="situationPanel">
+   <div class="panelHeader">
+    <button class="tab-travel" type="action" name="act_travel">Travel</button>
+    <button class="tab-explore" type="action" name="act_explore">Exploration</button>
+    <button class="tab-fight" type="action" name="act_fight">Encounter</button>
+   </div>  
+   <div class="panel-explore">
     <div class="f-row nowrap">
-      <label class="ability"><span name="attr_l3feat"></span></label>
-<!--
-      -<input class="round" type="checkbox">
-      -<input class="round" type="checkbox">
-      -<input class="round" type="checkbox">
-      -<input class="round" type="checkbox"> 
--->
-      <input name="attr_power" class="attack"><span style="font-size: 18px; font-style: bold;"><b>&nbsp;/&nbsp;</b></span><input name="attr_power_max" class="attack">
+      <span>
+        <button class="action" type="action" name="act_watch">Watch</button>
+      </span>
+      <label class="action">Keeping Watch helps keep the party <br>safe from ambushes.</label>
+    </div> 
+    <hr class="line">
+    <div class="f-row nowrap">
+      <span>
+        <button class="action" type="action" name="act_rest">Rest</button>
+      </span>
+      <label class="action">Resting spends one hit die to heal <br>hit points and recover all <span name="attr_l3feat"></span>.
+      </label>
+    </div> 
+    <div class="f-row nowrap">
+      <label class="action">Hit Dice:</label>
+      <span>
+        <input name="attr_hd1_max" class="skill">
+        <input name="attr_hd2_max" class="skill">
+        <input name="attr_hd3_max" class="skill">
+        <input name="attr_hd4_max" class="skill">
+      </span>
+    </div> 
+    <hr class="line">
+    <div class="f-row nowrap">
+      <span>
+        <button class="action" type="action" name="act_skill">Interact</button>
+      </span>
+      <label class="action">Describe what action your character <br>performs, then roll the skill that the <br>referee asks for.</label>
+    </div> 
 
-    </div>
+   </div panel-explore>
+   <div class="panel-fight">
+
+<!--        
     <div class="f-row nowrap">
       <label class="ability">Situation</label>
       <select class="dropdown" name="attr_d20">
@@ -30,11 +91,12 @@
         <option value="2d20kl1">(Disadvantage)</option>
       </select>
     </div>
-    <hr class="line">
+-->
     <div class="f-row nowrap">
       <label class="ability">Initiative</label>
       <input name="attr_initiative" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <label class="ability">Defense</label>
       <input name="attr_armor" type="text" class="w160">      
@@ -43,22 +105,24 @@
     <input type="hidden" name="attr_actiontab" class="action-toggle">
     <div class="actionPanel">
       <div class="panelHeader">
-          <button class="tab1" type="action" name="act_attack">Attack</button>
-          <button class="tab2" type="action" name="act_move">Move</button>
-          <button class="tab3" type="action" name="act_defend">Defend</button>
-          <button class="tab4" type="action" name="act_misc">Misc</button>
+          <button class="tab-attack" type="action" name="act_attack">Attack</button>
+          <button class="tab-move" type="action" name="act_move">Move</button>
+          <button class="tab-defend" type="action" name="act_defend">Defend</button>
+          <button class="tab-misc" type="action" name="act_misc">Misc</button>
       </div>    
       <div class="panel-attack">
         <div class="f-row nowrap">
           <label class="ability">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
           <input name="attr_attack" class="attack">
         </div>
+        <hr class="line">
         <div>
           <div class="f-row nowrap">
-            <button class="attack" type="roll" name="roll_attack1" value="@{attack1_action}"></button>
-            <input name="attr_weapon1" class="w220l">
+            <button class="action" type="action" name="act_attack1" value="@{attack1_action}">Attack</button>
+            <input name="attr_weapon1" class="weapon">
             <input name="attr_accuracy1" class="mod">
           </div>
+          <hr class="space">
           <div class="f-row nowrap">
             <button class="save" type="roll" name="roll_parry1"  
 	         value="&{template:rolls} {{subtitle=Parry: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry1}+@{attack}[parry] ]]}}"></button>
@@ -70,12 +134,15 @@
           </div>
         </div>
         <hr class="space">
+        <hr class="line">
+        <hr class="space">
         <div>
           <div class="f-row nowrap">
-            <button class="attack" type="roll" name="roll_attack2" value="@{attack2_action}"></button>
-            <input name="attr_weapon2" class="w220l">
+            <button class="action" type="action" name="act_attack2" value="@{attack2_action}">Attack</button>
+            <input name="attr_weapon2" class="weapon">
             <input name="attr_accuracy2" class="mod">
           </div>
+          <hr class="space">
           <div class="f-row nowrap">
             <button class="save" type="roll" name="roll_parry2" 
 	         value="&{template:rolls} {{subtitle=Parry: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button>
@@ -88,16 +155,49 @@
         </div>
       </div panel-attack>
       <div class="panel-move">
-          <span>MOVE PANEL</span>
+        <div class="f-row nowrap">
+            <button type="action" class="action" name="act_walk">Walk</button>
+            <label class="action"><span name="attr_speed"></span> paces / round</label>
+        </div>
+        <div class="f-row nowrap">
+            <button type="action" class="action" name="act_sprint">Sprint</button>
+            <label class="action"><span name="attr_sprintspeed"></span> paces / round</label>
+        </div>
+        <div class="f-row nowrap">
+            <button type="action" class="action" name="act_jump">Jump</button>
+            <label class="action"><span name="attr_jumpspeed"></span> paces</label>
+        </div>
+        <div class="f-row nowrap">
+            <button type="action" class="action" name="act_climb">Climb</button>
+            <label class="action"><span name="attr_climbspeed"></span> paces / round</label>
+        </div>
+        <div class="f-row nowrap">
+            <button type="action" class="action" name="act_swim">Swim</button>
+            <label class="action"><span name="attr_swimspeed"></span> paces / round</label>
+        </div>
       </div panel-move>
       <div class="panel-defend">
-          <span>DEFEND PANEL</span>
+        <div class="f-row">
+            <button type="action" class="action" name="act_guard">Guard</button>
+            <label class="action">Regain your reaction after you <br>successfully parry or hit with an <br>opportunity attack</label>
+        </div>
+        <hr class="line">
+        <div class="f-row">
+            <button type="action" class="action" name="act_evade">Evade</button>
+            <label class="action">Regain your reaction after you <br>successfully dodge</label>
+        </div>
+        <hr class="line">
+        <div class="f-row">
+            <button type="action" class="action" name="act_hide">Hide</button>
+            <label class="action">Roll Stealth to become hidden</label>
+        </div>
       </div panel-defend>
       <div class="panel-misc">
           <span>MISC PANEL</span>
       </div panel-misc>
     </div actionPanel>
-
+   </div panel-fight>
+  </div situationPanel>
   </section>
 
 
@@ -105,8 +205,9 @@
     <div class="f-row nowrap">
       <input name="attr_strength" class="ability">
       <label class="ability">Strength</label>
-      <input name="attr_str" class="mod" readonly>
+      <input name="attr_str" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_athletics" 
 	value="&{template:rolls} {{subtitle=Athletics}} {{title=@{character_name} }} {{roll= [[@{d20}@{str}+@{athletics}[athletics] ]]}}"></button>
@@ -119,12 +220,9 @@
       <label class="ability">Encumbrance</label>
       <input name="attr_encumbrance" class="attack">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Speed</label>
-      <input name="attr_speed" class="skill">
-    </div>
-    <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;<span name="attr_movemode"></span></label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> Speed</label>
       <input name="attr_move" class="skill">
     </div>
   </section>
@@ -133,8 +231,9 @@
     <div class="f-row nowrap">
       <input name="attr_dexterity" class="ability">
       <label class="ability">Dexterity</label>
-      <input name="attr_dex" class="mod" readonly>
+      <input name="attr_dex" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_reflex" 
 	value="&{template:rolls} {{subtitle=Reflex}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{reflex}[reflex] ]]}}"></button>
@@ -142,17 +241,20 @@
       <input name="attr_reflex_max" class="dv">
       <input name="attr_reflex" class="skill">
     </div>
-    <div class="f-row nowrap">
+<!--    <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_dodge" 
 	value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button>
       <label class="action">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>(Dodge)</i></label>
-    </div>
+    </div> 
+-->
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_stealth" 
 	value="&{template:rolls} {{subtitle=Stealth}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{stealth}[stealth] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Stealth</label>
       <input name="attr_stealth" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_finesse" 
 	value="&{template:rolls} {{subtitle=Finesse}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{finesse}[finesse] ]]}}"></button>
@@ -165,8 +267,9 @@
     <div class="f-row nowrap">
       <input name="attr_constitution" class="ability">
       <label class="ability">Constitution</label>
-      <input name="attr_con" class="mod" readonly>
+      <input name="attr_con" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_fortitude" 
 	value="&{template:rolls} {{subtitle=Fortitude}} {{title=@{character_name} }} {{roll= [[@{d20}@{con}+@{fortitude}[fortitude] ]]}}"></button>
@@ -180,18 +283,11 @@
       <label class="action nowrap">Wounds:<input name="attr_wounds" class="wounds">/<input name="attr_wounds_max" class="wounds"></label>      
     </div>
     <div class="f-row nowrap">
+      <label class="action nowrap">Conditions:</label>
+    </div>
+    <div class="f-row nowrap">
       <span>
         <input name="attr_conditions" class="conditions">
-      </span>
-    </div>
-    <hr class="space">
-    <div class="f-row nowrap">
-      <label class="action">HD:</label>
-      <span>
-        <input name="attr_hd1_max" class="skill">
-        <input name="attr_hd2_max" class="skill">
-        <input name="attr_hd3_max" class="skill">
-        <input name="attr_hd4_max" class="skill">
       </span>
     </div>
   </section>
@@ -200,8 +296,9 @@
     <div class="f-row nowrap">
       <input name="attr_intelligence" class="ability">
       <label class="ability">Intelligence</label>
-      <input name="attr_int" class="mod" readonly>
+      <input name="attr_int" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_deduction" 
 	value="&{template:rolls} {{subtitle=Deduction}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{deduction}[deduction] ]]}}"></button>
@@ -209,18 +306,21 @@
       <input name="attr_deduction_max" class="dv">
       <input name="attr_deduction" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_arcana" 
 	value="&{template:rolls} {{subtitle=Arcana}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{arcana}[arcana] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Arcana</label>
       <input name="attr_arcana" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_craft" 
 	value="&{template:rolls} {{subtitle=Crafting}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{craft}[craft] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Crafting</label>
       <input name="attr_craft" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_lore" 
 	value="&{template:rolls} {{subtitle=Lore}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{lore}[lore] ]]}}"></button>
@@ -233,8 +333,9 @@
     <div class="f-row nowrap">
       <input name="attr_wisdom" class="ability">
       <label class="ability">Wisdom</label>
-      <input name="attr_wis" class="mod" readonly>
+      <input name="attr_wis" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_perception" 
 	value="&{template:rolls} {{subtitle=Perception}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}"></button>
@@ -242,18 +343,21 @@
       <input name="attr_perception_max" class="dv">
       <input name="attr_perception" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_animalken" 
 	value="&{template:rolls} {{subtitle=Animal Ken}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{animalken}[animalken] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Animal Ken</label>
       <input name="attr_animalken" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_nature" 
 	value="&{template:rolls} {{subtitle=Nature}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{nature}[nature] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Nature</label>
       <input name="attr_nature" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_medicine" 
 	value="&{template:rolls} {{subtitle=Medicine}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{medicine}[medicine] ]]}}"></button>
@@ -266,8 +370,9 @@
     <div class="f-row nowrap">
       <input name="attr_charisma" class="ability">
       <label class="ability">Charisma</label>
-      <input name="attr_cha" class="mod" readonly>
+      <input name="attr_cha" class="mod-lg" readonly>
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <button class="save" type="roll" name="roll_willpower" 
 	value="&{template:rolls} {{subtitle=Willpower}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{willpower}[willpower] ]]}}"></button>
@@ -275,94 +380,124 @@
       <input name="attr_willpower_max" class="dv">
       <input name="attr_willpower" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_charm" 
 	value="&{template:rolls} {{subtitle=Charm}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{charm}[charm] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Charm</label>
       <input name="attr_charm" class="skill">
     </div>
+    <hr class="space">
     <div class="f-row nowrap">
       <button class="skill" type="roll" name="roll_wit" 
 	value="&{template:rolls} {{subtitle=Wit}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{wit}[wit] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Wit</label>
       <input name="attr_wit" class="skill">
     </div>
-    <hr class="line">
+<!--    <hr class="line">
     <div class="f-row nowrap">
       <label class="ability">Followers</label>
       <input name="attr_followers" class="w40">
-    </div>
+    </div> 
+-->
 
   </section>
 
   <section class="feats f-col">
     <h3>Class Features</h3>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;1</label>
-      <span><input name="attr_l1feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;1</label>
+      <span class="flush"><input name="attr_l1feat" class="list-first"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;2</label>
-      <span><input name="attr_l2feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;2</label>
+      <span class="flush"><input name="attr_l2feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;3</label>
-      <span><input name="attr_l3feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;3</label>
+      <span class="flush"><input name="attr_l3feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;4</label>
-      <span><input name="attr_l4feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;4</label>
+      <span class="flush"><input name="attr_l4feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;5</label>
-      <span><input name="attr_l5feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;5</label>
+      <span class="flush"><input name="attr_l5feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;6</label>
-      <span><input name="attr_l6feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;6</label>
+      <span class="flush"><input name="attr_l6feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;7</label>
-      <span><input name="attr_l7feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;7</label>
+      <span class="flush"><input name="attr_l7feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;8</label>
-      <span><input name="attr_l8feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;8</label>
+      <span class="flush"><input name="attr_l8feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">&nbsp;9</label>
-      <span><input name="attr_l9feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">&nbsp;9</label>
+      <span><input name="attr_l9feat" class="list-middle"></span>
     </div>
-    <div class="f-row nowrap">
-      <label class="ability">10</label>
-      <span><input name="attr_l10feat" class="w240"></span>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">10</label>
+      <span class="flush"><input name="attr_l10feat" class="list-last"></span>
+    </div>
+  </section>
+
+  <section class="equipment">
+    <h3>Equipment</h3>
+    <hr class="line">
+    <div class="f-row nowrap flush">
+      <label class="ability flush">Armor</label>
+      <span class="flush"><input name="attr_eqarmor" class="list-first"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">Main Hand</label>
+      <span class="flush"><input name="attr_eqhand1" class="list-middle"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="ability flush">Off Hand</label>
+      <span class="flush"><input name="attr_eqhand2" class="list-last"></span>
+    </div>
+    <hr class="line">
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Crown</label>
+      <span class="flush"><input name="attr_eqcrown" class="list-first"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Amulet</label>
+      <span class="flush"><input name="attr_eqamulet" class="list-middle"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Ring (Main Hand)</label>
+      <span class="flush"><input name="attr_eqring1" class="list-middle"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Ring (Off Hand)</label>
+      <span class="flush"><input name="attr_eqring2" class="list-middle"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Belt</label>
+      <span class="flush"><input name="attr_eqbelt" class="list-middle"></span>
+    </div>
+    <div class="f-row nowrap flush">
+      <label class="skill flush">Boots</label>
+      <span class="flush"><input name="attr_eqoots" class="list-last"></span>
     </div>
   </section>
 
   <section class="inventory">
     <h3>Inventory</h3>
-    <textarea name="attr_inventory"></textarea>
+    <textarea name="attr_inventory" class="inventory"></textarea>
   </section>
 
   <footer class="f-col f-center">
     <span style="font-color: white;">(C) Bakagaijin Productions</span>
   </footer>
 </main>
-
-<!-- Datalists & thing that don't show directly on sheet -->
-
-<datalist id="class">
-    <option value="Warrior">Warrior</option>
-    <option value="Expert">Expert</option>
-    <option value="Magic-User">Magic-User</option>
-</datalist>
-
-<datalist id="race">
-    <option value="Human">Human</option>
-    <option value="Dwarf">Dwarf</option>
-    <option value="Elf">Elf</option>
-    <option value="Halfling">Halfling</option>
-</datalist>
 
 <!-- roll template -->
 
@@ -446,6 +581,15 @@
             "size": "medium" }
     ];
 
+
+    const situationTabs = ["travel", "explore", "fight"];
+    situationTabs.forEach(tab => {
+        on(`clicked:${tab}`, function() {
+            console.log("  clicked " + tab);
+            setAttrs({ situation: tab });
+        });
+    });
+
     const actionTabs = ["attack", "move", "defend", "misc"];
     actionTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
@@ -454,19 +598,43 @@
         });
     });
 
+    const moveTabs = ["walk", "sprint", "climb", "swim", "jump"];
+    moveTabs.forEach(tab => {
+        on(`clicked:${tab}`, function() {
+            let val = String(tab).charAt(0).toUpperCase() + String(tab).slice(1);
+            let t = tab; if(tab == "walk") t = "";
+    		var attrsToChange = {};
+            getAttrs([t+"speed", "move"], function(v) {
+                console.log("  clicked " + tab + "; retrieving " + t+"speed (" + v[t+"speed"] + ")");
+                attrsToChange["move"] = v[t+"speed"];
+                attrsToChange["movement"] = val;
+        		setAttrs(attrsToChange);
+            });
+        });
+    });
+
  //abilities.forEach(ability => { on("change:"+ability, function() { updatemod(ability); }); });
 
- on("sheet:opened change:character_name", function(eventInfo) {
-	getAttrs(["character_name", "attack1_action", "attack2_action"], function(v) {
+ on("sheet:opened", function() {
+     abilities.forEach(ability => { updatemod(ability); });
+     setupActions();
+ });
+ 
+ on("change:character_name", function(eventInfo) {
+     setupActions();
+ });
+
+ on("change:strength change:dexterity change:constitution change:intelligence change:wisdom change:charisma", 
+  function() { abilities.forEach(ability => { updatemod(ability); }); });
+
+ function setupActions() {
+     	getAttrs(["character_name", "attack1_action", "attack2_action"], function(v) {
 		var attrsToChange = {};
 		attrsToChange["attack1_action"] = "%{" + v["character_name"] + "|attack1}";
 		attrsToChange["attack2_action"] = "%{" + v["character_name"] + "|attack2}";
 		setAttrs(attrsToChange);
 	});
- });
-
- on("change:strength change:dexterity change:constitution change:intelligence change:wisdom change:charisma sheet:opened", 
-  function() { abilities.forEach(ability => { updatemod(ability); }); });
+ }
 
  function updatemod(ability) {
 
@@ -482,7 +650,7 @@
     }
     let modname = ability.substring(0,3);
     let mod = a2mod(av);
-    if(raceMods.includes(modname)) {
+    if(String(raceMods).toLowerCase().includes(String(modname).toLowerCase())) {
       mod++;
       if(mod >= 0) mod = "+" + mod; 
     }
