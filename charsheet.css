@@ -9,11 +9,11 @@ main {
   height: 720px;
   grid-gap: 0px;
   grid-template-columns: 200px 200px 200px 300px;
-  grid-template-rows: 70px 160px 160px 310px 20px;
-  grid-template-areas:"hdr hdr hdr lvl"
+  grid-template-rows: 70px 165px 170px 295px 20px;
+  grid-template-areas:"hdr hdr bld lvl"
                       "str dex con sit"
                       "int wis cha sit"
-                      "inv inv inv fea"
+                      "eqp eqp inv fea"
                       "ftr ftr ftr ftr";
 }
 
@@ -21,12 +21,24 @@ main {
 
 :root {
   --header: #d08088;
-  --page: #ffe8d0; 
+  --page: #fff0e0; 
   --separator: #c0a080;
   --border: black; 
   --input: white;
   --text: black;
 }
+.charsheet .cclass[value="knight"] ~ :root          { --header: #d08088; }
+.charsheet .cclass[value="martial artist"] ~ :root  { --header: #d08088; }
+.charsheet .cclass[value="berserker"] ~ :root       { --header: #d08088; }
+
+.charsheet .cclass[value="thief"] ~ :root           { --header: #80d088; }
+.charsheet .cclass[value="alchemist"] ~ :root       { --header: #80d088; }
+.charsheet .cclass[value="bard"] ~ :root            { --header: #80d088; }
+
+.charsheet .cclass[value="wizard"] ~ :root          { --header: #8088d0; }
+.charsheet .cclass[value="cleric"] ~ :root          { --header: #8088d0; }
+.charsheet .cclass[value="druid"] ~ :root           { --header: #8088d0; }
+
 
 section {
     padding: 5px;
@@ -52,9 +64,14 @@ section {
   flex-wrap: nowrap;
   white-space: nowrap;
 }
-.thin {
-  padding-top: 1px;
-  padding-bottom: 1px;
+.flush {
+  height: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .f-center {
   align-items: center;
@@ -63,15 +80,22 @@ section {
 
 /*------------- Section-specific CSS -------------*/
 
-.header {
+.head {
   grid-area: hdr;
-  flex-direction: row;
   background-color: var(--header);
-  white-space: pre nowrap;
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
   border-left: 2px solid var(--border);
-  border-right: 2px solid transparent;
+  border-right: 0px transparent;
+}
+
+.builder {
+  grid-area: bld;
+  background-color: var(--header);
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-left: 0px transparent;
+  border-right: 0px transparent;
 }
 
 .level {
@@ -83,7 +107,7 @@ section {
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
   border-right: 2px solid var(--border);
-  border-left: 2px solid transparent;
+  border-left: 0px transparent;
 }
 
 .situation {
@@ -141,11 +165,19 @@ section {
   margin: 4px 0px;
 }
 
+.equipment {
+  grid-area: eqp;
+  background-color: var(--page);
+  border: 1px solid var(--separator);
+  border-left: 2px solid var(--border);
+  border-right: 0px transparent;
+}
+
 .inventory {
   grid-area: inv;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-left: 2px solid var(--border);
+  border-left: 0px transparent;
 }
 
 footer {
@@ -162,7 +194,7 @@ footer {
 }
 .charsheet div.panelHeader {
   height: 20px;
-  padding-top: 0px;
+  padding-top: 1px;
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
@@ -177,14 +209,14 @@ footer {
   z-index: 1;
 }
 
-.charsheet button.tab1 {
-  width: 60px;
+.charsheet button.tab-explore {
+  width: 75px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
   padding-right: 1px;
   padding-bottom: 0px;
-  margin-top: 3px;
+  margin-top: 2px;
   margin-left: 0px;
   margin-right: 2px;
   margin-bottom: -1px;
@@ -198,14 +230,14 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-.charsheet button.tab2 {
-  width: 60px;
+.charsheet button.tab-fight {
+  width: 75px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
   padding-right: 1px;
   padding-bottom: 0px;
-  margin-top: 3px;
+  margin-top: 2px;
   margin-left: 0px;
   margin-right: 2px;
   margin-bottom: -1px;
@@ -219,14 +251,14 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-.charsheet button.tab3 {
-  width: 60px;
+.charsheet button.tab-travel {
+  width: 75px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
   padding-right: 1px;
   padding-bottom: 0px;
-  margin-top: 3px;
+  margin-top: 2px;
   margin-left: 0px;
   margin-right: 2px;
   margin-bottom: -1px;
@@ -240,7 +272,70 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-.charsheet button.tab4 {
+.charsheet button.tab-attack {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab-move {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab-defend {
+  width: 60px;
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  color: var(--text);
+  background-color: var(--page);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator);
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  z-index: 2;
+}
+.charsheet button.tab-misc {
   width: 60px;
   height: 15px;
   padding-top: 1px;
@@ -262,28 +357,42 @@ footer {
   z-index: 2;
 }
 
+.charsheet div.panel-travel,
+.charsheet div.panel-explore,
+.charsheet div.panel-fight,
 .charsheet div.panel-attack,
 .charsheet div.panel-move,
 .charsheet div.panel-defend,
 .charsheet div.panel-misc {
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 
-/* show the selected archetype and style the active button */
-.charsheet input.action-toggle { display: none; }
 
+/* show the selected archetype and style the active button */
+.charsheet input.situation-toggle { display: none; }
+.charsheet .situation-toggle:not([value="travel"]) ~ div .panel-travel,
+.charsheet .situation-toggle:not([value="explore"]) ~ div .panel-explore,
+.charsheet .situation-toggle:not([value="fight"]) ~ div .panel-fight {
+    display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
+}
+.charsheet .situation-toggle[value="travel"] ~ div button.tab-travel,
+.charsheet .situation-toggle[value="explore"] ~ div button.tab-explore,
+.charsheet .situation-toggle[value="fight"] ~ div button.tab-fight {
+  border-bottom: 1px solid var(--page);
+}
+
+.charsheet input.action-toggle { display: none; }
 .charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
 .charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
 .charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
 .charsheet .action-toggle:not([value="misc"]) ~ div .panel-misc {
     display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
 }
-
-.charsheet .action-toggle[value="attack"] ~ div button.tab1,
-.charsheet .action-toggle[value="move"] ~ div button.tab2,
-.charsheet .action-toggle[value="defend"] ~ div button.tab3,
-.charsheet .action-toggle[value="misc"] ~ div button.tab4 {
+.charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
+.charsheet .action-toggle[value="move"] ~ div button.tab-move,
+.charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
+.charsheet .action-toggle[value="misc"] ~ div button.tab-misc {
   border-bottom: 1px solid var(--page);
 }
 
@@ -368,14 +477,28 @@ footer {
   border: 1px solid var(--border);
 }
 
+.charsheet select.cclass {
+  text-align: center;
+  margin: 1px 1px;
+  padding: 1px;
+  width: 230px;
+  height: 35px;
+  font-style: bold;
+  font-size: 24px;
+  background-color: var(--input);
+  border: 3px solid var(--border);
+}
+
 .charsheet input.level {
   text-align: center;
+  padding-right: 10px;
   margin: 1px 1px;
   width: 50px;
   height: 50px;
   font-family: arial;
-  font-style: black;
-  font-size: 27px;
+  font-style: bold;
+  font-size: 30px;
+  color: var(--text);
   background-color: var(--input);
   border-top-right-radius: 75%;
   border: 3px solid var(--border);
@@ -389,6 +512,7 @@ footer {
   font-family: arial;
   font-style: bold;
   font-size: 18px;
+  color: var(--text);
   padding: 0px 3px;
   background-color: var(--input);
   border-bottom-right-radius: 15%;
@@ -403,6 +527,7 @@ footer {
   font-family: arial;
   font-style: bold;
   font-size: 14px;
+  color: var(--text);
   padding: 0px 2px;
   background-color: var(--input);
   border-radius: 25%;
@@ -417,6 +542,7 @@ footer {
   font-family: arial;
   font-style: bold;
   font-size: 14px;
+  color: var(--text);
   padding: 0px 2px;
   background-color: var(--input);
   border-bottom-left-radius: 60%;
@@ -433,6 +559,7 @@ footer {
   font-family: arial;
   font-style: bold;
   font-size: 14px;
+  color: var(--text);
   padding: 0px 2px;
   border-top-left-radius: 10%;
   border-top-right-radius: 10%;
@@ -461,7 +588,20 @@ footer {
   background-color: var(--page);
   border: 2px solid var(--border);
 }
-
+.charsheet input.mod-lg {
+  text-align: center;
+  margin: 1px 1px;
+  width: 30px;
+  height: 30px;
+  font-family: arial;
+  font-style: bold;
+  font-size: 16px;
+  padding: 0px 2px;
+  border-radius: 50%;
+  color: var(--text);
+  background-color: var(--input);
+  border: 2px solid var(--border);
+}
 .charsheet input.save {
   text-align: center;
   margin: 1px 1px;
@@ -471,6 +611,7 @@ footer {
   font-style: bold;
   font-size: 14px;
   padding: 0px 2px;
+  color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
   border-radius: 25%;
@@ -484,8 +625,9 @@ footer {
   font-style: bold;
   font-size: 14px;
   padding: 0px 2px;
-  background-color: var(--input);
+  color: var(--text);
   border-radius: 25%;
+  background-color: var(--input);
   border: 2px solid var(--border);
 }
 
@@ -494,6 +636,7 @@ footer {
   margin: 1px 1px;
   width: 25px;
   height: 18px;
+  color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
 }
@@ -502,6 +645,7 @@ footer {
   margin: 1px 1px;
   width: 20px;
   height: 18px;
+  color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
 }
@@ -509,16 +653,69 @@ footer {
   text-align: center;
   margin: 1px 1px;
   width: 185px;
-  height: 18px;
+  height: 21px;
+  color: var(--text);
   background-color: var(--input);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 }
+
+.charsheet input.list-first {
+  text-align: center;
+  margin-bottom: 0px;
+  width: 240px !important;
+  height: 25px;
+  color: var(--text);
+  background-color: var(--input);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px dotted var(--border);
+}
+.charsheet input.list-middle {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 240px !important;
+  height: 25px;
+  color: var(--text);
+  background-color: var(--input);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-top: 0px transparent;
+  border-bottom: 1px dotted var(--border);
+}
+.charsheet input.list-last {
+  text-align: center;
+  margin-top: 0px;
+  width: 240px !important;
+  height: 25px;
+  color: var(--text);
+  background-color: var(--input);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-top: 0px transparent;
+  border-bottom: 1px solid var(--border);
+}
+
 
 .charsheet input.w40 {
   text-align: center;
   margin: 1px 1px;
   width: 40px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -527,6 +724,7 @@ footer {
   margin: 1px 1px;
   width: 60px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -535,6 +733,7 @@ footer {
   margin: 1px 1px;
   width: 80px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -543,6 +742,7 @@ footer {
   margin: 1px 1px;
   width: 100px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -551,6 +751,7 @@ footer {
   margin: 1px 1px;
   width: 120px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -559,6 +760,7 @@ footer {
   margin: 1px 1px;
   width: 140px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -567,6 +769,7 @@ footer {
   margin: 1px 1px;
   width: 160px;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -575,6 +778,7 @@ footer {
   margin: 1px 1px;
   width: 180px !important;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -583,6 +787,7 @@ footer {
   margin: 1px 1px;
   width: 200px !important;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -591,6 +796,7 @@ footer {
   margin: 1px 1px;
   width: 220px !important;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
@@ -599,14 +805,15 @@ footer {
   margin: 1px 1px;
   width: 240px !important;
   height: 25px;
+  color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
 }
 
-.charsheet input.w220l {
+.charsheet input.weapon {
   text-align: left;
   margin: 1px 1px;
-  width: 220px !important;
+  width: 200px !important;
   height: 25px;
   font-size: 16px;
   color: var(--text);
@@ -619,6 +826,25 @@ footer {
   width: 240px !important;
   height: 25px;
   font-size: 16px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.w320l {
+  text-align: left;
+  margin: 1px 1px;
+  width: 320px !important;
+  height: 25px;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet textarea.inventory {
+  text-align: left;
+  margin: 1px 1px;
+  font-size: 12px;
   color: var(--text);
   background-color: var(--input);
   border: 1px solid var(--border);
@@ -652,7 +878,7 @@ footer {
   border: 2px solid var(--border);
 }
 
-.charsheet button.save[type="roll"] {
+.charsheet button.save {
   width: 21px;
   height: 18px;
   padding: 1px 2px;
@@ -664,7 +890,7 @@ footer {
   border: 2px solid blue;
 }
 
-.charsheet button.skill[type="roll"]{
+.charsheet button.skill {
   width: 21px;
   height: 18px;
   padding: 1px 2px;
@@ -673,7 +899,7 @@ footer {
   border: 2px solid green;
 }
 
-.charsheet button.attack[type="roll"]{
+.charsheet button.attack {
   width: 27px;
   height: 21px;
   padding: 1px 2px;
@@ -682,7 +908,7 @@ footer {
   border: 2px solid red;
 }
 
-.charsheet button.damage[type="roll"]{
+.charsheet button.damage {
   width: 21px;
   height: 18px;
   padding: 1px 2px;
@@ -690,6 +916,16 @@ footer {
   border-radius: 50%;
   border: 2px solid red;
 }
+
+.charsheet button.action {
+  width: 60px;
+  height: 15px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 8px;
+  border: 2px solid green;
+}
+
 
 .charsheet input[type="number"]{
   text-align: right;
