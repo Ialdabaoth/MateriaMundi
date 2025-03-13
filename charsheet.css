@@ -11,34 +11,48 @@ main {
   grid-template-columns: 200px 200px 200px 300px;
   grid-template-rows: 70px 165px 170px 295px 20px;
   grid-template-areas:"hdr hdr bld lvl"
-                      "str dex con sit"
-                      "int wis cha sit"
+                      "str dex con act"
+                      "int wis cha act"
                       "eqp eqp inv fea"
                       "ftr ftr ftr ftr";
 }
 
 /*----------------- GENERAL CSS ------------------*/
-
 :root {
-  --header: #d08088;
+  --header: #e0c0a0;
   --page: #fff0e0; 
   --separator: #c0a080;
   --border: black; 
   --input: white;
   --text: black;
+  --save-color: blue;
+  --skill-color: green;
+  --attack-color: red;
+  --disabled-color: gray;
+  --save-bg: #e0f0ff;
+  --skill-bg: #e0fff0;
+  --attack-bg: #ffe0f0;
+  --disabled-bg: #c0c0c0;
+  --font-text: "Baskerville";
+  --font-number: "Arial";
 }
-.charsheet .cclass[value="knight"] ~ :root          { --header: #d08088; }
-.charsheet .cclass[value="martial artist"] ~ :root  { --header: #d08088; }
-.charsheet .cclass[value="berserker"] ~ :root       { --header: #d08088; }
 
-.charsheet .cclass[value="thief"] ~ :root           { --header: #80d088; }
-.charsheet .cclass[value="alchemist"] ~ :root       { --header: #80d088; }
-.charsheet .cclass[value="bard"] ~ :root            { --header: #80d088; }
+.charsheet * {
+  font-family: var(--font-text);
+}
 
-.charsheet .cclass[value="wizard"] ~ :root          { --header: #8088d0; }
-.charsheet .cclass[value="cleric"] ~ :root          { --header: #8088d0; }
-.charsheet .cclass[value="druid"] ~ :root           { --header: #8088d0; }
+.charsheet button[type="roll"] {
+  display: inline-block;
+  /*all: initial;*/
+}
 
+.charsheet select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 
 section {
     padding: 5px;
@@ -110,8 +124,8 @@ section {
   border-left: 0px transparent;
 }
 
-.situation {
-  grid-area: sit;
+.actions {
+  grid-area: act;
   background-color: var(--page);
   border: 1px solid var(--separator);
   border-right: 2px solid var(--border);
@@ -335,7 +349,7 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-.charsheet button.tab-misc {
+.charsheet button.tab-react {
   width: 60px;
   height: 15px;
   padding-top: 1px;
@@ -363,7 +377,7 @@ footer {
 .charsheet div.panel-attack,
 .charsheet div.panel-move,
 .charsheet div.panel-defend,
-.charsheet div.panel-misc {
+.charsheet div.panel-react {
   margin-top: 1px;
 }
 
@@ -386,16 +400,15 @@ footer {
 .charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
 .charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
 .charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
-.charsheet .action-toggle:not([value="misc"]) ~ div .panel-misc {
+.charsheet .action-toggle:not([value="react"]) ~ div .panel-react {
     display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
 }
 .charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
 .charsheet .action-toggle[value="move"] ~ div button.tab-move,
 .charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
-.charsheet .action-toggle[value="misc"] ~ div button.tab-misc {
+.charsheet .action-toggle[value="react"] ~ div button.tab-react {
   border-bottom: 1px solid var(--page);
 }
-
 
 /*----------------- Text & Input styling -----------------*/
 
@@ -403,10 +416,6 @@ footer {
 
 
 /* these are for overwriting default CSS that comes from Roll20 */
-
-.charsheet * {
-  font-family: "Baskerville";
-}
 
 .charsheet h3 {
   text-align: center;
@@ -432,12 +441,160 @@ footer {
   background-color: var(--page);
 }
 
+.charsheet input.character-name {
+  text-align: left;
+  margin: 1px 1px;
+  width: 320px;
+  height: 25px;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+.charsheet input.character-race {
+  text-align: center;
+  margin: 1px 1px;
+  width: 120px;
+  height: 25px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet select.character-class {
+  text-align: center;
+  margin: 1px 1px;
+  padding: 1px;
+  width: 230px;
+  height: 35px;
+  line-height: 32px;
+  color: var(--text);
+  font-style: bold;
+  font-size: 24px;
+  background-color: var(--input);
+  border: 3px solid var(--border);
+}
+
+.charsheet select.character-level {
+  text-align: center;
+  padding: 1px;
+  padding-right: 10px;
+  margin: 1px 1px;
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 30px;
+  color: var(--text);
+  background-color: var(--input);
+  border-top-right-radius: 75%;
+  border: 3px solid var(--border);
+}
+
+.charsheet button[type="roll"].proficiency {
+  margin: 0px;
+  padding: 0px;
+  width: 20px;
+  height: 22px; /*  should be 25px, no idea why it doesn't line up with input.skill's height */
+  border: 2px solid var(--border);
+  background: var(--header);
+
+  border-right: 0px;    
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.charsheet button[type="roll"].skill {
+  border: 2px solid var(--skill-color);
+  border-right: 0px;    
+  background: var(--skill-bg);
+}
+.charsheet button[type="roll"].save {
+  border: 2px solid var(--save-color);
+  border-right: 0px;    
+  background: var(--save-bg);
+}
+.charsheet button[type="roll"].attack {
+  border: 2px solid var(--attack-color);
+  border-right: 0px;    
+  background: var(--attack-bg);
+}
+.charsheet input.proficiency, select.proficiency {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  width: 30px;
+  height: 25px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 14px;
+  
+  color: var(--text);
+  background-color: var(--input);
+  border: 2px solid var(--border);
+
+  border-left: 1px solid var(--border);    
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.charsheet input.armor {
+  text-align: center;
+  margin: 1px 1px;
+  width: 160px;
+  height: 25px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
+.charsheet button[type="roll"].damage {
+  margin: 0px;
+  padding: 0px;
+  width: 20px;
+  height: 17px; /*  should be 20px, no idea why it doesn't line up with input.skill's height */
+  border: 2px solid var(--attack-color);
+  background: var(--attack-bg);
+
+  border-left: 0px;    
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.charsheet input.damage {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  width: 180px;
+  height: 20px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 14px;
+  
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+
+  border-right: 1px solid var(--border);    
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .charsheet label {
   margin: 3px;
   padding: 3px 0 0 0;
   color: var(--text); 
 }
 .charsheet label.ability {
+  font-family: var(--font-text);
   font-size: 18px;
   font-style: bold;
   color: var(--text); 
@@ -447,24 +604,35 @@ footer {
   color: var(--text); 
 }
 .charsheet label.save {
+  font-family: var(--font-text);
   font-size: 16px;
   font-style: italic;
   color: var(--text); 
 }
 .charsheet label.skill {
+  font-family: var(--font-text);
   font-size: 15px;
   color: var(--text); 
 }
 .charsheet label.action {
+  font-family: var(--font-text);
   font-size: 13px;
   color: var(--text); 
 }
+.charsheet label.description {
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--text); 
+}
 .charsheet label.attack {
+  font-family: var(--font-text);
   font-size: 18px;
   font-style: bold;
   color: var(--text); 
 }
 .charsheet label.damage {
+  font-family: var(--font-text);
   text-align: right;
   font-size: 13px;
   color: var(--text); 
@@ -477,54 +645,29 @@ footer {
   border: 1px solid var(--border);
 }
 
-.charsheet select.cclass {
-  text-align: center;
-  margin: 1px 1px;
-  padding: 1px;
-  width: 230px;
-  height: 35px;
-  font-style: bold;
-  font-size: 24px;
-  background-color: var(--input);
-  border: 3px solid var(--border);
-}
 
-.charsheet input.level {
+.charsheet input[type="number"].ability {
   text-align: center;
-  padding-right: 10px;
   margin: 1px 1px;
   width: 50px;
-  height: 50px;
-  font-family: arial;
-  font-style: bold;
-  font-size: 30px;
-  color: var(--text);
-  background-color: var(--input);
-  border-top-right-radius: 75%;
-  border: 3px solid var(--border);
-}
-
-.charsheet input.ability {
-  text-align: center;
-  margin: 1px 1px;
-  width: 30px;
   height: 30px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 18px;
   color: var(--text);
   padding: 0px 3px;
   background-color: var(--input);
-  border-bottom-right-radius: 15%;
+  border-radius: 5px;
+  border-bottom-right-radius: 10px;
   border: 3px solid var(--border);
 }
 
-.charsheet input.attack {
+.charsheet input.bigbox {
   text-align: center;
   margin: 1px 1px;
   width: 36px;
   height: 30px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
   color: var(--text);
@@ -539,7 +682,7 @@ footer {
   margin: 1px 1px;
   width: 30px;
   height: 30px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
   color: var(--text);
@@ -547,8 +690,8 @@ footer {
   background-color: var(--input);
   border-bottom-left-radius: 60%;
   border-bottom-right-radius: 60%;
-  border: 3px solid green;
-  background-color: #e0fff0;
+  border: 3px solid var(--save-color);
+  background-color: var(--save-bg);
 }
 
 .charsheet input.dv {
@@ -556,7 +699,7 @@ footer {
   margin: 2px 4px;
   width: 24px;
   height: 24px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
   color: var(--text);
@@ -565,8 +708,8 @@ footer {
   border-top-right-radius: 10%;
   border-bottom-left-radius: 60%;
   border-bottom-right-radius: 60%;
-  border: 1px solid green;
-  background-color: #e0fff0;
+  border: 1px solid var(--save-color);
+  background-color: var(--save-bg);
 }
 
 .charsheet input.mod {
@@ -574,7 +717,7 @@ footer {
   margin: 1px 1px;
   width: 25px;
   height: 25px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
   padding: 0px 2px;
@@ -583,17 +726,13 @@ footer {
   background-color: var(--input);
   border: 2px solid var(--border);
 }
-.charsheet input.mod:read-only {
-  color: var(--text);
-  background-color: var(--page);
-  border: 2px solid var(--border);
-}
+
 .charsheet input.mod-lg {
   text-align: center;
   margin: 1px 1px;
   width: 30px;
   height: 30px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 16px;
   padding: 0px 2px;
@@ -602,12 +741,24 @@ footer {
   background-color: var(--input);
   border: 2px solid var(--border);
 }
+
+.charsheet input.weapon {
+  text-align: left;
+  margin: 1px 1px;
+  width: 250px;
+  height: 25px;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--input);
+  border: 1px solid var(--border);
+}
+
 .charsheet input.save {
   text-align: center;
   margin: 1px 1px;
   width: 30px;
   height: 25px;
-  font-family: arial;
+  font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
   padding: 0px 2px;
@@ -616,20 +767,7 @@ footer {
   border: 2px solid var(--border);
   border-radius: 25%;
 }
-.charsheet input.skill {
-  text-align: center;
-  margin: 1px 1px;
-  width: 30px;
-  height: 25px;
-  font-family: arial;
-  font-style: bold;
-  font-size: 14px;
-  padding: 0px 2px;
-  color: var(--text);
-  border-radius: 25%;
-  background-color: var(--input);
-  border: 2px solid var(--border);
-}
+
 
 .charsheet input.hp {
   text-align: center;
@@ -659,6 +797,20 @@ footer {
   border: 2px solid var(--border);
 }
 
+/*--------------------- Level-Specific Elements --------------------*/
+.charsheet input.character-level { display: none; }
+.charsheet span.hd,
+.charsheet span.hd1,
+.charsheet span.hd2,
+.charsheet span.hd3,
+.charsheet span.hd4 {
+  display: inline-block;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
 .charsheet input.list-first {
   text-align: center;
   margin-bottom: 0px;
@@ -675,7 +827,15 @@ footer {
   border-top: 1px solid var(--border);
   border-bottom: 1px dotted var(--border);
 }
-.charsheet input.list-middle {
+.charsheet  input.list-middle, 
+            input.list-l2,
+            input.list-l3, 
+            input.list-l4, 
+            input.list-l5, 
+            input.list-l6, 
+            input.list-l7, 
+            input.list-l8, 
+            input.list-l9 {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -692,7 +852,7 @@ footer {
   border-top: 0px transparent;
   border-bottom: 1px dotted var(--border);
 }
-.charsheet input.list-last {
+.charsheet input.list-last, input.list-l10 {
   text-align: center;
   margin-top: 0px;
   width: 240px !important;
@@ -709,136 +869,121 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-
-.charsheet input.w40 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 40px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w60 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 60px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w80 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 80px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w100 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 100px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w120 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 120px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w140 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 140px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w160 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 160px;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w180 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 180px !important;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w200 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 200px !important;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w220 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 220px !important;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w240 {
-  text-align: center;
-  margin: 1px 1px;
-  width: 240px !important;
-  height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+.charsheet input.character-level[value="1"] ~ span.hd2,
+.charsheet input.character-level[value="1"] ~ span.hd3,
+.charsheet input.character-level[value="1"] ~ span.hd4,
+.charsheet input.character-level[value="2"] ~ span.hd2,
+.charsheet input.character-level[value="2"] ~ span.hd3,
+.charsheet input.character-level[value="2"] ~ span.hd4,
+.charsheet input.character-level[value="3"] ~ span.hd2,
+.charsheet input.character-level[value="3"] ~ span.hd3,
+.charsheet input.character-level[value="3"] ~ span.hd4,
+.charsheet input.character-level[value="4"] ~ span.hd3,
+.charsheet input.character-level[value="4"] ~ span.hd4,
+.charsheet input.character-level[value="5"] ~ span.hd3,
+.charsheet input.character-level[value="5"] ~ span.hd4,
+.charsheet input.character-level[value="6"] ~ span.hd3,
+.charsheet input.character-level[value="6"] ~ span.hd4,
+.charsheet input.character-level[value="7"] ~ span.hd4,
+.charsheet input.character-level[value="8"] ~ span.hd4,
+.charsheet input.character-level[value="9"] ~ span.hd4{
+    display: none !important;
 }
 
-.charsheet input.weapon {
-  text-align: left;
-  margin: 1px 1px;
-  width: 200px !important;
-  height: 25px;
-  font-size: 16px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+.charsheet input.character-level[value="1"] ~ div .show-l2,
+.charsheet input.character-level[value="1"] ~ div .show-l3,
+.charsheet input.character-level[value="1"] ~ div .show-l4,
+.charsheet input.character-level[value="1"] ~ div .show-l5,
+.charsheet input.character-level[value="1"] ~ div .show-l6,
+.charsheet input.character-level[value="1"] ~ div .show-l7,
+.charsheet input.character-level[value="1"] ~ div .show-l8,
+.charsheet input.character-level[value="1"] ~ div .show-l9,
+.charsheet input.character-level[value="1"] ~ div .show-l10,
+.charsheet input.character-level[value="2"] ~ div .show-l3,
+.charsheet input.character-level[value="2"] ~ div .show-l4,
+.charsheet input.character-level[value="2"] ~ div .show-l5,
+.charsheet input.character-level[value="2"] ~ div .show-l6,
+.charsheet input.character-level[value="2"] ~ div .show-l7,
+.charsheet input.character-level[value="2"] ~ div .show-l8,
+.charsheet input.character-level[value="2"] ~ div .show-l9,
+.charsheet input.character-level[value="2"] ~ div .show-l10,
+.charsheet input.character-level[value="3"] ~ div .show-l4,
+.charsheet input.character-level[value="3"] ~ div .show-l5,
+.charsheet input.character-level[value="3"] ~ div .show-l6,
+.charsheet input.character-level[value="3"] ~ div .show-l7,
+.charsheet input.character-level[value="3"] ~ div .show-l8,
+.charsheet input.character-level[value="3"] ~ div .show-l9,
+.charsheet input.character-level[value="3"] ~ div .show-l10,
+.charsheet input.character-level[value="4"] ~ div .show-l5,
+.charsheet input.character-level[value="4"] ~ div .show-l6,
+.charsheet input.character-level[value="4"] ~ div .show-l7,
+.charsheet input.character-level[value="4"] ~ div .show-l8,
+.charsheet input.character-level[value="4"] ~ div .show-l9,
+.charsheet input.character-level[value="4"] ~ div .show-l10,
+.charsheet input.character-level[value="5"] ~ div .show-l6,
+.charsheet input.character-level[value="5"] ~ div .show-l7,
+.charsheet input.character-level[value="5"] ~ div .show-l8,
+.charsheet input.character-level[value="5"] ~ div .show-l9,
+.charsheet input.character-level[value="5"] ~ div .show-l10,
+.charsheet input.character-level[value="6"] ~ div .show-l7,
+.charsheet input.character-level[value="6"] ~ div .show-l8,
+.charsheet input.character-level[value="6"] ~ div .show-l9,
+.charsheet input.character-level[value="6"] ~ div .show-l10,
+.charsheet input.character-level[value="7"] ~ div .show-l8,
+.charsheet input.character-level[value="7"] ~ div .show-l9,
+.charsheet input.character-level[value="7"] ~ div .show-l10,
+.charsheet input.character-level[value="8"] ~ div .show-l9,
+.charsheet input.character-level[value="8"] ~ div .show-l10,    
+.charsheet input.character-level[value="9"] ~ div .show-l10{
+  display: none !important;
 }
-.charsheet input.w240l {
-  text-align: left;
-  margin: 1px 1px;
-  width: 240px !important;
-  height: 25px;
-  font-size: 16px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-.charsheet input.w320l {
-  text-align: left;
-  margin: 1px 1px;
-  width: 320px !important;
-  height: 25px;
-  font-size: 16px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+.charsheet input.character-level[value="1"] ~ div .req-l2,
+.charsheet input.character-level[value="1"] ~ div .req-l3,
+.charsheet input.character-level[value="1"] ~ div .req-l4,
+.charsheet input.character-level[value="1"] ~ div .req-l5,
+.charsheet input.character-level[value="1"] ~ div .req-l6,
+.charsheet input.character-level[value="1"] ~ div .req-l7,
+.charsheet input.character-level[value="1"] ~ div .req-l8,
+.charsheet input.character-level[value="1"] ~ div .req-l9,
+.charsheet input.character-level[value="1"] ~ div .req-l10,
+.charsheet input.character-level[value="2"] ~ div .req-l3,
+.charsheet input.character-level[value="2"] ~ div .req-l4,
+.charsheet input.character-level[value="2"] ~ div .req-l5,
+.charsheet input.character-level[value="2"] ~ div .req-l6,
+.charsheet input.character-level[value="2"] ~ div .req-l7,
+.charsheet input.character-level[value="2"] ~ div .req-l8,
+.charsheet input.character-level[value="2"] ~ div .req-l9,
+.charsheet input.character-level[value="2"] ~ div .req-l10,
+.charsheet input.character-level[value="3"] ~ div .req-l4,
+.charsheet input.character-level[value="3"] ~ div .req-l5,
+.charsheet input.character-level[value="3"] ~ div .req-l6,
+.charsheet input.character-level[value="3"] ~ div .req-l7,
+.charsheet input.character-level[value="3"] ~ div .req-l8,
+.charsheet input.character-level[value="3"] ~ div .req-l9,
+.charsheet input.character-level[value="3"] ~ div .req-l10,
+.charsheet input.character-level[value="4"] ~ div .req-l5,
+.charsheet input.character-level[value="4"] ~ div .req-l6,
+.charsheet input.character-level[value="4"] ~ div .req-l7,
+.charsheet input.character-level[value="4"] ~ div .req-l8,
+.charsheet input.character-level[value="4"] ~ div .req-l9,
+.charsheet input.character-level[value="4"] ~ div .req-l10,
+.charsheet input.character-level[value="5"] ~ div .req-l6,
+.charsheet input.character-level[value="5"] ~ div .req-l7,
+.charsheet input.character-level[value="5"] ~ div .req-l8,
+.charsheet input.character-level[value="5"] ~ div .req-l9,
+.charsheet input.character-level[value="5"] ~ div .req-l10,
+.charsheet input.character-level[value="6"] ~ div .req-l7,
+.charsheet input.character-level[value="6"] ~ div .req-l8,
+.charsheet input.character-level[value="6"] ~ div .req-l9,
+.charsheet input.character-level[value="6"] ~ div .req-l10,
+.charsheet input.character-level[value="7"] ~ div .req-l8,
+.charsheet input.character-level[value="7"] ~ div .req-l9,
+.charsheet input.character-level[value="7"] ~ div .req-l10,
+.charsheet input.character-level[value="8"] ~ div .req-l9,
+.charsheet input.character-level[value="8"] ~ div .req-l10,    
+.charsheet input.character-level[value="9"] ~ div .req-l10{
+  color:            var(--disabled-color);
+  background-color: var(--disabled-bg);
 }
 
 .charsheet textarea.inventory {
@@ -866,55 +1011,31 @@ footer {
 }
 
 .charsheet input.round:checked {
-    background-color: green;
+    background-color: var(--skill-color);
 }
 
-.charsheet button[type="roll"] {
-  width: 21px;
-  height: 18px;
-  padding: 1px 2px;
-  margin: 2px 4px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-}
 
-.charsheet button.save {
-  width: 21px;
-  height: 18px;
-  padding: 1px 2px;
-  margin: 2px 4px;
-  border-top-left-radius: 10%;
-  border-top-right-radius: 10%;
-  border-bottom-left-radius: 60%;
-  border-bottom-right-radius: 60%;
-  border: 2px solid blue;
-}
-
-.charsheet button.skill {
-  width: 21px;
-  height: 18px;
-  padding: 1px 2px;
-  margin: 2px 4px;
-  border-radius: 50%;
-  border: 2px solid green;
-}
-
-.charsheet button.attack {
-  width: 27px;
+.charsheet button.defend {
+  width: 16px;
   height: 21px;
   padding: 1px 2px;
   margin: 2px 4px;
-  border-radius: 15%;
-  border: 2px solid red;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border: 2px solid var(--save-color);
+  background: var(--save-bg);
 }
 
-.charsheet button.damage {
+
+.charsheet button.opportunity-attack {
   width: 21px;
-  height: 18px;
+  height: 21px;
   padding: 1px 2px;
   margin: 2px 4px;
   border-radius: 50%;
-  border: 2px solid red;
+  border: 2px solid var(--attack-color);
 }
 
 .charsheet button.action {
@@ -923,7 +1044,7 @@ footer {
   padding: 1px 2px;
   margin: 2px 4px;
   border-radius: 8px;
-  border: 2px solid green;
+  border: 2px solid var(--skill-color);
 }
 
 
