@@ -2,13 +2,13 @@
   <section class="head">
     <div class="f-row">
       <label>Name:</label>
-      <span><input name="attr_character_name" class="w320l"></span>
+      <span><input name="attr_character_name" class="character-name"></span>
     </div>
     <div class="f-row nowrap">
       <label>Race:</label>
-      <span><input name="attr_race" class="w120"></span>
+      <span><input name="attr_race" class="character-race"></span>
       <label>Bonuses:</label>
-      <span><input name="attr_race_max" class="w120"></span>
+      <span><input name="attr_race_max" class="character-race"></span>
     </div>
   </section>
 
@@ -17,7 +17,7 @@
   
   <section class="level f-row nowrap">
     <span>
-      <select name="attr_class" class="cclass">
+      <select name="attr_class" class="character-class">
         <option value="knight">Knight</option>
         <option value="martial artist">Martial Artist</option>
         <option value="berserker">Berserker</option>
@@ -30,17 +30,29 @@
       </select>
     </span>
     <span>
-      <input name="attr_level" class="level" >
+      <select name="attr_level" class="character-level">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+      </select>
     </span>
   </section>
 
-  <section class="situation f-col nowrap">
+  <section class="actions f-col nowrap">
+   <input type="hidden" name="attr_level" class="character-level" >
    <div class="f-row nowrap">
-    <label class="ability"><span name="attr_l3feat"></span></label>
-    <input name="attr_power" class="attack"><span style="font-size: 18px; font-style: bold;"><b>&nbsp;/&nbsp;</b></span><input name="attr_power_max" class="attack">
-   </div>
+      <label class="ability show-l3"><span name="attr_l3feat"></span></label>
+      <input name="attr_power" class="bigbox show-l3"><span class="show-l3" style="font-size: 18px; font-style: bold;"><b>&nbsp;/&nbsp;</b></span><input name="attr_power_max" class="bigbox show-l3">
+   </div>    
    <input type="hidden" name="attr_situation" class="situation-toggle">
-  <div class="situationPanel">
+   <div class="situationPanel">
    <div class="panelHeader">
     <button class="tab-travel" type="action" name="act_travel">Travel</button>
     <button class="tab-explore" type="action" name="act_explore">Exploration</button>
@@ -61,13 +73,59 @@
       <label class="action">Resting spends one hit die to heal <br>hit points and recover all <span name="attr_l3feat"></span>.
       </label>
     </div> 
-    <div class="f-row nowrap">
+    <div class="nowrap">
       <label class="action">Hit Dice:</label>
-      <span>
-        <input name="attr_hd1_max" class="skill">
-        <input name="attr_hd2_max" class="skill">
-        <input name="attr_hd3_max" class="skill">
-        <input name="attr_hd4_max" class="skill">
+      <input type="hidden" name="attr_level" class="character-level" >
+      <span class="hd show-l3">
+        <button class="proficiency" type="roll" name="roll_hd1" 
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd1_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd1_max}[hit points] ]]}}">
+        </button><select name="attr_hd1_max" class="proficiency">
+            <option value="">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
+      &nbsp;
+      <span class="hd show-l4">
+        <button class="proficiency req-l4" type="roll" name="roll_hd2" 
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd2_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd2_max}[hit points] ]]}}">
+        </button><select name="attr_hd2_max" class="proficiency req-l4">
+            <option value="">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
+      &nbsp;
+      <span class="hd show-l7">
+        <button class="proficiency req-l7" type="roll" name="roll_hd3" 
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd3_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd3_max}[hit points] ]]}}">
+        </button><select name="attr_hd3_max" class="proficiency req-l7">
+            <option value="">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
+      &nbsp;
+      <span class="hd show-l10">
+        <button class="proficiency req-l10" type="roll" name="roll_hd4" 
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd4_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd4_max}[hit points] ]]}}">
+        </button><select name="attr_hd4_max" class="proficiency req-l10">
+            <option value="">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
       </span>
     </div> 
     <hr class="line">
@@ -80,27 +138,20 @@
 
    </div panel-explore>
    <div class="panel-fight">
-
-<!--        
     <div class="f-row nowrap">
-      <label class="ability">Situation</label>
-      <select class="dropdown" name="attr_d20">
-        <option value="">Exploration</option>
-        <option value="d20">Encounter</option>
-        <option value="2d20kh1">(Advantage)</option>
-        <option value="2d20kl1">(Disadvantage)</option>
-      </select>
+      <label class="skill">Initiative</label>
+      <button class="proficiency" type="roll" name="roll_initiative" 
+       value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
+      </button><input name="attr_initiative" class="proficiency">
     </div>
--->
     <div class="f-row nowrap">
-      <label class="ability">Initiative</label>
-      <input name="attr_initiative" class="skill">
-    </div>
-    <hr class="space">
-    <div class="f-row nowrap">
-      <label class="ability">Defense</label>
-      <input name="attr_armor" type="text" class="w160">      
+      <label class="skill">Defense</label>
+      <input name="attr_armor" type="text" class="armor">      
       <input name="attr_defense" class="defense">
+    </div>
+    <div class="f-row nowrap">
+      <label class="action">Last Action:</label>
+      <label class="action"><span="attr_lastaction"></span></label>
     </div>
     <input type="hidden" name="attr_actiontab" class="action-toggle">
     <div class="actionPanel">
@@ -108,53 +159,46 @@
           <button class="tab-attack" type="action" name="act_attack">Attack</button>
           <button class="tab-move" type="action" name="act_move">Move</button>
           <button class="tab-defend" type="action" name="act_defend">Defend</button>
-          <button class="tab-misc" type="action" name="act_misc">Misc</button>
+          <button class="tab-react" type="action" name="act_react">React</button>
       </div>    
       <div class="panel-attack">
+        <hr class="space">
         <div class="f-row nowrap">
           <label class="ability">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
-          <input name="attr_attack" class="attack">
+        <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
+        </button><input name="attr_attack" class="proficiency">
         </div>
         <hr class="line">
         <div>
           <div class="f-row nowrap">
-            <button class="action" type="action" name="act_attack1" value="@{attack1_action}">Attack</button>
+            <input name="attr_activeweapon" type="radio" value="@{attack1_action}">
             <input name="attr_weapon1" class="weapon">
             <input name="attr_accuracy1" class="mod">
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-            <button class="save" type="roll" name="roll_parry1"  
-	         value="&{template:rolls} {{subtitle=Parry: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry1}+@{attack}[parry] ]]}}"></button>
-            <input name="attr_parry1" class="mod">
-            <label class="action">Parry</label>
-            <input name="attr_damage1" class="w120">
-            <button class="damage" type="roll" name="roll_damage1" 
-  	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}"></button>
+              <label class="action">&nbsp;&nbsp;Damage:</label><input name="attr_damage1" class="damage"><button class="damage" type="roll" name="roll_damage1" 
+    	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}">
+              </button>
           </div>
         </div>
-        <hr class="space">
         <hr class="line">
-        <hr class="space">
         <div>
           <div class="f-row nowrap">
-            <button class="action" type="action" name="act_attack2" value="@{attack2_action}">Attack</button>
+            <input name="attr_activeweapon" type="radio" value="@{attack2_action}">
             <input name="attr_weapon2" class="weapon">
             <input name="attr_accuracy2" class="mod">
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-            <button class="save" type="roll" name="roll_parry2" 
-	         value="&{template:rolls} {{subtitle=Parry: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button>
-            <input name="attr_parry2" class="mod">
-            <label class="action">Parry</label>
-            <input name="attr_damage2" class="w120">
-            <button class="damage" type="roll" name="roll_damage2" 
-  	         value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}"></button>
+              <label class="action">&nbsp;&nbsp;Damage:</label><input name="attr_damage2" class="damage"><button class="damage" type="roll" name="roll_damage2" 
+  	           value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}">
+              </button>
           </div>
         </div>
       </div panel-attack>
       <div class="panel-move">
+        <hr class="space">
         <div class="f-row nowrap">
             <button type="action" class="action" name="act_walk">Walk</button>
             <label class="action"><span name="attr_speed"></span> paces / round</label>
@@ -177,6 +221,7 @@
         </div>
       </div panel-move>
       <div class="panel-defend">
+        <hr class="space">
         <div class="f-row">
             <button type="action" class="action" name="act_guard">Guard</button>
             <label class="action">Regain your reaction after you <br>successfully parry or hit with an <br>opportunity attack</label>
@@ -192,9 +237,23 @@
             <label class="action">Roll Stealth to become hidden</label>
         </div>
       </div panel-defend>
-      <div class="panel-misc">
-          <span>MISC PANEL</span>
-      </div panel-misc>
+      <div class="panel-react">
+        <hr class="space">
+        <div class="f-row nowrap">
+          <span><button class="opportunity-attack" type="roll" name="roll_opattack" value="@{activeweapon}"></button></span>
+          <label class="description"><b>Opportunity Attack</b><br>Attack with your current weapon.</label>
+        </div> 
+        <div class="f-row nowrap">
+          <span><button class="defend" type="roll" name="roll_dodge" 
+   	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
+          <label class="description"><b>Dodge</b><br>Add <span name="attr_reflex"></span> to your Defense vs one attack.</label>
+        </div> 
+        <div class="f-row nowrap">
+          <span><button class="defend" type="roll" name="roll_parry" 
+   	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
+          <label class="description"><b>Parry (<span name="attr_weapon2"></span>)</b><br>Add <span name="attr_attack"></span><span name="attr_parry2"></span> to your Defense vs one melee attack.</label>
+        </div> 
+      </div panel-react>
     </div actionPanel>
    </div panel-fight>
   </div situationPanel>
@@ -203,79 +262,118 @@
 
   <section class="str f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_strength" class="ability">
+      <input name="attr_strength" class="ability" type="number">
       <label class="ability">Strength</label>
       <input name="attr_str" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_athletics" 
-	value="&{template:rolls} {{subtitle=Athletics}} {{title=@{character_name} }} {{roll= [[@{d20}@{str}+@{athletics}[athletics] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Athletics</label>
-      <input name="attr_athletics_max" class="dv">
-      <input name="attr_athletics" class="skill">
+      <input name="attr_athletics_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_athletics" 
+	      value="&{template:rolls} {{subtitle=Athletics}} {{title=@{character_name} }} {{roll= [[@{d20}@{str}+@{athletics}[athletics] ]]}}">
+        </button><select name="attr_athletics" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select><!--input name="attr_athletics" class="proficiency"-->
+      </span>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
       <label class="ability">Encumbrance</label>
-      <input name="attr_encumbrance" class="attack">
+      <input name="attr_encumbrance" class="bigbox">
     </div>
     <hr class="space">
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> Speed</label>
-      <input name="attr_move" class="skill">
+      <input name="attr_move" class="bigbox">
     </div>
   </section>
 
   <section class="dex f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_dexterity" class="ability">
+      <input name="attr_dexterity" class="ability" type="number">
       <label class="ability">Dexterity</label>
       <input name="attr_dex" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_reflex" 
-	value="&{template:rolls} {{subtitle=Reflex}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{reflex}[reflex] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Reflex</label>
-      <input name="attr_reflex_max" class="dv">
-      <input name="attr_reflex" class="skill">
+      <input name="attr_reflex_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_reflex" 
+	      value="&{template:rolls} {{subtitle=Reflex}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{reflex}[reflex] ]]}}">
+        </button><select name="attr_reflex" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
-<!--    <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_dodge" 
-	value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button>
-      <label class="action">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>(Dodge)</i></label>
-    </div> 
--->
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_stealth" 
-	value="&{template:rolls} {{subtitle=Stealth}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{stealth}[stealth] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Stealth</label>
-      <input name="attr_stealth" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_stealth" 
+	      value="&{template:rolls} {{subtitle=Stealth}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{stealth}[stealth] ]]}}">
+        </button><select name="attr_stealth" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_finesse" 
-	value="&{template:rolls} {{subtitle=Finesse}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{finesse}[finesse] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Finesse</label>
-      <input name="attr_finesse" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_finesse" 
+      	  value="&{template:rolls} {{subtitle=Finesse}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{finesse}[finesse] ]]}}">
+        </button><select name="attr_finesse" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
   </section>
 
   <section class="con f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_constitution" class="ability">
+      <input name="attr_constitution" class="ability" type="number">
       <label class="ability">Constitution</label>
       <input name="attr_con" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_fortitude" 
-	value="&{template:rolls} {{subtitle=Fortitude}} {{title=@{character_name} }} {{roll= [[@{d20}@{con}+@{fortitude}[fortitude] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Fortitude</label>
-      <input name="attr_fortitude_max" class="dv">
-      <input name="attr_fortitude" class="skill">
+      <input name="attr_fortitude_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_fortitude" 
+	      value="&{template:rolls} {{subtitle=Fortitude}} {{title=@{character_name} }} {{roll= [[@{d20}@{con}+@{fortitude}[fortitude] ]]}}">
+        </button><select name="attr_fortitude" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
     <hr class="line">
     <div class="f-row nowrap">
@@ -294,156 +392,248 @@
 
   <section class="int f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_intelligence" class="ability">
+      <input name="attr_intelligence" class="ability" type="number">
       <label class="ability">Intelligence</label>
       <input name="attr_int" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_deduction" 
-	value="&{template:rolls} {{subtitle=Deduction}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{deduction}[deduction] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Deduction</label>
-      <input name="attr_deduction_max" class="dv">
-      <input name="attr_deduction" class="skill">
+      <input name="attr_deduction_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_deduction" 
+	      value="&{template:rolls} {{subtitle=Deduction}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{deduction}[deduction] ]]}}">
+        </button><select name="attr_deduction" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_arcana" 
-	value="&{template:rolls} {{subtitle=Arcana}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{arcana}[arcana] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Arcana</label>
-      <input name="attr_arcana" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_arcana" 
+	      value="&{template:rolls} {{subtitle=Arcana}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{arcana}[arcana] ]]}}">
+        </button><select name="attr_arcana" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_craft" 
-	value="&{template:rolls} {{subtitle=Crafting}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{craft}[craft] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Crafting</label>
-      <input name="attr_craft" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_craft" 
+	      value="&{template:rolls} {{subtitle=Crafting}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{craft}[craft] ]]}}">
+        </button><select name="attr_craft" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_lore" 
-	value="&{template:rolls} {{subtitle=Lore}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{lore}[lore] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Lore</label>
-      <input name="attr_lore" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_lore" 
+	      value="&{template:rolls} {{subtitle=Lore}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{lore}[lore] ]]}}">
+        </button><select name="attr_lore" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>
     </div>
   </section>
 
   <section class="wis f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_wisdom" class="ability">
+      <input name="attr_wisdom" class="ability" type="number">
       <label class="ability">Wisdom</label>
       <input name="attr_wis" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_perception" 
-	value="&{template:rolls} {{subtitle=Perception}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Perception</label>
-      <input name="attr_perception_max" class="dv">
-      <input name="attr_perception" class="skill">
+      <input name="attr_perception_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_perception" 
+	      value="&{template:rolls} {{subtitle=Perception}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
+        </button><select name="attr_perception" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_animalken" 
-	value="&{template:rolls} {{subtitle=Animal Ken}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{animalken}[animalken] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Animal Ken</label>
-      <input name="attr_animalken" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_animalken" 
+	      value="&{template:rolls} {{subtitle=Animal Ken}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{animalken}[animalken] ]]}}">
+        </button><select name="attr_animalken" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_nature" 
-	value="&{template:rolls} {{subtitle=Nature}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{nature}[nature] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Nature</label>
-      <input name="attr_nature" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_nature" 
+	      value="&{template:rolls} {{subtitle=Nature}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{nature}[nature] ]]}}">
+        </button><select name="attr_nature" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_medicine" 
-	value="&{template:rolls} {{subtitle=Medicine}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{medicine}[medicine] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Medicine</label>
-      <input name="attr_medicine" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_medicine" 
+	      value="&{template:rolls} {{subtitle=Medicine}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{medicine}[medicine] ]]}}">
+        </button><select name="attr_medicine" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
   </section>
 
   <section class="cha f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_charisma" class="ability">
+      <input name="attr_charisma" class="ability" type="number">
       <label class="ability">Charisma</label>
       <input name="attr_cha" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <button class="save" type="roll" name="roll_willpower" 
-	value="&{template:rolls} {{subtitle=Willpower}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{willpower}[willpower] ]]}}"></button>
       <label class="save">&nbsp;&nbsp;&nbsp;Willpower</label>
-      <input name="attr_willpower_max" class="dv">
-      <input name="attr_willpower" class="skill">
+      <input name="attr_willpower_max" class="dv" readonly>
+      <span class="nowrap">
+        <button class="proficiency save" type="roll" name="roll_willpower" 
+	      value="&{template:rolls} {{subtitle=Willpower}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{willpower}[willpower] ]]}}">
+        </button><select name="attr_willpower" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_charm" 
-	value="&{template:rolls} {{subtitle=Charm}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{charm}[charm] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Charm</label>
-      <input name="attr_charm" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_charm" 
+	      value="&{template:rolls} {{subtitle=Charm}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{charm}[charm] ]]}}">
+        </button><select name="attr_charm" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <button class="skill" type="roll" name="roll_wit" 
-	value="&{template:rolls} {{subtitle=Wit}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{wit}[wit] ]]}}"></button>
       <label class="skill">&nbsp;&nbsp;&nbsp;Wit</label>
-      <input name="attr_wit" class="skill">
+      <span class="nowrap">
+        <button class="proficiency skill" type="roll" name="roll_wit" 
+	      value="&{template:rolls} {{subtitle=Wit}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{wit}[wit] ]]}}">
+        </button><select name="attr_wit" class="proficiency">
+            <option value="2d4kl1">-</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+        </select>
+      </span>    
     </div>
-<!--    <hr class="line">
-    <div class="f-row nowrap">
-      <label class="ability">Followers</label>
-      <input name="attr_followers" class="w40">
-    </div> 
--->
 
   </section>
 
   <section class="feats f-col">
     <h3>Class Features</h3>
+    <input type="hidden" name="attr_level" class="character-level" >
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;1</label>
       <span class="flush"><input name="attr_l1feat" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;2</label>
-      <span class="flush"><input name="attr_l2feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l2feat" class="list-middle req-l2"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;3</label>
-      <span class="flush"><input name="attr_l3feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l3feat" class="list-middle req-l3"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;4</label>
-      <span class="flush"><input name="attr_l4feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l4feat" class="list-middle req-l4"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;5</label>
-      <span class="flush"><input name="attr_l5feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l5feat" class="list-middle req-l5"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;6</label>
-      <span class="flush"><input name="attr_l6feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l6feat" class="list-middle req-l6"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;7</label>
-      <span class="flush"><input name="attr_l7feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l7feat" class="list-middle req-l7"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;8</label>
-      <span class="flush"><input name="attr_l8feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l8feat" class="list-middle req-l8"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;9</label>
-      <span><input name="attr_l9feat" class="list-middle"></span>
+      <span class="flush"><input name="attr_l9feat" class="list-middle req-l9"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">10</label>
-      <span class="flush"><input name="attr_l10feat" class="list-last"></span>
+      <span class="flush"><input name="attr_l10feat" class="list-last req-l10"></span>
     </div>
   </section>
 
@@ -485,7 +675,7 @@
     </div>
     <div class="f-row nowrap flush">
       <label class="skill flush">Boots</label>
-      <span class="flush"><input name="attr_eqoots" class="list-last"></span>
+      <span class="flush"><input name="attr_eqboots" class="list-last"></span>
     </div>
   </section>
 
@@ -590,7 +780,7 @@
         });
     });
 
-    const actionTabs = ["attack", "move", "defend", "misc"];
+    const actionTabs = ["attack", "move", "defend", "react"];
     actionTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
             console.log("  clicked " + tab);
@@ -612,6 +802,30 @@
             });
         });
     });
+
+
+    const proficiencies = ["athletics", 
+                          "reflex", "stealth", "finesse", 
+                          "fortitude", 
+                          "deduction", "arcana", "craft", "lore", 
+                          "perception", "animalken", "nature", "medicine",
+                          "willpower", "charm", "wit", "attack"];
+    /*proficiencies.forEach(tab => {  
+        on(`clicked:${tab}`, function(info) => {
+            startRoll(rollString, (roll) => {
+                const total = results.results.roll1.result
+                const computed = total % 4;
+
+                finishRoll(
+                    roll.rollId,
+                    {
+                        roll1: computed
+                    }
+                );
+                
+            });
+        });
+    });*/
 
  //abilities.forEach(ability => { on("change:"+ability, function() { updatemod(ability); }); });
 
