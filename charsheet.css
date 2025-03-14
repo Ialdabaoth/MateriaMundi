@@ -22,6 +22,27 @@ main {
   width: 290px;
 }
 
+@media only screen and (max-width: 1024px) {
+ main {
+  display: grid;
+  width:  720px;
+  height: 900px;
+  grid-gap: 0px;
+  grid-template-columns: 200px 200px 320px;
+  grid-template-rows: 70px 170px 170px 170px 130px 170px 20px;
+  grid-template-areas:"hdr hdr lvl"
+                      "str int act"
+                      "dex wis act"
+                      "con cha fea"
+                      "eqp eqp fea"
+                      "eqp eqp inv"
+                      "ftr ftr ftr";
+ }
+ .charsheet select.character-class {
+  width: 250px;
+ }
+}
+
 @media only screen and (max-width: 800px) {
  main {
   display: grid;
@@ -42,7 +63,6 @@ main {
  .charsheet select.character-class {
   width: 210px;
  }
- 
 }
 
 /*----------------- GENERAL CSS ------------------*/
@@ -133,7 +153,7 @@ section {
   background-color: var(--header);
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
-  border-left: 2px solid var(--border);
+  border-left: 0px transparent;
   border-right: 0px transparent;
 }
 
@@ -162,14 +182,12 @@ section {
   grid-area: act;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-right: 2px solid var(--border);
 }
 
 .str {
   grid-area: str;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-left: 2px solid var(--border);
 }
 .dex {
   grid-area: dex;
@@ -185,7 +203,6 @@ section {
   grid-area: int;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-left: 2px solid var(--border);
 }
 .wis {
   grid-area: wis;
@@ -202,7 +219,6 @@ section {
   grid-area: fea;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-right: 2px solid var(--border);
 }
 
 .power .repcontainer[data-groupname="repeating_power"]{
@@ -217,15 +233,12 @@ section {
   grid-area: eqp;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-left: 2px solid var(--border);
-  border-right: 0px transparent;
 }
 
 .inventory {
   grid-area: inv;
   background-color: var(--page);
   border: 1px solid var(--separator);
-  border-left: 0px transparent;
 }
 
 footer {
@@ -268,7 +281,7 @@ footer {
   padding-bottom: 0px;
   margin-top: 2px;
   margin-left: 0px;
-  margin-right: 2px;
+  margin-right: 0px;
   margin-bottom: -1px;
   color: var(--text);
   background-color: var(--page);
@@ -293,7 +306,7 @@ footer {
   padding-bottom: 0px;
   margin-top: 2px;
   margin-left: 0px;
-  margin-right: 2px;
+  margin-right: 0px;
   margin-bottom: -1px;
   color: var(--text);
   background-color: var(--page);
@@ -326,7 +339,7 @@ footer {
 .charsheet .situation-toggle[value="travel"] ~ div button.tab-travel,
 .charsheet .situation-toggle[value="explore"] ~ div button.tab-explore,
 .charsheet .situation-toggle[value="fight"] ~ div button.tab-fight {
-  border-bottom: 1px solid var(--page);
+  border-bottom: 3px solid var(--page);
 }
 
 .charsheet input.action-toggle { display: none; }
@@ -340,7 +353,7 @@ footer {
 .charsheet .action-toggle[value="move"] ~ div button.tab-move,
 .charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
 .charsheet .action-toggle[value="react"] ~ div button.tab-react {
-  border-bottom: 1px solid var(--page);
+  border-bottom: 3px solid var(--page);
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -398,7 +411,7 @@ footer {
   text-align: center;
   margin: 1px 1px;
   padding: 1px;
-  height: 35px;
+  height: 50px;
   line-height: 32px;
   color: var(--text);
   font-style: bold;
@@ -424,11 +437,17 @@ footer {
   border: 3px solid var(--border);
 }
 
+.charsheet span.rollbox {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  height: 25px;
+}
 .charsheet button[type="roll"].proficiency {
   margin: 0px;
   padding: 0px;
   width: 20px;
-  height: 22px; /*  should be 25px, no idea why it doesn't line up with input.skill's height */
+  height: auto; /*  should be 25px, no idea why it doesn't line up with input.skill's height */
   border: 2px solid var(--border);
   background: var(--header);
 
@@ -458,7 +477,7 @@ footer {
   margin: 0px;
   padding: 0px;
   width: 30px;
-  height: 25px;
+  height: auto;
   font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
@@ -540,11 +559,13 @@ footer {
   font-style: italic;
   color: var(--text); 
 }
-.charsheet label.skill {
+.charsheet label.skill,
+.charsheet label.proficiency{
   font-family: var(--font-text);
   font-size: 15px;
   color: var(--text); 
 }
+
 .charsheet label.action {
   word-wrap: break-word;
   font-family: var(--font-text);
@@ -724,6 +745,7 @@ footer {
   width: 25px;
   height: 18px;
   font-family: var(--font-number);
+  font-size: 12px;
   color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
@@ -750,17 +772,6 @@ footer {
 
 /*--------------------- Level-Specific Elements --------------------*/
 .charsheet input.character-level { display: none; }
-.charsheet span.hd,
-.charsheet span.hd1,
-.charsheet span.hd2,
-.charsheet span.hd3,
-.charsheet span.hd4 {
-  display: inline-block;
-  height: 25px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
 
 .charsheet input.list-first {
   text-align: center;
