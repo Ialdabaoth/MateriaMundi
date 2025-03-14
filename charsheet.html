@@ -77,16 +77,15 @@
       <span>
         <button class="action" type="action" name="act_rest">Rest</button>
       </span>
-      <label class="description">Resting spends one hit die to heal hit points and recover all <span name="attr_l3feat"></span>.
+      <label class="description">Resting spends one <b>hit die</b> to heal hit points and recover all <span name="attr_l3feat"></span>.<br>
+      <input type="hidden" name="attr_level" class="character-level" >
       </label>
     </div> 
-    <div class="nowrap">
-      <label class="action">Hit Dice:</label>
-      <input type="hidden" name="attr_level" class="character-level" >
-      <span class="hd show-l3">
+    <div class="f-row f-center">
+      <span class="rollbox">
         <button class="proficiency" type="roll" name="roll_hd1" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd1_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd1_max}[hit points] ]]}}">
-        </button><select name="attr_hd1_max" class="proficiency">
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd1}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
+        </button><select name="attr_hd1" class="proficiency">
             <option value="">-</option>
             <option value="d4">d4</option>
             <option value="d6">d6</option>
@@ -96,10 +95,10 @@
         </select>
       </span>
       &nbsp;
-      <span class="hd show-l4">
+      <span class="rollbox show-l4">
         <button class="proficiency req-l4" type="roll" name="roll_hd2" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd2_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd2_max}[hit points] ]]}}">
-        </button><select name="attr_hd2_max" class="proficiency req-l4">
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd2}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
+        </button><select name="attr_hd2" class="proficiency req-l4">
             <option value="">-</option>
             <option value="d4">d4</option>
             <option value="d6">d6</option>
@@ -109,10 +108,10 @@
         </select>
       </span>
       &nbsp;
-      <span class="hd show-l7">
+      <span class="rollbox show-l7">
         <button class="proficiency req-l7" type="roll" name="roll_hd3" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd3_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd3_max}[hit points] ]]}}">
-        </button><select name="attr_hd3_max" class="proficiency req-l7">
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd3}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
+        </button><select name="attr_hd3" class="proficiency req-l7">
             <option value="">-</option>
             <option value="d4">d4</option>
             <option value="d6">d6</option>
@@ -122,10 +121,10 @@
         </select>
       </span>
       &nbsp;
-      <span class="hd show-l10">
+      <span class="rollbox show-l10">
         <button class="proficiency req-l10" type="roll" name="roll_hd4" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd4_max})}} {{title=@{character_name} }} {{roll= [[@{con}+@{hd4_max}[hit points] ]]}}">
-        </button><select name="attr_hd4_max" class="proficiency req-l10">
+          value="&{template:rolls} {{subtitle=Hit Die (@{hd4}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
+        </button><select name="attr_hd4" class="proficiency req-l10">
             <option value="">-</option>
             <option value="d4">d4</option>
             <option value="d6">d6</option>
@@ -134,18 +133,18 @@
             <option value="d12">d12</option>
         </select>
       </span>
-    </div> 
+    </div>
    </div panel-explore>
  
    <div class="panel-fight">
     <div class="f-row nowrap">
-      <label class="skill">Initiative</label>
+      <label class="proficiency">Initiative</label>
       <button class="proficiency" type="roll" name="roll_initiative" 
        value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
       </button><input name="attr_initiative" class="proficiency">
     </div>
     <div class="f-row nowrap">
-      <label class="skill">Defense</label>
+      <label class="proficiency">Defense</label>
       <input name="attr_armor" type="text" class="armor">      
       <input name="attr_defense" class="defense">
     </div>
@@ -157,16 +156,18 @@
     <div class="actionPanel">
       <div class="panelHeader">
           <button class="tab-attack" type="action" name="act_attack">Attack</button>
-          <button class="tab-move" type="action" name="act_move">Move</button>
           <button class="tab-defend" type="action" name="act_defend">Defend</button>
+          <button class="tab-move" type="action" name="act_move">Move</button>
           <button class="tab-react" type="action" name="act_react">React</button>
       </div>    
       <div class="panel-attack">
         <hr class="space">
         <div class="f-row nowrap">
-          <label class="ability">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
-        <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
-        </button><input name="attr_attack" class="proficiency">
+          <label class="proficiency">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
+        <span class="rollbox">
+            <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
+            </button><input name="attr_attack" class="proficiency">
+        </span>
         </div>
         <hr class="line">
         <div>
@@ -288,7 +289,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Athletics</label>
       <input name="attr_athletics_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_athletics" 
 	      value="&{template:rolls} {{subtitle=Athletics}} {{title=@{character_name} }} {{roll= [[@{d20}@{str}+@{athletics}[athletics] ]]}}">
         </button><select name="attr_athletics" class="proficiency">
@@ -340,7 +341,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Reflex</label>
       <input name="attr_reflex_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_reflex" 
 	      value="&{template:rolls} {{subtitle=Reflex}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{reflex}[reflex] ]]}}">
         </button><select name="attr_reflex" class="proficiency">
@@ -356,7 +357,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Stealth</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_stealth" 
 	      value="&{template:rolls} {{subtitle=Stealth}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{stealth}[stealth] ]]}}">
         </button><select name="attr_stealth" class="proficiency">
@@ -372,7 +373,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Finesse</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_finesse" 
       	  value="&{template:rolls} {{subtitle=Finesse}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{finesse}[finesse] ]]}}">
         </button><select name="attr_finesse" class="proficiency">
@@ -414,7 +415,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Fortitude</label>
       <input name="attr_fortitude_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_fortitude" 
 	      value="&{template:rolls} {{subtitle=Fortitude}} {{title=@{character_name} }} {{roll= [[@{d20}@{con}+@{fortitude}[fortitude] ]]}}">
         </button><select name="attr_fortitude" class="proficiency">
@@ -435,11 +436,6 @@
     <div class="f-row nowrap">
       <label class="action nowrap">Fatigue+Wounds:</label>
       <label class="action nowrap f-right"><input name="attr_fatigue" class="wounds alt">+<input name="attr_wounds" class="wounds"></label>      
-    </div>
-    <div class="f-row nowrap">
-      <span>
-        <input name="attr_conditions" class="conditions">
-      </span>
     </div>
   </section>
 
@@ -470,7 +466,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Deduction</label>
       <input name="attr_deduction_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_deduction" 
 	      value="&{template:rolls} {{subtitle=Deduction}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{deduction}[deduction] ]]}}">
         </button><select name="attr_deduction" class="proficiency">
@@ -486,7 +482,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Arcana</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_arcana" 
 	      value="&{template:rolls} {{subtitle=Arcana}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{arcana}[arcana] ]]}}">
         </button><select name="attr_arcana" class="proficiency">
@@ -502,7 +498,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Crafting</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_craft" 
 	      value="&{template:rolls} {{subtitle=Crafting}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{craft}[craft] ]]}}">
         </button><select name="attr_craft" class="proficiency">
@@ -518,7 +514,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Lore</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_lore" 
 	      value="&{template:rolls} {{subtitle=Lore}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{lore}[lore] ]]}}">
         </button><select name="attr_lore" class="proficiency">
@@ -560,7 +556,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Perception</label>
       <input name="attr_perception_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_perception" 
 	      value="&{template:rolls} {{subtitle=Perception}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
         </button><select name="attr_perception" class="proficiency">
@@ -575,7 +571,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Animal Ken</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_animalken" 
 	      value="&{template:rolls} {{subtitle=Animal Ken}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{animalken}[animalken] ]]}}">
         </button><select name="attr_animalken" class="proficiency">
@@ -590,7 +586,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Nature</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_nature" 
 	      value="&{template:rolls} {{subtitle=Nature}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{nature}[nature] ]]}}">
         </button><select name="attr_nature" class="proficiency">
@@ -606,7 +602,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Medicine</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_medicine" 
 	      value="&{template:rolls} {{subtitle=Medicine}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{medicine}[medicine] ]]}}">
         </button><select name="attr_medicine" class="proficiency">
@@ -648,7 +644,7 @@
     <div class="f-row nowrap">
       <label class="save">&nbsp;&nbsp;&nbsp;Willpower</label>
       <input name="attr_willpower_max" class="dv" readonly>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_willpower" 
 	      value="&{template:rolls} {{subtitle=Willpower}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{willpower}[willpower] ]]}}">
         </button><select name="attr_willpower" class="proficiency">
@@ -664,7 +660,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Charm</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_charm" 
 	      value="&{template:rolls} {{subtitle=Charm}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{charm}[charm] ]]}}">
         </button><select name="attr_charm" class="proficiency">
@@ -680,7 +676,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill">&nbsp;&nbsp;&nbsp;Wit</label>
-      <span class="nowrap">
+      <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_wit" 
 	      value="&{template:rolls} {{subtitle=Wit}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{wit}[wit] ]]}}">
         </button><select name="attr_wit" class="proficiency">
@@ -766,11 +762,11 @@
       <span class="flush"><input name="attr_eqamulet" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Ring (Main Hand)</label>
+      <label class="skill flush">Ring <span style="font-size: 67%;">(Main Hand)</span></label>
       <span class="flush"><input name="attr_eqring1" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Ring (Off Hand)</label>
+      <label class="skill flush">Ring <span style="font-size: 67%;">(Off Hand)</span></label>
       <span class="flush"><input name="attr_eqring2" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
