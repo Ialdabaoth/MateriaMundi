@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
 /*----------------- Main Layout ------------------*/
 
 /* A CSS Grid example using "grid-template-areas"
@@ -5,16 +7,42 @@
 */
 main {
   display: grid;
-  width:  900px;
+  width:  960px;
   height: 720px;
   grid-gap: 0px;
-  grid-template-columns: 200px 200px 200px 300px;
+  grid-template-columns: 200px 200px 200px 360px;
   grid-template-rows: 70px 165px 170px 295px 20px;
   grid-template-areas:"hdr hdr bld lvl"
                       "str dex con act"
                       "int wis cha act"
                       "eqp eqp inv fea"
                       "ftr ftr ftr ftr";
+}
+.charsheet select.character-class {
+  width: 290px;
+}
+
+@media only screen and (max-width: 800px) {
+ main {
+  display: grid;
+  width:  480px;
+  height: 720px;
+  grid-gap: 0px;
+  grid-template-columns: 200px 280px;
+  grid-template-rows: 70px 165px 170px 295px 295px 20px;
+  grid-template-areas:"bld lvl"
+                      "str act"
+                      "int act"
+                      "eqp eqp"
+                      "inv fea"
+                      "ftr ftr";
+
+     
+ }
+ .charsheet select.character-class {
+  width: 210px;
+ }
+ 
 }
 
 /*----------------- GENERAL CSS ------------------*/
@@ -25,15 +53,17 @@ main {
   --border: black; 
   --input: white;
   --text: black;
+  --alt-color: teal;
   --save-color: blue;
   --skill-color: green;
   --attack-color: red;
   --disabled-color: gray;
+  --alt-bg: #e0faff;
   --save-bg: #e0f0ff;
   --skill-bg: #e0fff0;
   --attack-bg: #ffe0f0;
   --disabled-bg: #c0c0c0;
-  --font-text: "Baskerville";
+  --font-text: "Libre Baskerville";
   --font-number: "Arial";
 }
 
@@ -74,7 +104,7 @@ section {
   flex-wrap: wrap;
 }
 .nowrap {
-  display: flex; /* inline-block; */
+  display: flex; 
   flex-wrap: nowrap;
   white-space: nowrap;
 }
@@ -90,6 +120,10 @@ section {
 .f-center {
   align-items: center;
   justify-content: center;
+}
+.f-right {
+  align-items: right;
+  justify-content: right;
 }
 
 /*------------- Section-specific CSS -------------*/
@@ -223,8 +257,10 @@ footer {
   z-index: 1;
 }
 
-.charsheet button.tab-explore {
-  width: 75px;
+.charsheet button.tab-travel,
+.charsheet button.tab-explore,
+.charsheet button.tab-fight{
+  width: 80px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
@@ -244,119 +280,18 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-.charsheet button.tab-fight {
-  width: 75px;
+
+.charsheet button.tab-attack,
+.charsheet button.tab-move,
+.charsheet button.tab-defend,
+.charsheet button.tab-react{
+  width: 50px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
   padding-right: 1px;
   padding-bottom: 0px;
   margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 2px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
-}
-.charsheet button.tab-travel {
-  width: 75px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 2px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
-}
-.charsheet button.tab-attack {
-  width: 60px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 2px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
-}
-.charsheet button.tab-move {
-  width: 60px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 2px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
-}
-.charsheet button.tab-defend {
-  width: 60px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 2px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
-}
-.charsheet button.tab-react {
-  width: 60px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 3px;
   margin-left: 0px;
   margin-right: 2px;
   margin-bottom: -1px;
@@ -380,8 +315,6 @@ footer {
 .charsheet div.panel-react {
   margin-top: 1px;
 }
-
-
 
 /* show the selected archetype and style the active button */
 .charsheet input.situation-toggle { display: none; }
@@ -410,13 +343,13 @@ footer {
   border-bottom: 1px solid var(--page);
 }
 
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 /*----------------- Text & Input styling -----------------*/
 
-@import url("https://fonts.googleapis.com/css?family=Baskerville&display=swap");
-
-
 /* these are for overwriting default CSS that comes from Roll20 */
-
 .charsheet h3 {
   text-align: center;
 }
@@ -465,7 +398,6 @@ footer {
   text-align: center;
   margin: 1px 1px;
   padding: 1px;
-  width: 230px;
   height: 35px;
   line-height: 32px;
   color: var(--text);
@@ -540,7 +472,6 @@ footer {
   border-bottom-left-radius: 0px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-
 }
 
 .charsheet input.armor {
@@ -615,11 +546,15 @@ footer {
   color: var(--text); 
 }
 .charsheet label.action {
+  word-wrap: break-word;
   font-family: var(--font-text);
   font-size: 13px;
   color: var(--text); 
 }
 .charsheet label.description {
+  flex-wrap: wrap;
+  white-space: wrap;
+  word-wrap: break-word;
   font-family: var(--font-text);
   font-size: 12px;
   font-weight: normal;
@@ -661,7 +596,21 @@ footer {
   border-bottom-right-radius: 10px;
   border: 3px solid var(--border);
 }
-
+.charsheet select.ability {
+  text-align: center;
+  margin: 1px 1px;
+  width: 40px;
+  height: 30px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 18px;
+  color: var(--text);
+  padding: 0px 3px;
+  background-color: var(--input);
+  border-radius: 5px;
+  border-bottom-right-radius: 10px;
+  border: 3px solid var(--border);
+}
 .charsheet input.bigbox {
   text-align: center;
   margin: 1px 1px;
@@ -745,7 +694,7 @@ footer {
 .charsheet input.weapon {
   text-align: left;
   margin: 1px 1px;
-  width: 250px;
+  width: 100%;
   height: 25px;
   font-size: 16px;
   color: var(--text);
@@ -774,6 +723,7 @@ footer {
   margin: 1px 1px;
   width: 25px;
   height: 18px;
+  font-family: var(--font-number);
   color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
@@ -783,6 +733,7 @@ footer {
   margin: 1px 1px;
   width: 20px;
   height: 18px;
+  font-family: var(--font-number);
   color: var(--text);
   background-color: var(--input);
   border: 2px solid var(--border);
@@ -1061,6 +1012,20 @@ footer {
 .charsheet textarea {
   width: 95%;
   height: 85%;
+}
+
+.charsheet input.red {
+  border-color: red;
+}
+.charsheet input.blue {
+  border-color: blue;
+}
+.charsheet input.green {
+  border-color: green;
+}
+.charsheet input.alt {
+  background-color: var(--alt-bg);
+  border-color: var(--alt-color);
 }
 
 /*------------------------------------*\
