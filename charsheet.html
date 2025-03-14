@@ -59,18 +59,25 @@
     <button class="tab-fight" type="action" name="act_fight">Encounter</button>
    </div>  
    <div class="panel-explore">
-    <div class="f-row nowrap">
+    <div class="f-row">
+      <span>
+        <button class="action" type="action" name="act_skill">Interact</button>
+      </span>
+      <label class="description">Describe what action your character performs, then roll the skill that the referee asks for.</label>
+    </div> 
+    <hr class="line">
+    <div class="f-row">
       <span>
         <button class="action" type="action" name="act_watch">Watch</button>
       </span>
-      <label class="action">Keeping Watch helps keep the party <br>safe from ambushes.</label>
+      <label class="description">Keeping Watch helps keep the party safe from ambushes.</label>
     </div> 
     <hr class="line">
-    <div class="f-row nowrap">
+    <div class="f-row">
       <span>
         <button class="action" type="action" name="act_rest">Rest</button>
       </span>
-      <label class="action">Resting spends one hit die to heal <br>hit points and recover all <span name="attr_l3feat"></span>.
+      <label class="description">Resting spends one hit die to heal hit points and recover all <span name="attr_l3feat"></span>.
       </label>
     </div> 
     <div class="nowrap">
@@ -128,15 +135,8 @@
         </select>
       </span>
     </div> 
-    <hr class="line">
-    <div class="f-row nowrap">
-      <span>
-        <button class="action" type="action" name="act_skill">Interact</button>
-      </span>
-      <label class="action">Describe what action your character <br>performs, then roll the skill that the <br>referee asks for.</label>
-    </div> 
-
    </div panel-explore>
+ 
    <div class="panel-fight">
     <div class="f-row nowrap">
       <label class="skill">Initiative</label>
@@ -224,31 +224,31 @@
         <hr class="space">
         <div class="f-row">
             <button type="action" class="action" name="act_guard">Guard</button>
-            <label class="action">Regain your reaction after you <br>successfully parry or hit with an <br>opportunity attack</label>
+            <label class="description">Regain your reaction after you successfully parry or hit with an opportunity attack</label>
         </div>
         <hr class="line">
         <div class="f-row">
             <button type="action" class="action" name="act_evade">Evade</button>
-            <label class="action">Regain your reaction after you <br>successfully dodge</label>
+            <label class="description">Regain your reaction after you successfully dodge</label>
         </div>
         <hr class="line">
         <div class="f-row">
             <button type="action" class="action" name="act_hide">Hide</button>
-            <label class="action">Roll Stealth to become hidden</label>
+            <label class="description">Roll Stealth to become hidden</label>
         </div>
       </div panel-defend>
       <div class="panel-react">
         <hr class="space">
-        <div class="f-row nowrap">
+        <div class="f-row">
           <span><button class="opportunity-attack" type="roll" name="roll_opattack" value="@{activeweapon}"></button></span>
           <label class="description"><b>Opportunity Attack</b><br>Attack with your current weapon.</label>
         </div> 
-        <div class="f-row nowrap">
+        <div class="f-row">
           <span><button class="defend" type="roll" name="roll_dodge" 
    	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
           <label class="description"><b>Dodge</b><br>Add <span name="attr_reflex"></span> to your Defense vs one attack.</label>
         </div> 
-        <div class="f-row nowrap">
+        <div class="f-row">
           <span><button class="defend" type="roll" name="roll_parry" 
    	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
           <label class="description"><b>Parry (<span name="attr_weapon2"></span>)</b><br>Add <span name="attr_attack"></span><span name="attr_parry2"></span> to your Defense vs one melee attack.</label>
@@ -262,7 +262,25 @@
 
   <section class="str f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_strength" class="ability" type="number">
+      <!--input name="attr_strength" class="ability" type="number"-->
+      <select name="attr_strength" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Strength</label>
       <input name="attr_str" class="mod-lg" readonly>
     </div>
@@ -290,14 +308,31 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> Speed</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> Speed</label>
       <input name="attr_move" class="bigbox">
     </div>
   </section>
 
   <section class="dex f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_dexterity" class="ability" type="number">
+      <select name="attr_dexterity" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Dexterity</label>
       <input name="attr_dex" class="mod-lg" readonly>
     </div>
@@ -354,7 +389,24 @@
 
   <section class="con f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_constitution" class="ability" type="number">
+      <select name="attr_constitution" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Constitution</label>
       <input name="attr_con" class="mod-lg" readonly>
     </div>
@@ -377,11 +429,12 @@
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="action nowrap">HP:<input name="attr_hitpoints" class="hp">/<input name="attr_hitpoints_max" class="hp"></label>      
-      <label class="action nowrap">Wounds:<input name="attr_wounds" class="wounds">/<input name="attr_wounds_max" class="wounds"></label>      
+      <label class="action nowrap">Hit Points:</label>
+      <label class="action nowrap f-right"><input name="attr_temp-hitpoints" class="hp alt">+<input name="attr_hitpoints" class="hp">/<input name="attr_hitpoints_max" class="hp"></label>      
     </div>
     <div class="f-row nowrap">
-      <label class="action nowrap">Conditions:</label>
+      <label class="action nowrap">Fatigue+Wounds:</label>
+      <label class="action nowrap f-right"><input name="attr_fatigue" class="wounds alt">+<input name="attr_wounds" class="wounds"></label>      
     </div>
     <div class="f-row nowrap">
       <span>
@@ -392,7 +445,24 @@
 
   <section class="int f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_intelligence" class="ability" type="number">
+      <select name="attr_intelligence" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Intelligence</label>
       <input name="attr_int" class="mod-lg" readonly>
     </div>
@@ -465,7 +535,24 @@
 
   <section class="wis f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_wisdom" class="ability" type="number">
+      <select name="attr_wisdom" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Wisdom</label>
       <input name="attr_wis" class="mod-lg" readonly>
     </div>
@@ -536,7 +623,24 @@
 
   <section class="cha f-col nowrap">
     <div class="f-row nowrap">
-      <input name="attr_charisma" class="ability" type="number">
+      <select name="attr_charisma" class="ability">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>      
       <label class="ability">Charisma</label>
       <input name="attr_cha" class="mod-lg" readonly>
     </div>
