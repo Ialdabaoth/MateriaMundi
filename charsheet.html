@@ -734,44 +734,9 @@
 </rolltemplate>
 
 <!-- javascript -->
-
 <script type="text/worker">
- const abilities = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
- let races = [
-        
-          { "name": "Human", 
-	    "type": "natural",
-            "mods": [""],
-            "size": "medium" },
-
-          { "name": "Dwarf", 
-	    "type": "natural",
-            "mods": ["str", "con"],
-            "size": "medium" },
-
-          { "name": "Elf",
-	    "type": "fey",
-            "mods": ["dex", "wis"],
-            "size": "medium" },
-
-          { "name": "Halfling",
-	    "type": "fey",
-            "mods": ["dex", "cha"],
-            "size": "small" },
-
-          { "name": "Goblin",
-	    "type": "natural",
-            "mods": ["dex", "con"],
-            "size": "small" },
-
-          { "name": "Centaur",
-	    "type": "natural",
-            "mods": ["str", "wis"],
-            "size": "medium" }
-    ];
-
-
+/*===== tabbed functionality =====*/
     const situationTabs = ["travel", "explore", "fight"];
     situationTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
@@ -804,59 +769,39 @@
     });
 
 
-    const proficiencies = ["athletics", 
-                          "reflex", "stealth", "finesse", 
-                          "fortitude", 
-                          "deduction", "arcana", "craft", "lore", 
-                          "perception", "animalken", "nature", "medicine",
-                          "willpower", "charm", "wit", "attack"];
-    /*proficiencies.forEach(tab => {  
-        on(`clicked:${tab}`, function(info) => {
-            startRoll(rollString, (roll) => {
-                const total = results.results.roll1.result
-                const computed = total % 4;
-
-                finishRoll(
-                    roll.rollId,
-                    {
-                        roll1: computed
-                    }
-                );
-                
-            });
-        });
-    });*/
-
- //abilities.forEach(ability => { on("change:"+ability, function() { updatemod(ability); }); });
-
- on("sheet:opened", function() {
-     abilities.forEach(ability => { updatemod(ability); });
-     setupActions();
- });
+/*===== auto-computing fields =====*/
+    const abilities = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
+    abilities.forEach(ability => { on(`change:${ability}`, function() { updatemod(ability); }); });
  
- on("change:character_name", function(eventInfo) {
-     setupActions();
- });
+    const saves = ["athletics", "reflex", "fortitude", "deduction", "perception","willpower"];
+    saves.forEach(save => { on(`change:${save}`, function() { updatedv(save); }); });
 
- on("change:strength change:dexterity change:constitution change:intelligence change:wisdom change:charisma", 
-  function() { abilities.forEach(ability => { updatemod(ability); }); });
+    on("sheet:opened", function() {
+      abilities.forEach(ability => { updatemod(ability); });
+      saves.forEach(save => { updatedv(save); });
+      setupActions();
+    });
+ 
+    on("change:character_name", function(eventInfo) { setupActions(); });
 
- function setupActions() {
-     	getAttrs(["character_name", "attack1_action", "attack2_action"], function(v) {
-		var attrsToChange = {};
-		attrsToChange["attack1_action"] = "%{" + v["character_name"] + "|attack1}";
-		attrsToChange["attack2_action"] = "%{" + v["character_name"] + "|attack2}";
-		setAttrs(attrsToChange);
-	});
- }
+    function updatedv(save) {
+      let dv = save+"_max"; 
+      let mod = save2mod(save);
+      console.log("updating " + save + "("+mod+")");
+      getAttrs([save, mod], function(values) {
+        let prof = values[save];
+        let val = 10+1*values[mod];
+        if(prof[0] == 'd') val += prof.substring(1,2)/2;
+        console.log("  " + save + " (" + prof + "+"+ values[mod] + ") => " + dv + " (" + val + ")");
+    	setAttrs({ [dv] : val} );      
+      });
+    }
 
+ 
  function updatemod(ability) {
-
   console.log("updating " + ability ); 
   getAttrs([ability,"race_max"], function(values) {
     let raceMods = values["race_max"];
-//    let raceData = races.find(item => item.name == race);
-
     let av = values[ability];
     if(av == "") {
       av = rollAbility(ability);
@@ -870,8 +815,19 @@
     }
     console.log("  " + ability + " (" + av + ") => " + modname + " (" + mod + ")");
     setAttrs({ [modname]: mod });
+    updatedv(mod2save(modname));
   });
  }
+
+ function setupActions() {
+    getAttrs(["character_name", "attack1_action", "attack2_action"], function(v) {
+		var attrsToChange = {};
+		attrsToChange["attack1_action"] = "%{" + v["character_name"] + "|attack1}";
+		attrsToChange["attack2_action"] = "%{" + v["character_name"] + "|attack2}";
+		setAttrs(attrsToChange);
+	});
+ }
+
 
  function rollD6() {
    return Math.floor(Math.random()*6+1);
@@ -890,5 +846,20 @@
   if(a>12) return "+1";
   return "+0";
  }
-
+ function save2mod(save) {
+    if(save == "athletics") return "str";
+    if(save == "reflex") return "dex";
+    if(save == "fortitude") return "con";
+    if(save == "deduction") return "int";
+    if(save == "perception") return "wis";
+    if(save == "willpower") return "cha";
+ }
+ function mod2save(mod) {
+    if(mod == "str") return "athletics";
+    if(mod == "dex") return "reflex";
+    if(mod == "con") return "fortitude";
+    if(mod == "int") return "deduction";
+    if(mod == "wis") return "perception";
+    if(mod == "cha") return "willpower";
+ }
 </script>
