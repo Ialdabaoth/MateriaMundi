@@ -55,8 +55,8 @@
    <div class="situationPanel">
    <div class="panelHeader">
     <button class="tab-travel" type="action" name="act_travel">Travel</button>
-    <button class="tab-explore" type="action" name="act_explore">Exploration</button>
-    <button class="tab-fight" type="action" name="act_fight">Encounter</button>
+    <button class="tab-explore" type="action" name="act_explore">Explore</button>
+    <button class="tab-fight" type="action" name="act_fight">Fight</button>
    </div>  
    <div class="panel-explore">
     <div class="f-row">
@@ -163,7 +163,7 @@
       <div class="panel-attack">
         <hr class="space">
         <div class="f-row nowrap">
-          <label class="proficiency">Weapon Attacks (<span name="attr_attack_max"></span>/action)</label>
+          <label class="proficiency">Weapon Attacks (<span name="attr_attack_max"></span>x)</label>
         <span class="rollbox">
             <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
             </button><input name="attr_attack" class="proficiency">
@@ -242,17 +242,23 @@
         <hr class="space">
         <div class="f-row">
           <span><button class="opportunity-attack" type="roll" name="roll_opattack" value="@{activeweapon}"></button></span>
-          <label class="description"><b>Opportunity Attack</b><br>Attack with your current weapon.</label>
+          <label class="description"><b>Opportunity Attack</b>
+          <br>Attack with your current weapon.</label>
         </div> 
+        <hr class="line">
         <div class="f-row">
           <span><button class="defend" type="roll" name="roll_dodge" 
    	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
-          <label class="description"><b>Dodge</b><br>Add <span name="attr_reflex"></span> to your Defense vs one attack.</label>
+          <label class="description"><b>Dodge</b><br>
+          Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</label>
         </div> 
+        <hr class="line">
         <div class="f-row">
           <span><button class="defend" type="roll" name="roll_parry" 
    	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
-          <label class="description"><b>Parry (<span name="attr_weapon2"></span>)</b><br>Add <span name="attr_attack"></span><span name="attr_parry2"></span> to your Defense vs one melee attack.</label>
+          <label class="description"><b>Parry (<span name="attr_weapon2"></span>)</b><br>
+          Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
+          to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</label>
         </div> 
       </div panel-react>
     </div actionPanel>
@@ -739,42 +745,41 @@
 
   <section class="equipment">
     <h3>Equipment</h3>
-    <hr class="line">
     <div class="f-row nowrap flush">
-      <label class="ability flush">Armor</label>
+      <label class="action flush">Armor</label>
       <span class="flush"><input name="attr_eqarmor" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="ability flush">Main Hand</label>
+      <label class="action flush">R Hand</label>
       <span class="flush"><input name="attr_eqhand1" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="ability flush">Off Hand</label>
+      <label class="action flush">L Hand</label>
       <span class="flush"><input name="attr_eqhand2" class="list-last"></span>
     </div>
     <hr class="line">
     <div class="f-row nowrap flush">
-      <label class="skill flush">Crown</label>
+      <label class="action flush">Crown</label>
       <span class="flush"><input name="attr_eqcrown" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Amulet</label>
+      <label class="action flush">Amulet</label>
       <span class="flush"><input name="attr_eqamulet" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Ring <span style="font-size: 67%;">(Main Hand)</span></label>
+      <label class="action flush">Ring <span style="font-size: 67%;">(R)</span></label>
       <span class="flush"><input name="attr_eqring1" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Ring <span style="font-size: 67%;">(Off Hand)</span></label>
+      <label class="action flush">Ring <span style="font-size: 67%;">(L)</span></label>
       <span class="flush"><input name="attr_eqring2" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Belt</label>
+      <label class="action flush">Belt</label>
       <span class="flush"><input name="attr_eqbelt" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="skill flush">Boots</label>
+      <label class="action flush">Boots</label>
       <span class="flush"><input name="attr_eqboots" class="list-last"></span>
     </div>
   </section>
