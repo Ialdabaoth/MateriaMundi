@@ -332,8 +332,12 @@ footer {
 
 .charsheet button.tab-travel,
 .charsheet button.tab-explore,
-.charsheet button.tab-fight{
-  width: 60px;
+.charsheet button.tab-fight,
+.charsheet button.tab-attack,
+.charsheet button.tab-defend,
+.charsheet button.tab-move,
+.charsheet button.tab-react,
+.charsheet button.tab-feat{
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
@@ -344,6 +348,7 @@ footer {
   margin-right: 0px;
   margin-bottom: -1px;
   color: var(--text);
+  font-size: 12px;
   background-color: var(--page);
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
@@ -353,39 +358,29 @@ footer {
   border-bottom: 1px solid var(--separator);
   z-index: 2;
 }
-
+.charsheet button.tab-travel,
+.charsheet button.tab-explore,
+.charsheet button.tab-fight{
+  width: 55px;
+}
 .charsheet button.tab-attack,
+.charsheet button.tab-defend{
+  width: 45px;
+}
 .charsheet button.tab-move,
-.charsheet button.tab-defend,
-.charsheet button.tab-react{
-  width: 50px;
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: -1px;
-  color: var(--text);
-  background-color: var(--page);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 1px solid var(--separator);
-  z-index: 2;
+.charsheet button.tab-react,
+.charsheet button.tab-feat{
+  width: 35px;
 }
 
 .charsheet div.panel-travel,
 .charsheet div.panel-explore,
 .charsheet div.panel-fight,
 .charsheet div.panel-attack,
-.charsheet div.panel-move,
 .charsheet div.panel-defend,
-.charsheet div.panel-react {
+.charsheet div.panel-move,
+.charsheet div.panel-react,
+.charsheet div.panel-feat{
   margin-top: 1px;
 }
 
@@ -406,13 +401,15 @@ footer {
 .charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
 .charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
 .charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
-.charsheet .action-toggle:not([value="react"]) ~ div .panel-react {
+.charsheet .action-toggle:not([value="react"]) ~ div .panel-react,
+.charsheet .action-toggle:not([value="feat"]) ~ div .panel-feat{
     display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
 }
 .charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
 .charsheet .action-toggle[value="move"] ~ div button.tab-move,
 .charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
-.charsheet .action-toggle[value="react"] ~ div button.tab-react {
+.charsheet .action-toggle[value="react"] ~ div button.tab-react,
+.charsheet .action-toggle[value="feat"] ~ div button.tab-feat{
   border-bottom: 3px solid var(--page);
 }
 
