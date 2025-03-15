@@ -7,64 +7,122 @@
 */
 main {
   display: grid;
-  width:  960px;
-  height: 720px;
-  grid-gap: 0px;
-  grid-template-columns: 200px 200px 200px 360px;
-  grid-template-rows: 70px 165px 170px 295px 20px;
-  grid-template-areas:"hdr hdr bld lvl"
-                      "str dex con act"
-                      "int wis cha act"
-                      "eqp eqp inv fea"
-                      "ftr ftr ftr ftr";
-}
-.charsheet select.character-class {
-  width: 290px;
-}
-
-@media only screen and (max-width: 1024px) {
- main {
-  display: grid;
   width:  720px;
   height: 900px;
   grid-gap: 0px;
   grid-template-columns: 200px 200px 320px;
-  grid-template-rows: 70px 170px 170px 170px 130px 170px 20px;
+  grid-template-rows: 70px 180px 180px 180px 300px 20px;
   grid-template-areas:"hdr hdr lvl"
                       "str int act"
                       "dex wis act"
-                      "con cha fea"
+                      "con cha act"
                       "eqp eqp fea"
-                      "eqp eqp inv"
                       "ftr ftr ftr";
- }
- .charsheet select.character-class {
-  width: 250px;
- }
 }
-
+.charsheet select.character-class {
+  width: 250px;
+}
+.charsheet input.list-first,
+.charsheet input.list-middle,
+.charsheet input.list-last{
+  width: 240px;
+}
+.charsheet input.damage{
+   width: 225px;
+}
+.charsheet input.armor{
+   width: 175px;
+}
 @media only screen and (max-width: 800px) {
  main {
   display: grid;
   width:  480px;
-  height: 720px;
+  height: 1230px;
   grid-gap: 0px;
   grid-template-columns: 200px 280px;
-  grid-template-rows: 70px 165px 170px 295px 295px 20px;
-  grid-template-areas:"bld lvl"
+  grid-template-rows: 70px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px;
+  grid-template-areas:"lvl lvl"
                       "str act"
-                      "int act"
-                      "eqp eqp"
-                      "inv fea"
+                      "str act"
+                      "str act"
+                      "dex act"
+                      "dex act"
+                      "dex act"
+                      "con act"
+                      "con act"
+                      "con eqp"
+                      "int eqp"
+                      "int eqp"
+                      "int eqp"
+                      "wis eqp"
+                      "wis fea"
+                      "wis fea"
+                      "cha fea"
+                      "cha fea"
+                      "cha fea"
                       "ftr ftr";
 
      
  }
  .charsheet select.character-class {
-  width: 210px;
+  width: 410px;
+ }
+ .charsheet input.list-first,
+ .charsheet input.list-middle,
+ .charsheet input.list-last{
+  width: 200px;
+ }
+ .charsheet input.damage{
+   width: 180px;
+ }
+ .charsheet input.armor{
+   width: 150px;
+ }
+ .head {
+     display: none;
  }
 }
 
+@media only screen and (max-width: 500px) {
+ main {
+  display: grid;
+  width:  250px;
+  height: 2000px;
+  grid-gap: 0px;
+  grid-template-columns: 250px;
+  grid-template-rows: 70px 540px 160px 145px 145px 170px 170px 145px 295px 300px 20px;
+  grid-template-areas:"lvl"
+                      "act"
+                      "str"
+                      "dex"
+                      "con"
+                      "int"
+                      "wis"
+                      "cha"
+                      "eqp"
+                      "fea"
+                      "ftr";
+
+     
+ }
+ .charsheet select.character-class {
+  width: 180px;
+ }
+ .charsheet input.list-first,
+ .charsheet input.list-middle,
+ .charsheet input.list-last{
+  width: 180px;
+ }
+ .charsheet input.damage{
+   width: 150px;
+ }
+ .charsheet input.armor{
+   width: 120px;
+ }
+ .head {
+     display: none;
+ }
+}
 /*----------------- GENERAL CSS ------------------*/
 :root {
   --header: #e0c0a0;
@@ -164,6 +222,7 @@ section {
   border-bottom: 2px solid var(--border);
   border-left: 0px transparent;
   border-right: 0px transparent;
+  display: none;
 }
 
 .level {
@@ -239,6 +298,7 @@ section {
   grid-area: inv;
   background-color: var(--page);
   border: 1px solid var(--separator);
+  display: none;
 }
 
 footer {
@@ -273,7 +333,7 @@ footer {
 .charsheet button.tab-travel,
 .charsheet button.tab-explore,
 .charsheet button.tab-fight{
-  width: 80px;
+  width: 60px;
   height: 15px;
   padding-top: 1px;
   padding-left: 1px;
@@ -496,7 +556,6 @@ footer {
 .charsheet input.armor {
   text-align: center;
   margin: 1px 1px;
-  width: 160px;
   height: 25px;
   color: var(--text);
   background-color: var(--input);
@@ -521,7 +580,6 @@ footer {
   text-align: center;
   margin: 0px;
   padding: 0px;
-  width: 180px;
   height: 20px;
   font-family: var(--font-number);
   font-style: bold;
@@ -770,13 +828,9 @@ footer {
   border: 2px solid var(--border);
 }
 
-/*--------------------- Level-Specific Elements --------------------*/
-.charsheet input.character-level { display: none; }
-
 .charsheet input.list-first {
   text-align: center;
   margin-bottom: 0px;
-  width: 240px !important;
   height: 25px;
   color: var(--text);
   background-color: var(--input);
@@ -789,19 +843,10 @@ footer {
   border-top: 1px solid var(--border);
   border-bottom: 1px dotted var(--border);
 }
-.charsheet  input.list-middle, 
-            input.list-l2,
-            input.list-l3, 
-            input.list-l4, 
-            input.list-l5, 
-            input.list-l6, 
-            input.list-l7, 
-            input.list-l8, 
-            input.list-l9 {
+.charsheet  input.list-middle {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
-  width: 240px !important;
   height: 25px;
   color: var(--text);
   background-color: var(--input);
@@ -814,10 +859,9 @@ footer {
   border-top: 0px transparent;
   border-bottom: 1px dotted var(--border);
 }
-.charsheet input.list-last, input.list-l10 {
+.charsheet input.list-last {
   text-align: center;
   margin-top: 0px;
-  width: 240px !important;
   height: 25px;
   color: var(--text);
   background-color: var(--input);
@@ -831,27 +875,8 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-.charsheet input.character-level[value="1"] ~ span.hd2,
-.charsheet input.character-level[value="1"] ~ span.hd3,
-.charsheet input.character-level[value="1"] ~ span.hd4,
-.charsheet input.character-level[value="2"] ~ span.hd2,
-.charsheet input.character-level[value="2"] ~ span.hd3,
-.charsheet input.character-level[value="2"] ~ span.hd4,
-.charsheet input.character-level[value="3"] ~ span.hd2,
-.charsheet input.character-level[value="3"] ~ span.hd3,
-.charsheet input.character-level[value="3"] ~ span.hd4,
-.charsheet input.character-level[value="4"] ~ span.hd3,
-.charsheet input.character-level[value="4"] ~ span.hd4,
-.charsheet input.character-level[value="5"] ~ span.hd3,
-.charsheet input.character-level[value="5"] ~ span.hd4,
-.charsheet input.character-level[value="6"] ~ span.hd3,
-.charsheet input.character-level[value="6"] ~ span.hd4,
-.charsheet input.character-level[value="7"] ~ span.hd4,
-.charsheet input.character-level[value="8"] ~ span.hd4,
-.charsheet input.character-level[value="9"] ~ span.hd4{
-    display: none !important;
-}
-
+/*--------------------- Level-Specific Elements --------------------*/
+.charsheet input.character-level { display: none; }
 .charsheet input.character-level[value="1"] ~ div .show-l2,
 .charsheet input.character-level[value="1"] ~ div .show-l3,
 .charsheet input.character-level[value="1"] ~ div .show-l4,
@@ -976,7 +1001,6 @@ footer {
     background-color: var(--skill-color);
 }
 
-
 .charsheet button.defend {
   width: 16px;
   height: 21px;
@@ -992,11 +1016,11 @@ footer {
 
 
 .charsheet button.opportunity-attack {
-  width: 21px;
+  width: 16px;
   height: 21px;
   padding: 1px 2px;
   margin: 2px 4px;
-  border-radius: 50%;
+  border-radius: 7px;
   border: 2px solid var(--attack-color);
 }
 
