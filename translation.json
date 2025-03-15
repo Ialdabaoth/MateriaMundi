@@ -76,7 +76,7 @@
 	"opportunity-attack-description": "Make one weapon attack against a provoking target.",
 	"dodge": "Dodge",
 	"dodge-description": "Add {{0}} to your defense vs one attack.",
-	"parry": "Opportunity Attack",
+	"parry": "Parry",
 	"parry-description": "Add {{0}}{{1}} to your defense vs one melee attack, or vs one ranged attack if you are using a shield.",
 	"class-features": "Class Features",
 	"equipment": "Equipment",
