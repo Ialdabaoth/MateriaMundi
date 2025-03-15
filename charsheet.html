@@ -1,13 +1,13 @@
 <main>
   <section class="head">
     <div class="f-row">
-      <label>Name:</label>
+      <label data-i18n="name">Name:</label>
       <span><input name="attr_character_name" class="character-name"></span>
     </div>
     <div class="f-row nowrap">
-      <label>Race:</label>
+      <label data-i18n="race">Race:</label>
       <span><input name="attr_race" class="character-race"></span>
-      <label>Bonuses:</label>
+      <label data-i18n="bonuses">Bonuses:</label>
       <span><input name="attr_race_max" class="character-race"></span>
     </div>
   </section>
@@ -18,15 +18,15 @@
   <section class="level f-row nowrap">
     <span>
       <select name="attr_class" class="character-class">
-        <option value="knight">Knight</option>
-        <option value="martial artist">Martial Artist</option>
-        <option value="berserker">Berserker</option>
-        <option value="thief">Thief</option>
-        <option value="alchemist">Alchemist</option>
-        <option value="bard">Bard</option>
-        <option value="wizard">Wizard</option>
-        <option value="cleric">Cleric</option>
-        <option value="druid">Druid</option>
+        <option data-i18n="knight" value="Knight">Knight</option>
+        <option data-i18n="martial-artist" value="Martial Artist">Martial Artist</option>
+        <option data-i18n="berserker" value="Berserker">Berserker</option>
+        <option data-i18n="thief" value="Thief">Thief</option>
+        <option data-i18n="alchemist" value="Alchemist">Alchemist</option>
+        <option data-i18n="bard" value="Bard">Bard</option>
+        <option data-i18n="wizard" value="Wizard">Wizard</option>
+        <option data-i18n="cleric" value="Cleric">Cleric</option>
+        <option data-i18n="druid" value="Druid">Druid</option>
       </select>
     </span>
     <span>
@@ -54,30 +54,30 @@
    <input type="hidden" name="attr_situation" class="situation-toggle">
    <div class="situationPanel">
    <div class="panelHeader">
-    <button class="tab-travel" type="action" name="act_travel">Travel</button>
-    <button class="tab-explore" type="action" name="act_explore">Explore</button>
-    <button class="tab-fight" type="action" name="act_fight">Fight</button>
+    <button class="tab-travel" type="action" name="act_travel"><span data-i18n="travel">Travel</span></button>
+    <button class="tab-explore" type="action" name="act_explore"><span data-i18n="explore">Explore</span></button>
+    <button class="tab-fight" type="action" name="act_fight"><span data-i18n="fight">Fight</span></button>
    </div>  
    <div class="panel-explore">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_skill">Interact</button>
+        <button class="action" type="action" name="act_skill"><span data-i18n="interact">Interact</span></button>
       </span>
       <label class="description">Describe what action your character performs, then roll the skill that the referee asks for.</label>
     </div> 
     <hr class="line">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_watch">Watch</button>
+        <button class="action" type="action" name="act_watch"><span data-i18n="watch">Watch</span></button>
       </span>
       <label class="description">Keeping Watch helps keep the party safe from ambushes.</label>
     </div> 
     <hr class="line">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_rest">Rest</button>
+        <button class="action" type="action" name="act_rest"><span data-i18n="rest">Rest</span></button>
       </span>
-      <label class="description">Resting spends one <b>hit die</b> to heal hit points and recover all <span name="attr_l3feat"></span>.<br>
+      <label class="description" data-i18n="rest-description">Resting spends one <b>hit die</b> to heal hit points and recover all <span name="attr_l3feat"></span>.<br>
       <input type="hidden" name="attr_level" class="character-level" >
       </label>
     </div> 
@@ -138,32 +138,32 @@
  
    <div class="panel-fight">
     <div class="f-row nowrap">
-      <label class="proficiency">Initiative</label>
+      <label class="proficiency" data-i18n="initiative">Initiative</label>
       <button class="proficiency" type="roll" name="roll_initiative" 
        value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
       </button><input name="attr_initiative" class="proficiency">
     </div>
     <div class="f-row nowrap">
-      <label class="proficiency">Defense</label>
+      <label class="proficiency" data-i18n="defense">Defense</label>
       <input name="attr_armor" type="text" class="armor">      
       <input name="attr_defense" class="defense">
     </div>
     <div class="f-row nowrap">
-      <label class="action">Last Action:</label>
+      <label class="action" data-i18n="last-action">Last Action:</label>
       <label class="action"><span="attr_lastaction"></span></label>
     </div>
     <input type="hidden" name="attr_actiontab" class="action-toggle">
     <div class="actionPanel">
       <div class="panelHeader">
-          <button class="tab-attack" type="action" name="act_attack">Attack</button>
-          <button class="tab-defend" type="action" name="act_defend">Defend</button>
-          <button class="tab-move" type="action" name="act_move">Move</button>
-          <button class="tab-react" type="action" name="act_react">React</button>
+          <button class="tab-attack" type="action" name="act_attack"><span data-i18n="attack">Attack</span></button>
+          <button class="tab-defend" type="action" name="act_defend"><span data-i18n="defend">Defend</span></button>
+          <button class="tab-move" type="action" name="act_move"><span data-i18n="move">Move</span></button>
+          <button class="tab-react" type="action" name="act_react"><span data-i18n="react">React</span></button>
       </div>    
       <div class="panel-attack">
         <hr class="space">
         <div class="f-row nowrap">
-          <label class="proficiency">Weapon Attacks (<span name="attr_attack_max"></span>x)</label>
+          <label class="proficiency"><span data-i18n="weapon-attacks">Weapon Attacks</span> (<span name="attr_attack_max"></span>x)</label>
         <span class="rollbox">
             <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
             </button><input name="attr_attack" class="proficiency">
@@ -178,7 +178,7 @@
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-              <label class="action">&nbsp;&nbsp;Damage:</label><input name="attr_damage1" class="damage"><button class="damage" type="roll" name="roll_damage1" 
+              <label class="action" data-i18n="damage">Damage:</label><input name="attr_damage1" class="damage"><button class="damage" type="roll" name="roll_damage1" 
     	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}">
               </button>
           </div>
@@ -192,7 +192,7 @@
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-              <label class="action">&nbsp;&nbsp;Damage:</label><input name="attr_damage2" class="damage"><button class="damage" type="roll" name="roll_damage2" 
+              <label class="action" data-i18n="damage">Damage:</label><input name="attr_damage2" class="damage"><button class="damage" type="roll" name="roll_damage2" 
   	           value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}">
               </button>
           </div>
@@ -201,64 +201,64 @@
       <div class="panel-move">
         <hr class="space">
         <div class="f-row nowrap">
-            <button type="action" class="action" name="act_walk">Walk</button>
-            <label class="action"><span name="attr_speed"></span> paces / round</label>
+            <button type="action" class="action" name="act_walk"><span data-i18n="walk">Walk</span></button>
+            <label class="action"><span name="attr_speed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
         </div>
         <div class="f-row nowrap">
-            <button type="action" class="action" name="act_sprint">Sprint</button>
-            <label class="action"><span name="attr_sprintspeed"></span> paces / round</label>
+            <button type="action" class="action" name="act_sprint"><span data-i18n="sprint">Sprint</span></button>
+            <label class="action"><span name="attr_sprintspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
         </div>
         <div class="f-row nowrap">
-            <button type="action" class="action" name="act_jump">Jump</button>
-            <label class="action"><span name="attr_jumpspeed"></span> paces</label>
+            <button type="action" class="action" name="act_jump"><span data-i18n="jump">Jump</span></button>
+            <label class="action"><span name="attr_jumpspeed"></span> <span data-i18n="paces">paces</span></label>
         </div>
         <div class="f-row nowrap">
-            <button type="action" class="action" name="act_climb">Climb</button>
-            <label class="action"><span name="attr_climbspeed"></span> paces / round</label>
+            <button type="action" class="action" name="act_climb"><span data-i18n="climb">Climb</span></button>
+            <label class="action"><span name="attr_climbspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
         </div>
         <div class="f-row nowrap">
-            <button type="action" class="action" name="act_swim">Swim</button>
-            <label class="action"><span name="attr_swimspeed"></span> paces / round</label>
+            <button type="action" class="action" name="act_swim"><span data-i18n="swim">Swim</span></button>
+            <label class="action"><span name="attr_swimspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
         </div>
       </div panel-move>
       <div class="panel-defend">
         <hr class="space">
         <div class="f-row">
-            <button type="action" class="action" name="act_guard">Guard</button>
-            <label class="description">Regain your reaction after you successfully parry or hit with an opportunity attack</label>
+            <button type="action" class="action" name="act_guard"><span data-i18n="guard">Guard</span></button>
+            <label class="description" data-i18n="guard-description">Regain your reaction after you successfully parry or hit with an opportunity attack</label>
         </div>
         <hr class="line">
         <div class="f-row">
-            <button type="action" class="action" name="act_evade">Evade</button>
-            <label class="description">Regain your reaction after you successfully dodge</label>
+            <button type="action" class="action" name="act_evade"><span data-i18n="evade">Evade</span></button>
+            <label class="description" data-i18n="evade-description">Regain your reaction after you successfully dodge</label>
         </div>
         <hr class="line">
         <div class="f-row">
-            <button type="action" class="action" name="act_hide">Hide</button>
-            <label class="description">Roll Stealth to become hidden</label>
+            <button type="action" class="action" name="act_hide"><span data-i18n="hide">Hide</span></button>
+            <label class="description" data-i18n="hide-description">Roll Stealth to become hidden</label>
         </div>
       </div panel-defend>
       <div class="panel-react">
         <hr class="space">
         <div class="f-row">
           <span><button class="opportunity-attack" type="roll" name="roll_opattack" value="@{activeweapon}"></button></span>
-          <label class="description"><b>Opportunity Attack</b>
-          <br>Attack with your current weapon.</label>
+          <label class="description"><b><span data-i18n="opportunity-attack">Opportunity Attack</span></b><br>
+          <span data-i18n="opportunity-attack-description">Attack with your current weapon.</span></label>
         </div> 
         <hr class="line">
         <div class="f-row">
           <span><button class="defend" type="roll" name="roll_dodge" 
    	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
-          <label class="description"><b>Dodge</b><br>
-          Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</label>
+          <label class="description"><b><span data-i18n="dodge">Dodge</span></b><br>
+          <span data-i18n="dodge-description" data-i18n-vars="@{reflex}">Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</span></label>
         </div> 
         <hr class="line">
         <div class="f-row">
           <span><button class="defend" type="roll" name="roll_parry" 
    	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
-          <label class="description"><b>Parry (<span name="attr_weapon2"></span>)</b><br>
-          Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
-          to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</label>
+          <label class="description"><b><span data-i18n="parry">Parry</span> (<span name="attr_weapon2"></span>)</b><br>
+          <span data-i18n="parry-description" data-i18n-vars="@{attack}|@{parry}">Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
+          to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</span></label>
         </div> 
       </div panel-react>
     </div actionPanel>
@@ -288,12 +288,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Strength</label>
+      <label class="ability" data-i18n="strength">Strength</label>
       <input name="attr_str" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Athletics</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span  data-i18n="athletics">Athletics</span></label>
       <input name="attr_athletics_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_athletics" 
@@ -310,12 +310,12 @@
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="ability">Encumbrance</label>
+      <label class="ability" data-i18n="encumbrance">Encumbrance</label>
       <input name="attr_encumbrance" class="bigbox">
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> Speed</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> <span  data-i18n="speed">Speed</span></label>
       <input name="attr_move" class="bigbox">
     </div>
   </section>
@@ -340,12 +340,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Dexterity</label>
+      <label class="ability" data-i18n="dexterity">Dexterity</label>
       <input name="attr_dex" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Reflex</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span  data-i18n="reflex">Reflex</span></label>
       <input name="attr_reflex_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_reflex" 
@@ -362,7 +362,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Stealth</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span  data-i18n="stealth">Stealth</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_stealth" 
 	      value="&{template:rolls} {{subtitle=Stealth}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{stealth}[stealth] ]]}}">
@@ -378,7 +378,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Finesse</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span  data-i18n="finesse">Finesse</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_finesse" 
       	  value="&{template:rolls} {{subtitle=Finesse}} {{title=@{character_name} }} {{roll= [[@{d20}@{dex}+@{finesse}[finesse] ]]}}">
@@ -414,12 +414,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Constitution</label>
+      <label class="ability" data-i18n="constitution">Constitution</label>
       <input name="attr_con" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Fortitude</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span  data-i18n="fortitude">Fortitude</span></label>
       <input name="attr_fortitude_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_fortitude" 
@@ -436,11 +436,11 @@
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="action nowrap">Hit Points:</label>
+      <label class="action nowrap"><span data-i18n="hit-points">Hit Points</span>:</label>
       <label class="action nowrap f-right"><input name="attr_temp-hitpoints" class="hp alt">+<input name="attr_hitpoints" class="hp">/<input name="attr_hitpoints_max" class="hp"></label>      
     </div>
     <div class="f-row nowrap">
-      <label class="action nowrap">Fatigue+Wounds:</label>
+      <label class="action nowrap"><span data-i18n="fatigue">Fatigue</span>+<span data-i18n="wounds">Wounds</span>:</label>
       <label class="action nowrap f-right"><input name="attr_fatigue" class="wounds alt">+<input name="attr_wounds" class="wounds"></label>      
     </div>
   </section>
@@ -465,12 +465,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Intelligence</label>
+      <label class="ability" data-i18n="intelligence">Intelligence</label>
       <input name="attr_int" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Deduction</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span data-i18n="deduction">Deduction</span></label>
       <input name="attr_deduction_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_deduction" 
@@ -487,7 +487,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Arcana</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="arcana">Arcana</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_arcana" 
 	      value="&{template:rolls} {{subtitle=Arcana}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{arcana}[arcana] ]]}}">
@@ -503,7 +503,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Crafting</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="crafting">Crafting</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_craft" 
 	      value="&{template:rolls} {{subtitle=Crafting}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{craft}[craft] ]]}}">
@@ -519,7 +519,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Lore</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="lore">Lore</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_lore" 
 	      value="&{template:rolls} {{subtitle=Lore}} {{title=@{character_name} }} {{roll= [[@{d20}@{int}+@{lore}[lore] ]]}}">
@@ -555,12 +555,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Wisdom</label>
+      <label class="ability" data-i18n="wisdom">Wisdom</label>
       <input name="attr_wis" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Perception</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span data-i18n="perception">Perception</span></label>
       <input name="attr_perception_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_perception" 
@@ -576,7 +576,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Animal Ken</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="animal-handling">Animal Ken</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_animalken" 
 	      value="&{template:rolls} {{subtitle=Animal Ken}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{animalken}[animalken] ]]}}">
@@ -591,7 +591,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Nature</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="nature">Nature</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_nature" 
 	      value="&{template:rolls} {{subtitle=Nature}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{nature}[nature] ]]}}">
@@ -607,7 +607,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Medicine</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="medicine">Medicine</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_medicine" 
 	      value="&{template:rolls} {{subtitle=Medicine}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{medicine}[medicine] ]]}}">
@@ -643,12 +643,12 @@
         <option value="17">17</option>
         <option value="18">18</option>
       </select>      
-      <label class="ability">Charisma</label>
+      <label class="ability" data-i18n="charisma">Charisma</label>
       <input name="attr_cha" class="mod-lg" readonly>
     </div>
     <hr class="line">
     <div class="f-row nowrap">
-      <label class="save">&nbsp;&nbsp;&nbsp;Willpower</label>
+      <label class="save">&nbsp;&nbsp;&nbsp;<span data-i18n="willpower">Willpower</span></label>
       <input name="attr_willpower_max" class="dv" readonly>
       <span class="rollbox">
         <button class="proficiency save" type="roll" name="roll_willpower" 
@@ -665,7 +665,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Charm</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="charm">Charm</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_charm" 
 	      value="&{template:rolls} {{subtitle=Charm}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{charm}[charm] ]]}}">
@@ -681,7 +681,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;Wit</label>
+      <label class="skill">&nbsp;&nbsp;&nbsp;<span data-i18n="wit">Wit</span></label>
       <span class="rollbox">
         <button class="proficiency skill" type="roll" name="roll_wit" 
 	      value="&{template:rolls} {{subtitle=Wit}} {{title=@{character_name} }} {{roll= [[@{d20}@{cha}+@{wit}[wit] ]]}}">
@@ -699,7 +699,7 @@
   </section>
 
   <section class="feats f-col">
-    <h3>Class Features</h3>
+    <h3><span data-i18n="class-features">Class Features</span></h3>
     <input type="hidden" name="attr_level" class="character-level" >
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;1</label>
@@ -744,53 +744,53 @@
   </section>
 
   <section class="equipment">
-    <h3>Equipment</h3>
+    <h3><span data-i18n="equipment">Equipment</span></h3>
     <div class="f-row nowrap flush">
-      <label class="action flush">Armor</label>
+      <label class="action flush" data-i18n="armor">Armor</label>
       <span class="flush"><input name="attr_eqarmor" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">R Hand</label>
+      <label class="action flush" data-i18n="r-hand">R Hand</label>
       <span class="flush"><input name="attr_eqhand1" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">L Hand</label>
+      <label class="action flush" data-i18n="l-hand">L Hand</label>
       <span class="flush"><input name="attr_eqhand2" class="list-last"></span>
     </div>
     <hr class="line">
     <div class="f-row nowrap flush">
-      <label class="action flush">Crown</label>
+      <label class="action flush" data-i18n="crown">Crown</label>
       <span class="flush"><input name="attr_eqcrown" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">Amulet</label>
+      <label class="action flush" data-i18n="amulet">Amulet</label>
       <span class="flush"><input name="attr_eqamulet" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">Ring <span style="font-size: 67%;">(R)</span></label>
+      <label class="action flush"><span data-i18n="ring">Ring</span> <span style="font-size: 67%;">(R)</span></label>
       <span class="flush"><input name="attr_eqring1" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">Ring <span style="font-size: 67%;">(L)</span></label>
+      <label class="action flush"><span data-i18n="ring">Ring</span> <span style="font-size: 67%;">(L)</span></label>
       <span class="flush"><input name="attr_eqring2" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">Belt</label>
+      <label class="action flush" data-i18n="belt">Belt</label>
       <span class="flush"><input name="attr_eqbelt" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
-      <label class="action flush">Boots</label>
+      <label class="action flush" data-i18n="boots">Boots</label>
       <span class="flush"><input name="attr_eqboots" class="list-last"></span>
     </div>
   </section>
 
   <section class="inventory">
-    <h3>Inventory</h3>
+    <h3><span data-i18n="inventory">Inventory</span></h3>
     <textarea name="attr_inventory" class="inventory"></textarea>
   </section>
 
   <footer class="f-col f-center">
-    <span style="font-color: white;">(C) Bakagaijin Productions</span>
+    <span style="font-color: white;" data-i18n="copyright">(C) Bakagaijin Productions</span>
   </footer>
 </main>
 
