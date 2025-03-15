@@ -54,9 +54,9 @@
    <input type="hidden" name="attr_situation" class="situation-toggle">
    <div class="situationPanel">
    <div class="panelHeader">
-    <button class="tab-travel" type="action" name="act_travel"><span data-i18n="travel">Travel</span></button>
-    <button class="tab-explore" type="action" name="act_explore"><span data-i18n="explore">Explore</span></button>
-    <button class="tab-fight" type="action" name="act_fight"><span data-i18n="fight">Fight</span></button>
+    <button class="tab-travel" type="action" name="act_travel"><span data-i18n="tab-travel">Travel</span></button>
+    <button class="tab-explore" type="action" name="act_explore"><span data-i18n="tab-explore">Explore</span></button>
+    <button class="tab-fight" type="action" name="act_fight"><span data-i18n="tab-fight">Fight</span></button>
    </div>  
    <div class="panel-explore">
     <div class="f-row">
@@ -155,10 +155,11 @@
     <input type="hidden" name="attr_actiontab" class="action-toggle">
     <div class="actionPanel">
       <div class="panelHeader">
-          <button class="tab-attack" type="action" name="act_attack"><span data-i18n="attack">Attack</span></button>
-          <button class="tab-defend" type="action" name="act_defend"><span data-i18n="defend">Defend</span></button>
-          <button class="tab-move" type="action" name="act_move"><span data-i18n="move">Move</span></button>
-          <button class="tab-react" type="action" name="act_react"><span data-i18n="react">React</span></button>
+          <button class="tab-attack" type="action" name="act_attack"><span data-i18n="tab-attack">Attack</span></button>
+          <button class="tab-defend" type="action" name="act_defend"><span data-i18n="tab-defend">Defend</span></button>
+          <button class="tab-move" type="action" name="act_move"><span data-i18n="tab-move">Move</span></button>
+          <button class="tab-react" type="action" name="act_react"><span data-i18n="tab-react">React</span></button>
+          <button class="tab-feat" type="action" name="act_feat"><span data-i18n="tab-feat">Feats</span></button>
       </div>    
       <div class="panel-attack">
         <hr class="space">
@@ -850,7 +851,7 @@
         });
     });
 
-    const actionTabs = ["attack", "move", "defend", "react"];
+    const actionTabs = ["attack", "move", "defend", "react", "feat"];
     actionTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
             console.log("  clicked " + tab);
