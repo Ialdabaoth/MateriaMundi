@@ -57,6 +57,7 @@
     <button class="tab-travel" type="action" name="act_travel"><span data-i18n="tab-travel">Travel</span></button>
     <button class="tab-explore" type="action" name="act_explore"><span data-i18n="tab-explore">Explore</span></button>
     <button class="tab-fight" type="action" name="act_fight"><span data-i18n="tab-fight">Fight</span></button>
+    <button class="tab-journal" type="action" name="act_journal"><span data-i18n="tab-journal">Journal</span></button>
    </div>  
    <div class="panel-explore">
     <div class="f-row">
@@ -199,6 +200,7 @@
           </div>
         </div>
       </div panel-attack>
+      
       <div class="panel-move">
         <hr class="space">
         <div class="f-row nowrap">
@@ -222,6 +224,7 @@
             <label class="action"><span name="attr_swimspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
         </div>
       </div panel-move>
+      
       <div class="panel-defend">
         <hr class="space">
         <div class="f-row">
@@ -239,6 +242,7 @@
             <label class="description" data-i18n="hide-description">Roll Stealth to become hidden</label>
         </div>
       </div panel-defend>
+      
       <div class="panel-react">
         <hr class="space">
         <div class="f-row">
@@ -262,8 +266,12 @@
           to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</span></label>
         </div> 
       </div panel-react>
+      
     </div actionPanel>
    </div panel-fight>
+   
+   <div class="panel-journal">
+   </div panel-journal>
   </div situationPanel>
   </section>
 
@@ -843,7 +851,7 @@
 <script type="text/worker">
 
 /*===== tabbed functionality =====*/
-    const situationTabs = ["travel", "explore", "fight"];
+    const situationTabs = ["travel", "explore", "fight", "journal"];
     situationTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
             console.log("  clicked " + tab);
