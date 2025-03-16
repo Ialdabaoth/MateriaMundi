@@ -48,7 +48,7 @@
   <section class="actions f-col nowrap">
    <input type="hidden" name="attr_level" class="character-level" >
    <div class="f-row nowrap">
-      <label class="ability show-l3"><span name="attr_l3feat"></span></label>
+      <label class="ability show-l3"><span name="attr_l3feat" data-i18n-dynamic ></span></label>
       <input name="attr_power" class="bigbox show-l3"><span class="show-l3" style="font-size: 18px; font-style: bold;"><b>&nbsp;/&nbsp;</b></span><input name="attr_power_max" class="bigbox show-l3">
    </div>    
    <input type="hidden" name="attr_situation" class="situation-toggle">
@@ -255,14 +255,14 @@
           <span><button class="defend" type="roll" name="roll_dodge" 
    	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
           <label class="description"><b><span data-i18n="dodge">Dodge</span></b><br>
-          <span data-i18n="dodge-description" data-i18n-vars="@{reflex}">Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</span></label>
+          <span data-i18n="dodge-description" data-i18n-vars="<span name='attr_reflex'></span>">Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</span></label>
         </div> 
         <hr class="line">
         <div class="f-row">
           <span><button class="defend" type="roll" name="roll_parry" 
    	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll= [[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
           <label class="description"><b><span data-i18n="parry">Parry</span> (<span name="attr_weapon2"></span>)</b><br>
-          <span data-i18n="parry-description" data-i18n-vars="@{attack}|@{parry}">Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
+          <span data-i18n="parry-description" data-i18n-vars="<span name='attr_attack'></span>|<span name='attr_parry2'></span>">Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
           to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</span></label>
         </div> 
       </div panel-react>
@@ -324,7 +324,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="skill">&nbsp;&nbsp;&nbsp;<span name="attr_movement"></span> <span  data-i18n="speed">Speed</span></label>
+      <label class="action"><span name="attr_movement"></span> <span  data-i18n="speed">Speed</span></label>
       <input name="attr_move" class="bigbox">
     </div>
   </section>
@@ -711,44 +711,44 @@
     <h3><span data-i18n="class-features">Class Features</span></h3>
     <input type="hidden" name="attr_level" class="character-level" >
     <div class="f-row nowrap flush">
-      <label class="ability flush">&nbsp;1</label>
-      <span class="flush"><input name="attr_l1feat" class="list-first"></span>
+      <label class="ability flush">&nbsp;1</label><input name="attr_l0feat" type="hidden">
+      <span class="flush"><label class="list-first"><span name="attr_l1feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;2</label>
-      <span class="flush"><input name="attr_l2feat" class="list-middle req-l2"></span>
+      <span class="flush"><label class="list-middle req-l2"><span name="attr_l2feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;3</label>
-      <span class="flush"><input name="attr_l3feat" class="list-middle req-l3"></span>
+      <span class="flush"><label class="list-middle req-l3"><span name="attr_l3feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;4</label>
-      <span class="flush"><input name="attr_l4feat" class="list-middle req-l4"></span>
+      <span class="flush"><label class="list-middle req-l4"><span name="attr_l4feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;5</label>
-      <span class="flush"><input name="attr_l5feat" class="list-middle req-l5"></span>
+      <span class="flush"><label class="list-middle req-l5"><span name="attr_l5feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;6</label>
-      <span class="flush"><input name="attr_l6feat" class="list-middle req-l6"></span>
+      <span class="flush"><label class="list-middle req-l6"><span name="attr_l6feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;7</label>
-      <span class="flush"><input name="attr_l7feat" class="list-middle req-l7"></span>
+      <span class="flush"><label class="list-middle req-l7"><span name="attr_l7feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;8</label>
-      <span class="flush"><input name="attr_l8feat" class="list-middle req-l8"></span>
+      <span class="flush"><label class="list-middle req-l8"><span name="attr_l8feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">&nbsp;9</label>
-      <span class="flush"><input name="attr_l9feat" class="list-middle req-l9"></span>
+      <span class="flush"><label class="list-middle req-l9"><span name="attr_l9feat" data-i18n-dynamic></span></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="ability flush">10</label>
-      <span class="flush"><input name="attr_l10feat" class="list-last req-l10"></span>
+      <span class="flush"><label class="list-last req-l10"><span name="attr_l10feat" data-i18n-dynamic></span></span>
     </div>
   </section>
 
@@ -810,9 +810,28 @@
     <div class="sheet-header">
       {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
     </div>
     <div class="sheet-content">
+      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
+      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
+      {{#allprops() title name subtitle roll desc}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title name subtitle roll desc}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-saves">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+    </div>
+    <div class="sheet-content">
+      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
+      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
       {{#allprops() title name subtitle desc}}
       <div class="sheet-key">{{key}}</div>
       <div class="sheet-value">{{value}}</div>
