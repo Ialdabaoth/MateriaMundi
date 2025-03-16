@@ -30,10 +30,11 @@ main {
 .charsheet select.character-class {
   width: 250px;
 }
-.charsheet input.list-first,
-.charsheet input.list-middle,
-.charsheet input.list-last{
+.charsheet .list-first,
+.charsheet .list-middle,
+.charsheet .list-last{
   width: 240px;
+  font-size: 13px;
 }
 .charsheet input.damage{
    width: 225px;
@@ -75,10 +76,11 @@ main {
  .charsheet select.character-class {
   width: 380px;
  }
- .charsheet input.list-first,
- .charsheet input.list-middle,
- .charsheet input.list-last{
+ .charsheet .list-first,
+ .charsheet .list-middle,
+ .charsheet .list-last{
   width: 180px;
+  font-size: 11px;
  }
  .charsheet input.damage{
    width: 150px;
@@ -116,10 +118,11 @@ main {
  .charsheet select.character-class {
   width: 180px;
  }
- .charsheet input.list-first,
- .charsheet input.list-middle,
- .charsheet input.list-last{
+ .charsheet .list-first,
+ .charsheet .list-middle,
+ .charsheet .list-last{
   width: 180px;
+  font-size: 11px;
  }
  .charsheet input.damage{
    width: 150px;
@@ -423,6 +426,104 @@ footer {
 .charsheet .action-toggle[value="react"] ~ div button.tab-react,
 .charsheet .action-toggle[value="feat"] ~ div button.tab-feat{
   border-bottom: 3px solid var(--page);
+}
+
+/*--------------------- Level-Specific Elements --------------------*/
+.charsheet input.character-level { display: none; }
+.charsheet input.character-level[value="1"] ~ div .show-l2,
+.charsheet input.character-level[value="1"] ~ div .show-l3,
+.charsheet input.character-level[value="1"] ~ div .show-l4,
+.charsheet input.character-level[value="1"] ~ div .show-l5,
+.charsheet input.character-level[value="1"] ~ div .show-l6,
+.charsheet input.character-level[value="1"] ~ div .show-l7,
+.charsheet input.character-level[value="1"] ~ div .show-l8,
+.charsheet input.character-level[value="1"] ~ div .show-l9,
+.charsheet input.character-level[value="1"] ~ div .show-l10,
+.charsheet input.character-level[value="2"] ~ div .show-l3,
+.charsheet input.character-level[value="2"] ~ div .show-l4,
+.charsheet input.character-level[value="2"] ~ div .show-l5,
+.charsheet input.character-level[value="2"] ~ div .show-l6,
+.charsheet input.character-level[value="2"] ~ div .show-l7,
+.charsheet input.character-level[value="2"] ~ div .show-l8,
+.charsheet input.character-level[value="2"] ~ div .show-l9,
+.charsheet input.character-level[value="2"] ~ div .show-l10,
+.charsheet input.character-level[value="3"] ~ div .show-l4,
+.charsheet input.character-level[value="3"] ~ div .show-l5,
+.charsheet input.character-level[value="3"] ~ div .show-l6,
+.charsheet input.character-level[value="3"] ~ div .show-l7,
+.charsheet input.character-level[value="3"] ~ div .show-l8,
+.charsheet input.character-level[value="3"] ~ div .show-l9,
+.charsheet input.character-level[value="3"] ~ div .show-l10,
+.charsheet input.character-level[value="4"] ~ div .show-l5,
+.charsheet input.character-level[value="4"] ~ div .show-l6,
+.charsheet input.character-level[value="4"] ~ div .show-l7,
+.charsheet input.character-level[value="4"] ~ div .show-l8,
+.charsheet input.character-level[value="4"] ~ div .show-l9,
+.charsheet input.character-level[value="4"] ~ div .show-l10,
+.charsheet input.character-level[value="5"] ~ div .show-l6,
+.charsheet input.character-level[value="5"] ~ div .show-l7,
+.charsheet input.character-level[value="5"] ~ div .show-l8,
+.charsheet input.character-level[value="5"] ~ div .show-l9,
+.charsheet input.character-level[value="5"] ~ div .show-l10,
+.charsheet input.character-level[value="6"] ~ div .show-l7,
+.charsheet input.character-level[value="6"] ~ div .show-l8,
+.charsheet input.character-level[value="6"] ~ div .show-l9,
+.charsheet input.character-level[value="6"] ~ div .show-l10,
+.charsheet input.character-level[value="7"] ~ div .show-l8,
+.charsheet input.character-level[value="7"] ~ div .show-l9,
+.charsheet input.character-level[value="7"] ~ div .show-l10,
+.charsheet input.character-level[value="8"] ~ div .show-l9,
+.charsheet input.character-level[value="8"] ~ div .show-l10,    
+.charsheet input.character-level[value="9"] ~ div .show-l10{
+  display: none !important;
+}
+.charsheet input.character-level[value="1"] ~ div .req-l2,
+.charsheet input.character-level[value="1"] ~ div .req-l3,
+.charsheet input.character-level[value="1"] ~ div .req-l4,
+.charsheet input.character-level[value="1"] ~ div .req-l5,
+.charsheet input.character-level[value="1"] ~ div .req-l6,
+.charsheet input.character-level[value="1"] ~ div .req-l7,
+.charsheet input.character-level[value="1"] ~ div .req-l8,
+.charsheet input.character-level[value="1"] ~ div .req-l9,
+.charsheet input.character-level[value="1"] ~ div .req-l10,
+.charsheet input.character-level[value="2"] ~ div .req-l3,
+.charsheet input.character-level[value="2"] ~ div .req-l4,
+.charsheet input.character-level[value="2"] ~ div .req-l5,
+.charsheet input.character-level[value="2"] ~ div .req-l6,
+.charsheet input.character-level[value="2"] ~ div .req-l7,
+.charsheet input.character-level[value="2"] ~ div .req-l8,
+.charsheet input.character-level[value="2"] ~ div .req-l9,
+.charsheet input.character-level[value="2"] ~ div .req-l10,
+.charsheet input.character-level[value="3"] ~ div .req-l4,
+.charsheet input.character-level[value="3"] ~ div .req-l5,
+.charsheet input.character-level[value="3"] ~ div .req-l6,
+.charsheet input.character-level[value="3"] ~ div .req-l7,
+.charsheet input.character-level[value="3"] ~ div .req-l8,
+.charsheet input.character-level[value="3"] ~ div .req-l9,
+.charsheet input.character-level[value="3"] ~ div .req-l10,
+.charsheet input.character-level[value="4"] ~ div .req-l5,
+.charsheet input.character-level[value="4"] ~ div .req-l6,
+.charsheet input.character-level[value="4"] ~ div .req-l7,
+.charsheet input.character-level[value="4"] ~ div .req-l8,
+.charsheet input.character-level[value="4"] ~ div .req-l9,
+.charsheet input.character-level[value="4"] ~ div .req-l10,
+.charsheet input.character-level[value="5"] ~ div .req-l6,
+.charsheet input.character-level[value="5"] ~ div .req-l7,
+.charsheet input.character-level[value="5"] ~ div .req-l8,
+.charsheet input.character-level[value="5"] ~ div .req-l9,
+.charsheet input.character-level[value="5"] ~ div .req-l10,
+.charsheet input.character-level[value="6"] ~ div .req-l7,
+.charsheet input.character-level[value="6"] ~ div .req-l8,
+.charsheet input.character-level[value="6"] ~ div .req-l9,
+.charsheet input.character-level[value="6"] ~ div .req-l10,
+.charsheet input.character-level[value="7"] ~ div .req-l8,
+.charsheet input.character-level[value="7"] ~ div .req-l9,
+.charsheet input.character-level[value="7"] ~ div .req-l10,
+.charsheet input.character-level[value="8"] ~ div .req-l9,
+.charsheet input.character-level[value="8"] ~ div .req-l10,    
+.charsheet input.character-level[value="9"] ~ div .req-l10{
+  color:            var(--disabled-color);
+  background-color: var(--disabled-bg);
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -837,11 +938,13 @@ footer {
   border: 2px solid var(--border);
 }
 
-.charsheet input.list-first {
+.charsheet .list-first {
   text-align: center;
   margin-bottom: 0px;
   height: 25px;
   color: var(--text);
+  font-family: var(--font-text);
+  font-weight: normal;
   background-color: var(--input);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -850,13 +953,15 @@ footer {
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
   border-top: 1px solid var(--border);
-  border-bottom: 1px dotted var(--border);
+  border-bottom: 0px transparent;
 }
-.charsheet  input.list-middle {
+.charsheet .list-middle {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
   height: 25px;
+  font-family: var(--font-text);
+  font-weight: normal;
   color: var(--text);
   background-color: var(--input);
   border-top-left-radius: 0px;
@@ -865,14 +970,16 @@ footer {
   border-bottom-right-radius: 0px;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  border-top: 0px transparent;
-  border-bottom: 1px dotted var(--border);
+  border-top: 1px dotted var(--disabled-color);
+  border-bottom: 0px transparent;
 }
-.charsheet input.list-last {
+.charsheet .list-last {
   text-align: center;
   margin-top: 0px;
   height: 25px;
   color: var(--text);
+  font-family: var(--font-text);
+  font-weight: normal;
   background-color: var(--input);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -880,106 +987,8 @@ footer {
   border-bottom-right-radius: 5px;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  border-top: 0px transparent;
+  border-top: 1px dotted var(--disabled-color);
   border-bottom: 1px solid var(--border);
-}
-
-/*--------------------- Level-Specific Elements --------------------*/
-.charsheet input.character-level { display: none; }
-.charsheet input.character-level[value="1"] ~ div .show-l2,
-.charsheet input.character-level[value="1"] ~ div .show-l3,
-.charsheet input.character-level[value="1"] ~ div .show-l4,
-.charsheet input.character-level[value="1"] ~ div .show-l5,
-.charsheet input.character-level[value="1"] ~ div .show-l6,
-.charsheet input.character-level[value="1"] ~ div .show-l7,
-.charsheet input.character-level[value="1"] ~ div .show-l8,
-.charsheet input.character-level[value="1"] ~ div .show-l9,
-.charsheet input.character-level[value="1"] ~ div .show-l10,
-.charsheet input.character-level[value="2"] ~ div .show-l3,
-.charsheet input.character-level[value="2"] ~ div .show-l4,
-.charsheet input.character-level[value="2"] ~ div .show-l5,
-.charsheet input.character-level[value="2"] ~ div .show-l6,
-.charsheet input.character-level[value="2"] ~ div .show-l7,
-.charsheet input.character-level[value="2"] ~ div .show-l8,
-.charsheet input.character-level[value="2"] ~ div .show-l9,
-.charsheet input.character-level[value="2"] ~ div .show-l10,
-.charsheet input.character-level[value="3"] ~ div .show-l4,
-.charsheet input.character-level[value="3"] ~ div .show-l5,
-.charsheet input.character-level[value="3"] ~ div .show-l6,
-.charsheet input.character-level[value="3"] ~ div .show-l7,
-.charsheet input.character-level[value="3"] ~ div .show-l8,
-.charsheet input.character-level[value="3"] ~ div .show-l9,
-.charsheet input.character-level[value="3"] ~ div .show-l10,
-.charsheet input.character-level[value="4"] ~ div .show-l5,
-.charsheet input.character-level[value="4"] ~ div .show-l6,
-.charsheet input.character-level[value="4"] ~ div .show-l7,
-.charsheet input.character-level[value="4"] ~ div .show-l8,
-.charsheet input.character-level[value="4"] ~ div .show-l9,
-.charsheet input.character-level[value="4"] ~ div .show-l10,
-.charsheet input.character-level[value="5"] ~ div .show-l6,
-.charsheet input.character-level[value="5"] ~ div .show-l7,
-.charsheet input.character-level[value="5"] ~ div .show-l8,
-.charsheet input.character-level[value="5"] ~ div .show-l9,
-.charsheet input.character-level[value="5"] ~ div .show-l10,
-.charsheet input.character-level[value="6"] ~ div .show-l7,
-.charsheet input.character-level[value="6"] ~ div .show-l8,
-.charsheet input.character-level[value="6"] ~ div .show-l9,
-.charsheet input.character-level[value="6"] ~ div .show-l10,
-.charsheet input.character-level[value="7"] ~ div .show-l8,
-.charsheet input.character-level[value="7"] ~ div .show-l9,
-.charsheet input.character-level[value="7"] ~ div .show-l10,
-.charsheet input.character-level[value="8"] ~ div .show-l9,
-.charsheet input.character-level[value="8"] ~ div .show-l10,    
-.charsheet input.character-level[value="9"] ~ div .show-l10{
-  display: none !important;
-}
-.charsheet input.character-level[value="1"] ~ div .req-l2,
-.charsheet input.character-level[value="1"] ~ div .req-l3,
-.charsheet input.character-level[value="1"] ~ div .req-l4,
-.charsheet input.character-level[value="1"] ~ div .req-l5,
-.charsheet input.character-level[value="1"] ~ div .req-l6,
-.charsheet input.character-level[value="1"] ~ div .req-l7,
-.charsheet input.character-level[value="1"] ~ div .req-l8,
-.charsheet input.character-level[value="1"] ~ div .req-l9,
-.charsheet input.character-level[value="1"] ~ div .req-l10,
-.charsheet input.character-level[value="2"] ~ div .req-l3,
-.charsheet input.character-level[value="2"] ~ div .req-l4,
-.charsheet input.character-level[value="2"] ~ div .req-l5,
-.charsheet input.character-level[value="2"] ~ div .req-l6,
-.charsheet input.character-level[value="2"] ~ div .req-l7,
-.charsheet input.character-level[value="2"] ~ div .req-l8,
-.charsheet input.character-level[value="2"] ~ div .req-l9,
-.charsheet input.character-level[value="2"] ~ div .req-l10,
-.charsheet input.character-level[value="3"] ~ div .req-l4,
-.charsheet input.character-level[value="3"] ~ div .req-l5,
-.charsheet input.character-level[value="3"] ~ div .req-l6,
-.charsheet input.character-level[value="3"] ~ div .req-l7,
-.charsheet input.character-level[value="3"] ~ div .req-l8,
-.charsheet input.character-level[value="3"] ~ div .req-l9,
-.charsheet input.character-level[value="3"] ~ div .req-l10,
-.charsheet input.character-level[value="4"] ~ div .req-l5,
-.charsheet input.character-level[value="4"] ~ div .req-l6,
-.charsheet input.character-level[value="4"] ~ div .req-l7,
-.charsheet input.character-level[value="4"] ~ div .req-l8,
-.charsheet input.character-level[value="4"] ~ div .req-l9,
-.charsheet input.character-level[value="4"] ~ div .req-l10,
-.charsheet input.character-level[value="5"] ~ div .req-l6,
-.charsheet input.character-level[value="5"] ~ div .req-l7,
-.charsheet input.character-level[value="5"] ~ div .req-l8,
-.charsheet input.character-level[value="5"] ~ div .req-l9,
-.charsheet input.character-level[value="5"] ~ div .req-l10,
-.charsheet input.character-level[value="6"] ~ div .req-l7,
-.charsheet input.character-level[value="6"] ~ div .req-l8,
-.charsheet input.character-level[value="6"] ~ div .req-l9,
-.charsheet input.character-level[value="6"] ~ div .req-l10,
-.charsheet input.character-level[value="7"] ~ div .req-l8,
-.charsheet input.character-level[value="7"] ~ div .req-l9,
-.charsheet input.character-level[value="7"] ~ div .req-l10,
-.charsheet input.character-level[value="8"] ~ div .req-l9,
-.charsheet input.character-level[value="8"] ~ div .req-l10,    
-.charsheet input.character-level[value="9"] ~ div .req-l10{
-  color:            var(--disabled-color);
-  background-color: var(--disabled-bg);
 }
 
 .charsheet textarea.inventory {
