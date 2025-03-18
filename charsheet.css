@@ -26,7 +26,7 @@ div.ui-dialog.charsheet {
                       "inv eqp eqp fea fea"
                       "ftr ftr ftr ftr ftr";
  }
- .charsheet select.character-class {
+ .charsheet .character-class {
   width: 340px;
  }
  .charsheet .list-first,
@@ -57,7 +57,7 @@ div.ui-dialog.charsheet {
                       "eqp eqp fea"
                       "bld ftr ftr";
  }
- .charsheet select.character-class {
+ .charsheet .character-class {
   width: 250px;
  }
  .charsheet .list-first,
@@ -106,7 +106,7 @@ div.ui-dialog.charsheet {
 
      
  }
- .charsheet select.character-class {
+ .charsheet .character-class {
   width: 180px;
  }
  .charsheet .list-first,
@@ -146,7 +146,7 @@ div.ui-dialog.charsheet {
 
      
  }
- .charsheet select.character-class {
+ .charsheet .character-class {
   width: 180px;
  }
  .charsheet .list-first,
@@ -505,22 +505,22 @@ footer { grid-area: ftr;
   background-color: var(--disabled-bg);
 }
 
-select.character-class.viewer { display: inline; }
-.charsheet input.character-level[value="0"] ~ select.character-class.viewer { display: none; }
-select.character-class.chooser { display: none; }
-.charsheet input.character-level[value="0"] ~ select.character-class.chooser { display: inline; }
+span.character-class { display: inline-block; }
+.charsheet input.character-level[value="0"] ~ span.character-class { display: none; }
+select.character-class { display: none; }
+.charsheet input.character-level[value="0"] ~ select.character-class { display: inline-block; }
 
 /*----------------- text & input styling -----------------*/
  
 /* remove the arrow at the {
 end of select boxes */
-.charsheet select {
+/* .charsheet select {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
+} */
 
 .charsheet h3 {
   text-align: center;
@@ -546,7 +546,7 @@ end of select boxes */
 }
 
 /* header input and display elements */
-.charsheet input.character-name {
+.charsheet .character-name {
   text-align: left;
   margin: 1px 1px;
   width: 320px;
@@ -558,7 +558,7 @@ end of select boxes */
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
 }
-.charsheet input.character-race {
+.charsheet .character-race {
   text-align: center;
   margin: 1px 1px;
   width: 120px;
@@ -570,11 +570,11 @@ end of select boxes */
   border: 1px solid var(--border-color);
 }
 
-.charsheet select.character-class {
+.charsheet .character-class {
   text-align: center;
   margin: 1px 1px;
   padding: 1px;
-  height: 50px;
+  height: auto;
   line-height: 32px;
   color: var(--text-color);
   font-family: var(--font-text);
@@ -583,7 +583,13 @@ end of select boxes */
   background-color: var(--input-bg);
   border: 3px solid var(--border-color);
 }
-.charsheet select.character-level {
+.charsheet .character-level {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
   text-align: center;
   padding: 1px;
   padding-right: 10px;
