@@ -505,9 +505,15 @@ footer { grid-area: ftr;
   background-color: var(--disabled-bg);
 }
 
-/*----------------- text & input styling -----------------*/
+select.character-class.viewer { display: inline; }
+.charsheet input.character-level[value="0"] ~ select.character-class.viewer { display: none; }
+select.character-class.chooser { display: none; }
+.charsheet input.character-level[value="0"] ~ select.character-class.chooser { display: inline; }
 
-/* remove the arrow at the end of select boxes */
+/*----------------- text & input styling -----------------*/
+ 
+/* remove the arrow at the {
+end of select boxes */
 .charsheet select {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
