@@ -1110,7 +1110,55 @@
         });
         validate();
     }
-    
+
+/* -----===== Character Validator ======------ 
+   This function contains all the logic for building the character 
+   based on level, feat choices, and skill training choices. These
+   choices are recorrded in the l1feat - l10feat attributes -- the
+   l#feat stores the class feat choice, and the l#feat_max stores
+   the skill training choice(s). 
+   
+   A class feat will look like this:  
+   
+   "knight-1" 
+   
+   - this indicates the level 1 knight class feat. 
+   (The translation.js file will contain the text names and 
+   descriptions for each choice.)
+
+   Skill training  will look like this: 
+   
+   "athletics, animal-ken" -
+   
+   - this indicates that both the athletics and animal-ken feats
+   get raised at this level. 
+   
+   If a class level allows a choice of what skill(s) to train, the 
+   choice will look like this: 
+   
+   "choose(crafting, lore, arcana)" 
+   
+   - this indicates that the player can choose between the crafting,
+   lore, or arcana skills for this choice. 
+   
+   A choice might also look like this: 
+   
+   "choose(any)"
+   
+   - indicating any skill may be chosen.
+   
+   Once they choose, this entire choice(...) block will be removed 
+   from the l#feat_max attribute, and replaced with the skill chosen. 
+   
+   A l#feat_max entry can contain both skill training, and pending
+   choices, like so: 
+   
+   "athletics, reflex, choose(any), choose(lore, arcana)"
+   
+   When the player makes a skill choice, the train() function will 
+   find the first matching choose(...) block, and replace it with 
+   that choice.
+*/
     const levelUpData = ["class", "level", 
                         "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
                         "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
@@ -1124,7 +1172,7 @@
                 return;
             }
             let level = values["level"];
-            let powerMax = Math.floor(level/3+.667);
+            let hitDice = Math.floor(level/3+.667);
             console.log("level " + level + " " + values["class"] + " (" + powerMax + "hd)");
 
             let power = "";
@@ -1141,7 +1189,11 @@
                 let skill = values["l"+i+"feat_max"];
                 console.log(feat);
                 feats += ", " + feat;
-                if(power == "" && feat.includes("-3")) power = feat;
+                
+                // level 3 feats always grant a class's encounter power, except for wizards.
+                if(power == "" && feat.includes("-3") && !(feat == "wizard-3")) power = feat;
+
+                // many class levels allow for a skill choice, while others simply grant specific skills
                 if(skill.includes("choose(")) {
                     let splitArray = skill.split("choose(");
                     if(splitArray[0] > "") skillList += ", " + splitArray[0];
@@ -1149,12 +1201,13 @@
                         if(skillOptions > "") skillOptions += ", ";
                         skillOptions += "choose(" + splitArray[i];
                     }
-                } else { skillList += ", " + skill; }
+                } else { skillList += ", " + skill; } // keep a running tally of all granted and chosen skills
             }
             console.log(feats);
             console.log(skillList);
             console.log(skillOptions);
 
+            let powerMax = hitDice;
             if(power == "") powerMax = 0;
             
             let attacks = 1;
@@ -1185,63 +1238,81 @@
             }
             setAttrs({ featlist: feats, powername: power, power_max: powerMax, attack: attackDie, attack_max: attacks });
            
+            // clear out the skills, to prepare for running through the tallied skill list
             var skillData = {};
             skills.forEach(skill => { skillData[skill] = "2d4kl1"; skillData[skill+"_max"] = "d4"; });
             
-            if(feats.includes("warrior-2")) { // Superior Athlete
+            // first, work out skill maximums based on highest class and level skill caps
+            
+            if(feats.includes("warrior-2")) { // Superior Athlete gives warriors better physical saves
                 skillData["athletics_max"]  = biggerDie(skillData["athletics_max"], attackDie);
                 skillData["reflex_max"]     = biggerDie(skillData["reflex_max"], attackDie);
                 skillData["fortitude_max"]  = biggerDie(skillData["fortitude_max"], attackDie);
             }
             
             var maxDie;
-            if(feats.includes("expert-10")
+            if(feats.includes("bard-10")
+            || feats.includes("alchemist-10")
+            || feats.includes("thief-9")
             || feats.includes("wizard-9")
             || feats.includes("cleric-9")
             || feats.includes("druid-9")) { 
-                maxDie = "d12";
-            } else if(feats.includes("expert-7")
+                maxDie = "d12"; // magic-users reach a d12 skill cap at level 9, while experts reach it at level 10
+            } else if(feats.includes("bard-7")
+            || feats.includes("alchemist-7")
+            || feats.includes("thief-7")
             || feats.includes("wizard-7")
             || feats.includes("cleric-7")
             || feats.includes("druid-7")) { 
-                maxDie = "d10";
+                maxDie = "d10"; // magic-users and experts both reach a d10 skill cap at level 7
             } else if(feats.includes("expert-4")
             || feats.includes("wizard-5")
             || feats.includes("cleric-5")
             || feats.includes("druid-5") 
             || feats.includes("warrior-9")) {
-                maxDie = "d8";
+                maxDie = "d8"; // experts reach a d8 skill cap at level 4, while magic-users reach it at level 5, and warriors at level 9.
             } else if(feats.includes("expert-1") 
             || feats.includes("wizard-3") 
             || feats.includes("cleric-3") 
             || feats.includes("druid-3") 
             || feats.includes("warrior-5")) { 
-                maxDie = "d6";                
+                maxDie = "d6"; // experts start with a d6 skill cap, while magic-users reach it at level 3, and warriors at level 5.
             } else {
-                maxDie = "d4";
+                maxDie = "d4"; // magic-users and warriors start with a skill cap at d4.
             }
             console.log("  attack -> " + attackDie);
             
+            // now run through the tallied skill list, and assign the appropriate skill levels
             skills.forEach(skill => { 
+                // merge Superior Athlete limits into the normal skill limits
                 skillData[skill+"_max"] = biggerDie(skillData[skill+"_max"], maxDie);
+                
+                // count number of times the skill appears in the tallied skill list
                 let skillLevel = countMatches(skillList, skill);
-                if(skillLevel > 0) {
+                if(skillLevel > 0) { // once = d4. twice = d6, 3x = d8, 4x = d10, 5x or more = d12
                     if(skillLevel > 5) skillLevel = 5;
                     skillData[skill] = "d" + (skillLevel+1)*2;
+                    
+                    // respect the skill caps
                     if(biggerDie(skillData[skill], skillData[skill+"_max"]) == skillData[skill]) {
                       skillData[skill] = skillData[skill+"_max"];
                     }
                 }
+                
+                // see if there are any pending choices for this skill
                 let opt = "";
                 if((skillOptions.includes(skill) || skillOptions.includes("any")) 
                 && biggerDie(skillData[skill], skillData[skill+"_max"]) != skillData[skill]) {
-                    opt = " - *can train";
+                    opt = " - *can train"; 
+                    // show the [+] training button next to this skill
                     $20(`button[name=act_train-${skill}]`).removeClass('hidden');
                 } else { 
+                    // hide the [+] training button next to this skill
                     $20(`button[name=act_train-${skill}]`).addClass('hidden'); 
                 }
                 console.log("  " + skill + " -> " + skillData[skill] + " (max " + skillData[skill+"_max"] + ")" + opt);
             });
+            // set all the skills and skill caps at once
             setAttrs(skillData);
         });
     }
@@ -1258,7 +1329,7 @@
         if(values[save] == undefined || values[mod] == undefined) {
             console.log("--Uninitialized! Aborting...");
         }
-        
+        // a dv equals 10 + ability mod + half the proficiency die maximum
         let prof = values[save];
         let val = 10+1*values[mod];
         val += die2dv(prof);
@@ -1270,58 +1341,98 @@
  function updatemod(ability) {
   console.log("updating " + ability ); 
   getAttrs([ability,"race_max"], function(values) {
+    // most races provide two bonuses; 
+    // racial bonuses are always a +1 to the mod
+    // (racial bonuses never affect the raw score)
     let raceMods = values["race_max"];
     let score = values[ability];
-    if(score == undefined) {
+    
+    if(score == undefined) { 
+      // if the score hasn't been set yet, then hail the dread lord Gygax and roll a flat 3d6
       score = rollAbility(ability);
       console.log("rolling " + ability + " (3d6): " + score);
       setAttrs({ [ability]: score });
     }
+    // scores are always referred to by their full name, 
+    // while mods are always referred to by their first 3 letters
     let modname = ability.substring(0,3);
+    
+    // we're using B/X ability modifiers, like a good little OSR demiclone
     let mod = a2mod(score);
+
+    // if the race includes this mod in its bonuses, add +1 to the mod
     if(String(raceMods).toLowerCase().includes(String(modname).toLowerCase())) {
       mod++;
       if(mod >= 0) mod = "+" + mod; 
     }
     console.log("  " + ability + " (" + score + ") => " + modname + " (" + mod + ")");
     setAttrs({ [modname]: mod });
+
+    // update the associated saving throw dv for this ability
     updatedv(mod2save(modname));
   });
  }
 
  function train(skill) {
+    // each skill is either "none" (technically 2d4kl1), 
+    // or a die size between d4 and d12. 
+    // training a skill means raising it by one die size,
+    // if doing so wouldn't exceed that skill's cap.
+    
+    // (skill caps are determined by class and level - see
+    //  the validate() function for the complete calculations.)
     getAttrs([skill,skill+"_max"], function(values) {
       let die = values[skill];
       let max = values[skill+"_max"];
       console.log("  " + skill + ": " + die + " (max "+max + ")");
+
+      // easiest way to get the skill as a numeric comparator is to
+      // use the dv calculator, which assigns 0 to "none", 2 to d4,
+      // 3 to d6, 4 to d8, 5 to d10, and 6 to d12.
       let dv = die2dv(die);
       if(dv == 0) {
-        die = "d4";
+        die = "d4"; // the first jump is from "none" to d4
       } else if(dv < die2dv(max)) {
-        dv++;
-        die = "d"+dv*2;
+        dv++; // we're below the cap, so raise the skill by one level
+        die = "d"+dv*2; // the die size is always twice the dv
       }
+
+      // see if we've changed the die size
       if(die != values[skill]) {
         console.log("  " + skill + " => " + die + " (max "+max + ")");
         setAttrs({ [skill]: die });
+        // now find the first matching choose(...) in the l#feat_max 
+        // level-up list, and replace that choose(...) with the name
+        // of the chosen skill. 
         getAttrs(levelUpData, function(values) {
           for(let level = 1; level <= values["level"]; level++) {
             let choices = values["l"+level+"feat_max"];
             if( choices.includes("choose(")
             && (choices.includes("any") || choices.includes(skill)) ) {
+              // we found a match at this level, 
+              // now let's replace the first  
+              // matching choose(...) for this level    
               let splitArray = choices.split("choose(");
-              let skillList = splitArray[0];
+              // non-optional skill training will always 
+              // come before any choose(...) options
+              let skillList = splitArray[0]; 
               for(let i = 1; i < splitArray.length; i++) {
                 if(skillList > "") skillList += ", ";
                 if( splitArray[i].includes("any") || splitArray[i].includes(skill) ) { 
-                  skillList += skill;
-                  for(i++; i < splitArray.length; i++) { // only replace the first matching choice that we find
+                  // this is our first match, so replace it
+                  skillList += skill; 
+                  // only replace the first matching choice that we find;
+                  // this means adding back all the remaining choices.
+                  for(i++; i < splitArray.length; i++) { 
                     skillList += "choose(" + splitArray[i];  
                   }
                 } else { 
+                  // it's not a match, so add it back
                   skillList += "choose(" + splitArray[i]; 
                 }
               }
+              // we've now made our replacement, so we don't need to continue
+              // traipsing through the level list willy-nilly
               console.log("   (replaces level " + level + " choice: ["+values["l"+level+"feat_max"]+"] -> ["+skillList+"])");
               setAttrs({ ["l"+level+"feat_max"]: skillList });
               validate();
@@ -1342,25 +1453,35 @@
 	});
  }
 
-
  function rollD6() {
    return Math.floor(Math.random()*6+1);
  }
  
+// 3d6, in order. 
+// Contemplate this on the tree of woe.
  function rollAbility(ability) {
    return rollD6()+rollD6()+rollD6();
  }
  
+// converting dice to their corresponding dv bonuses
+// lets us compare them numerically, and return
+// whichever one is bigger.
  function biggerDie(a, b) {
     if(die2dv(a) >= die2dv(b)) return a;
     return b;
  }
  
+// a die adds half its maximum roll size to its saving throw dv,
+// or any other static bonus (such as maximum hit points).
  function die2dv(d) {
     if(d[0] != "d") return 0;
     return Math.floor(d.substring(1,3)*0.5);
  }
  
+// B/X ability modifiers are superior to 
+// those used by 3.5e/4e/5e/5.5e/Pathfinder,
+// especially since we aren't using the d20
+// for exploration skill tests.
  function a2mod(a) {
   if(a==3) return "-3";
   if(a<6) return "-2";
@@ -1371,6 +1492,7 @@
   return "+0";
  }
  
+// which ability mod does this save use?
  function save2mod(save) {
     if(save == "athletics") return "str";
     if(save == "reflex") return "dex";
@@ -1380,6 +1502,8 @@
     if(save == "willpower") return "cha";
     return "";
  }
+
+// which save uses this ability mod?
  function mod2save(mod) {
     if(mod == "str") return "athletics";
     if(mod == "dex") return "reflex";
@@ -1390,6 +1514,9 @@
     return "";
  }
  
+//simple regexp tally for how many times
+//one string shows up inside another.
+//primarily used for the skill validator
  function countMatches(str, test) {
     let regex = new RegExp(test, "g"); 
     return (str.match(regex ) || []).length;
