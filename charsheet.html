@@ -17,20 +17,33 @@
   
   <section class="level f-row nowrap">
     <span>
-      <select name="attr_class" class="character-class">
-        <option data-i18n="knight" value="Knight">Knight</option>
-        <option data-i18n="martial-artist" value="Martial Artist">Martial Artist</option>
-        <option data-i18n="berserker" value="Berserker">Berserker</option>
-        <option data-i18n="thief" value="Thief">Thief</option>
-        <option data-i18n="alchemist" value="Alchemist">Alchemist</option>
-        <option data-i18n="bard" value="Bard">Bard</option>
-        <option data-i18n="wizard" value="Wizard">Wizard</option>
-        <option data-i18n="cleric" value="Cleric">Cleric</option>
-        <option data-i18n="druid" value="Druid">Druid</option>
+      <input type="hidden" name="attr_level" class="character-level" >
+      <select name="attr_class" class="character-class chooser">
+        <option data-i18n="knight" value="knight">Knight</option>
+        <option data-i18n="martial-artist" value="martial-artist">Martial Artist</option>
+        <option data-i18n="berserker" value="berserker">Berserker</option>
+        <option data-i18n="thief" value="thief">Thief</option>
+        <option data-i18n="alchemist" value="alchemist">Alchemist</option>
+        <option data-i18n="bard" value="bard">Bard</option>
+        <option data-i18n="wizard" value="wizard">Wizard</option>
+        <option data-i18n="cleric" value="cleric">Cleric</option>
+        <option data-i18n="druid" value="druid">Druid</option>
+      </select>
+      <select name="attr_class" class="character-class viewer" readonly>
+        <option data-i18n="knight" value="knight">Knight</option>
+        <option data-i18n="martial-artist" value="martial-artist">Martial Artist</option>
+        <option data-i18n="berserker" value="berserker">Berserker</option>
+        <option data-i18n="thief" value="thief">Thief</option>
+        <option data-i18n="alchemist" value="alchemist">Alchemist</option>
+        <option data-i18n="bard" value="bard">Bard</option>
+        <option data-i18n="wizard" value="wizard">Wizard</option>
+        <option data-i18n="cleric" value="cleric">Cleric</option>
+        <option data-i18n="druid" value="druid">Druid</option>
       </select>
     </span>
     <span>
       <select name="attr_level" class="character-level">
+          <option value="0">&#x1F513;</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -823,23 +836,228 @@
     skills.forEach(skill => { on(`clicked:train-${skill}`, function() { train(skill); }); });
 
     on("change:character_name", function(eventInfo) { setupActions(); });
+    on("change:class", function(eventInfo) { setupClass(); });
     on("change:level", function(eventInfo) { validate(); });
     
     on("sheet:opened", function() {
-      abilities.forEach(ability => { updatemod(ability); });
+      initialize();    
       validate();
+      abilities.forEach(ability => { updatemod(ability); });
       saves.forEach(save => { updatedv(save); });
       setupActions();
     });
  
-    const levelUpData = ["level", 
+    var classData = {};
+    function initialize() {
+        console.log("---=== initializing class data ===---");
+        var loadClass = {};
+        loadClass["class_max"] = "knight";
+        loadClass["hd1"] = "d10";
+        loadClass["hd2"] = "d10";
+        loadClass["hd3"] = "d10";
+        loadClass["hd4"] = "d10";
+        loadClass["l1feat"] = "warrior-1, knight-1";
+        loadClass["l2feat"] = "warrior-2";
+        loadClass["l3feat"] = "knight-3";
+        loadClass["l4feat"] = "warrior-4";
+        loadClass["l5feat"] = "warrior-5";
+        loadClass["l6feat"] = "knight-6";
+        loadClass["l7feat"] = "warrior-7";
+        loadClass["l8feat"] = "warrior-8";
+        loadClass["l9feat"] = "warrior-9";
+        loadClass["l10feat"] = "warrior-10";
+        loadClass["l1feat_max"] = "athletics, fortitude, animal-ken";
+        loadClass["l2feat_max"] = "athletics, fortitude, reflex";
+        loadClass["l3feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l4feat_max"] = "choose(any)";
+        loadClass["l5feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l6feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l7feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l8feat_max"] = "choose(any)";
+        loadClass["l9feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l10feat_max"] = "choose(any)";
+        classData["knight"] = JSON.parse(JSON.stringify(loadClass));
+
+        loadClass["class_max"] = "martial-artist";
+        loadClass["l1feat"] = "warrior-1, martial-artist-1";
+        loadClass["l3feat"] = "martial-artist-3";
+        loadClass["l6feat"] = "martial-artist-6";
+        loadClass["l1feat_max"] = "athletics, reflex, perception";
+        classData["martial-artist"] = JSON.parse(JSON.stringify(loadClass));
+        
+        loadClass["class_max"] = "berserker";
+        loadClass["l1feat"] = "warrior-1, berserker-1";
+        loadClass["l3feat"] = "berserker-3";
+        loadClass["l6feat"] = "berserker-6";
+        loadClass["l1feat_max"] = "athletics, reflex, fortitude";
+        classData["berserker"] = JSON.parse(JSON.stringify(loadClass));
+        
+        loadClass["class_max"] = "thief";
+        loadClass["hd1"] = "d8";
+        loadClass["hd2"] = "d8";
+        loadClass["hd3"] = "d8";
+        loadClass["hd4"] = "d8";
+        loadClass["l1feat"] = "expert-1, thief-1";
+        loadClass["l2feat"] = "thief-2";
+        loadClass["l3feat"] = "expert-3";
+        loadClass["l4feat"] = "expert-4";
+        loadClass["l5feat"] = "thief-5";
+        loadClass["l6feat"] = "thief-6";
+        loadClass["l7feat"] = "thief-7";
+        loadClass["l8feat"] = "expert-8";
+        loadClass["l9feat"] = "thief-9";
+        loadClass["l10feat"] = "thief-10";
+        loadClass["l1feat_max"] = "reflex, stealth, finesse, perception, choose(reflex, stealth, finesse, perception)";
+        loadClass["l2feat_max"] = "choose(any), choose(any)";
+        loadClass["l3feat_max"] = "choose(any), choose(any)";
+        loadClass["l4feat_max"] = "choose(any), choose(any)";
+        loadClass["l5feat_max"] = "choose(any), choose(any)";
+        loadClass["l6feat_max"] = "choose(any), choose(any)";
+        loadClass["l7feat_max"] = "choose(any), choose(any)";
+        loadClass["l8feat_max"] = "choose(any), choose(any)";
+        loadClass["l9feat_max"] = "choose(any), choose(any)";
+        loadClass["l10feat_max"] = "choose(any), choose(any)";
+        classData["thief"] = JSON.parse(JSON.stringify(loadClass));
+
+        loadClass["class_max"] = "alchemist";
+        loadClass["l1feat"] = "expert-1, alchemist-1";
+        loadClass["l2feat"] = "alchemist-2";
+        loadClass["l5feat"] = "alchemist-5";
+        loadClass["l6feat"] = "alchemist-6";
+        loadClass["l7feat"] = "alchemist-7";
+        loadClass["l9feat"] = "alchemist-9";
+        loadClass["l10feat"] = "alchemist-10";
+        loadClass["l1feat_max"] = "arcana, crafting, finesse, medicine, choose(arcana, crafting, finesse, medicine)";
+        classData["alchemist"] = JSON.parse(JSON.stringify(loadClass));
+
+        loadClass["class_max"] = "bard";
+        loadClass["l1feat"] = "expert-1, bard-1";
+        loadClass["l2feat"] = "bard-2";
+        loadClass["l5feat"] = "bard-5";
+        loadClass["l6feat"] = "bard-6";
+        loadClass["l7feat"] = "bard-7";
+        loadClass["l9feat"] = "bard-9";
+        loadClass["l10feat"] = "bard-10";
+        loadClass["l1feat_max"] = "charm, wit, finesse, lore, choose(charm, wit, finesse, lore)";
+        classData["bard"] = JSON.parse(JSON.stringify(loadClass));
+
+        loadClass["class_max"] = "druid";
+        loadClass["l1feat"] = "druid-1";
+        loadClass["l2feat"] = "druid-2";
+        loadClass["l3feat"] = "druid-3";
+        loadClass["l4feat"] = "druid-4";
+        loadClass["l5feat"] = "druid-5";
+        loadClass["l6feat"] = "druid-6";
+        loadClass["l7feat"] = "druid-7";
+        loadClass["l8feat"] = "druid-8";
+        loadClass["l9feat"] = "druid-9";
+        loadClass["l10feat"] = "druid-10";
+        loadClass["l1feat_max"] = "nature, animal-ken";
+        loadClass["l2feat_max"] = "choose(crafting, fortitude, lore, medicine, perception)";
+        loadClass["l3feat_max"] = "choose(nature, animal-ken)";
+        loadClass["l4feat_max"] = "choose(any)";
+        loadClass["l5feat_max"] = "choose(nature, animal-ken)";
+        loadClass["l6feat_max"] = "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)";
+        loadClass["l7feat_max"] = "choose(nature, animal-ken)";
+        loadClass["l8feat_max"] = "choose(any)";
+        loadClass["l9feat_max"] = "choose(nature, animal-ken)";
+        loadClass["l10feat_max"] = "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)";
+        classData["druid"] = JSON.parse(JSON.stringify(loadClass));
+        
+        loadClass["class_max"] = "wizard";
+        loadClass["hd1"] = "d6";
+        loadClass["hd2"] = "d6";
+        loadClass["hd3"] = "d6";
+        loadClass["hd4"] = "d6";
+        loadClass["l1feat"] = "wizard-1";
+        loadClass["l2feat"] = "wizard-2";
+        loadClass["l3feat"] = "wizard-3";
+        loadClass["l4feat"] = "wizard-4";
+        loadClass["l5feat"] = "wizard-5";
+        loadClass["l6feat"] = "wizard-6";
+        loadClass["l7feat"] = "wizard-7";
+        loadClass["l8feat"] = "wizard-8";
+        loadClass["l9feat"] = "wizard-9";
+        loadClass["l10feat"] = "wizard-10";
+        loadClass["l1feat_max"] = "arcana, deduction";
+        loadClass["l2feat_max"] = "choose(crafting, lore, medicine, perception)";
+        loadClass["l3feat_max"] = "arcana";
+        loadClass["l4feat_max"] = "choose(any)";
+        loadClass["l5feat_max"] = "arcana";
+        loadClass["l6feat_max"] = "choose(deduction, crafting, lore, medicine, perception)";
+        loadClass["l7feat_max"] = "arcana";
+        loadClass["l8feat_max"] = "choose(any)";
+        loadClass["l9feat_max"] = "arcana";
+        loadClass["l10feat_max"] = "choose(deduction, crafting, lore, medicine, perception)";
+        classData["wizard"] = JSON.parse(JSON.stringify(loadClass));
+
+
+        loadClass["class_max"] = "cleric";
+        loadClass["l1feat"] = "cleric-1";
+        loadClass["l2feat"] = "cleric-2";
+        loadClass["l3feat"] = "cleric-3";
+        loadClass["l4feat"] = "cleric-4";
+        loadClass["l5feat"] = "cleric-5";
+        loadClass["l6feat"] = "cleric-6";
+        loadClass["l7feat"] = "cleric-7";
+        loadClass["l8feat"] = "cleric-8";
+        loadClass["l9feat"] = "cleric-9";
+        loadClass["l10feat"] = "cleric-10";
+        loadClass["l1feat_max"] = "willpower, perception";
+        loadClass["l2feat_max"] = "choose(charm, fortitude, lore, medicine)";
+        loadClass["l3feat_max"] = "willpower";
+        loadClass["l4feat_max"] = "choose(any)";
+        loadClass["l5feat_max"] = "willpower";
+        loadClass["l6feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
+        loadClass["l7feat_max"] = "willpower";
+        loadClass["l8feat_max"] = "choose(any)";
+        loadClass["l9feat_max"] = "willpower";
+        loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
+        classData["cleric"] = JSON.parse(JSON.stringify(loadClass));
+        
+        getAttrs(levelUpData, function(values) {
+            if(values["l1feat"]==undefined) {
+                console.log("---=== NEW CHARACTER DETECTED ===---");
+                if(values["class"]==undefined) {
+                    console.log("---=== NO CLASS CHOSEN ===---");
+                } else {
+                    setAttrs(classData[values["class"]]);
+                }
+            }
+        });
+    }
+    
+    function setupClass() {
+        getAttrs(["class", "class_max", "level"], function(values) {
+            let level = values["level"];
+            if(level == undefined || level == 0) {
+                newClass = values["class"];
+                console.log("WARNING! Changing class to " + newClass);
+                setAttrs(classData[newClass]);
+            } else if(values["class"] != values["class_max"]) { 
+                // undo the change
+                console.log("WARNING! Changing class back to " + values["class_max"]);
+                //setAttrs({ "class": values["class_max"] });
+            }
+        });
+        validate();
+    }
+    
+    const levelUpData = ["class", "level", 
                         "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
                         "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
     function validate() {
+        getAttrs(["character_name"], function(values) {
+            console.log("---=== validating " + values["character_name"] + " ===---");
+        });
         getAttrs(levelUpData, function(values) {
+            if(values["l1feat"] == undefined) {
+                console.log("UNINITIALIZED CHARACTER! Aborting validation.");
+                return;
+            }
             let level = values["level"];
             let powerMax = Math.floor(level/3+.667);
-            console.log("level " + level + " (" + powerMax + "hd)");
+            console.log("level " + level + " " + values["class"] + " (" + powerMax + "hd)");
 
             let power = "";
             let feats = values["l1feat"];
@@ -969,6 +1187,10 @@
       }
       console.log("updating " + save + "("+mod+")");
       getAttrs([save, mod], function(values) {
+        if(values[save] == undefined || values[mod] == undefined) {
+            console.log("--Uninitialized! Aborting...");
+        }
+        
         let prof = values[save];
         let val = 10+1*values[mod];
         val += die2dv(prof);
@@ -981,18 +1203,19 @@
   console.log("updating " + ability ); 
   getAttrs([ability,"race_max"], function(values) {
     let raceMods = values["race_max"];
-    let av = values[ability];
-    if(av == "") {
-      av = rollAbility(ability);
-      setAttrs({ [ability]: av });
+    let score = values[ability];
+    if(score == undefined) {
+      score = rollAbility(ability);
+      console.log("rolling " + ability + " (3d6): " + score);
+      setAttrs({ [ability]: score });
     }
     let modname = ability.substring(0,3);
-    let mod = a2mod(av);
+    let mod = a2mod(score);
     if(String(raceMods).toLowerCase().includes(String(modname).toLowerCase())) {
       mod++;
       if(mod >= 0) mod = "+" + mod; 
     }
-    console.log("  " + ability + " (" + av + ") => " + modname + " (" + mod + ")");
+    console.log("  " + ability + " (" + score + ") => " + modname + " (" + mod + ")");
     setAttrs({ [modname]: mod });
     updatedv(mod2save(modname));
   });
