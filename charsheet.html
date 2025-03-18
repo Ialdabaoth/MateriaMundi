@@ -6,7 +6,18 @@
     </div>
     <div class="f-row nowrap">
       <label class="header-label" data-i18n="race">Race:</label>
-      <span><input name="attr_race" class="character-race"></span>
+      <span><select name="attr_race" class="character-race">
+          <option data-i18n="human" value="human">Human</option>
+          <option data-i18n="dwarf" value="dwarf">Dwarf</option>
+          <option data-i18n="elf" value="elf">Elf</option>
+          <option data-i18n="halfling" value="halfling">Halfling</option>
+          <option data-i18n="goblin" value="goblin">Goblin</option>
+          <option data-i18n="lizardfolk" value="lizardfolk">Lizardfolk</option>
+          <option data-i18n="hen-ge" value="hen-ge">Hen-ge</option>
+          <option data-i18n="satyr" value="satyr">Satyr</option>
+          <option data-i18n="centaur" value="centaur">Centaur</option>
+          <option data-i18n="genasi" value="genasi">Genasi</option>
+      </select></span>
       <label class="header-label" data-i18n="bonuses">Bonuses:</label>
       <span><input name="attr_race_max" class="character-race"></span>
     </div>
@@ -18,7 +29,7 @@
   <section class="level f-row nowrap">
     <span>
       <input type="hidden" name="attr_level" class="character-level" >
-      <select name="attr_class" class="character-class chooser">
+      <select name="attr_class" class="character-class">
         <option data-i18n="knight" value="knight">Knight</option>
         <option data-i18n="martial-artist" value="martial-artist">Martial Artist</option>
         <option data-i18n="berserker" value="berserker">Berserker</option>
@@ -29,17 +40,7 @@
         <option data-i18n="cleric" value="cleric">Cleric</option>
         <option data-i18n="druid" value="druid">Druid</option>
       </select>
-      <select name="attr_class" class="character-class viewer" readonly>
-        <option data-i18n="knight" value="knight">Knight</option>
-        <option data-i18n="martial-artist" value="martial-artist">Martial Artist</option>
-        <option data-i18n="berserker" value="berserker">Berserker</option>
-        <option data-i18n="thief" value="thief">Thief</option>
-        <option data-i18n="alchemist" value="alchemist">Alchemist</option>
-        <option data-i18n="bard" value="bard">Bard</option>
-        <option data-i18n="wizard" value="wizard">Wizard</option>
-        <option data-i18n="cleric" value="cleric">Cleric</option>
-        <option data-i18n="druid" value="druid">Druid</option>
-      </select>
+      <span class="character-class" name="attr_class" data-i18n-dynamic></span>
     </span>
     <span>
       <select name="attr_level" class="character-level">
@@ -836,6 +837,7 @@
     skills.forEach(skill => { on(`clicked:train-${skill}`, function() { train(skill); }); });
 
     on("change:character_name", function(eventInfo) { setupActions(); });
+    on("change:race", function(eventInfo) { setupRace(); });
     on("change:class", function(eventInfo) { setupClass(); });
     on("change:level", function(eventInfo) { validate(); });
     
@@ -847,9 +849,66 @@
       setupActions();
     });
  
+    var raceTable = [];
+    var raceTable2 = [];
+    var raceData = {};
     var classData = {};
     function initialize() {
-        console.log("---=== initializing class data ===---");
+        console.log("---=== initializing race and class data ===---");
+        raceData["human"] = "none";
+        raceData["dwarf"] = "Con, Str";
+        raceData["elf"] = "Dex, Wis";
+        raceData["halfling"] = "Dex, Cha";
+        raceData["hen-ge"] = "none";
+        raceData["goblin"] = "Dex, Con";
+        raceData["lizardfolk"] = "Dex, Str";
+        raceData["centaur"] = "Str, Wis";
+        raceData["satyr"] = "Cha, Wis";
+        raceData["genasi"] = "Con, Wis";
+
+        raceTable[1] = "human";
+        raceTable[2] = "human";
+        raceTable[3] = "human";
+        raceTable[4] = "human";
+        raceTable[5] = "human";
+        raceTable[6] = "human";
+        raceTable[7] = "human";
+        raceTable[8] = "human";
+        raceTable[9] = "human";
+        raceTable[10] = "human";
+        raceTable[11] = "dwarf";
+        raceTable[12] = "dwarf";
+        raceTable[13] = "dwarf";
+        raceTable[14] = "dwarf";
+        raceTable[15] = "elf";
+        raceTable[16] = "elf";
+        raceTable[17] = "elf";
+        raceTable[18] = "halfling";
+        raceTable[19] = "halfling";
+        raceTable[20] = "*";
+        
+        raceTable2[1] = "goblin";
+        raceTable2[2] = "goblin";
+        raceTable2[3] = "goblin";
+        raceTable2[4] = "goblin";
+        raceTable2[5] = "goblin";
+        raceTable2[6] = "lizardfolk";
+        raceTable2[7] = "lizardfolk";
+        raceTable2[8] = "lizardfolk";
+        raceTable2[9] = "genasi";
+        raceTable2[10] = "genasi";
+        raceTable2[11] = "genasi";
+        raceTable2[12] = "hen-ge";
+        raceTable2[13] = "hen-ge";
+        raceTable2[14] = "hen-ge";
+        raceTable2[15] = "satyr";
+        raceTable2[16] = "satyr";
+        raceTable2[17] = "satyr";
+        raceTable2[18] = "centaur";
+        raceTable2[19] = "centaur";
+        raceTable2[20] = "centaur";
+        
+        
         var loadClass = {};
         loadClass["class_max"] = "knight";
         loadClass["hd1"] = "d10";
@@ -1015,6 +1074,7 @@
         loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
         classData["cleric"] = JSON.parse(JSON.stringify(loadClass));
         
+        
         getAttrs(levelUpData, function(values) {
             if(values["l1feat"]==undefined) {
                 console.log("---=== NEW CHARACTER DETECTED ===---");
@@ -1025,6 +1085,13 @@
                 }
             }
         });
+    }
+    
+    function setupRace() {
+        getAttrs(["race"], function(values) {
+            setAttrs({ "race_max": raceData[values["race"]] });
+        });
+        validate();
     }
     
     function setupClass() {
