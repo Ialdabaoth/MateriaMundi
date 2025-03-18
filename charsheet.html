@@ -134,11 +134,18 @@
        value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
       </button --><input type="text" name="attr_initiative" class="bigbox"><!-- class="proficiency-die" -->
     </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <label class="armor-defense" data-i18n="defense">Defense</label>
       <input name="attr_armor" type="text" class="armor">      
       <label class="dv-big"><span name="attr_defense"></span></label>
     </div>
+    <hr class="space">
+    <div class="f-row nowrap">
+      <label class="damage" data-i18n="resistances">Resistances:</label>
+      <input name="attr_resistances" type="text" class="resistances">
+    </div>
+    <hr class="line">
     <div class="f-row nowrap">
       <label class="action" data-i18n="last-action">Last Action:</label>
       <label class="action"><span="attr_lastaction"></span></label>
