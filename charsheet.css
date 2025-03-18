@@ -18,13 +18,13 @@ div.ui-dialog.charsheet {
   width:  1024px;
   height: 750px;
   grid-gap: 0px;
-  grid-template-columns: 204px 204px 204px 204px 204px;
+  grid-template-columns: 204px 102px 102px 204px 204px 204px;
   grid-template-rows: 70px 180px 180px 300px 20px;
-  grid-template-areas:"hdr hdr bld lvl lvl"
-                      "str dex con act act"
-                      "int wis cha act act"
-                      "inv eqp eqp fea fea"
-                      "ftr ftr ftr ftr ftr";
+  grid-template-areas:"hdr hdr hdr bld lvl lvl"
+                      "str dex dex con act act"
+                      "int wis wis cha act act"
+                      "eqp eqp fea fea act act"
+                      "ftr ftr ftr ftr ftr ftr";
  }
  .charsheet .character-class {
   width: 340px;
@@ -32,16 +32,19 @@ div.ui-dialog.charsheet {
  .charsheet .list-first,
  .charsheet .list-middle,
  .charsheet .list-last{
-  width: 300px;
+  width: 225px;
   font-size: 13px;
  }
  .charsheet input.damage,
  .charsheet input.resistances{
-   width: 300px;
+   width: 360px;
  }
  .charsheet input.armor{
     width: 225px;
  } 
+  .inventory {
+     display: none;
+ }
 
 @media only screen and (max-width: 1025px) {
  main {
@@ -69,7 +72,7 @@ div.ui-dialog.charsheet {
  }
  .charsheet input.damage,
  .charsheet input.resistances{
-   width: 225px;
+   width: 250px;
  }
  .charsheet input.armor{
     width: 175px;
