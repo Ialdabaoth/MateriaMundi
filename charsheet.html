@@ -19,7 +19,7 @@
           <option data-i18n="genasi" value="genasi">Genasi</option>
       </select></span>
       <label class="header-label" data-i18n="bonuses">Bonuses:</label>
-      <span><input name="attr_race_max" class="character-race"></span>
+      <span><input name="attr_race_max" type="text" class="character-race"></span>
     </div>
   </section>
 
@@ -64,7 +64,7 @@
    <div class="f-row nowrap show-power">
       <label class="ability"><span name="attr_powername" data-i18n-dynamic ></span></label>
       <span class="blockbox">
-        <input class="bigbox" name="attr_power">
+        <input class="bigbox" type="text" name="attr_power">
         <span style="font-size: 18px; font-style: bold;"><b>/</b></span>
         <input class="bigbox" readonly name="attr_power_max"></span>
    </div>    
@@ -129,9 +129,10 @@
    <div class="panel-fight">
     <div class="f-row nowrap">
       <label class="initiative" data-i18n="initiative">Initiative</label>
-      <button class="proficiency" type="roll" name="roll_initiative" 
+      
+      <!-- button class="proficiency" type="roll" name="roll_initiative" 
        value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
-      </button><input name="attr_initiative" class="proficiency-die">
+      </button --><input type="text" name="attr_initiative" class="bigbox"><!-- class="proficiency-die" -->
     </div>
     <div class="f-row nowrap">
       <label class="armor-defense" data-i18n="defense">Defense</label>
@@ -164,12 +165,12 @@
         <div>
           <div class="f-row nowrap">
             <input name="attr_activeweapon" type="radio" value="@{attack1_action}">
-            <input name="attr_weapon1" class="weapon">
-            <input name="attr_accuracy1" class="weapon-accuracy">
+            <input name="attr_weapon1" type="text" class="weapon">
+            <input name="attr_accuracy1" type="text" class="weapon-accuracy">
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-              <label class="damage" data-i18n="damage">Damage:</label><input name="attr_damage1" class="damage"><button class="damage" type="roll" name="roll_damage1" 
+              <label class="damage" data-i18n="damage">Damage:</label><input name="attr_damage1" type="text" class="damage"><button class="damage" type="roll" name="roll_damage1" 
     	         value="&{template:rolls} {{subtitle=Damage: @{weapon1}}} {{title=@{character_name} }} {{roll= [[@{damage1}[damage] ]]}}">
               </button>
           </div>
@@ -178,12 +179,12 @@
         <div>
           <div class="f-row nowrap">
             <input name="attr_activeweapon" type="radio" value="@{attack2_action}">
-            <input name="attr_weapon2" class="weapon">
-            <input name="attr_accuracy2" class="weapon-accuracy">
+            <input name="attr_weapon2" type="text" class="weapon">
+            <input name="attr_accuracy2" type="text" class="weapon-accuracy">
           </div>
           <hr class="space">
           <div class="f-row nowrap">
-              <label class="damage" data-i18n="damage">Damage:</label><input name="attr_damage2" class="damage"><button class="damage" type="roll" name="roll_damage2" 
+              <label class="damage" data-i18n="damage">Damage:</label><input name="attr_damage2" type="text" class="damage"><button class="damage" type="roll" name="roll_damage2" 
   	           value="&{template:rolls} {{subtitle=Damage: @{weapon2}}} {{title=@{character_name} }} {{roll= [[@{damage2}[damage] ]]}}">
               </button>
           </div>
@@ -413,11 +414,11 @@
     <hr class="line">
     <div class="f-row nowrap">
       <label class="action nowrap"><span data-i18n="hit-points">Hit Points</span>:</label>
-      <label class="action nowrap f-right"><input name="attr_temp-hitpoints" class="hp alt">+<input name="attr_hitpoints" class="hp">/<input name="attr_hitpoints_max" readonly class="hp"></label>      
+      <label class="action nowrap f-right"><input name="attr_temp-hitpoints" type="text" class="hp alt">+<input name="attr_hitpoints" type="text" class="hp">/<input name="attr_hitpoints_max" readonly class="hp"></label>      
     </div>
     <div class="f-row nowrap">
       <label class="action nowrap"><span data-i18n="fatigue">Fatigue</span>+<span data-i18n="wounds">Wounds</span>:</label>
-      <label class="action nowrap f-right"><input name="attr_fatigue" class="wounds alt">+<input name="attr_wounds" class="wounds"></label>      
+      <label class="action nowrap f-right"><input name="attr_fatigue" type="text" class="wounds alt">+<input name="attr_wounds" type="text" class="wounds"></label>      
     </div>
   </section>
 
@@ -672,40 +673,40 @@
     <h3><span data-i18n="equipment">Equipment</span></h3>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="armor">Armor</label>
-      <span class="flush"><input name="attr_eqarmor" class="list-first"></span>
+      <span class="flush"><input name="attr_eqarmor" type="text" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="r-hand">R Hand</label>
-      <span class="flush"><input name="attr_eqhand1" class="list-middle"></span>
+      <span class="flush"><input name="attr_eqhand1" type="text" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="l-hand">L Hand</label>
-      <span class="flush"><input name="attr_eqhand2" class="list-last"></span>
+      <span class="flush"><input name="attr_eqhand2" type="text" class="list-last"></span>
     </div>
     <hr class="line">
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="crown">Crown</label>
-      <span class="flush"><input name="attr_eqcrown" class="list-first"></span>
+      <span class="flush"><input name="attr_eqcrown" type="text" class="list-first"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="amulet">Amulet</label>
-      <span class="flush"><input name="attr_eqamulet" class="list-middle"></span>
+      <span class="flush"><input name="attr_eqamulet" type="text" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush"><span data-i18n="ring">Ring</span> <span style="font-size: 67%;">(R)</span></label>
-      <span class="flush"><input name="attr_eqring1" class="list-middle"></span>
+      <span class="flush"><input name="attr_eqring1" type="text" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush"><span data-i18n="ring">Ring</span> <span style="font-size: 67%;">(L)</span></label>
-      <span class="flush"><input name="attr_eqring2" class="list-middle"></span>
+      <span class="flush"><input name="attr_eqring2" type="text" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="belt">Belt</label>
-      <span class="flush"><input name="attr_eqbelt" class="list-middle"></span>
+      <span class="flush"><input name="attr_eqbelt" type="text" class="list-middle"></span>
     </div>
     <div class="f-row nowrap flush">
       <label class="action flush" data-i18n="boots">Boots</label>
-      <span class="flush"><input name="attr_eqboots" class="list-last"></span>
+      <span class="flush"><input name="attr_eqboots" type="text" class="list-last"></span>
     </div>
   </section>
 
@@ -1314,7 +1315,7 @@
                 if(skillList > "") skillList += ", ";
                 if( splitArray[i].includes("any") || splitArray[i].includes(skill) ) { 
                   skillList += skill;
-                  for(i++; i < splitArray.length; i++) { // only replace the first one
+                  for(i++; i < splitArray.length; i++) { // only replace the first matching choice that we find
                     skillList += "choose(" + splitArray[i];  
                   }
                 } else { 
@@ -1324,6 +1325,7 @@
               console.log("   (replaces level " + level + " choice: ["+values["l"+level+"feat_max"]+"] -> ["+skillList+"])");
               setAttrs({ ["l"+level+"feat_max"]: skillList });
               validate();
+              return; // only replace the first matching choice level that we find
             }
           }
         });
