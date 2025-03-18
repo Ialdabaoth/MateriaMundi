@@ -1,19 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 
+
+/*----------------- Main Layout ------------------*/
+/* get rid of padding */
 div.dialog.largedialog.characterviewer,
-div.ui-dialog.charsheet { /* get rid of padding */
+div.ui-dialog.charsheet { 
     padding-left: 0px;
-    margin-left: 0px;
     padding-right: 0px;
+    margin-left: 0px;
     margin-right: 0px;
 }
 
-/*----------------- Main Layout ------------------*/
+/* responsive grid layouts */
 
-/* A CSS Grid example using "grid-template-areas"
-  https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas
-*/
-main {
+ main {
+  display: grid;
+  width:  1024px;
+  height: 750px;
+  grid-gap: 0px;
+  grid-template-columns: 204px 204px 204px 204px 204px;
+  grid-template-rows: 70px 180px 180px 300px 20px;
+  grid-template-areas:"hdr hdr bld lvl lvl"
+                      "str dex con act act"
+                      "int wis cha act act"
+                      "inv eqp eqp fea fea"
+                      "ftr ftr ftr ftr ftr";
+ }
+ .charsheet select.character-class {
+  width: 340px;
+ }
+ .charsheet .list-first,
+ .charsheet .list-middle,
+ .charsheet .list-last{
+  width: 300px;
+  font-size: 13px;
+ }
+ .charsheet input.damage{
+   width: 300px;
+ }
+ .charsheet input.armor{
+    width: 225px;
+ } 
+
+@media only screen and (max-width: 1025px) {
+ main {
   display: grid;
   width:  720px;
   height: 900px;
@@ -25,24 +55,27 @@ main {
                       "dex wis act"
                       "con cha act"
                       "eqp eqp fea"
-                      "ftr ftr ftr";
-}
-.charsheet select.character-class {
+                      "bld ftr ftr";
+ }
+ .charsheet select.character-class {
   width: 250px;
-}
-.charsheet .list-first,
-.charsheet .list-middle,
-.charsheet .list-last{
+ }
+ .charsheet .list-first,
+ .charsheet .list-middle,
+ .charsheet .list-last{
   width: 240px;
   font-size: 13px;
-}
-.charsheet input.damage{
+ }
+ .charsheet input.damage{
    width: 225px;
-}
-.charsheet input.armor{
-   width: 175px;
-}
-@media only screen and (max-width: 725px) {
+ }
+ .charsheet input.armor{
+    width: 175px;
+ }
+  .inventory {
+     display: none;
+ }
+} @media only screen and (max-width: 725px) {
  main {
   display: grid;
   width:  450px;
@@ -50,7 +83,7 @@ main {
   grid-gap: 0px;
   grid-template-columns: 200px 250px;
   grid-template-rows: 70px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px;
-  grid-template-areas:"lvl lvl"
+  grid-template-areas:"bld lvl"
                       "str act"
                       "str act"
                       "str act"
@@ -74,7 +107,7 @@ main {
      
  }
  .charsheet select.character-class {
-  width: 380px;
+  width: 180px;
  }
  .charsheet .list-first,
  .charsheet .list-middle,
@@ -88,12 +121,10 @@ main {
  .charsheet input.armor{
    width: 120px;
  }
- .head {
+ .header, .inventory {
      display: none;
  }
-}
-
-@media only screen and (max-width: 455px) {
+} @media only screen and (max-width: 455px) {
  main {
   display: grid;
   width:  250px;
@@ -130,54 +161,38 @@ main {
  .charsheet input.armor{
    width: 120px;
  }
- .head {
+ .header, .builder, .inventory {
      display: none;
  }
 }
 /*----------------- GENERAL CSS ------------------*/
 :root {
-  --header: #e0c0a0;
-  --page: #fff0e0; 
-  --separator: #c0a080;
-  --border: black; 
-  --input: white;
-  --text: black;
+  --border-color: black; 
+  --text-color: black;
   --alt-color: teal;
   --save-color: blue;
   --skill-color: green;
   --attack-color: red;
   --disabled-color: gray;
+  --separator-color: #c0a080;
+  
+  --header-bg: #e0c0a0;
+  --page-bg: #fff0e0; 
+  --input-bg: white;
   --alt-bg: #e0faff;
   --save-bg: #e0f0ff;
   --skill-bg: #e0fff0;
   --attack-bg: #ffe0f0;
   --disabled-bg: #c0c0c0;
+  
   --font-text: "Libre Baskerville";
   --font-number: "Arial";
-}
-
-.charsheet * {
-  font-family: var(--font-text);
-}
-
-.charsheet button[type="roll"] {
-  display: inline-block;
-  /*all: initial;*/
-}
-
-.charsheet select {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 section {
     padding: 5px;
     border-style: solid; 
 }
-
 
 /* CSS Flexbox styling, used for adjusting how content inside section behaves */
 .f-col {
@@ -217,108 +232,66 @@ section {
 
 /*------------- Section-specific CSS -------------*/
 
-.head {
+.charsheet .header {
   grid-area: hdr;
-  background-color: var(--header);
-  border-top: 2px solid var(--border);
-  border-bottom: 2px solid var(--border);
+  background-color: var(--header-bg);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   border-left: 0px transparent;
   border-right: 0px transparent;
 }
 
-.builder {
+.charsheet .builder {
   grid-area: bld;
-  background-color: var(--header);
-  border-top: 2px solid var(--border);
-  border-bottom: 2px solid var(--border);
+  background-color: var(--header-bg);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   border-left: 0px transparent;
   border-right: 0px transparent;
-  display: none;
 }
 
-.level {
+.charsheet .level {
   grid-area: lvl;
   flex-direction: row;
   white-space: pre nowrap;
-  background-color: var(--header);
+  background-color: var(--header-bg);
   border-top-right-radius: 50px;
-  border-top: 2px solid var(--border);
-  border-bottom: 2px solid var(--border);
-  border-right: 2px solid var(--border);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
   border-left: 0px transparent;
 }
 
-.actions {
-  grid-area: act;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
+.charsheet .str, 
+.charsheet .dex, 
+.charsheet .con, 
+.charsheet .int, 
+.charsheet .wis, 
+.charsheet .cha,
+.charsheet .actions, 
+.charsheet .feats, 
+.charsheet .equipment, 
+.charsheet .inventory {
+  background-color: var(--page-bg);
+  border: 1px solid var(--separator-color);
 }
 
-.str {
-  grid-area: str;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-.dex {
-  grid-area: dex;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-.con {
-  grid-area: con;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-.int {
-  grid-area: int;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-.wis {
-  grid-area: wis;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-.cha {
-  grid-area: cha;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
+.str { grid-area: str; }
+.dex { grid-area: dex; }
+.con { grid-area: con; }
+.int { grid-area: int; }
+.wis { grid-area: wis; }
+.cha { grid-area: cha; }
+.actions { grid-area: act; }
+.equipment { grid-area: eqp; }
+.inventory { grid-area: inv; }
+.feats { grid-area: fea; }
+footer { grid-area: ftr;
+  background-color: var(--header-bg);
+  border: 2px solid var(--border-color);
 }
 
-.feats {
-  grid-area: fea;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-
-.power .repcontainer[data-groupname="repeating_power"]{
-  padding-bottom: 0.2em;
-}
-
-.power .repcontainer[data-groupname="repeating_power"] .repitem{
-  margin: 4px 0px;
-}
-
-.equipment {
-  grid-area: eqp;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-}
-
-.inventory {
-  grid-area: inv;
-  background-color: var(--page);
-  border: 1px solid var(--separator);
-  display: none;
-}
-
-footer {
-  grid-area: ftr;
-  background-color: var(--header);
-  border: 2px solid var(--border);
-}
-
-/*--------------------- Tabbed Panels --------------------*/
+/*--------------------- tabbed panels and other dynamic elements --------------------*/
 .charsheet div.actionPanel {
   margin: 0px;
   padding: 0px;
@@ -337,7 +310,7 @@ footer {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-bottom: 1px solid var(--separator);
+  border-bottom: 1px solid var(--separator-color);
   z-index: 1;
 }
 
@@ -359,15 +332,15 @@ footer {
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: -1px;
-  color: var(--text);
+  color: var(--text-color);
   font-size: 12px;
-  background-color: var(--page);
+  background-color: var(--page-bg);
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator);
-  border-left: 2px solid var(--separator);
-  border-right: 2px solid var(--separator);
-  border-bottom: 0px solid var(--page);
+  border-top: 2px solid var(--separator-color);
+  border-left: 2px solid var(--separator-color);
+  border-right: 2px solid var(--separator-color);
+  border-bottom: 0px solid var(--page-bg);
   z-index: 2;
 }
 .charsheet button.tab-travel,
@@ -403,13 +376,13 @@ footer {
 .charsheet .situation-toggle:not([value="explore"]) ~ div .panel-explore,
 .charsheet .situation-toggle:not([value="fight"]) ~ div .panel-fight, 
 .charsheet .situation-toggle:not([value="journal"]) ~ div .panel-journal{
-    display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
+    display: none !important;
 }
 .charsheet .situation-toggle[value="travel"] ~ div button.tab-travel,
 .charsheet .situation-toggle[value="explore"] ~ div button.tab-explore,
 .charsheet .situation-toggle[value="fight"] ~ div button.tab-fight,
 .charsheet .situation-toggle[value="journal"] ~ div button.tab-journal{
-  border-bottom: 3px solid var(--page);
+  border-bottom: 3px solid var(--page-bg);
 }
 
 .charsheet input.action-toggle { display: none; }
@@ -418,17 +391,23 @@ footer {
 .charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
 .charsheet .action-toggle:not([value="react"]) ~ div .panel-react,
 .charsheet .action-toggle:not([value="feat"]) ~ div .panel-feat{
-    display: none !important; /* We usually want to avoid !important, but when we are making something that is meant to override all other behavior it is very useful */
+    display: none !important; 
 }
 .charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
 .charsheet .action-toggle[value="move"] ~ div button.tab-move,
 .charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
 .charsheet .action-toggle[value="react"] ~ div button.tab-react,
 .charsheet .action-toggle[value="feat"] ~ div button.tab-feat{
-  border-bottom: 3px solid var(--page);
+  border-bottom: 3px solid var(--page-bg);
 }
 
 /*--------------------- Level-Specific Elements --------------------*/
+.charsheet input.power-max { display: none; }
+.charsheet input.power-max[value="0"] ~ div.show-power,
+.charsheet input.power-max[value="0"] ~ div .show-power{
+  display: none !important;    
+}
+
 .charsheet input.character-level { display: none; }
 .charsheet input.character-level[value="1"] ~ div .show-l2,
 .charsheet input.character-level[value="1"] ~ div .show-l3,
@@ -526,26 +505,29 @@ footer {
   background-color: var(--disabled-bg);
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-/*----------------- Text & Input styling -----------------*/
+/*----------------- text & input styling -----------------*/
 
-/* these are for overwriting default CSS that comes from Roll20 */
+/* remove the arrow at the end of select boxes */
+.charsheet select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 .charsheet h3 {
   text-align: center;
+  font-family: var(--font-text);
 }
-
 .charsheet hr.space {
   width: 95%;
   height: 1px;
   margin: 1px;
   padding: 1px;
   border: 1px transparent;
-  background-color: var(--page);
+  background-color: var(--page-bg);
 }
-
 .charsheet hr.line {
   width: 100%;
   height: 1px;
@@ -553,28 +535,33 @@ footer {
   margin-bottom: 2px;
   margin-left: 0px;
   margin-right: 0px;
-  border-top: 1px dotted var(--separator);
-  background-color: var(--page);
+  border-top: 1px dotted var(--separator-color);
+  background-color: var(--page-bg);
 }
 
+/* header input and display elements */
 .charsheet input.character-name {
   text-align: left;
   margin: 1px 1px;
   width: 320px;
   height: 25px;
+  font-family: var(--font-text);
+  font-weight: bold;
   font-size: 16px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
 }
 .charsheet input.character-race {
   text-align: center;
   margin: 1px 1px;
   width: 120px;
   height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+  font-family: var(--font-text);
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
 }
 
 .charsheet select.character-class {
@@ -583,13 +570,13 @@ footer {
   padding: 1px;
   height: 50px;
   line-height: 32px;
-  color: var(--text);
-  font-style: bold;
+  color: var(--text-color);
+  font-family: var(--font-text);
+  font-weight: bold;
   font-size: 24px;
-  background-color: var(--input);
-  border: 3px solid var(--border);
+  background-color: var(--input-bg);
+  border: 3px solid var(--border-color);
 }
-
 .charsheet select.character-level {
   text-align: center;
   padding: 1px;
@@ -599,62 +586,62 @@ footer {
   height: 50px;
   line-height: 48px;
   font-family: var(--font-number);
-  font-style: bold;
+  font-weight: bold;
   font-size: 30px;
-  color: var(--text);
-  background-color: var(--input);
+  color: var(--text-color);
+  background-color: var(--input-bg);
   border-top-right-radius: 75%;
-  border: 3px solid var(--border);
+  border: 3px solid var(--border-color);
 }
 
+/* main sheet input and display elements */
+/* a 'rollbox' is a roll button next to a label or select box indicating the die size */
 .charsheet span.rollbox {
   display: inline-flex;
   flex-wrap: nowrap;
   white-space: nowrap;
   height: 25px;
-}
-.charsheet button[type="roll"].proficiency {
+} .charsheet button[type="roll"].proficiency {
   margin: 0px;
   padding: 0px;
   width: 20px;
-  height: auto; /*  should be 25px, no idea why it doesn't line up with input.skill's height */
-  border: 2px solid var(--border);
-  background: var(--header);
-
+  height: auto; 
+  border: 2px solid var(--border-color);
+  background: var(--header-bg);
   border-right: 0px;    
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-}
-.charsheet button[type="roll"].skill {
+} .charsheet button[type="roll"].skill {
   border: 2px solid var(--skill-color);
   border-right: 0px;    
   background: var(--skill-bg);
-}
-.charsheet button[type="roll"].save {
+} .charsheet button[type="roll"].save {
   border: 2px solid var(--save-color);
   border-right: 0px;    
   background: var(--save-bg);
-}
-.charsheet button[type="roll"].attack {
+} .charsheet button[type="roll"].attack {
   border: 2px solid var(--attack-color);
   border-right: 0px;    
   background: var(--attack-bg);
-}
-.charsheet input.proficiency, select.proficiency {
+} .charsheet .proficiency-die {
   text-align: center;
+  vertical-align: middle;
+  line-height: auto;
+  vertical-align: middle;
   margin: 0px;
-  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 30px;
   height: auto;
   font-family: var(--font-number);
-  font-style: bold;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 15px;
   
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
 
   border-left: 1px solid var(--border);    
   border-top-left-radius: 0px;
@@ -663,16 +650,69 @@ footer {
   border-bottom-right-radius: 5px;
 }
 
-.charsheet input.armor {
+.charsheet label.initiative,
+.charsheet label.armor-defense {
+  vertical-align: middle;
+  font-family: var(--font-text);
+  font-size: 15px;
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
+} .charsheet input.armor {
   text-align: center;
+  vertical-align: middle;
   margin: 1px 1px;
   height: 25px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+} .charsheet .dv-big {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  width: 35px;
+  height: 20px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 16px;
+  color: var(--text-color);
+  padding: 0px 2px;
+  background-color: var(--input-bg);
+  border-top-left-radius: 50% 15%;
+  border-top-right-radius: 50% 15%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 3px solid var(--save-color);
+  background-color: var(--save-bg);
 }
 
-.charsheet button[type="roll"].damage {
+.charsheet label.damage {
+  font-family: var(--font-text);
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
+} .charsheet input.damage {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 14px;
+  
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+
+  border-right: 1px solid var(--border-color);    
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+} .charsheet button[type="roll"].damage {
   margin: 0px;
   padding: 0px;
   width: 20px;
@@ -686,60 +726,66 @@ footer {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.charsheet input.damage {
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  height: 20px;
-  font-family: var(--font-number);
-  font-style: bold;
-  font-size: 14px;
-  
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
 
-  border-right: 1px solid var(--border);    
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-
-.charsheet label {
-  margin: 3px;
-  padding: 3px 0 0 0;
-  color: var(--text); 
-}
 .charsheet label.ability {
   font-family: var(--font-text);
   font-size: 18px;
   font-style: bold;
-  color: var(--text); 
-}
-.charsheet label.mod {
-  font-size: 18px;
-  color: var(--text); 
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
 }
 .charsheet label.save {
   font-family: var(--font-text);
   font-size: 16px;
   font-style: italic;
-  color: var(--text); 
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
 }
+
 .charsheet label.skill,
 .charsheet label.proficiency{
   font-family: var(--font-text);
   font-size: 15px;
-  color: var(--text); 
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
+} .charsheet .skill-trainingbox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  border: 0px transparent;
+} .charsheet button[type="action"].train-skill {
+  text-align: center;
+  vertical-align: middle;
+  height: 12px !important;
+  width: 12px !important;
+  line-height: 12px;
+  font-family: var(--font-number);
+  font-weight: bold;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 3px;
+  border: 2px solid var(--skill-color);
+  background: var(--skill-bg);
+} .charsheet .hidden {
+    display: none;
 }
 
+.charsheet label.header-label,
+.charsheet label.attacks,
 .charsheet label.action {
   word-wrap: break-word;
   font-family: var(--font-text);
   font-size: 13px;
-  color: var(--text); 
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
 }
+
 .charsheet label.description {
   flex-wrap: wrap;
   white-space: wrap;
@@ -747,137 +793,84 @@ footer {
   font-family: var(--font-text);
   font-size: 12px;
   font-weight: normal;
-  color: var(--text); 
-}
-.charsheet label.attack {
-  font-family: var(--font-text);
-  font-size: 18px;
-  font-style: bold;
-  color: var(--text); 
-}
-.charsheet label.damage {
-  font-family: var(--font-text);
-  text-align: right;
-  font-size: 13px;
-  color: var(--text); 
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;
 }
 
-.charsheet select.dropdown {
-  margin: 1px 1px;
-  height: 25px;
-  background-color: var(--input);
-  border: 1px solid var(--border);
-}
-
-
-.charsheet input[type="number"].ability {
-  text-align: center;
-  margin: 1px 1px;
-  width: 50px;
-  height: 30px;
-  font-family: var(--font-number);
-  font-style: bold;
-  font-size: 18px;
-  color: var(--text);
-  padding: 0px 3px;
-  background-color: var(--input);
-  border-radius: 5px;
-  border-bottom-right-radius: 10px;
-  border: 3px solid var(--border);
-}
-.charsheet select.ability {
+/* elements that need to look the same whether they're a label, input, select, or div */
+.charsheet .ability-score {
+  display: inline-block;
   text-align: center;
   margin: 1px 1px;
   width: 40px;
-  height: 30px;
+  height: auto;
   font-family: var(--font-number);
   font-style: bold;
   font-size: 18px;
-  color: var(--text);
+  color: var(--text-color);
   padding: 0px 3px;
-  background-color: var(--input);
+  background-color: var(--input-bg);
   border-radius: 5px;
   border-bottom-right-radius: 10px;
-  border: 3px solid var(--border);
-}
-.charsheet input.bigbox {
+  border: 3px solid var(--border-color);
+} .charsheet .ability-mod {
+  -webkit-box-sizing: border-box ;
+  -moz-box-sizing: border-box ;
+  box-sizing: border-box;
+  display: inline-block;
   text-align: center;
   margin: 1px 1px;
-  width: 36px;
   height: 30px;
+  aspect-ratio : 1 / 1;
+  font-family: var(--font-number);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0px 2px;
+  border-radius: 50%;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
+}
+
+.charsheet span.blockbox {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  height: 30px;
+} .charsheet .bigbox {
+  display: inline-block;
+  text-align: center;
+  margin: 1px 1px;
+  width: 36px !important;
+  height: auto;
   font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
-  color: var(--text);
+  color: var(--text-color);
   padding: 0px 2px;
-  background-color: var(--input);
-  border-radius: 25%;
-  border: 3px solid var(--border);
+  background-color: var(--input-bg);
+  border-radius: 5px;
+  border: 3px solid var(--border-color);
 }
 
-.charsheet input.defense {
-  text-align: center;
-  margin: 1px 1px;
-  width: 30px;
-  height: 30px;
-  font-family: var(--font-number);
-  font-style: bold;
-  font-size: 14px;
-  color: var(--text);
-  padding: 0px 2px;
-  background-color: var(--input);
-  border-bottom-left-radius: 60%;
-  border-bottom-right-radius: 60%;
-  border: 3px solid var(--save-color);
-  background-color: var(--save-bg);
-}
-
-.charsheet input.dv {
+.charsheet .dv {
+  display: inline-block;
   text-align: center;
   margin: 2px 4px;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 20px;
   font-family: var(--font-number);
   font-style: bold;
   font-size: 14px;
-  color: var(--text);
+  color: var(--text-color);
   padding: 0px 2px;
-  border-top-left-radius: 10%;
-  border-top-right-radius: 10%;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
   border-bottom-left-radius: 60%;
   border-bottom-right-radius: 60%;
   border: 1px solid var(--save-color);
   background-color: var(--save-bg);
-}
-
-.charsheet input.mod {
-  text-align: center;
-  margin: 1px 1px;
-  width: 25px;
-  height: 25px;
-  font-family: var(--font-number);
-  font-style: bold;
-  font-size: 14px;
-  padding: 0px 2px;
-  border-radius: 50%;
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
-}
-
-.charsheet input.mod-lg {
-  text-align: center;
-  margin: 1px 1px;
-  width: 30px;
-  height: 30px;
-  font-family: var(--font-number);
-  font-style: bold;
-  font-size: 16px;
-  padding: 0px 2px;
-  border-radius: 50%;
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
 }
 
 .charsheet input.weapon {
@@ -886,128 +879,121 @@ footer {
   width: 100%;
   height: 25px;
   font-size: 16px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+} .charsheet .weapon-accuracy, .charsheet .weapon-parry {
+  -webkit-box-sizing: border-box ;
+  -moz-box-sizing: border-box ;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  margin: 1px 1px;
+  width: 25px;
+  height: 25px;
+  aspect-ratio : 1 / 1;
+  font-family: var(--font-number);
+  font-size: 14px;
+  padding: 0px 2px;
+  border-radius: 50%;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
 }
 
-.charsheet input.save {
+.charsheet input.hp {
   text-align: center;
   margin: 1px 1px;
   width: 30px;
-  height: 25px;
+  height: 18px;
   font-family: var(--font-number);
-  font-style: bold;
-  font-size: 14px;
-  padding: 0px 2px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
-  border-radius: 25%;
-}
-
-
-.charsheet input.hp {
+  font-size: 12px;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
+} .charsheet input.wounds {
   text-align: center;
   margin: 1px 1px;
   width: 25px;
   height: 18px;
   font-family: var(--font-number);
-  font-size: 12px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
-}
-.charsheet input.wounds {
-  text-align: center;
-  margin: 1px 1px;
-  width: 20px;
-  height: 18px;
-  font-family: var(--font-number);
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
-}
-.charsheet input.conditions {
-  text-align: center;
-  margin: 1px 1px;
-  width: 185px;
-  height: 21px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 2px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
 }
 
 .charsheet .list-first {
   text-align: center;
   margin-bottom: 0px;
   height: 25px;
-  color: var(--text);
+  color: var(--text-color);
   font-family: var(--font-text);
   font-weight: normal;
-  background-color: var(--input);
+  background-color: var(--input-bg);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
   border-bottom: 0px transparent;
 }
 .charsheet .list-middle {
   text-align: center;
+  vertical-align: middle;
   margin-top: 0px;
   margin-bottom: 0px;
   height: 25px;
   font-family: var(--font-text);
   font-weight: normal;
-  color: var(--text);
-  background-color: var(--input);
+  color: var(--text-color);
+  background-color: var(--input-bg);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   border-top: 1px dotted var(--disabled-color);
   border-bottom: 0px transparent;
 }
 .charsheet .list-last {
   text-align: center;
+  vertical-align: middle;
   margin-top: 0px;
   height: 25px;
-  color: var(--text);
+  color: var(--text-color);
   font-family: var(--font-text);
   font-weight: normal;
-  background-color: var(--input);
+  background-color: var(--input-bg);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   border-top: 1px dotted var(--disabled-color);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .charsheet textarea.inventory {
   text-align: left;
   margin: 1px 1px;
   font-size: 12px;
-  color: var(--text);
-  background-color: var(--input);
-  border: 1px solid var(--border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
 }
 
 .charsheet input.round[type="checkbox"] {
   width: 35px;
   height: 25px;
   padding: 5px;
-  background-color: var(--input);
+  background-color: var(--input-bg);
   border-radius: 50%;
-  border: 2px solid var(--border);
-  margin: 2px solid var(--input);
+  border: 2px solid var(--border-color);
+  margin: 2px solid var(--input-bg);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -1040,6 +1026,7 @@ footer {
   margin: 2px 4px;
   border-radius: 7px;
   border: 2px solid var(--attack-color);
+  background: var(--attack-bg);
 }
 
 .charsheet button.action {
@@ -1049,6 +1036,7 @@ footer {
   margin: 2px 4px;
   border-radius: 8px;
   border: 2px solid var(--skill-color);
+  background: var(--skill-bg);
 }
 
 
@@ -1059,7 +1047,7 @@ footer {
 
 .charsheet input[type="text"]{
   margin: 2px 4px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
 }
 
 .charsheet textarea {
