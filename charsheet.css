@@ -35,7 +35,8 @@ div.ui-dialog.charsheet {
   width: 300px;
   font-size: 13px;
  }
- .charsheet input.damage{
+ .charsheet input.damage,
+ .charsheet input.resistances{
    width: 300px;
  }
  .charsheet input.armor{
@@ -66,7 +67,8 @@ div.ui-dialog.charsheet {
   width: 240px;
   font-size: 13px;
  }
- .charsheet input.damage{
+ .charsheet input.damage,
+ .charsheet input.resistances{
    width: 225px;
  }
  .charsheet input.armor{
@@ -115,7 +117,8 @@ div.ui-dialog.charsheet {
   width: 180px;
   font-size: 11px;
  }
- .charsheet input.damage{
+ .charsheet input.damage,
+ .charsheet input.resistances{
    width: 150px;
  }
  .charsheet input.armor{
@@ -155,7 +158,8 @@ div.ui-dialog.charsheet {
   width: 180px;
   font-size: 11px;
  }
- .charsheet input.damage{
+ .charsheet input.damage,
+ .charsheet input.resistances{
    width: 150px;
  }
  .charsheet input.armor{
@@ -698,7 +702,7 @@ end of select boxes */
   border-bottom-right-radius: 60%;
   border: 3px solid var(--save-color);
   background-color: var(--save-bg);
-} .charsheet input.resistances {ances
+} .charsheet input.resistances {
   text-align: center;
   margin: 0px;
   padding: 0px;
