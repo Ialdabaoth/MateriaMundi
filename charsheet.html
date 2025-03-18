@@ -1384,7 +1384,8 @@
     setAttrs({ [modname]: mod });
 
     if(String(modname).toLowerCase() == "con") {
-        setAttrs({ wounds_max: (mod+5) });
+        let modN = mod * 1.0;
+        setAttrs({ wounds_max: (modN + 5) });
         if(mod > 1) 
             setAttrs({ fatigue_max: mod });
         else 
