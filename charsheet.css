@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
-
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Emoji:wght@300...700&display=swap");
 
 /*----------------- Main Layout ------------------*/
 /* get rid of padding */
 div.dialog.largedialog.characterviewer,
-div.ui-dialog.charsheet { 
-    padding-left: 0px;
-    padding-right: 0px;
+.ui-dialog .charsheet { 
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -38,6 +37,7 @@ div.ui-dialog.charsheet {
  .charsheet input.damage,
  .charsheet input.resistances{
    width: 360px;
+   font-size: 14px;
  }
  .charsheet input.armor{
     width: 225px;
@@ -73,6 +73,7 @@ div.ui-dialog.charsheet {
  .charsheet input.damage,
  .charsheet input.resistances{
    width: 250px;
+   font-size: 12px;
  }
  .charsheet input.armor{
     width: 175px;
@@ -123,6 +124,7 @@ div.ui-dialog.charsheet {
  .charsheet input.damage,
  .charsheet input.resistances{
    width: 150px;
+   font-size: 10px;
  }
  .charsheet input.armor{
    width: 120px;
@@ -185,6 +187,7 @@ div.ui-dialog.charsheet {
   
   --header-bg: #e0c0a0;
   --page-bg: #fff0e0; 
+  --tab-bg: #e0d0c0;
   --input-bg: white;
   --alt-bg: #e0faff;
   --save-bg: #e0f0ff;
@@ -194,12 +197,26 @@ div.ui-dialog.charsheet {
   
   --font-text: "Libre Baskerville";
   --font-number: "Arial";
+  --font-icon: "Noto Emoji";
+  
 }
 
 section {
     padding: 5px;
     border-style: solid; 
 }
+
+.str { grid-area: str; }
+.dex { grid-area: dex; }
+.con { grid-area: con; }
+.int { grid-area: int; }
+.wis { grid-area: wis; }
+.cha { grid-area: cha; }
+.actions { grid-area: act; }
+.equipment { grid-area: eqp; }
+.inventory { grid-area: inv; }
+.feats { grid-area: fea; }
+footer { grid-area: ftr; }
 
 /* CSS Flexbox styling, used for adjusting how content inside section behaves */
 .f-col {
@@ -262,7 +279,7 @@ section {
   flex-direction: row;
   white-space: pre nowrap;
   background-color: var(--header-bg);
-  border-top-right-radius: 50px;
+  border-top-right-radius: 45px;
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
   border-right: 2px solid var(--border-color);
@@ -280,242 +297,17 @@ section {
 .charsheet .equipment, 
 .charsheet .inventory {
   background-color: var(--page-bg);
-  border: 1px solid var(--separator-color);
+  border-top: 0px transparent;
+  border-right: 1px solid var(--separator-color);
+  border-left: 0px transparent;
+  border-bottom: 1px solid var(--separator-color);
 }
 
-.str { grid-area: str; }
-.dex { grid-area: dex; }
-.con { grid-area: con; }
-.int { grid-area: int; }
-.wis { grid-area: wis; }
-.cha { grid-area: cha; }
-.actions { grid-area: act; }
-.equipment { grid-area: eqp; }
-.inventory { grid-area: inv; }
-.feats { grid-area: fea; }
-footer { grid-area: ftr;
+footer { 
   background-color: var(--header-bg);
   border: 2px solid var(--border-color);
+  border-left: 0px transparent;
 }
-
-/*--------------------- tabbed panels and other dynamic elements --------------------*/
-.charsheet div.actionPanel {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
-.charsheet div.panelHeader {
-  height: 20px;
-  padding-top: 1px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 1px solid var(--separator-color);
-  z-index: 1;
-}
-
-.charsheet button.tab-travel,
-.charsheet button.tab-explore,
-.charsheet button.tab-fight,
-.charsheet button.tab-journal,
-.charsheet button.tab-attack,
-.charsheet button.tab-defend,
-.charsheet button.tab-move,
-.charsheet button.tab-react,
-.charsheet button.tab-feat{
-  height: 15px;
-  padding-top: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 0px;
-  margin-top: 2px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: -1px;
-  color: var(--text-color);
-  font-size: 12px;
-  background-color: var(--page-bg);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  border-top: 2px solid var(--separator-color);
-  border-left: 2px solid var(--separator-color);
-  border-right: 2px solid var(--separator-color);
-  border-bottom: 0px solid var(--page-bg);
-  z-index: 2;
-}
-.charsheet button.tab-travel,
-.charsheet button.tab-explore,
-.charsheet button.tab-fight,
-.charsheet button.tab-journal{
-  width: 50px;
-}
-.charsheet button.tab-attack,
-.charsheet button.tab-defend{
-  width: 45px;
-}
-.charsheet button.tab-move,
-.charsheet button.tab-react,
-.charsheet button.tab-feat{
-  width: 35px;
-}
-
-.charsheet div.panel-travel,
-.charsheet div.panel-explore,
-.charsheet div.panel-fight,
-.charsheet div.panel-attack,
-.charsheet div.panel-defend,
-.charsheet div.panel-move,
-.charsheet div.panel-react,
-.charsheet div.panel-feat{
-  margin-top: 1px;
-}
-
-/* show the selected archetype and style the active button */
-.charsheet input.situation-toggle { display: none; }
-.charsheet .situation-toggle:not([value="travel"]) ~ div .panel-travel,
-.charsheet .situation-toggle:not([value="explore"]) ~ div .panel-explore,
-.charsheet .situation-toggle:not([value="fight"]) ~ div .panel-fight, 
-.charsheet .situation-toggle:not([value="journal"]) ~ div .panel-journal{
-    display: none !important;
-}
-.charsheet .situation-toggle[value="travel"] ~ div button.tab-travel,
-.charsheet .situation-toggle[value="explore"] ~ div button.tab-explore,
-.charsheet .situation-toggle[value="fight"] ~ div button.tab-fight,
-.charsheet .situation-toggle[value="journal"] ~ div button.tab-journal{
-  border-bottom: 3px solid var(--page-bg);
-}
-
-.charsheet input.action-toggle { display: none; }
-.charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
-.charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
-.charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
-.charsheet .action-toggle:not([value="react"]) ~ div .panel-react,
-.charsheet .action-toggle:not([value="feat"]) ~ div .panel-feat{
-    display: none !important; 
-}
-.charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
-.charsheet .action-toggle[value="move"] ~ div button.tab-move,
-.charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
-.charsheet .action-toggle[value="react"] ~ div button.tab-react,
-.charsheet .action-toggle[value="feat"] ~ div button.tab-feat{
-  border-bottom: 3px solid var(--page-bg);
-}
-
-/*--------------------- Level-Specific Elements --------------------*/
-.charsheet input.power-max { display: none; }
-.charsheet input.power-max[value="0"] ~ div.show-power,
-.charsheet input.power-max[value="0"] ~ div .show-power{
-  display: none !important;    
-}
-
-.charsheet input.character-level { display: none; }
-.charsheet input.character-level[value="1"] ~ div .show-l2,
-.charsheet input.character-level[value="1"] ~ div .show-l3,
-.charsheet input.character-level[value="1"] ~ div .show-l4,
-.charsheet input.character-level[value="1"] ~ div .show-l5,
-.charsheet input.character-level[value="1"] ~ div .show-l6,
-.charsheet input.character-level[value="1"] ~ div .show-l7,
-.charsheet input.character-level[value="1"] ~ div .show-l8,
-.charsheet input.character-level[value="1"] ~ div .show-l9,
-.charsheet input.character-level[value="1"] ~ div .show-l10,
-.charsheet input.character-level[value="2"] ~ div .show-l3,
-.charsheet input.character-level[value="2"] ~ div .show-l4,
-.charsheet input.character-level[value="2"] ~ div .show-l5,
-.charsheet input.character-level[value="2"] ~ div .show-l6,
-.charsheet input.character-level[value="2"] ~ div .show-l7,
-.charsheet input.character-level[value="2"] ~ div .show-l8,
-.charsheet input.character-level[value="2"] ~ div .show-l9,
-.charsheet input.character-level[value="2"] ~ div .show-l10,
-.charsheet input.character-level[value="3"] ~ div .show-l4,
-.charsheet input.character-level[value="3"] ~ div .show-l5,
-.charsheet input.character-level[value="3"] ~ div .show-l6,
-.charsheet input.character-level[value="3"] ~ div .show-l7,
-.charsheet input.character-level[value="3"] ~ div .show-l8,
-.charsheet input.character-level[value="3"] ~ div .show-l9,
-.charsheet input.character-level[value="3"] ~ div .show-l10,
-.charsheet input.character-level[value="4"] ~ div .show-l5,
-.charsheet input.character-level[value="4"] ~ div .show-l6,
-.charsheet input.character-level[value="4"] ~ div .show-l7,
-.charsheet input.character-level[value="4"] ~ div .show-l8,
-.charsheet input.character-level[value="4"] ~ div .show-l9,
-.charsheet input.character-level[value="4"] ~ div .show-l10,
-.charsheet input.character-level[value="5"] ~ div .show-l6,
-.charsheet input.character-level[value="5"] ~ div .show-l7,
-.charsheet input.character-level[value="5"] ~ div .show-l8,
-.charsheet input.character-level[value="5"] ~ div .show-l9,
-.charsheet input.character-level[value="5"] ~ div .show-l10,
-.charsheet input.character-level[value="6"] ~ div .show-l7,
-.charsheet input.character-level[value="6"] ~ div .show-l8,
-.charsheet input.character-level[value="6"] ~ div .show-l9,
-.charsheet input.character-level[value="6"] ~ div .show-l10,
-.charsheet input.character-level[value="7"] ~ div .show-l8,
-.charsheet input.character-level[value="7"] ~ div .show-l9,
-.charsheet input.character-level[value="7"] ~ div .show-l10,
-.charsheet input.character-level[value="8"] ~ div .show-l9,
-.charsheet input.character-level[value="8"] ~ div .show-l10,    
-.charsheet input.character-level[value="9"] ~ div .show-l10{
-  display: none !important;
-}
-.charsheet input.character-level[value="1"] ~ div .req-l2,
-.charsheet input.character-level[value="1"] ~ div .req-l3,
-.charsheet input.character-level[value="1"] ~ div .req-l4,
-.charsheet input.character-level[value="1"] ~ div .req-l5,
-.charsheet input.character-level[value="1"] ~ div .req-l6,
-.charsheet input.character-level[value="1"] ~ div .req-l7,
-.charsheet input.character-level[value="1"] ~ div .req-l8,
-.charsheet input.character-level[value="1"] ~ div .req-l9,
-.charsheet input.character-level[value="1"] ~ div .req-l10,
-.charsheet input.character-level[value="2"] ~ div .req-l3,
-.charsheet input.character-level[value="2"] ~ div .req-l4,
-.charsheet input.character-level[value="2"] ~ div .req-l5,
-.charsheet input.character-level[value="2"] ~ div .req-l6,
-.charsheet input.character-level[value="2"] ~ div .req-l7,
-.charsheet input.character-level[value="2"] ~ div .req-l8,
-.charsheet input.character-level[value="2"] ~ div .req-l9,
-.charsheet input.character-level[value="2"] ~ div .req-l10,
-.charsheet input.character-level[value="3"] ~ div .req-l4,
-.charsheet input.character-level[value="3"] ~ div .req-l5,
-.charsheet input.character-level[value="3"] ~ div .req-l6,
-.charsheet input.character-level[value="3"] ~ div .req-l7,
-.charsheet input.character-level[value="3"] ~ div .req-l8,
-.charsheet input.character-level[value="3"] ~ div .req-l9,
-.charsheet input.character-level[value="3"] ~ div .req-l10,
-.charsheet input.character-level[value="4"] ~ div .req-l5,
-.charsheet input.character-level[value="4"] ~ div .req-l6,
-.charsheet input.character-level[value="4"] ~ div .req-l7,
-.charsheet input.character-level[value="4"] ~ div .req-l8,
-.charsheet input.character-level[value="4"] ~ div .req-l9,
-.charsheet input.character-level[value="4"] ~ div .req-l10,
-.charsheet input.character-level[value="5"] ~ div .req-l6,
-.charsheet input.character-level[value="5"] ~ div .req-l7,
-.charsheet input.character-level[value="5"] ~ div .req-l8,
-.charsheet input.character-level[value="5"] ~ div .req-l9,
-.charsheet input.character-level[value="5"] ~ div .req-l10,
-.charsheet input.character-level[value="6"] ~ div .req-l7,
-.charsheet input.character-level[value="6"] ~ div .req-l8,
-.charsheet input.character-level[value="6"] ~ div .req-l9,
-.charsheet input.character-level[value="6"] ~ div .req-l10,
-.charsheet input.character-level[value="7"] ~ div .req-l8,
-.charsheet input.character-level[value="7"] ~ div .req-l9,
-.charsheet input.character-level[value="7"] ~ div .req-l10,
-.charsheet input.character-level[value="8"] ~ div .req-l9,
-.charsheet input.character-level[value="8"] ~ div .req-l10,    
-.charsheet input.character-level[value="9"] ~ div .req-l10{
-  color:            var(--disabled-color);
-  background-color: var(--disabled-bg);
-}
-
-span.character-class { display: inline-block; }
-.charsheet input.character-level[value="0"] ~ span.character-class { display: none; }
-select.character-class { display: none; }
-.charsheet input.character-level[value="0"] ~ select.character-class { display: inline-block; }
 
 /*----------------- text & input styling -----------------*/
  
@@ -613,6 +405,86 @@ end of select boxes */
   border: 3px solid var(--border-color);
 }
 
+/*--------------------- tabbed panels --------------------*/
+.charsheet div.actionPanel {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+.charsheet div.panelHeader {
+  height: 20px;
+  padding-top: 1px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid var(--separator-color);
+  z-index: 1;
+}
+
+.charsheet button.tab-prepare,
+.charsheet button.tab-travel,
+.charsheet button.tab-explore,
+.charsheet button.tab-fight,
+.charsheet button.tab-attack,
+.charsheet button.tab-defend,
+.charsheet button.tab-move,
+.charsheet button.tab-react,
+.charsheet button.tab-feat{
+  height: 15px;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: -1px;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 12px;
+  background-color: var(--tab-bg);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-top: 2px solid var(--separator-color);
+  border-left: 2px solid var(--separator-color);
+  border-right: 2px solid var(--separator-color);
+  border-bottom: 0px solid var(--page-bg);
+  z-index: 2;
+}
+.charsheet button.tab-prepare,
+.charsheet button.tab-travel,
+.charsheet button.tab-explore,
+.charsheet button.tab-fight{
+  width: 50px;
+}
+.charsheet button.tab-attack,
+.charsheet button.tab-defend{
+  width: 45px;
+}
+.charsheet button.tab-move,
+.charsheet button.tab-react,
+.charsheet button.tab-feat{
+  width: 35px;
+}
+
+.charsheet div.panel-travel,
+.charsheet div.panel-explore,
+.charsheet div.panel-fight,
+.charsheet div.panel-attack,
+.charsheet div.panel-defend,
+.charsheet div.panel-move,
+.charsheet div.panel-react,
+.charsheet div.panel-feat{
+  margin-top: 1px;
+}
+
 /* main sheet input and display elements */
 /* a 'rollbox' is a roll button next to a label or select box indicating the die size */
 .charsheet span.rollbox {
@@ -620,11 +492,12 @@ end of select boxes */
   flex-wrap: nowrap;
   white-space: nowrap;
   height: 25px;
-} .charsheet button[type="roll"].proficiency {
-  margin: 0px;
+} .charsheet button.proficiency {
+  margin: 0px !important;
   padding: 0px;
   width: 20px;
   height: auto; 
+  color: var(--text-color);
   border: 2px solid var(--border-color);
   background: var(--header-bg);
   border-right: 0px;    
@@ -632,18 +505,32 @@ end of select boxes */
   border-bottom-left-radius: 5px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-} .charsheet button[type="roll"].skill {
+} .charsheet button.proficiency::before {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3px;
+  color: var(--text-color);
+} .charsheet button.skill {
+  color: var(--skill-color);
   border: 2px solid var(--skill-color);
   border-right: 0px;    
   background: var(--skill-bg);
-} .charsheet button[type="roll"].save {
+} .charsheet button.skill::before {
+  color: var(--skill-color);
+} .charsheet button.save {
+  color: var(--save-color);
   border: 2px solid var(--save-color);
   border-right: 0px;    
   background: var(--save-bg);
-} .charsheet button[type="roll"].attack {
+} .charsheet button.save::before {
+  color: var(--save-color);
+} .charsheet button.attack {
+  color: var(--attack-color);
   border: 2px solid var(--attack-color);
   border-right: 0px;    
   background: var(--attack-bg);
+} .charsheet button.attack::before {
+  color: var(--attack-color);
 } .charsheet .proficiency-die {
   display: inline-block;
   text-align: center;
@@ -712,8 +599,7 @@ end of select boxes */
   height: 20px;
   font-family: var(--font-number);
   font-style: bold;
-  font-size: 14px;
-  
+
   color: var(--text-color);
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
@@ -810,7 +696,8 @@ end of select boxes */
 
 .charsheet label.header-label,
 .charsheet label.attacks,
-.charsheet label.action {
+.charsheet label.action,
+.charsheet label.equipment-slot {
   word-wrap: break-word;
   font-family: var(--font-text);
   font-size: 13px;
@@ -833,6 +720,12 @@ end of select boxes */
 
 /* elements that need to look the same whether they're a label, input, select, or div */
 .charsheet .ability-score {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
   display: inline-block;
   text-align: center;
   margin: 1px 1px;
@@ -1108,50 +1001,82 @@ end of select boxes */
 
 /* SKILL ROLLS */
 
-.sheet-rolltemplate-rolls {
-  font-family: "Lexend";
+.sheet-rolltemplate-rolls,
+.sheet-rolltemplate-skills {
+  font-family: var(font-text);
 }
-.sheet-rolltemplate-rolls .sheet-container {
+.sheet-rolltemplate-rolls .sheet-container,
+.sheet-rolltemplate-skills .sheet-container {
   border: 3px solid black;
   border-radius: 3px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
-.sheet-rolltemplate-rolls .sheet-header {
+.sheet-rolltemplate-rolls .sheet-header,
+.sheet-rolltemplate-skills .sheet-header {
   background-color: var(--header-bg-color, #21a835);
   color: var(--header-text-color, #FFF);
-  text-align: left;
+  font-family: var(font-text);
+  text-align: center;
   text-transform: capitalize;
   padding: 5px;
   border-bottom: 2px solid black;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
 }
 .sheet-rolltemplate-rolls .sheet-title,
-.sheet-rolltemplate-rolls .sheet-name {
+.sheet-rolltemplate-rolls .sheet-name,
+.sheet-rolltemplate-skills .sheet-title,
+.sheet-rolltemplate-skills .sheet-name {
+  font-family: var(font-text);
   font-size: 1.4em;
   font-weight: bold;
 }
-.sheet-rolltemplate-rolls .sheet-subtitle {
+.sheet-rolltemplate-rolls .sheet-subtitle,
+.sheet-rolltemplate-skills .sheet-subtitle {
+  font-family: "Lexend";
   font-size: 1em;
 }
-.sheet-rolltemplate-rolls .sheet-container {
+.sheet-rolltemplate-rolls .sheet-container,
+.sheet-rolltemplate-skills .sheet-container {
+  font-family: var(font-text);
   --header-bg-color: #21a835;
   --header-text-color: #FFF;
 }
 
-.sheet-rolltemplate-rolls .sheet-content {
+.sheet-rolltemplate-rolls .sheet-content,
+.sheet-rolltemplate-skills .sheet-content {
+  font-family: var(font-text);
   display: grid;
   background: #FFF;
   grid-template-columns: auto auto;
+  font-size: 1.2em;
   line-height: 1.4em;
 }
-.sheet-rolltemplate-rolls .sheet-content > div {
+.sheet-rolltemplate-rolls .sheet-content > div,
+.sheet-rolltemplate-skills .sheet-content > div {
+  font-family: var(font-text);
   padding: 5px;
 }
-.sheet-rolltemplate-rolls .sheet-content .sheet-key {
+.sheet-rolltemplate-rolls .sheet-content .sheet-key,
+.sheet-rolltemplate-skills .sheet-content .sheet-key {
+  font-family: var(font-text);
   font-weight: bold;
   padding-right: 10px;
   text-align: right;
 }
+.sheet-rolltemplate-rolls .sheet-content .sheet-value,
+.sheet-rolltemplate-skills .sheet-content .sheet-value {
+  font-family: var(font-number);
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: center;
+}
+
 .sheet-rolltemplate-rolls .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-rolls .sheet-content :nth-child(4n) {
+.sheet-rolltemplate-rolls .sheet-content :nth-child(4n),
+.sheet-rolltemplate-skills .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-skills .sheet-content :nth-child(4n) {
   background: #EEE;
 }
 
@@ -1201,4 +1126,188 @@ end of select boxes */
 .sheet-rolltemplate-attacks .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-attacks .sheet-content :nth-child(4n) {
   background: #EEE;
+}
+
+/*---------------------=========== dynamic element control =========------------------------*/
+/* show the selected archetype and style the active button */
+.charsheet input.situation-toggle { display: none; }
+.charsheet .situation-toggle:not([value="travel"]) ~ div .panel-travel,
+.charsheet .situation-toggle:not([value="explore"]) ~ div .panel-explore,
+.charsheet .situation-toggle:not([value="fight"]) ~ div .panel-fight, 
+.charsheet .situation-toggle:not([value="prepare"]) ~ div .panel-prepare{
+    display: none !important;
+}
+.charsheet .situation-toggle[value="travel"] ~ div button.tab-travel,
+.charsheet .situation-toggle[value="explore"] ~ div button.tab-explore,
+.charsheet .situation-toggle[value="fight"] ~ div button.tab-fight,
+.charsheet .situation-toggle[value="prepare"] ~ div button.tab-prepare{
+  font-weight: bold;
+  background-color: var(--page-bg);
+  border-bottom: 3px solid var(--page-bg);
+}
+
+.charsheet input.action-toggle { display: none; }
+.charsheet .action-toggle:not([value="attack"]) ~ div .panel-attack,
+.charsheet .action-toggle:not([value="move"]) ~ div .panel-move,
+.charsheet .action-toggle:not([value="defend"]) ~ div .panel-defend,
+.charsheet .action-toggle:not([value="react"]) ~ div .panel-react,
+.charsheet .action-toggle:not([value="feat"]) ~ div .panel-feat{
+    display: none !important; 
+}
+.charsheet .action-toggle[value="attack"] ~ div button.tab-attack,
+.charsheet .action-toggle[value="move"] ~ div button.tab-move,
+.charsheet .action-toggle[value="defend"] ~ div button.tab-defend,
+.charsheet .action-toggle[value="react"] ~ div button.tab-react,
+.charsheet .action-toggle[value="feat"] ~ div button.tab-feat{
+  font-weight: bold;
+  background-color: var(--page-bg);
+  border-bottom: 3px solid var(--page-bg);
+}
+
+/*--------------------- Level-Specific Elements --------------------*/
+.charsheet input.power-max { display: none; }
+.charsheet input.power-max[value="0"] ~ div.show-power,
+.charsheet input.power-max[value="0"] ~ div .show-power{
+  display: none !important;    
+}
+
+.charsheet input.character-level { display: none; }
+.charsheet input.character-level[value="1"] ~ div .show-l2,
+.charsheet input.character-level[value="1"] ~ div .show-l3,
+.charsheet input.character-level[value="1"] ~ div .show-l4,
+.charsheet input.character-level[value="1"] ~ div .show-l5,
+.charsheet input.character-level[value="1"] ~ div .show-l6,
+.charsheet input.character-level[value="1"] ~ div .show-l7,
+.charsheet input.character-level[value="1"] ~ div .show-l8,
+.charsheet input.character-level[value="1"] ~ div .show-l9,
+.charsheet input.character-level[value="1"] ~ div .show-l10,
+.charsheet input.character-level[value="2"] ~ div .show-l3,
+.charsheet input.character-level[value="2"] ~ div .show-l4,
+.charsheet input.character-level[value="2"] ~ div .show-l5,
+.charsheet input.character-level[value="2"] ~ div .show-l6,
+.charsheet input.character-level[value="2"] ~ div .show-l7,
+.charsheet input.character-level[value="2"] ~ div .show-l8,
+.charsheet input.character-level[value="2"] ~ div .show-l9,
+.charsheet input.character-level[value="2"] ~ div .show-l10,
+.charsheet input.character-level[value="3"] ~ div .show-l4,
+.charsheet input.character-level[value="3"] ~ div .show-l5,
+.charsheet input.character-level[value="3"] ~ div .show-l6,
+.charsheet input.character-level[value="3"] ~ div .show-l7,
+.charsheet input.character-level[value="3"] ~ div .show-l8,
+.charsheet input.character-level[value="3"] ~ div .show-l9,
+.charsheet input.character-level[value="3"] ~ div .show-l10,
+.charsheet input.character-level[value="4"] ~ div .show-l5,
+.charsheet input.character-level[value="4"] ~ div .show-l6,
+.charsheet input.character-level[value="4"] ~ div .show-l7,
+.charsheet input.character-level[value="4"] ~ div .show-l8,
+.charsheet input.character-level[value="4"] ~ div .show-l9,
+.charsheet input.character-level[value="4"] ~ div .show-l10,
+.charsheet input.character-level[value="5"] ~ div .show-l6,
+.charsheet input.character-level[value="5"] ~ div .show-l7,
+.charsheet input.character-level[value="5"] ~ div .show-l8,
+.charsheet input.character-level[value="5"] ~ div .show-l9,
+.charsheet input.character-level[value="5"] ~ div .show-l10,
+.charsheet input.character-level[value="6"] ~ div .show-l7,
+.charsheet input.character-level[value="6"] ~ div .show-l8,
+.charsheet input.character-level[value="6"] ~ div .show-l9,
+.charsheet input.character-level[value="6"] ~ div .show-l10,
+.charsheet input.character-level[value="7"] ~ div .show-l8,
+.charsheet input.character-level[value="7"] ~ div .show-l9,
+.charsheet input.character-level[value="7"] ~ div .show-l10,
+.charsheet input.character-level[value="8"] ~ div .show-l9,
+.charsheet input.character-level[value="8"] ~ div .show-l10,    
+.charsheet input.character-level[value="9"] ~ div .show-l10{
+  display: none !important;
+}
+.charsheet input.character-level[value="1"] ~ div .req-l2,
+.charsheet input.character-level[value="1"] ~ div .req-l3,
+.charsheet input.character-level[value="1"] ~ div .req-l4,
+.charsheet input.character-level[value="1"] ~ div .req-l5,
+.charsheet input.character-level[value="1"] ~ div .req-l6,
+.charsheet input.character-level[value="1"] ~ div .req-l7,
+.charsheet input.character-level[value="1"] ~ div .req-l8,
+.charsheet input.character-level[value="1"] ~ div .req-l9,
+.charsheet input.character-level[value="1"] ~ div .req-l10,
+.charsheet input.character-level[value="2"] ~ div .req-l3,
+.charsheet input.character-level[value="2"] ~ div .req-l4,
+.charsheet input.character-level[value="2"] ~ div .req-l5,
+.charsheet input.character-level[value="2"] ~ div .req-l6,
+.charsheet input.character-level[value="2"] ~ div .req-l7,
+.charsheet input.character-level[value="2"] ~ div .req-l8,
+.charsheet input.character-level[value="2"] ~ div .req-l9,
+.charsheet input.character-level[value="2"] ~ div .req-l10,
+.charsheet input.character-level[value="3"] ~ div .req-l4,
+.charsheet input.character-level[value="3"] ~ div .req-l5,
+.charsheet input.character-level[value="3"] ~ div .req-l6,
+.charsheet input.character-level[value="3"] ~ div .req-l7,
+.charsheet input.character-level[value="3"] ~ div .req-l8,
+.charsheet input.character-level[value="3"] ~ div .req-l9,
+.charsheet input.character-level[value="3"] ~ div .req-l10,
+.charsheet input.character-level[value="4"] ~ div .req-l5,
+.charsheet input.character-level[value="4"] ~ div .req-l6,
+.charsheet input.character-level[value="4"] ~ div .req-l7,
+.charsheet input.character-level[value="4"] ~ div .req-l8,
+.charsheet input.character-level[value="4"] ~ div .req-l9,
+.charsheet input.character-level[value="4"] ~ div .req-l10,
+.charsheet input.character-level[value="5"] ~ div .req-l6,
+.charsheet input.character-level[value="5"] ~ div .req-l7,
+.charsheet input.character-level[value="5"] ~ div .req-l8,
+.charsheet input.character-level[value="5"] ~ div .req-l9,
+.charsheet input.character-level[value="5"] ~ div .req-l10,
+.charsheet input.character-level[value="6"] ~ div .req-l7,
+.charsheet input.character-level[value="6"] ~ div .req-l8,
+.charsheet input.character-level[value="6"] ~ div .req-l9,
+.charsheet input.character-level[value="6"] ~ div .req-l10,
+.charsheet input.character-level[value="7"] ~ div .req-l8,
+.charsheet input.character-level[value="7"] ~ div .req-l9,
+.charsheet input.character-level[value="7"] ~ div .req-l10,
+.charsheet input.character-level[value="8"] ~ div .req-l9,
+.charsheet input.character-level[value="8"] ~ div .req-l10,    
+.charsheet input.character-level[value="9"] ~ div .req-l10{
+  color:            var(--disabled-color);
+  background-color: var(--disabled-bg);
+}
+
+span.character-class,
+div.ability-score { 
+    display: inline-block !important; 
+}
+.charsheet input.character-level[value="0"] ~ span.character-class,
+.charsheet input.character-level[value="0"] ~ div.ability-score{ 
+    display: none !important; 
+}
+select.character-class,
+select.ability-score { 
+    display: none !important; 
+}
+.charsheet input.character-level[value="0"] ~ select.character-class,
+.charsheet input.character-level[value="0"] ~ select.ability-score{ 
+    display: inline-block !important;
+    border-color:   var(--save-color);
+}
+
+.charsheet .die-controller[value="2d4kl1"] ~ button.proficiency::before{
+    font-family: 'dicefontd4';
+    font-size: 24px;
+    content: '0 ';
+}.charsheet .die-controller[value="d4"] ~ button.proficiency::before{
+    font-family: 'dicefontd4';
+    font-size: 24px;
+    content: 'L ';
+}.charsheet .die-controller[value="d6"] ~ button.proficiency::before{
+    font-family: 'dicefontd6';
+    font-size: 24px;
+    content: 'F ';
+}.charsheet .die-controller[value="d8"] ~ button.proficiency::before{
+    font-family: 'dicefontd8';
+    font-size: 24px;
+    content: 'H ';
+}.charsheet .die-controller[value="d10"] ~ button.proficiency::before{
+    font-family: 'dicefontd10';
+    font-size: 24px;
+    content: 'K ';
+}.charsheet .die-controller[value="d12"] ~ button.proficiency::before{
+    font-family: 'dicefontd12';
+    font-size: 24px;
+    content: 'L ';
 }
