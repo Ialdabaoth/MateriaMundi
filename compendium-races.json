@@ -1,0 +1,393 @@
+{
+	"pagesByCategory": {
+		"Rules": {
+
+		}, "Races": {
+			"Human": {
+				"content": 
+"Humans are one of the two original species of mortal on the Prime Material, seemingly unaffected by its collision with the Aether. Originating from the savannahs of the Southern continent, humans spread north during the last ice age to eke out a living in every environment imaginable. If not for the coming of magic, it is likely that humans would have out-competed the dwarven race and driven it to extinction.\nBecause they conquered the surface world while dwarves built their underground empires, humans are something like the ‘default’ species of the world. In some human cultures, non-human prejudice is almost nonexistent, while in others it borders on rabid xenophobia. Most civilized places, though, find diversity too rewarding to pay the costs of racism.\nBy the time of the Old Empire, humans and dwarves had largely set aside their differences. The combination of Dwarven technological know-how and Human ambition led to a rapid expansion of the Old Empire across the known world; even today, the Successor States live fully in its historic shadow. \nHumans and dwarves can interbreed, and their children will typically take after both parents - although usually with a stronger resemblance for one race or the other.",
+				"Ability Modifiers": "none",
+				"Size": "medium",
+				"Advantage": "none",
+				"Special Powers": "none"
+			},
+			"Dwarf": {
+				"content": 
+"Dwarves, like humans, are an original species of mortal from the Prime Material. Humans and dwarves share a distant ancestry that diverged approximately 400,000 years ago in the Southern continent, when the ancestors of the dwarves first spread north and east into the larger world.\nThe race that became the dwarves was almost extinct when the Aether and Material collided 12,000 years ago, driven deep into the wilds by human competitors and the harsh climate of the last ice age. The discovery of arcane magic changed all that.\nDwarven wizardry and alchemy allowed them to survive, and thrive, in conditions where humans could not gain a foothold. Dwarves built vast empires underground, where they studied the Arcane sciences and unlocked the secrets of the universe, largely sheltered from the predation of humans or the Fair Folk.\nWhen they re-emerged into the surface world 8,000 years ago, much had changed - both within them and within the world that greeted them.\nDwarven medicine and technology, combined with their natural hardiness, has resulted in a species with almost twice the longevity of humans - although a dwarf subjected to the same conditions that a human normally lives in would likely only live a few meager decades longer than their neighbors.\nDwarven temperament seems biologically predisposed to a certain kind of obsessive focus more often than in other species, giving them a distinct advantage in learning new skills or knowledge, but at the cost of some amount of warmth and connection when relating to those who do not think as they do.",
+				"Ability Modifiers": "Con, Str",
+				"Size": "medium",
+				"Advantage": "Fortitude",
+				"Special Powers": "none"
+			},
+			"Elf": {
+				"content": 
+"Ten thousand years of humans living side-by-side with the fey has resulted in a species that combines the most robust attributes of both. Elves are slender, delicate beings with large, brightly-colored eyes and large ears, often reminiscent of a deer’s or a rabbit’s. Elves find themselves most at home within the beauty of wild nature, although longer established elven civilizations will likely have cultivated and gardened that nature into a vast patchwork of parks and groves which blend seamlessly into living and working spaces, merchant stalls, and military strongholds.\nAn elf’s apparent age is almost entirely dependent on the stress and emotional hardships that they have experienced. Elves have inherited some of the natural magical resilience of their fey ancestors, often living for hundreds of years in bodies that appear to be in their mid to late teens before they show any signs of aging at all. Once they do begin to age, they will typically settle into a middle-aged appearance that lasts for several more centuries, before becoming wizened and frail for the rest of their lives. Unlike humans, who tend to fear aging, elves see middle-age and even the frailty of the old as badges of honor, signs of a rich life filled with meaning and stories.\nMany elves can tap into the druidic magic of their fey ancestry if they choose, but most forgo this easy road to power in favor of exploring their other faculties - most elven culture teaches elves to pride themselves in the breadth of their experience and expertise, and magic often provides too many ‘easy outs’ to truly learn how to manage one’s problems the hard way. Thus, most elves typically avoid magic until they settle into middle age, however long that might take. An elven druid who takes up their training as a child is often seen as impulsive or undisciplined, although when they reach old age, the sheer depth of their knowledge and power is well-appreciated by their community.",
+				"Ability Modifiers": "Dex, Wis",
+				"Size": "medium",
+				"Advantage": "Perception",
+				"Special Powers": "none"
+			},
+			"Halfling": {
+				"content": 
+"Halflings, like elves, originated from unions between humans and the fey. While elves are tall, slender, feral beings, halflings most often appear to be small human or elven children, with wide eyes and a ready smile.\nMany halflings retain some of their fey heritage, although just as many are completely bereft of magical power. A halfling druid is known by others as their kind as a “gnome”, and tend to favor illusions and animal-befriending magics over flashy elemental control. The legendary stealthiness of halflings is even more pronounced in gnomes - their hair and skin color often shift visibly as they shift moods or enter a new environment, either brightening to match their emotions or forming near-perfect camouflage patterns when they become frightened. \nHalfling settlements often do not make a distinction between their druids, clerics, and wizards, calling any such neighbors their “gnomes”. The resulting confusion this has sown among the “big folk” has led to the impression that there are two different races of little folk - halflings and gnomes - each with their own habits and powers.\nMuch of halfling society is distinctly agrarian, favoring comfort and tradition over spectacle and innovation. Those halflings that choose to adventure among the big folk are often seen by their kin as somewhat queer.",
+				"Ability Modifiers": "Dex, Cha",
+				"Size": "small",
+				"Advantage": "none",
+				"Special Powers": "none"
+			},
+			"Goblin": {
+				"content": 
+"Goblins may be vicious, sneaky little bastards, but they are loyal to a fault, and even endearing in a horrible sort of way. A goblin player character may be a stray that attached itself to the party after they wiped out its warband, or may be an exile from its clan, seeking new allies and a new way of life.\nGoblins’ natural culture shares all resources communally; as such, a goblin might need some time and not-so-gentle correction before it begins to understand the concepts of ‘privacy’ and ‘personal property’, and the difference between ‘food’, ‘riding mounts’, and ‘animal companions’. For that matter, a Goblin might need significant time and correction before it understands that its new clan doesn’t eat beings that can talk, and expects it to also abstain from such meat, no matter how delicious.\nA Goblin’s stomach seems almost bottomless, and their jaw can unhinge like a snake to swallow food (or “food”, in a Goblin’s case) bigger than their head. Goblins never stop growing, as long as they can get enough fresh meat to eat. On the other hand, a starving goblin will actually shrink in size over several months, their body consuming itself to feed their own ravenous appetite. \nGoblin magic-users often seem to be an exception to this rule - the same metabolism feeds their growth and their magic, so a goblin that can wield magic often stays small and scrawny.\nA goblin clan is typically led by the largest member, who therefore gets the largest share of the food, thus keeping them in charge. Goblin druids are seen as valuable advisors to the clan chief, so long as they remember who’s in charge.\n",
+				"Ability Modifiers": "Dex, Con",
+				"Size": "small",
+				"Advantage": "none",
+				"Special Powers": "none"
+			},
+			"Lizardfolk": {
+				"content": 
+"Lizardfolk are a rare example of a non-mammalian species of intelligent creature. While they are historically classified among the fey races, it is unknown if they are truly fey, or a natural or unnatural product of draconic magics.\nFossil evidence of lizardfolk-like creatures extends back to the Age of Dragons; it is believed that the Lizardfolk might have even been the ‘natural’ form of intelligent life, before using their arcane magics to transform themselves into draconic form. Whatever the truth, lizardfolk and primordial dragons maintain a relationship of worship and fealty to the present day.\nSmall lizardfolk, known as kobolds, were originally believed to be a species of goblin before careful study revealed them to be a diminutive form of the Lizardfolk race. Larger examples of the species, known as dragonborn, are produced from kobold lizardfolk who undergo a ritual ceremony and imbue a specially-prepared alchemical elixir, which permanently transforms them into an enhanced specimen of their race.\nAll lizardfolk practice ritual cannibalism, where the remains of their honored tribesfolk are fed to their gravid den-mothers by their druid priests. This ritual is said to imbue the newborn hatchlings with the memories and prowess of their fallen warriors, and most lizardfolk tribes are willing to give up the practice. As such, most non-player lizardfolk remain unwelcome under the Catholic aegis of civilization, and continue to maintain all the dark practices of the blood-soaked Old Ways.",
+				"Ability Modifiers": "Dex, Str",
+				"Size": "small",
+				"Advantage": "none",
+				"Special Powers": "none"
+			},
+			"Hen-Ge": {
+				"content": 
+"all Hen-Ge have the ability to transform between a humanoid form and a single kind of natural beast. Unlike a Druid’s ‘Wild Shape’ magic, a hen-ge’s magic – and their animal form – is innate to their fey nature, and their animal form is considered their ‘natural’ form. Typical animal forms include badgers, bears, cats, foxes, otters, rabbits, raccoons, rats, ravens, seals, and snakes. In their humanoid form, an Hen-Ge closely resembles a satyr.\nHen-Ge feel just as home in either form, but often have difficulty maintaining their humanoid form when injured or startled. Most obake humanoid forms have a ‘tell’ - a long, luxurious fox’s tail, or a cat’s reflective eyes - that can only be partially hidden under clothing or illusion magic, but that a discerning mortal might still spot.\nMortal legends of the He-Ge tend towards the fanciful. Selkies do not shed their seal coats to transform into humans, nor do kitsune grow additional tails as they gain power. Hen-Ge do show a natural talent for fey magic, especially those related to illusions or their animal natures, and these powers can have strange side-effects. Such individual variations are likely the source of these mortal legends.",
+				"Ability Modifiers": "none",
+				"Size": "medium",
+				"Advantage": "AnimalKen",
+				"Special Powers": "Shapeshifting"
+			},
+			"Centaur": {
+				"content": 
+"Centaurs are fey chimera, possessing the upper body of a satyr and the lower body of some form of natural beast. Horse, deer, seal, dolphin, snake, spider, and leopard centaurs are all known to exist in populations large enough to maintain a tribal presence in the wilderness, while stranger and more unique specimens occasionally prowl the deep forests.\nThe most common form of centaur encountered by humans are hippocentaurs, who possess a lower body that resembles a small pony. Wild hippocentaur tribes typically live in close proximity to elven and human barbarians, and share many of their habits and beliefs. Cervitaurs, or deer centaur, are more elusive creatures, keeping mostly to their own kind in small tribal herds. \nIn coastal regions, dolphin and seal centaurs called merfolk are most commonly encountered. While merfolk cannot breathe underwater by nature, they can hold their breath for nearly an hour at a time, and often craft intricate magic items allowing themselves to transform into two-legged forms and walk on dry land.\nOther centaur types are more often seen as a threat than an ally, although there are always exceptions. Tribes of serpent-centaurs dot the wild jungles of the world, still offering demihuman sacrifices to the Fair Folk. Spider-centaurs are typically proud, solitary creatures, but will often enslave tribes of elves or goblins in the deep underground caverns of Faerie. Leopard centaurs are most often found as solitary predators, waylaying the unwary and devouring them.\n",
+				"Ability Modifiers": "Str, Wis",
+				"Size": "medium",
+				"Advantage": "Athletics",
+				"Special Powers": "EnhancedMovement"
+			},
+			"Satyr": {
+				"content": 
+"Satyrs have the appearance of muscular, feral elves with pronounced animal features - their ears, eyes, and legs are almost entirely those of some species of wild mammal, and they typically possess a tail and a slight muzzle, and horns or antlers if appropriate to the animal species (and gender) that they resemble. They are a dream of Faerie, produced by the stories of animals whose lives and politics are as complex as a human’s. \nSatyrs are almost universally bards or druids, usually both. A satyr who forgoes their primal heritage to live among mortal folk is making a conscious effort to be something new, usually due to a deep yearning for novel experiences.\nMost satyrs are rowdy and lecherous creatures, prone to follow their animal passions. The union of a satyr and a natural being is almost always an elf, and such a child will invariably possess a strong innate talent for fey magic.\n",
+				"Ability Modifiers": "Wis, Cha",
+				"Size": "medium",
+				"Advantage": "Nature",
+				"Special Powers": "none"
+			},
+			"Genasi": {
+				"content": 
+"Genasi are the embryonic form of the djinn, elemental fey creatures with wondrous and terrifying powers. All genasi have an inborn talent for elemental magic that matches the element of their birthright, as well as a smaller talent for fey illusions and manipulations. As their magical talent grows, they shed more and more of their mortal guise, eventually discarding their material forms entirely and becoming beings of pure spirit.\nGenasi typically display striking colors and patterns which reveal their elemental heritage. Earth-genasi show deep browns and greys mottled with the metallic hues of precious metals and the slight glitter of gemstones, while water-genasi display deep blues, greens and purples with a slick and often translucent lustre, wood-genasi have deep browns and brilliant greens with flashes of every flower-color imaginable, air-genasi show pale blues, grays and yellows that shift and billow with their moods, and fire-genasi show dark blacks and ash-grays with flashes of brilliant red, orange and gold. \nFor as long as they remain capable of enjoying a mortal life, most genasi are eager to do so - they know in their bones that someday all their mortal triumphs and troubles will be mere fading memories in an immortal djinn’s long existence.\n",
+				"Ability Modifiers": "Con, Wis",
+				"Size": "medium",
+				"Advantage": "none",
+				"Special Powers": "Elemental Affinity"
+			}
+        	}, "Classes": {
+				"Knight": {
+					"content": 
+"While all warriors can wear heavy armor and use shields, the Knight focuses on their capabilities more than others. They train in heavy full plate and heavier shields than most, learning various defensive techniques with them.",
+					"Requisite": "Con",
+					"HD": "d10",
+					"Attack": "d6",
+					"Starting Skills": "Athletics, Fortitude, Animal Ken",
+					"Class Skills": "Athletics, Reflex, Fortitude, Animal Ken, Perception, Willpower",
+					"hd1": "d10",
+					"hd2": "d10",
+					"hd3": "d10",
+					"hd4": "d10",
+					"l1feat": "warrior-1, knight-1",
+					"l1feat_max": "athletics, fortitude, animal-ken",
+					"l2feat": "warrior-2",
+					"l2feat_max": "athletics, fortitude, reflex",
+					"l3feat": "knight-3",
+					"l3feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l4feat": "warrior-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "warrior-5",
+					"l5feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l6feat": "knight-6",
+					"l6feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l7feat": "warrior-7",
+					"l7feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l8feat": "warrior-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "warrior-9",
+					"l9feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l10feat": "warrior-10",
+					"l10feat_max": "choose(any)"
+				},
+				"Martial Artist": {
+					"content": 
+"",
+					"Requisite": "Dex",
+					"HD": "d10",
+					"Attack": "d6",
+					"Starting Skills": "Athletics, Reflex, Perception",
+					"Class Skills": "Athletics, Reflex, Fortitude, Animal Ken, Perception, Willpower",
+					"hd1": "d10",
+					"hd2": "d10",
+					"hd3": "d10",
+					"hd4": "d10",
+					"l1feat": "warrior-1, martial-artist-1",
+					"l1feat_max": "athletics, fortitude, animal-ken",
+					"l2feat": "warrior-2",
+					"l2feat_max": "athletics, fortitude, reflex",
+					"l3feat": "martial-artist-3",
+					"l3feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l4feat": "warrior-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "warrior-5",
+					"l5feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l6feat": "martial-artist-6",
+					"l6feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l7feat": "warrior-7",
+					"l7feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l8feat": "warrior-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "warrior-9",
+					"l9feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l10feat": "warrior-10",
+					"l10feat_max": "choose(any)"
+				},
+				"Berserker": {
+					"content": 
+"",
+					"Requisite": "Str",
+					"HD": "d10",
+					"Attack": "d6",
+					"Starting Skills": "Athletics, Fortitude, Reflex",
+					"Class Skills": "Athletics, Reflex, Fortitude, Animal Ken, Perception, Willpower",
+					"hd1": "d10",
+					"hd2": "d10",
+					"hd3": "d10",
+					"hd4": "d10",
+					"l1feat": "warrior-1, berserker-1",
+					"l1feat_max": "athletics, fortitude, animal-ken",
+					"l2feat": "warrior-2",
+					"l2feat_max": "athletics, fortitude, reflex",
+					"l3feat": "berserker-3",
+					"l3feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l4feat": "warrior-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "warrior-5",
+					"l5feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l6feat": "berserker-6",
+					"l6feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l7feat": "warrior-7",
+					"l7feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l8feat": "warrior-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "warrior-9",
+					"l9feat_max": "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)",
+					"l10feat": "warrior-10",
+					"l10feat_max": "choose(any)"
+				}, "Thief": {
+					"content": 
+"",
+					"Requisite": "Dex",
+					"HD": "d8",
+					"Attack": "d4",
+					"Starting Skills": "Reflex, Stealth, Finesse, Perception",
+					"Class Skills": "Any",
+					"hd1": "d8",
+					"hd2": "d8",
+					"hd3": "d8",
+					"hd4": "d8",
+					"l1feat": "expert-1, thief-1",
+					"l1feat_max": "reflex, stealth, finesse, perception, choose(reflex, stealth, finesse, perception)",
+					"l2feat": "thief-2",
+					"l2feat_max": "choose(any), choose(any)",
+					"l3feat": "expert-3",
+					"l3feat_max": "choose(any), choose(any)",
+					"l4feat": "expert-4",
+					"l4feat_max": "choose(any), choose(any)",
+					"l5feat": "thief-5",
+					"l5feat_max": "choose(any), choose(any)",
+					"l6feat": "thief-6",
+					"l6feat_max": "choose(any), choose(any)",
+					"l7feat": "thief-7",
+					"l7feat_max": "choose(any), choose(any)",
+					"l8feat": "expert-8",
+					"l8feat_max": "choose(any), choose(any)",
+					"l9feat": "thief-9",
+					"l9feat_max": "choose(any), choose(any)",
+					"l10feat": "thief-10",
+					"l10feat_max": "choose(any), choose(any)"
+				}, "Alchemist": {
+					"content": 
+"",
+					"Requisite": "Dex",
+					"HD": "d8",
+					"Attack": "d4",
+					"Starting Skills": "Arcana, Crafting, Finesse, Medicine",
+					"Class Skills": "Any",
+					"hd1": "d8",
+					"hd2": "d8",
+					"hd3": "d8",
+					"hd4": "d8",
+					"l1feat": "expert-1, alchemist-1",
+					"l1feat_max": "arcana, crafting, finesse, medicine, choose(arcana, crafting, finesse, medicine)",
+					"l2feat": "alchemist-2",
+					"l2feat_max": "choose(any), choose(any)",
+					"l3feat": "expert-3",
+					"l3feat_max": "choose(any), choose(any)",
+					"l4feat": "expert-4",
+					"l4feat_max": "choose(any), choose(any)",
+					"l5feat": "alchemist-5",
+					"l5feat_max": "choose(any), choose(any)",
+					"l6feat": "alchemist-6",
+					"l6feat_max": "choose(any), choose(any)",
+					"l7feat": "alchemist-7",
+					"l7feat_max": "choose(any), choose(any)",
+					"l8feat": "expert-8",
+					"l8feat_max": "choose(any), choose(any)",
+					"l9feat": "alchemist-9",
+					"l9feat_max": "choose(any), choose(any)",
+					"l10feat": "alchemist-10",
+					"l10feat_max": "choose(any), choose(any)"
+				}, "Bard": {
+					"content": 
+"",
+					"Requisite": "Cha",
+					"HD": "d8",
+					"Attack": "d4",
+					"Starting Skills": "Charm, Wit, Lore, Finesse",
+					"Class Skills": "Any",
+					"hd1": "d8",
+					"hd2": "d8",
+					"hd3": "d8",
+					"hd4": "d8",
+					"l1feat": "expert-1, bard-1",
+					"l1feat_max": "charm, wit, lore, finesse, choose(charm, wit, lore, finesse)",
+					"l2feat": "bard-2",
+					"l2feat_max": "choose(any), choose(any)",
+					"l3feat": "expert-3",
+					"l3feat_max": "choose(any), choose(any)",
+					"l4feat": "expert-4",
+					"l4feat_max": "choose(any), choose(any)",
+					"l5feat": "bard-5",
+					"l5feat_max": "choose(any), choose(any)",
+					"l6feat": "bard-6",
+					"l6feat_max": "choose(any), choose(any)",
+					"l7feat": "bard-7",
+					"l7feat_max": "choose(any), choose(any)",
+					"l8feat": "expert-8",
+					"l8feat_max": "choose(any), choose(any)",
+					"l9feat": "bard-9",
+					"l9feat_max": "choose(any), choose(any)",
+					"l10feat": "bard-10",
+					"l10feat_max": "choose(any), choose(any)"
+				}, "Wizard": {
+					"content": 
+"",
+					"Requisite": "Int",
+					"HD": "d6",
+					"Attack": "",
+					"Starting Skills": "Arcana, Deduction",
+					"Class Skills": "Arcana, Deduction, Crafting, Lore, Medicine, Perception",
+					"hd1": "d6",
+					"hd2": "d6",
+					"hd3": "d6",
+					"hd4": "d6",
+					"l1feat": "wizard-1",
+					"l1feat_max": "arcana, deduction",
+					"l2feat": "wizard-2",
+					"l2feat_max": "choose(arcana, deduction, crafting, lore, medicine, perception)",
+					"l3feat": "wizard-3",
+					"l3feat_max": "arcana",
+					"l4feat": "wizard-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "wizard-5",
+					"l5feat_max": "arcana",
+					"l6feat": "wizard-6",
+					"l6feat_max": "choose(arcana, deduction, crafting, lore, medicine, perception)",
+					"l7feat": "wizard-7",
+					"l7feat_max": "arcana",
+					"l8feat": "wizard-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "wizard-9",
+					"l9feat_max": "arcana",
+					"l10feat": "wizard-10",
+					"l10feat_max": "choose(arcana, deduction, crafting, lore, medicine, perception)"
+				}, "Cleric": {
+					"content": 
+"",
+					"Requisite": "Int",
+					"HD": "d6",
+					"Attack": "",
+					"Starting Skills": "Willpower, Perception",
+					"Class Skills": "Willpower, Perception, Charm, Fortitude, Lore, Medicine",
+					"hd1": "d6",
+					"hd2": "d6",
+					"hd3": "d6",
+					"hd4": "d6",
+					"l1feat": "cleric-1",
+					"l1feat_max": "willpower, perception",
+					"l2feat": "cleric-2",
+					"l2feat_max": "choose(willpower, perception, charm, fortitude, lore, medicine)",
+					"l3feat": "cleric-3",
+					"l3feat_max": "willpower",
+					"l4feat": "cleric-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "cleric-5",
+					"l5feat_max": "willpower",
+					"l6feat": "cleric-6",
+					"l6feat_max": "choose(willpower, perception, charm, fortitude, lore, medicine)",
+					"l7feat": "cleric-7",
+					"l7feat_max": "willpower",
+					"l8feat": "cleric-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "cleric-9",
+					"l9feat_max": "willpower",
+					"l10feat": "cleric-10",
+					"l10feat_max": "choose(willpower, perception, charm, fortitude, lore, medicine)"
+				}, "Druid": {
+					"content": 
+"",
+					"Requisite": "Wis",
+					"HD": "d8",
+					"Attack": "",
+					"Starting Skills": "Nature, Animal Ken",
+					"Class Skills": "Nature, Animal Ken, Crafting, Fortitude, Lore, Medicine, Perception",
+					"hd1": "d8",
+					"hd2": "d8",
+					"hd3": "d8",
+					"hd4": "d8",
+					"l1feat": "cleric-1",
+					"l1feat_max": "nature, animal-ken",
+					"l2feat": "cleric-2",
+					"l2feat_max": "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)",
+					"l3feat": "cleric-3",
+					"l3feat_max": "choose(nature, animal-ken)",
+					"l4feat": "cleric-4",
+					"l4feat_max": "choose(any)",
+					"l5feat": "cleric-5",
+					"l5feat_max": "choose(nature, animal-ken)",
+					"l6feat": "cleric-6",
+					"l6feat_max": "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)",
+					"l7feat": "cleric-7",
+					"l7feat_max": "choose(nature, animal-ken)",
+					"l8feat": "cleric-8",
+					"l8feat_max": "choose(any)",
+					"l9feat": "cleric-9",
+					"l9feat_max": "choose(nature, animal-ken)",
+					"l10feat": "cleric-10",
+					"l10feat_max": "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)"
+				}
+
+		}, "Feats": {
+
+		}, "Spells": {
+
+		}, "Items": {
+
+		}, "Setting": {
+
+		}, "NPCs": {
+
+		}, "Monsters": {
+
+		}
+	}
+}
