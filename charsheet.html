@@ -1014,7 +1014,7 @@
     <div class="f-row nowrap">
       <label class="skill animal-ken"><span class="skill-trainingbox">
         <button type="action" class="train-skill skill" name="act_train-animal-ken">+</button>
-      </span>&nbsp;<span data-i18n="animal-handling">Animal Ken</span></label>
+      </span>&nbsp;<span data-i18n="animal-ken">Animal Ken</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_animal-ken">
         <button class="proficiency skill animal-ken" type="action" name="act_roll-animal-ken">
         </button><label class="proficiency-die"><span name="attr_animal-ken"></span></label>
@@ -2005,7 +2005,7 @@
  }
 
  function rollDodge() {
-    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Dodge}}`;
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=dodge}}`;
     rollString    += ` {{reflexdie=@{reflex}}} `;
     rollString    += ` {{defense=[[@{defense}]]}} {{reflex=[[@{reflex}]]}} {{mod=[[@{dex}]]}}`;
     rollString    += ` {{total=[[ 0 ]]}}`;
@@ -2024,7 +2024,7 @@
     });
  }
  function rollParry() {
-    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Parry}}`;
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=parry}}`;
     rollString    += ` {{parrydie=@{attack}}} {{parrymod=@{parry2}}}`;
     rollString    += ` {{defense=[[@{defense}]]}} {{parry=[[@{attack}]]}} {{mod=[[@{parry2}]]}}`;
     rollString    += ` {{total=[[ 0 ]]}}`;
@@ -2041,7 +2041,7 @@
     });
  }
  function rollDeflect() {
-    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Deflect}}`;
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=deflect}}`;
     rollString    += ` {{reflexdie=@{reflex}}} {{parrydie=@{attack}}}`;
     rollString    += ` {{defense=[[@{defense}]]}} {{reflex=[[@{reflex}]]}} {{parry=[[@{attack}]]}} {{parrymod=}}`;
     rollString    += ` {{total=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
@@ -2073,7 +2073,7 @@
     if(values["featlist"].includes("expert-3")) power = values["power"];
 
     let rollString = `&{template:skills} {{name=@{character_name} }} `;
-    rollString    += `{{skill=${skill} }} {{die=@{${skill}}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
+    rollString    += `{{skill=${skill}}} {{die=@{${skill}}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
     if(d20 > "") {
       rollString  += ` {{d20=[[ ${d20} ]]}} `;
       rollString  += ` {{cof=[[ ?{Difficulty|None,0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|Custom,?{Enter DV}} ]]}}`;
@@ -2232,7 +2232,7 @@
   <div class="sheet-container">
     <div class="sheet-header">
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#skill}}<div class="sheet-title">{{skill}}</div>{{/skill}}
+      {{#skill}}<div class="sheet-title" data-i18n-dynamic>{{skill}}</div>{{/skill}}
     </div>
     <div class="sheet-content">
       {{#die}}
@@ -2251,7 +2251,7 @@
   <div class="sheet-container">
     <div class="sheet-header">
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#skill}}<div class="sheet-title">{{skill}}</div>{{/skill}}
+      {{#skill}}<div class="sheet-title" data-i18n-dynamic>{{skill}}</div>{{/skill}}
     </div>
     <div class="sheet-content">
       {{#die}}
@@ -2270,7 +2270,7 @@
   <div class="sheet-container">
     <div class="sheet-header">
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#title}}<div class="sheet-title" data-i18n-dynamic>{{title}}</div>{{/title}}
     </div>
     <div class="sheet-content">
       <div class="sheet-value sheet-fullwidth">
