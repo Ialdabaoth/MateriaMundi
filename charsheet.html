@@ -1,4 +1,355 @@
-<main>
+<input name="attr_sheet_type" type="hidden" class="sheet-type" value="Character">
+
+<!--========[ Party Management sheet ]========-->
+
+<main class="party">
+  <section class="party-header">
+    <div class="f-row f-center">
+      <h3><span name="attr_character_name"></span></h3>
+    </div>
+    <div class="f-row">
+      <label class="header-label" data-i18n="party-situation">Party's Situation:</label>
+      <span><select name="attr_situation">
+        <option data-i18n="tab-prepare" selected>Prepare</option>          
+        <option data-i18n="tab-travel">Travel</option>          
+        <option data-i18n="tab-explore">Explore</option>          
+        <option data-i18n="tab-fight">Fight</option>          
+      </select></span>
+    </div>
+  </section>
+  <section class="party">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char1"><span name="attr_name1"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof1">
+          <option data-i18-n="attack">Attack</option>
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+
+           <option data-i18-n="arcana">Arcana</option>
+           <option data-i18-n="crafting">Crafting</option>
+           <option data-i18-n="lore">Lore</option>
+
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs1">
+      <label class="party-char-done"><input type="checkbox" name="attr_done1"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char2"><span name="attr_name2"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof2">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs2">
+      <label class="party-char-done"><input type="checkbox" name="attr_done2"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char3"><span name="attr_name3"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof3">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs3">
+      <label class="party-char-done"><input type="checkbox" name="attr_done3"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char4"><span name="attr_name4"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof4">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs4">
+      <label class="party-char-done"><input type="checkbox" name="attr_done4"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char5"><span name="attr_name5"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof5">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs5">
+      <label class="party-char-done"><input type="checkbox" name="attr_done5"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char6"><span name="attr_name6"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof6">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs6">
+      <label class="party-char-done"><input type="checkbox" name="attr_done6"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char7"><span name="attr_name7"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof7">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs7">
+      <label class="party-char-done"><input type="checkbox" name="attr_done7"> Done</label>
+    </div>
+    <hr class="line">
+    <div class="party-line">
+      <button type="action" class="party-char-name" name="act_select-char7"><span name="attr_name8"></span></button>
+      <label class="party-char-ask">Ask them to roll:</label>
+      <select type="text" class="party-char-skill" name="attr_prof8">
+          <option data-i18-n="attack">Attack</option>
+          <optgroup label="Saving Throws">
+           <option data-i18-n="athletics">Athletics</option>
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="fortitude">Fortitude</option>
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup>
+          <optgroup label="Dexterity">
+           <option data-i18-n="reflex">Reflex</option>
+           <option data-i18-n="stealth">Stealth</option>
+           <option data-i18-n="finesse">Finesse</option>
+          </optgroup>
+          <optgroup label="Intelligence">
+           <option data-i18-n="deduction">Deduction</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="willpower">Willpower</option>
+          </optgroup> 
+          <optgroup label="Wisdom">
+           <option data-i18-n="perception">Perception</option>
+           <option data-i18-n="animal-ken">Animal Ken</option>
+           <option data-i18-n="medicine">Medicine</option>
+           <option data-i18-n="nature">Nature</option>
+          </optgroup> 
+          <optgroup label="Charisma">
+           <option data-i18-n="willpower">Willpower</option>
+           <option data-i18-n="Charm">Charm</option>
+           <option data-i18-n="wit">Wit</option>
+          </optgroup> 
+      </select>
+      <label class="party-char-vs"> vs. </label>
+      <input type="text" class="party-char-dv" name="attr_vs8">
+      <label class="party-char-done"><input type="checkbox" name="attr_done8"> Done</label>
+    </div>
+  </section>
+
+  <section class="party-desc">
+    <textarea name="attr_desc" class="fullsize"></textarea>
+  </section>
+  
+  <footer class="f-col f-center">
+    <span style="font-color: white;" data-i18n="copyright">(C) Bakagaijin Productions</span>
+  </footer>
+</main party>
+
+<!--========[ Character sheet ]========-->
+
+<main class="character">
   <section class="header">
     <div class="f-row">
       <label class="header-label" data-i18n="name">Name:</label>
@@ -23,7 +374,11 @@
     </div>
   </section>
 
-  <section class="builder">
+  <section class="group">
+    <div class="f-row">
+      <label class="header-label" data-i18n="party">Party:</label>
+      <span><input name="attr_party" type="text" class="character-party"></span>
+    </div>
   </section>
   
   <section class="level f-row nowrap">
@@ -60,14 +415,6 @@
   </section>
 
   <section class="actions f-col nowrap">
-   <input type="hidden" name="attr_power_max" class="power-max" >
-   <div class="f-row nowrap show-power">
-      <label class="ability"><span name="attr_powername" data-i18n-dynamic ></span></label>
-      <span class="blockbox">
-        <input class="bigbox" type="text" name="attr_power">
-        <span style="font-size: 18px; font-style: bold;"><b>/</b></span>
-        <input class="bigbox" readonly name="attr_power_max"></span>
-   </div>    
    <input type="hidden" name="attr_situation" class="situation-toggle">
    <div class="situationPanel">
    <div class="panelHeader">
@@ -139,25 +486,25 @@
       <span class="rollbox">
         <button class="proficiency" type="roll" name="roll_hd1" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd1}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd1" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd1_max"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l4">
         <button class="proficiency req-l4" type="roll" name="roll_hd2" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd2}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd2" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd2_max"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l7">
         <button class="proficiency req-l7" type="roll" name="roll_hd3" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd3}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd3" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd3_max"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l10">
         <button class="proficiency req-l10" type="roll" name="roll_hd4" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd4}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd4" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd4_max"></span></label>
       </span>
     </div>   </div panel-travel>
    <div class="panel-explore">
@@ -187,25 +534,25 @@
       <span class="rollbox">
         <button class="proficiency" type="roll" name="roll_hd1" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd1}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd1" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd1"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l4">
         <button class="proficiency req-l4" type="roll" name="roll_hd2" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd2}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd2" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd2"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l7">
         <button class="proficiency req-l7" type="roll" name="roll_hd3" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd3}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd3" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd3"></span></label>
       </span>
       &nbsp;
       <span class="rollbox show-l10">
         <button class="proficiency req-l10" type="roll" name="roll_hd4" 
           value="&{template:rolls} {{subtitle=Hit Die (@{hd4}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd4" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_hd4"></span></label>
       </span>
     </div>
    </div panel-explore>
@@ -213,10 +560,7 @@
    <div class="panel-fight">
     <div class="f-row nowrap">
       <label class="initiative" data-i18n="initiative">Initiative</label>
-      
-      <!-- button class="proficiency" type="roll" name="roll_initiative" 
-       value="&{template:rolls} {{subtitle=Initiative}} {{title=@{character_name} }} {{roll= [[@{d20}@{wis}+@{perception}[perception] ]]}}">
-      </button --><input type="text" name="attr_initiative" class="bigbox"><!-- class="proficiency-die" -->
+      <input type="text" name="attr_initiative" class="bigbox">
     </div>
     <hr class="line">
     <div class="f-row nowrap">
@@ -247,9 +591,9 @@
         <hr class="space">
         <div class="f-row nowrap">
           <label class="attacks"><span data-i18n="weapon-attacks">Weapon Attacks</span> (<span name="attr_attack_max"></span><span data-i18n="per-action">/action</span>)</label>
-        <span class="rollbox">
-            <button class="proficiency attack" type="roll" name="roll_attack" value="@{activeweapon}">
-            </button><label class="proficiency-die"><span name="attr_attack" data-i18n-dynamic></span></label>
+        <span class="rollbox"><input type="hidden" class="die-controller" name="attr_attack">
+            <button class="proficiency attack" type="action" name="act_roll-attack">
+            </button><label class="proficiency-die"><span name="attr_attack"></span></label>
         </span>
         </div>
         <hr class="line">
@@ -284,25 +628,34 @@
       
       <div class="panel-move">
         <hr class="space">
-        <div class="f-row nowrap">
-            <button type="action" class="action" name="act_walk"><span data-i18n="walk">Walk</span></button>
-            <label class="action"><span name="attr_speed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
+        <div class="f-row">
+            <label class="description"><b><span data-i18n="walk">Walk</span></b><br>
+            <span data-i18n="walk-description" data-i18n-vars="<span name='attr_speed'></span>">You may move up to {{0}} paces freely as part of your action.</span></label>
         </div>
-        <div class="f-row nowrap">
+        <input type="hidden" class="athlete-feat-toggle" name="attr_featlist">
+        <div class="f-row athlete">
+            <label class="description"><b><span data-i18n="warrior-2">Superior Athlete</span></b><br>
+            <span data-i18n="warrior-2-description">You may jump, climb, and swim freely as part of your normal movement during your action.</span></label>
+        </div>
+        <hr class="line sprint">
+        <div class="f-row">
             <button type="action" class="action" name="act_sprint"><span data-i18n="sprint">Sprint</span></button>
-            <label class="action"><span name="attr_sprintspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
+            <label class="description"><span data-i18n="sprint-description" data-i18n-vars="<span name='attr_sprintspeed'></span>">You may use your action to dash up to {{0}} paces.</span></label>
         </div>
-        <div class="f-row nowrap">
-            <button type="action" class="action" name="act_jump"><span data-i18n="jump">Jump</span></button>
-            <label class="action"><span name="attr_jumpspeed"></span> <span data-i18n="paces">paces</span></label>
-        </div>
-        <div class="f-row nowrap">
+        <hr class="line climb">
+        <div class="f-row climb nowrap">
             <button type="action" class="action" name="act_climb"><span data-i18n="climb">Climb</span></button>
-            <label class="action"><span name="attr_climbspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
+            <label class="description"><span data-i18n="climb-description" data-i18n-vars="<span name='attr_climbspeed'></span>">You may use your action to climb up to {{0}} paces.</span></label>
         </div>
-        <div class="f-row nowrap">
+        <hr class="line swim">
+        <div class="f-row swim nowrap">
             <button type="action" class="action" name="act_swim"><span data-i18n="swim">Swim</span></button>
-            <label class="action"><span name="attr_swimspeed"></span> <span data-i18n="paces">paces</span> / <span data-i18n="round">round</span></label>
+            <label class="description"><span data-i18n="swim-description" data-i18n-vars="<span name='attr_swimspeed'></span>">You may use your action to swim up to {{0}} paces.</span></label>
+        </div>
+        <hr class="line jump">
+        <div class="f-row jump nowrap">
+            <button type="action" class="action" name="act_jump"><span data-i18n="jump">Jump</span></button>
+            <label class="description"><span data-i18n="jump-description" data-i18n-vars="<span name='attr_jumpspeed'></span>">You may use your action to jump up to {{0}} paces.</span></label>
         </div>
       </div panel-move>
       
@@ -310,15 +663,40 @@
         <hr class="space">
         <div class="f-row">
             <button type="action" class="action" name="act_guard"><span data-i18n="guard">Guard</span></button>
-            <label class="description" data-i18n="guard-description">Regain your reaction after you successfully parry or hit with an opportunity attack</label>
+            <label class="description">
+                <span data-i18n="defensive-action-description">Use your action to re-roll your initiative. </span>
+                <span data-i18n="guard-description">Regain your reaction whenever you successfully parry or hit with an opportunity attack.</span>
+            </label>
         </div>
         <hr class="line">
-        <div class="f-row">
+        <input type="hidden" class="elusive-feat-toggle" name="attr_featlist">
+        <div class="f-row elusive">
+            <label class="description"><b><span data-i18n="thief-2">Elusive</span></b><br>
+            <span data-i18n="thief-2-description">You may choose to evade or hide as part of your normal action (choose one).</span></label>
+        </div>
+        <div class="f-row elusive">
+            <input type="radio" name="sub-action" value="evade">
+            <label class="description"><b><span data-i18n="evade">Evade</span></b> - 
+            <span data-i18n="evade-description">Regain your reaction whenever you successfully dodge.</span></label>
+        </div>
+        <div class="f-row elusive">
+            <input type="radio" name="sub-action" value="hide">
+            <label class="description"><b><span data-i18n="hide">Hide</span></b> - 
+            <span data-i18n="hide-description">Roll Stealth to become hidden</span></label>
+        </div>
+        <div class="f-row elusive">
+            <button type="action" class="action" name="act_hide"><span data-i18n="hide-evade">Both</span></button>
+            <label class="description" data-i18n="hide-evade-description">Hide and Evade (this uses your action)</label>
+        </div>
+        <div class="f-row evade">
             <button type="action" class="action" name="act_evade"><span data-i18n="evade">Evade</span></button>
-            <label class="description" data-i18n="evade-description">Regain your reaction after you successfully dodge</label>
+            <label class="description">
+                <span data-i18n="defensive-action-description">Use your action to re-roll your initiative. </span>
+                <span class="description" data-i18n="evade-description">Regain your reaction after you successfully dodge</span>
+            </label>
         </div>
         <hr class="line">
-        <div class="f-row">
+        <div class="f-row evade">
             <button type="action" class="action" name="act_hide"><span data-i18n="hide">Hide</span></button>
             <label class="description" data-i18n="hide-description">Roll Stealth to become hidden</label>
         </div>
@@ -326,28 +704,44 @@
       
       <div class="panel-react">
         <hr class="space">
-        <div class="f-row">
-          <span><button class="opportunity-attack" type="roll" name="roll_opattack" value="@{activeweapon}"></button></span>
+        <div class="f-row"><input type="hidden" class="die-controller" name="attr_attack">
+          <button class="opportunity-attack reaction" type="action" name="act_opp-attack" value="@{activeweapon}"></button>
           <label class="description"><b><span data-i18n="opportunity-attack">Opportunity Attack</span></b><br>
           <span data-i18n="opportunity-attack-description">Attack with your current weapon.</span></label>
         </div> 
         <hr class="line">
-        <div class="f-row">
-          <span><button class="defend" type="roll" name="roll_dodge" 
-   	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[dodge] ]]}}"></button></span>
+        <input type="hidden" class="deflect-feat-toggle" name="attr_featlist">
+        <div class="f-row deflect"><input type="hidden" class="die-controller" name="attr_attack">
+          <button class="defend reaction" type="action" name="act_roll-deflect"></button>
+          <label class="description"><b><span data-i18n="deflect">Deflect</span></b><br>
+          <span data-i18n="deflect-description" data-i18n-vars="<span name='attr_reflex'></span>|<span name='attr_attack'></span>">Add <b><span name="attr_reflex"></span>+<span name="attr_attack"></span></b> to your Defense vs one attack.</span></label>
+        </div> 
+        <div class="f-row dodge"><input type="hidden" class="die-controller" name="attr_reflex">
+          <button class="defend reaction" type="action" name="act_roll-dodge" 
+   	        value="&{template:rolls} {{subtitle=Dodge}} {{title=@{character_name} }} {{roll= [[@{defense}+@{reflex}[reflex] ]]}}"></button>
           <label class="description"><b><span data-i18n="dodge">Dodge</span></b><br>
           <span data-i18n="dodge-description" data-i18n-vars="<span name='attr_reflex'></span>">Add <b><span name="attr_reflex"></span></b> to your Defense vs one attack.</span></label>
         </div> 
         <hr class="line">
-        <div class="f-row">
-          <span><button class="defend" type="roll" name="roll_parry" 
-   	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll=[[@{defense}+@{parry2}+@{attack}[parry] ]]}}"></button></span>
+        <div class="f-row parry"><input type="hidden" class="die-controller" name="attr_attack">
+          <button class="defend reaction" type="action" name="act_roll-parry" 
+   	        value="&{template:rolls} {{subtitle=Parry (@{weapon2})}} {{title=@{character_name} }} {{roll=[[@{defense}+@{parry2}+@{attack}[attack] ]]}}"></button>
           <label class="description"><b><span data-i18n="parry">Parry</span> (<span name="attr_weapon2"></span>)</b><br>
           <span data-i18n="parry-description" data-i18n-vars="<span name='attr_attack'></span>|<span name='attr_parry2'></span>">Add <b><span name="attr_attack"></span><span name="attr_parry2"></span></b>
           to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</span></label>
         </div> 
       </div panel-react>
       
+      <div class="panel-feat">
+        <input type="hidden" name="attr_power_max" class="power-max" >
+        <div class="f-row nowrap show-power">
+        <label class="ability"><span name="attr_powername" data-i18n-dynamic ></span></label>
+        <span class="blockbox">
+            <input class="bigbox" type="text" name="attr_power">
+            <span style="font-size: 18px; font-style: bold;"><b>/</b></span>
+            <input class="bigbox" readonly name="attr_power_max"></span>
+        </div>    
+      </div panel-feat>
     </div actionPanel>
    </div panel-fight>
    
@@ -389,7 +783,7 @@
       <label class="dv"><span name="attr_athletics-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_athletics">
         <button class="proficiency save athletics" type="action" name="act_roll-athletics">
-        </button><label class="proficiency-die"><span name="attr_athletics" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_athletics"></span></label>
       </span>
     </div>
     <hr class="line">
@@ -399,7 +793,7 @@
     </div>
     <hr class="space">
     <div class="f-row nowrap">
-      <label class="action"><span name="attr_movement"></span> <span  data-i18n="speed">Speed</span></label>
+      <label class="action"><span name="attr_movement" data-i18n-dynamic></span> <span data-i18n="speed">Speed</span></label>
       <span name="attr_move" class="bigbox"></span>
     </div>
   </section>
@@ -438,7 +832,7 @@
       <label class="dv"><span name="attr_reflex-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_reflex">
         <button class="proficiency save reflex" type="action" name="act_roll-reflex">
-        </button><label class="proficiency-die"><span name="attr_reflex" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_reflex"></span></label>
       </span>
     </div>
     <hr class="space">
@@ -448,7 +842,7 @@
       </span>&nbsp;<span  data-i18n="stealth">Stealth</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_stealth"> 
         <button class="proficiency skill stealth" type="action" name="act_roll-stealth">
-        </button><label class="proficiency-die"><span name="attr_stealth" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_stealth"></span></label>
       </span>
     </div>
     <hr class="space">
@@ -458,7 +852,7 @@
       </span>&nbsp;<span  data-i18n="finesse">Finesse</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_finesse">
         <button class="proficiency skill finesse" type="action" name="act_roll-finesse">
-        </button><label class="proficiency-die"><span name="attr_finesse" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_finesse"></span></label>
       </span>
     </div>
   </section>
@@ -497,7 +891,7 @@
       <label class="dv"><span name="attr_fortitude-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_fortitude">
         <button class="proficiency save fortitude" type="action" name="act_roll-fortitude">
-        </button><label class="proficiency-die"><span name="attr_fortitude" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_fortitude"></span></label>
       </span>    
     </div>
     <hr class="line">
@@ -545,7 +939,7 @@
       <label class="dv"><span name="attr_deduction-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_deduction">
         <button class="proficiency save deduction" type="action" name="act_roll-deduction">
-        </button><label class="proficiency-die"><span name="attr_deduction" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_deduction"></span></label>
       </span>
     </div>
     <hr class="space">
@@ -555,7 +949,7 @@
       </span>&nbsp;<span data-i18n="arcana">Arcana</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_arcana">
         <button class="proficiency skill arcana" type="action" name="act_roll-arcana">
-        </button><label class="proficiency-die"><span name="attr_arcana" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_arcana"></span></label>
       </span>
     </div>
     <hr class="space">
@@ -565,7 +959,7 @@
       </span>&nbsp;<span data-i18n="crafting">Crafting</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_crafting">
         <button class="proficiency skill crafting" type="action" name="act_roll-crafting">
-        </button><label class="proficiency-die"><span name="attr_crafting" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_crafting"></span></label>
       </span>
     </div>
     <hr class="space">
@@ -575,7 +969,7 @@
       </span>&nbsp;<span data-i18n="lore">Lore</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_lore">
         <button class="proficiency skill lore" type="action" name="act_roll-lore">
-        </button><label class="proficiency-die"><span name="attr_lore" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_lore"></span></label>
       </span>
     </div>
   </section>
@@ -614,7 +1008,7 @@
       <label class="dv"><span name="attr_perception-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_perception">
         <button class="proficiency save perception" type="action" name="act_roll-perception">
-        </button><label class="proficiency-die"><span name="attr_perception" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_perception"></span></label>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
@@ -623,7 +1017,7 @@
       </span>&nbsp;<span data-i18n="animal-handling">Animal Ken</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_animal-ken">
         <button class="proficiency skill animal-ken" type="action" name="act_roll-animal-ken">
-        </button><label class="proficiency-die"><span name="attr_animal-ken" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_animal-ken"></span></label>
     </div>
     <hr class="space">
     <div class="f-row nowrap">
@@ -632,7 +1026,7 @@
       </span>&nbsp;<span data-i18n="nature">Nature</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_nature">
         <button class="proficiency skill nature" type="action" name="act_roll-nature">
-        </button><label class="proficiency-die"><span name="attr_nature" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_nature"></span></label>
       </span>    
     </div>
     <hr class="space">
@@ -642,7 +1036,7 @@
       </span>&nbsp;<span data-i18n="medicine">Medicine</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_medicine">
         <button class="proficiency skill medicine" type="action" name="act_roll-medicine">
-        </button><label class="proficiency-die"><span name="attr_medicine" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_medicine"></span></label>
       </span>    
     </div>
   </section>
@@ -681,7 +1075,7 @@
       <label class="dv"><span name="attr_willpower-dv"></span></label> 
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_willpower">
         <button class="proficiency save willpower" type="action" name="act_roll-willpower">
-        </button><label class="proficiency-die"><span name="attr_willpower" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_willpower"></span></label>
       </span>    
     </div>
     <hr class="space">
@@ -691,7 +1085,7 @@
       </span>&nbsp;<span data-i18n="charm">Charm</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_charm">
         <button class="proficiency skill charm" type="action" name="act_roll-charm">
-        </button><label class="proficiency-die"><span name="attr_charm" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_charm"></span></label>
       </span>    
     </div>
     <hr class="space">
@@ -701,7 +1095,7 @@
       </span>&nbsp;<span data-i18n="wit">Wit</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_wit">
         <button class="proficiency skill wit" type="action" name="act_roll-wit">
-        </button><label class="proficiency-die"><span name="attr_wit" data-i18n-dynamic></span></label>
+        </button><label class="proficiency-die"><span name="attr_wit"></span></label>
       </span>    
     </div>
 
@@ -802,90 +1196,9 @@
   <footer class="f-col f-center">
     <span style="font-color: white;" data-i18n="copyright">(C) Bakagaijin Productions</span>
   </footer>
-</main>
+</main character>
 
-<!-- roll template -->
-
-<rolltemplate class="sheet-rolltemplate-rolls">
-  <div class="sheet-container">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-    </div>
-    <div class="sheet-content">
-      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
-      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
-      {{#allprops() title name subtitle roll desc}}
-      <div class="sheet-key">{{key}}</div>
-      <div class="sheet-value">{{value}}</div>
-      {{/allprops() title name subtitle roll desc}}
-      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
-</rolltemplate>
-
-<rolltemplate class="sheet-rolltemplate-skills">
-  <div class="sheet-container">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-    </div>
-    <div class="sheet-content">
-      {{#skill}}<div class="sheet-key">{{skill}} ({{die}}+{{modname}}):</div>
-      <div class="sheet-value">{{roll}} {{rawmod}} </div>{{/skill}}
-      {{#d20}}<div class="sheet-key">D20:</div>
-      <div class="sheet-value">{{d20}} </div>{{/d20}}
-      {{#total}}<div class="sheet-key">Total:</div>
-      <div class="sheet-value">{{computed::total}}</div>{{/total}}
-      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
-</rolltemplate>
-
-<rolltemplate class="sheet-rolltemplate-saves">
-  <div class="sheet-container">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-    </div>
-    <div class="sheet-content">
-      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
-      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
-      {{#allprops() title name subtitle desc}}
-      <div class="sheet-key">{{key}}</div>
-      <div class="sheet-value">{{value}}</div>
-      {{/allprops() title name subtitle desc}}
-      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
-</rolltemplate>
-
-<rolltemplate class="sheet-rolltemplate-attacks">
-  <div class="sheet-container">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-    </div>
-    <div class="sheet-content">
-      {{#hit}}
-      <div class="sheet-key">Attack</div>
-      <div class="sheet-value">{{hit}}</div>
-      {{/hit}}
-      {{#damage}}
-      <div class="sheet-key">Damage</div>
-      <div class="sheet-value">{{damage}}</div>
-      {{/damage}}
-      {{#allprops() title name subtitle desc attack hit damage}}
-      <div class="sheet-key">{{key}}</div>
-      <div class="sheet-value">{{value}}</div>
-      {{/allprops() title name subtitle desc attack hit damage}}
-      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
-</rolltemplate>
-
-<!-- javascript -->
+<!-------------------======================= javascript =======================------------------->
 <script type="text/worker">
 
 /*===== tabbed functionality =====*/
@@ -911,13 +1224,12 @@
     const moveTabs = ["walk", "sprint", "climb", "swim", "jump"];
     moveTabs.forEach(tab => {
         on(`clicked:${tab}`, function() {
-            let val = String(tab).charAt(0).toUpperCase() + String(tab).slice(1);
-            let t = tab; if(tab == "walk") t = "";
+            let moveType = tab; if(tab == "walk") moveType = "";
     		var attrsToChange = {};
-            getAttrs([t+"speed", "move"], function(v) {
-                console.log("  clicked " + tab + "; retrieving " + t+"speed (" + v[t+"speed"] + ")");
-                attrsToChange["move"] = v[t+"speed"];
-                attrsToChange["movement"] = val;
+            getAttrs([moveType+"speed", "move"], function(values) {
+                console.log("  clicked " + tab + "; retrieving " + moveType+"speed (" + values[moveType+"speed"] + ")");
+                attrsToChange["move"] = values[moveType+"speed"];
+                attrsToChange["movement"] = tab;
         		setAttrs(attrsToChange);
             });
         });
@@ -943,6 +1255,12 @@
 
     });
 
+    on(`clicked:roll-attack`, function(eventInfo) { rollAttack(""); });
+    on(`clicked:opp-attack`, function(eventInfo) { rollAttack("Opportunity"); });
+    on(`clicked:roll-dodge`, function(eventInfo) { rollDodge(); });
+    on(`clicked:roll-parry`, function(eventInfo) { rollParry(); });
+    on(`clicked:roll-deflect`, function(eventInfo) { rollDeflect(); });
+    
     on("change:character_name", function(eventInfo) { setupActions(); });
     on("change:race", function(eventInfo) { setupRace(); });
     on("change:class", function(eventInfo) { setupClass(); });
@@ -950,12 +1268,22 @@
     
     on("sheet:opened", function() {
       initialize();    
-      validate();
-      abilities.forEach(ability => { updatemod(ability); });
-      saves.forEach(save => { updatedv(save); });
-      setupActions();
+      getAttrs(["sheet_type"], function(values) {
+        let sheetType = String(values["sheet_type"]).toLowerCase();
+        if(sheetType.includes("character")) {
+          setupClass();
+          validate();
+          abilities.forEach(ability => { updatemod(ability); });
+          saves.forEach(save => { updatedv(save); });
+          setupActions();
+        }
+      });
     });
  
+    const levelUpData = ["class", "class_max", "level", "featlist", "constitution", "con", "hd1", "hd2", "hd3", "hd4", 
+                        "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
+                        "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
+
     var raceTable = [];
     var raceTable2 = [];
     var raceData = {};
@@ -1184,18 +1512,6 @@
         loadClass["l9feat_max"] = "willpower";
         loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
         classData["cleric"] = JSON.parse(JSON.stringify(loadClass));
-        
-        
-        getAttrs(levelUpData, function(values) {
-            if(values["l1feat"]==undefined) {
-                console.log("---=== NEW CHARACTER DETECTED ===---");
-                if(values["class"]==undefined) {
-                    console.log("---=== NO CLASS CHOSEN ===---");
-                } else {
-                    setAttrs(classData[values["class"]]);
-                }
-            }
-        });
     }
     
     function setupRace() {
@@ -1206,7 +1522,15 @@
     }
     
     function setupClass() {
-        getAttrs(["class", "class_max", "level"], function(values) {
+        getAttrs(levelUpData, function(values) {
+            if(values["featlist"]==undefined) {
+                console.log("---=== NEW CHARACTER DETECTED ===---");
+                if(values["class"]==undefined) {
+                    console.log("---=== NO CLASS CHOSEN ===---");
+                } else {
+                    setAttrs(classData[values["class"]]);
+                }
+            }
             let level = values["level"];
             if(level == undefined || level == 0) {
                 newClass = values["class"];
@@ -1269,9 +1593,7 @@
    find the first matching choose(...) block, and replace it with 
    that choice.
 */
-    const levelUpData = ["class", "level", "constitution", "con", "hd1", "hd2", "hd3", "hd4",
-                        "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
-                        "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
+    const untrained = "", untrainedDie = "2df";
     function validate() {
         getAttrs(["character_name"], function(values) {
             console.log("---=== validating " + values["character_name"] + " ===---");
@@ -1352,13 +1674,13 @@
             } else if(feats.includes("expert-1")) {
                 attackDie = "d4"; 
             } else {
-                attackDie = "";
+                attackDie = untrained;
             }
             setAttrs({ featlist: feats, powername: power, power_max: powerMax, attack: attackDie, attack_max: attacks, hitpoints_max: maxHP });
            
             // clear out the skills, to prepare for running through the tallied skill list
             var skillData = {};
-            skills.forEach(skill => { skillData[skill] = "2d4kl1"; skillData[skill+"_max"] = "d4"; });
+            skills.forEach(skill => { skillData[skill] = untrained; skillData[skill+"_max"] = "d4"; });
             
             // first, work out skill maximums based on highest class and level skill caps
             
@@ -1368,36 +1690,46 @@
                 skillData["fortitude_max"]  = biggerDie(skillData["fortitude_max"], attackDie);
             }
             
+            if(feats.includes("wizard-3")) { // wizards use arcana for spells, so they go up every 2 levels
+                if(feats.includes("wizard-9"))      skillData["arcana_max"] = "d12";
+                else if(feats.includes("wizard-7")) skillData["arcana_max"] = "d10";
+                else if(feats.includes("wizard-5")) skillData["arcana_max"] = "d8";
+                else                                skillData["arcana_max"] = "d6"; 
+            }  
+            if(feats.includes("cleric-3")) { // clerics use willpower for miracles, so they go up every 2 levels
+                if(feats.includes("cleric-9"))      skillData["willpower_max"] = "d12";
+                else if(feats.includes("cleric-7")) skillData["willpower_max"] = "d10";
+                else if(feats.includes("cleric-5")) skillData["willpower_max"] = "d8";
+                else                                skillData["willpower_max"] = "d6"; 
+            } 
+            
             var maxDie;
             if(feats.includes("bard-10")
             || feats.includes("alchemist-10")
-            || feats.includes("thief-9")
-            || feats.includes("wizard-9")
-            || feats.includes("cleric-9")
+            || feats.includes("thief-10")
             || feats.includes("druid-9")) { 
-                maxDie = "d12"; // magic-users reach a d12 skill cap at level 9, while experts reach it at level 10
+                maxDie = "d12"; // druids reach a d12 skill cap at level 9, while experts reach it at level 10
             } else if(feats.includes("bard-7")
             || feats.includes("alchemist-7")
             || feats.includes("thief-7")
-            || feats.includes("wizard-7")
-            || feats.includes("cleric-7")
             || feats.includes("druid-7")) { 
-                maxDie = "d10"; // magic-users and experts both reach a d10 skill cap at level 7
+                maxDie = "d10"; // druids and experts both reach a d10 skill cap at level 7
             } else if(feats.includes("expert-4")
-            || feats.includes("wizard-5")
-            || feats.includes("cleric-5")
             || feats.includes("druid-5") 
+            || feats.includes("wizard-9")
+            || feats.includes("cleric-9")
             || feats.includes("warrior-9")) {
-                maxDie = "d8"; // experts reach a d8 skill cap at level 4, while magic-users reach it at level 5, and warriors at level 9.
+                maxDie = "d8"; // experts reach a d8 skill cap at level 4, while druids reach it at level 5, and everyone else at level 9.
             } else if(feats.includes("expert-1") 
-            || feats.includes("wizard-3") 
-            || feats.includes("cleric-3") 
             || feats.includes("druid-3") 
+            || feats.includes("wizard-5") 
+            || feats.includes("cleric-5") 
             || feats.includes("warrior-5")) { 
-                maxDie = "d6"; // experts start with a d6 skill cap, while magic-users reach it at level 3, and warriors at level 5.
+                maxDie = "d6"; // experts start with a d6 skill cap, while druids reach it at level 3, and everyone else at level 5.
             } else {
                 maxDie = "d4"; // magic-users and warriors start with a skill cap at d4.
             }
+
             console.log("  attack -> " + attackDie);
             
             // now run through the tallied skill list, and assign the appropriate skill levels
@@ -1500,7 +1832,7 @@
     updatedv(mod2save(modname));
   });
  }
-
+ 
  function recalcHitPoints() {
     getAttrs(levelUpData, function(values) {
         if(values["l1feat"] == undefined) {
@@ -1522,8 +1854,8 @@
     });
  }
  function train(skill) {
-    // each skill is either "none" (technically 2d4kl1), 
-    // or a die size between d4 and d12. 
+
+    // each skill is either 0, or a die size between d4 and d12. 
     // training a skill means raising it by one die size,
     // if doing so wouldn't exceed that skill's cap.
     
@@ -1593,90 +1925,192 @@
  }
  
  function setupActions() {
-    getAttrs(["character_name", "attack1_action", "attack2_action"], function(v) {
-		var attrsToChange = {};
-		attrsToChange["attack1_action"] = "%{" + v["character_name"] + "|attack1}";
-		attrsToChange["attack2_action"] = "%{" + v["character_name"] + "|attack2}";
-		setAttrs(attrsToChange);
+
+    getAttrs(["sheet_type", "character_name", "attack1_action", "attack2_action"], function(values) {
+        let sheetType = String(values["sheet_type"]).toLowerCase();
+        if(sheetType.includes("character")) {
+
+		  var attrsToChange = {};
+		  attrsToChange["attack1_action"] = "%{" + values["character_name"] + "|attack1}";
+		  attrsToChange["attack2_action"] = "%{" + values["character_name"] + "|attack2}";
+		  setAttrs(attrsToChange);
+        }
 	});
  }
  
- function rollSkill(skill) {
-  getAttrs([skill, "power", "featlist", "d20"], function(values) {
-    let rawmod = skill2mod(skill); 
-    let talent = 0;
-    let ability = "";  
-    let power = 0;
+ function rollAttack(attacktype) {
+  getAttrs(["attack", "featlist", "d20", "weapon1", "accuracy1", "damage1"], function(values) {
+    let weapon = values["weapon1"];
+    let accuracy = values["accuracy1"];  
+    let damage = values["damage1"];
+    let attack = values["attack"];  
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
-    if(values["featlist"].includes("expert-3")) power = values["power"];
 
-    if(power > 0) {
-      talent = die2dv(values[skill]);
-      if(talent < 4) talent = 4;
-      ability = mod2score(mod);
-    }
-    let rollString = `&{template:skills} {{skill=${skill} }} {{die=@{${skill}} }} {{rawmod=@{${rawmod}} }} {{modname=${rawmod} }} {{title=@{character_name} }}`;
-    if(d20 > "") rollString += ` {{d20=[[ @{d20} ]] }} `;
-    if(ability > "") rollString += ` {{ability=[[ @{${ability}} ]] }}`;
-    rollString += ` {{roll=[[ @{${skill}}cs13 ]] }} {{talent=[[ ${talent} ]] }}`;
-    rollString += ` {{mod=[[ @{${rawmod}} ]] }} {{power=[[${power} ]] }}`;
-    rollString += ` {{total=[[ 0 ]] }}`;
+    let rollString = `&{template:attacks} {{name=@{character_name}}} {{title=${weapon}}} {{attacktype=${attacktype}}}`;
+    rollString    += ` {{dmg=${damage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
+    if(attack = untrained) attack = 0;
+    rollString    += ` {{roll=[[ @{attack} ]]}} {{d20=[[ ${d20} ]]}}`;
+    rollString    += ` {{defense=[[ ?{vs Defense} ]]}}`;
+    rollString    += ` {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
+    rollString    += ` {{damage=[[ ${damage} ]] }} {{bonusdmg=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
     console.log(rollString);
     
     startRoll(rollString, data => {
       const results = data.results;
       const roll = results.roll.result;
-      const talent = results.talent.result;
-      const power = results.power.result;
-      const mod = results.mod.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
-      const ability = (results.ability == undefined) ? 0 : results.ability.result;
-      const rollResult = d20 + roll + 1*mod;
+      const defense = results.defense.result;
 
-      let talentResult = "";
-      let abilityResult = "";
-      let doubleResult = "";
-      let talentCmd = "";
-      let abilityCmd = "";
-      let doubleCmd = "";
-      if(power > 0) { // Reliable Talent is available
-          if(roll > 1 && roll < talent) { // can use Reliable Talent on the proficiency die
-            talentResult = d20 + talent + 1*mod;
-            talentCmd = `&{template:skills} {{skill=${skill} }} {{die=@{${skill}} }} {{title=@{character_name} }}`;
-            if(d20 > "") talentCmd += ` {{d20=[[ ${d20} ]] }} {{ability=[[ @{${ability}} ]] }}`;
-            talentCmd += ` {{roll=[[ ${talent} ]] }} {{talent=[[ 1 ]] }}`;
-            talentCmd += ` {{mod=[[ @{${mod}} ]] }}`;
-            talentCmd += ` {{total=[[ ${talentResult} ]] }}`;
-          } 
-          if(d20 > 1 && d20 < ability) { // can use Reliable Talent on the d20
-            abilityResult = ability + proficiency + 1*mod;  
-            abilityCmd = `&{template:skills} {{skill=${skill} }} {{die=@{${skill}} }} {{title=@{character_name} }}`;
-            abilityCmd += ` {{d20=[[ ${ability} ]] }} {{ability=[[ 1 ]] }}`;
-            abilityCmd += ` {{roll=[[ ${roll} ]] }} {{talent=[[ ${talent} ]] }}`;
-            abilityCmd += ` {{mod=[[ @{${mod}} ]] }}`;
-            abilityCmd += ` {{total=[[ ${abilityResult} ]] }}`;
-            if(roll > 1 && roll < talent && power > 1) { // can use 2x Reliable Talent on both dice
-              doubleResult = ability + talent + 1*mod;
-              doubleCmd = `&{template:skills} {{skill=${skill} }} {{die=@{${skill}} }} {{title=@{character_name} }}`;  
-              doubleCmd += ` {{d20=[[ ${ability} ]] }} {{ability=[[ 1 ]] }}`;
-              doubleCmd += ` {{roll=[[ ${roll} ]] }} {{talent=[[ ${talent} ]] }}`;
-              doubleCmd += ` {{mod=[[ @{${mod}} ]] }}`;
-              doubleCmd += ` {{total=[[ ${doubleResult} ]] }}`;
-            }
+      let damageResult = (results.damage == undefined) ? 0 : results.damage.result;
+      let bonusDamage = 0; 
+      let rollResult = d20 + roll + 1*accuracy;
+      let effectsResult = "";
+      let hitResult = 0;
+      if(roll ==1 && d20 == 1) {
+          effectsResult = "Critical Miss";
+          hitResult = -1;
+      } else if(rollResult <= defense && d20 < 20) {
+          effectsResult = "Miss";
+          hitResult = 0;
+      } else {
+        if(roll >= 10 || (d20 >= 20 && roll > defense)) {
+            effectsResult = "Critical Hit"; 
+            hitResult = 2;
+        } else {
+            effectsResult = "Hit";
+            hitResult = 1;
+        }
+        if(values["featlist"].includes("warrior-1")) {
+          bonusDamage = roll;
+          damageResult += roll;
+          if(roll >= 6) {
+              if(effectsResult > "") effectsResult += " + ";
+              effectsResult += "Weapon Mastery effect";
           }
+        }
       }
-      
       finishRoll(data.rollId, {
-        talent: talentResult,
-        talentCommand: talentCmd,
-        ability: abilityResult,
-        abilityCommand: abilityCmd,
-        double: doubleResult,
-        doubleCommand: doubleCmd,
+        d20: String.fromCharCode(d20 + 64),  
+        roll: String.fromCharCode(roll + 64),  
+        total: rollResult,
+        damage: damageResult,
+        bonusdmg: bonusDamage,
+        effects: effectsResult,
+        hit: hitResult
+      });
+      console.log(weapon + " (" + attack + accuracy + "): " + rollResult);   
+    });
+  });
+ }
+
+ function rollDodge() {
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Dodge}}`;
+    rollString    += ` {{reflexdie=@{reflex}}} `;
+    rollString    += ` {{defense=[[@{defense}]]}} {{reflex=[[@{reflex}]]}} {{mod=[[@{dex}]]}}`;
+    rollString    += ` {{total=[[ 0 ]]}}`;
+    console.log(rollString);
+    
+    startRoll(rollString, data => {
+      const results = data.results;
+      const rollResult = results.defense.result + results.reflex.result;
+      let effectsResult = "";
+      finishRoll(data.rollId, {
+        reflex: String.fromCharCode(results.reflex.result + 64),  
+        total: rollResult,
+        effects: effectsResult
+      });
+      console.log(rollResult);   
+    });
+ }
+ function rollParry() {
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Parry}}`;
+    rollString    += ` {{parrydie=@{attack}}} {{parrymod=@{parry2}}}`;
+    rollString    += ` {{defense=[[@{defense}]]}} {{parry=[[@{attack}]]}} {{mod=[[@{parry2}]]}}`;
+    rollString    += ` {{total=[[ 0 ]]}}`;
+    console.log(rollString);
+    
+    startRoll(rollString, data => {
+      const results = data.results;
+      const rollResult = results.defense.result + results.parry.result + results.mod.result;
+      finishRoll(data.rollId, {
+        parry: String.fromCharCode(results.parry.result + 64),  
         total: rollResult
       });
-      console.log(skill + " (" + values[skill] + "+" + mod + "): " + rollResult);
+      console.log(rollResult);   
+    });
+ }
+ function rollDeflect() {
+    let rollString = `&{template:reactions} {{name=@{character_name} }} {{title=Deflect}}`;
+    rollString    += ` {{reflexdie=@{reflex}}} {{parrydie=@{attack}}}`;
+    rollString    += ` {{defense=[[@{defense}]]}} {{reflex=[[@{reflex}]]}} {{parry=[[@{attack}]]}} {{parrymod=}}`;
+    rollString    += ` {{total=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
+    console.log(rollString);
+    
+    startRoll(rollString, data => {
+      const results = data.results;
+      const rollResult = results.defense.result + results.reflex.result + results.parry.result;
+      const higher = (results.reflex.result > results.parry.result ? results.reflex.result : results.parry.result);
+      let effectsResult = "Reduce damage by " + higher; 
+      finishRoll(data.rollId, {
+        reflex: String.fromCharCode(results.reflex.result + 64),  
+        parry: String.fromCharCode(results.parry.result + 64),  
+        total: rollResult,
+        effects: effectsResult
+      });
+      console.log(rollResult);   
+    });
+ }
+
+ function rollSkill(skill) {
+
+  getAttrs([skill, "power", "featlist", "d20"], function(values) {
+    let rawmod = skill2mod(skill); 
+    let ability = mod2score(rawmod);  
+    let proficiency = die2dv(values[skill]);
+    let d20 = values["d20"];
+    if(d20 == undefined) d20 = "";
+    if(values["featlist"].includes("expert-3")) power = values["power"];
+
+    let rollString = `&{template:skills} {{name=@{character_name} }} `;
+    rollString    += `{{skill=${skill} }} {{die=@{${skill}}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
+    if(d20 > "") {
+      rollString  += ` {{d20=[[ ${d20} ]]}} `;
+      rollString  += ` {{cof=[[ ?{Difficulty|None,0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|Custom,?{Enter DV}} ]]}}`;
+    } else {
+      rollString  += ` {{cof=[[ ?{Chance of Failure|None,0|Easy,2d4kh1[2]|Average,2d6kh1[3]|Hard,2d8kh1[4]|Extreme,2d10kh1[5]|Legendary,2d12kh1[6]|Custom,?{Enter CoF}} ]]}}`;
+    }
+    if(proficiency == 0)
+      rollString  += ` {{roll=[[ ${untrainedDie} ]]}}`;
+    else
+      rollString  += ` {{roll=[[ @{${skill}} ]]}}`;
+    rollString    += ` {{mod=[[ @{${rawmod}} ]]}}`;
+    rollString    += ` {{total=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
+    console.log(rollString);
+    
+    startRoll(rollString, data => {
+      const results = data.results;
+      const roll = results.roll.result;
+      const mod = results.mod.result;
+      const cof = results.cof.result;
+      const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
+      const rollResult = d20 + roll + 1*mod;
+      let successResult = "";//+" (quality: " + roll + 1*mod + ")";
+      
+      if(cof > 0) {
+        if(rollResult > cof + 5) successResult = "Critical success!";
+        else if(rollResult > cof) successResult = "Success!";
+        else if(d20 == 1 && roll == 1) successResult = "Critical Failure!";
+        else successResult = "Failure!";
+      }
+
+      finishRoll(data.rollId, {
+        d20: String.fromCharCode(d20 + 64),  
+        roll: String.fromCharCode(roll + 64),  
+        total: rollResult,
+        effects: successResult
+      });
+      console.log(skill + " (" + values[skill] + "+" + mod + "): " + rollResult + " vs " + cof + "(" + results.cof.expression + ") - " + successResult);
     });
   });
  }
@@ -1702,7 +2136,7 @@
 // a die adds half its maximum roll size to its saving throw dv,
 // or any other static bonus (such as maximum hit points).
  function die2dv(d) {
-    if(d[0] != "d") return 0;
+    if(d.length == 0 || d[0] != "d") return 0;
     return Math.floor(d.substring(1,3)*0.5);
  }
  
@@ -1772,3 +2206,106 @@
     
 
 </script>
+
+<!-- roll template -->
+
+<rolltemplate class="sheet-rolltemplate-rolls">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
+      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
+      {{#allprops() title name subtitle roll desc}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title name subtitle roll desc}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-skills">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+      {{#skill}}<div class="sheet-title">{{skill}}</div>{{/skill}}
+    </div>
+    <div class="sheet-content">
+      {{#die}}
+      <div class="sheet-value sheet-fullwidth">
+          {{#d20}}<span class="sheet-d20">{{computed::d20}}</span> +{{/d20}}
+          <span class="sheet-{{die}}">{{computed::roll}}</span> {{rawmod}} = <span class="sheet-big sheet-notip">{{computed::total}}</span>
+      </div>
+      {{/die}}
+    </div>
+    {{#effects}}<div class="sheet-info sheet-notip">{{computed::effects}}</div>{{/effects}}
+    {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-saves">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+      {{#skill}}<div class="sheet-title">{{skill}}</div>{{/skill}}
+    </div>
+    <div class="sheet-content">
+      {{#die}}
+      <div class="sheet-value sheet-fullwidth">
+          {{#d20}}<span class="sheet-d20">{{computed::d20}}</span> +{{/d20}}
+          <span class="sheet-{{die}}">{{computed::roll}}</span> {{rawmod}} = <span class="sheet-big sheet-notip">{{computed::total}}</span>
+      </div>
+      {{/die}}
+    </div>
+    {{#effects}}<div class="sheet-info sheet-notip">{{computed::effects}}</div>{{/effects}}
+    {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-reactions">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+    </div>
+    <div class="sheet-content">
+      <div class="sheet-value sheet-fullwidth">
+          <span class="sheet-dv-med sheet-notip">{{defense}}</span>
+          {{#reflex}}+<span class="sheet-{{reflexdie}}">{{computed::reflex}}</span>{{/reflex}}
+          {{#parry}}+<span class="sheet-{{parrydie}}">{{computed::parry}}</span>{{parrymod}}{{/parry}}
+          = <span class="sheet-dv-big sheet-notip">{{computed::total}}</span>
+      </div>
+    </div>
+      {{#effects}}<div class="sheet-info sheet-notip">{{computed::effects}}</div>{{/effects}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-attacks">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+    </div>
+    
+    <div class="sheet-content">
+      <div class="sheet-value sheet-fullwidth">
+          <span class="sheet-d20">{{computed::d20}}</span>{{#die}} + <span class="sheet-{{die}}">{{computed::roll}}</span>{{/die}} {{accuracy}}
+      </div>
+      <div class="sheet-value sheet-fullwidth"><span class="sheet-big sheet-notip">{{computed::total}}</span> vs <span class="sheet-dv-big sheet-notip">{{defense}}</span></div>
+    </div>
+    <div class="sheet-info sheet-notip">{{computed::effects}}</div>
+    {{#rollGreater() computed::hit 0}} 
+    <div class="sheet-content">
+      <div class="sheet-key">Damage ({{#rollGreater() computed::bonusdmg 0}}{{computed::bonusdmg}}+{{/rollGreater() computed::bonusdmg 0}}{{dmg}}):</div>
+      <div class="sheet-value">{{computed::damage}}</div>
+    </div>
+    {{/rollGreater() computed::hit 0}} 
+
+    {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+  </div>
+</rolltemplate>
