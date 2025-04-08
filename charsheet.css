@@ -11,22 +11,34 @@ div.dialog.largedialog.characterviewer,
 }
 
 /* responsive grid layouts */
+ main.party {
+  display: grid;
+  width:  100%;
+  height: 100%;
+  grid-gap: 0px;
+  grid-template-columns: 1fr 800px;
+  grid-template-rows: 70px 1fr 20px;
+  grid-template-areas: "phd phd"
+                       "dsc man"
+                       "ftr ftr"; 
+ }
 
- main {
+ main.character {
   display: grid;
   width:  1024px;
   height: 750px;
   grid-gap: 0px;
   grid-template-columns: 204px 102px 102px 204px 204px 204px;
   grid-template-rows: 70px 180px 180px 300px 20px;
-  grid-template-areas:"hdr hdr hdr bld lvl lvl"
+  grid-template-areas:"hdr hdr hdr grp lvl lvl"
                       "str dex dex con act act"
                       "int wis wis cha act act"
                       "eqp eqp fea fea act act"
                       "ftr ftr ftr ftr ftr ftr";
  }
+
  .charsheet .character-class {
-  width: 340px;
+  width: 335px;
  }
  .charsheet .list-first,
  .charsheet .list-middle,
@@ -45,9 +57,13 @@ div.dialog.largedialog.characterviewer,
   .inventory {
      display: none;
  }
+ .charsheet label.description {
+    font-size: 12px;
+    line-height: 16px;
+ }
 
 @media only screen and (max-width: 1025px) {
- main {
+ main.character {
   display: grid;
   width:  720px;
   height: 900px;
@@ -59,10 +75,11 @@ div.dialog.largedialog.characterviewer,
                       "dex wis act"
                       "con cha act"
                       "eqp eqp fea"
-                      "bld ftr ftr";
+                      "ftr ftr ftr";
  }
+ 
  .charsheet .character-class {
-  width: 250px;
+  width: 247px;
  }
  .charsheet .list-first,
  .charsheet .list-middle,
@@ -78,18 +95,22 @@ div.dialog.largedialog.characterviewer,
  .charsheet input.armor{
     width: 175px;
  }
-  .inventory {
+  .group, .inventory {
      display: none;
  }
+ .charsheet label.description {
+    font-size: 12px;
+    line-height: 16px;
+ }
 } @media only screen and (max-width: 725px) {
- main {
+ main.character {
   display: grid;
   width:  450px;
   height: 1230px;
   grid-gap: 0px;
   grid-template-columns: 200px 250px;
   grid-template-rows: 70px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px;
-  grid-template-areas:"bld lvl"
+  grid-template-areas:"grp lvl"
                       "str act"
                       "str act"
                       "str act"
@@ -113,7 +134,7 @@ div.dialog.largedialog.characterviewer,
      
  }
  .charsheet .character-class {
-  width: 180px;
+  width: 177px;
  }
  .charsheet .list-first,
  .charsheet .list-middle,
@@ -129,11 +150,16 @@ div.dialog.largedialog.characterviewer,
  .charsheet input.armor{
    width: 120px;
  }
+ .group { display: flex; }
  .header, .inventory {
      display: none;
  }
+ .charsheet label.description {
+    font-size: 11px;
+    line-height: 14px;
+ }
 } @media only screen and (max-width: 455px) {
- main {
+ main.character {
   display: grid;
   width:  250px;
   height: 2000px;
@@ -155,7 +181,7 @@ div.dialog.largedialog.characterviewer,
      
  }
  .charsheet .character-class {
-  width: 180px;
+  width: 177px;
  }
  .charsheet .list-first,
  .charsheet .list-middle,
@@ -170,8 +196,12 @@ div.dialog.largedialog.characterviewer,
  .charsheet input.armor{
    width: 120px;
  }
- .header, .builder, .inventory {
+ .header, .group, .inventory {
      display: none;
+ }
+ .charsheet label.description {
+    font-size: 11px;
+    line-height: 14px;
  }
 }
 /*----------------- GENERAL CSS ------------------*/
@@ -181,7 +211,7 @@ div.dialog.largedialog.characterviewer,
   --alt-color: teal;
   --save-color: blue;
   --skill-color: green;
-  --attack-color: red;
+  --attack-color: #b00000;
   --disabled-color: gray;
   --separator-color: #c0a080;
   
@@ -194,6 +224,9 @@ div.dialog.largedialog.characterviewer,
   --skill-bg: #e0fff0;
   --attack-bg: #ffe0f0;
   --disabled-bg: #c0c0c0;
+  --save-bg-dark: #30407f;
+  --skill-bg-dark: #307f40;
+  --attack-bg-dark: #7f3030;
   
   --font-text: "Libre Baskerville";
   --font-number: "Arial";
@@ -206,6 +239,9 @@ section {
     border-style: solid; 
 }
 
+.header { grid-area: hdr; }
+.group { grid-area: grp; }
+.level { grid-area: lvl; }
 .str { grid-area: str; }
 .dex { grid-area: dex; }
 .con { grid-area: con; }
@@ -257,7 +293,6 @@ footer { grid-area: ftr; }
 /*------------- Section-specific CSS -------------*/
 
 .charsheet .header {
-  grid-area: hdr;
   background-color: var(--header-bg);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
@@ -265,8 +300,7 @@ footer { grid-area: ftr; }
   border-right: 0px transparent;
 }
 
-.charsheet .builder {
-  grid-area: bld;
+.charsheet .group {
   background-color: var(--header-bg);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
@@ -275,7 +309,6 @@ footer { grid-area: ftr; }
 }
 
 .charsheet .level {
-  grid-area: lvl;
   flex-direction: row;
   white-space: pre nowrap;
   background-color: var(--header-bg);
@@ -306,7 +339,6 @@ footer { grid-area: ftr; }
 footer { 
   background-color: var(--header-bg);
   border: 2px solid var(--border-color);
-  border-left: 0px transparent;
 }
 
 /*----------------- text & input styling -----------------*/
@@ -368,7 +400,18 @@ end of select boxes */
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
 }
-
+.charsheet .character-party {
+  text-align: left;
+  margin: 1px 1px;
+  width: 140px;
+  height: 25px;
+  font-family: var(--font-text);
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+}
 .charsheet .character-class {
   text-align: center;
   margin: 1px 1px;
@@ -529,7 +572,7 @@ end of select boxes */
   border: 2px solid var(--attack-color);
   border-right: 0px;    
   background: var(--attack-bg);
-} .charsheet button.attack::before {
+} .charsheet button.attack::before, .charsheet button.opportunity-attack::before {
   color: var(--attack-color);
 } .charsheet .proficiency-die {
   display: inline-block;
@@ -711,7 +754,6 @@ end of select boxes */
   white-space: wrap;
   word-wrap: break-word;
   font-family: var(--font-text);
-  font-size: 12px;
   font-weight: normal;
   color: var(--text-color); 
   margin: 3px;
@@ -903,13 +945,16 @@ end of select boxes */
   border-bottom: 1px solid var(--border-color);
 }
 
-.charsheet textarea.inventory {
+.charsheet textarea.fullsize {
+  height: 99%;
+  width: 97%;
   text-align: left;
   margin: 1px 1px;
   font-size: 12px;
   color: var(--text-color);
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
+  resize: none;
 }
 
 .charsheet input.round[type="checkbox"] {
@@ -932,10 +977,6 @@ end of select boxes */
 }
 
 .charsheet button.defend {
-  width: 16px;
-  height: 21px;
-  padding: 1px 2px;
-  margin: 2px 4px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 18px;
@@ -943,18 +984,22 @@ end of select boxes */
   border: 2px solid var(--save-color);
   background: var(--save-bg);
 }
-
+button.defend::before{
+    text-align: center;
+    vertical-align: middle;
+    color: var(--save-color);
+}
 
 .charsheet button.opportunity-attack {
-  width: 16px;
-  height: 21px;
-  padding: 1px 2px;
-  margin: 2px 4px;
   border-radius: 7px;
   border: 2px solid var(--attack-color);
   background: var(--attack-bg);
 }
-
+button.opportunity-attack::before{
+    text-align: center;
+    vertical-align: middle;
+    color: var(--attack-color);
+}
 .charsheet button.action {
   width: 60px;
   height: 15px;
@@ -965,6 +1010,20 @@ end of select boxes */
   background: var(--skill-bg);
 }
 
+.charsheet button.reaction {
+    display: inline-block;
+    width: 24px;
+    height: 21px;
+    margin: 2px 4px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+}
+.charsheet button.reaction::before {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+}
 
 .charsheet input[type="number"]{
   text-align: right;
@@ -974,11 +1033,6 @@ end of select boxes */
 .charsheet input[type="text"]{
 /*  margin: 2px 4px;
   border: 1px solid var(--border-color);*/
-}
-
-.charsheet textarea {
-  width: 95%;
-  height: 85%;
 }
 
 .charsheet input.red {
@@ -993,139 +1047,6 @@ end of select boxes */
 .charsheet input.alt {
   background-color: var(--alt-bg);
   border-color: var(--alt-color);
-}
-
-/*------------------------------------*\
-  #ROLL TEMPLATES
-\*------------------------------------*/
-
-/* SKILL ROLLS */
-
-.sheet-rolltemplate-rolls,
-.sheet-rolltemplate-skills {
-  font-family: var(font-text);
-}
-.sheet-rolltemplate-rolls .sheet-container,
-.sheet-rolltemplate-skills .sheet-container {
-  border: 3px solid black;
-  border-radius: 3px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-}
-.sheet-rolltemplate-rolls .sheet-header,
-.sheet-rolltemplate-skills .sheet-header {
-  background-color: var(--header-bg-color, #21a835);
-  color: var(--header-text-color, #FFF);
-  font-family: var(font-text);
-  text-align: center;
-  text-transform: capitalize;
-  padding: 5px;
-  border-bottom: 2px solid black;
-  border-top-left-radius: 21px;
-  border-top-right-radius: 21px;
-}
-.sheet-rolltemplate-rolls .sheet-title,
-.sheet-rolltemplate-rolls .sheet-name,
-.sheet-rolltemplate-skills .sheet-title,
-.sheet-rolltemplate-skills .sheet-name {
-  font-family: var(font-text);
-  font-size: 1.4em;
-  font-weight: bold;
-}
-.sheet-rolltemplate-rolls .sheet-subtitle,
-.sheet-rolltemplate-skills .sheet-subtitle {
-  font-family: "Lexend";
-  font-size: 1em;
-}
-.sheet-rolltemplate-rolls .sheet-container,
-.sheet-rolltemplate-skills .sheet-container {
-  font-family: var(font-text);
-  --header-bg-color: #21a835;
-  --header-text-color: #FFF;
-}
-
-.sheet-rolltemplate-rolls .sheet-content,
-.sheet-rolltemplate-skills .sheet-content {
-  font-family: var(font-text);
-  display: grid;
-  background: #FFF;
-  grid-template-columns: auto auto;
-  font-size: 1.2em;
-  line-height: 1.4em;
-}
-.sheet-rolltemplate-rolls .sheet-content > div,
-.sheet-rolltemplate-skills .sheet-content > div {
-  font-family: var(font-text);
-  padding: 5px;
-}
-.sheet-rolltemplate-rolls .sheet-content .sheet-key,
-.sheet-rolltemplate-skills .sheet-content .sheet-key {
-  font-family: var(font-text);
-  font-weight: bold;
-  padding-right: 10px;
-  text-align: right;
-}
-.sheet-rolltemplate-rolls .sheet-content .sheet-value,
-.sheet-rolltemplate-skills .sheet-content .sheet-value {
-  font-family: var(font-number);
-  font-weight: bold;
-  padding-right: 10px;
-  text-align: center;
-}
-
-.sheet-rolltemplate-rolls .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-rolls .sheet-content :nth-child(4n),
-.sheet-rolltemplate-skills .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-skills .sheet-content :nth-child(4n) {
-  background: #EEE;
-}
-
-/* ATTACKS */
-.sheet-rolltemplate-attacks {
-  font-family: "Lexend";
-}
-.sheet-rolltemplate-attacks .sheet-container {
-  border: 3px solid black;
-  border-radius: 3px;
-}
-.sheet-rolltemplate-attacks .sheet-header {
-  background-color: var(--header-bg-color, #a83521);
-  color: var(--header-text-color, #FFF);
-  text-align: left;
-  text-transform: capitalize;
-  padding: 5px;
-  border-bottom: 2px solid black;
-}
-.sheet-rolltemplate-attacks .sheet-title,
-.sheet-rolltemplate-attacks .sheet-name {
-  font-size: 1.4em;
-  font-weight: bold;
-}
-.sheet-rolltemplate-attacks .sheet-subtitle {
-  font-size: 1em;
-}
-.sheet-rolltemplate-attacks .sheet-container {
-  --header-bg-color: #a83521;
-  --header-text-color: #FFF;
-}
-
-.sheet-rolltemplate-attacks .sheet-content {
-  display: grid;
-  background: #FFF;
-  grid-template-columns: auto auto;
-  line-height: 1.4em;
-}
-.sheet-rolltemplate-attacks .sheet-content > div {
-  padding: 5px;
-}
-.sheet-rolltemplate-attacks .sheet-content .sheet-key {
-  font-weight: bold;
-  padding-right: 10px;
-  text-align: right;
-}
-.sheet-rolltemplate-attacks .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-attacks .sheet-content :nth-child(4n) {
-  background: #EEE;
 }
 
 /*---------------------=========== dynamic element control =========------------------------*/
@@ -1286,28 +1207,526 @@ select.ability-score {
     border-color:   var(--save-color);
 }
 
-.charsheet .die-controller[value="2d4kl1"] ~ button.proficiency::before{
+.charsheet input.athlete-feat-toggle { display: none; }
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ div.jump,
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ hr.jump,
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ div.climb,
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ hr.climb,
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ div.swim,
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ hr.swim,
+.charsheet div.athlete { display: none; }
+.charsheet input.athlete-feat-toggle[value*="warrior-2"] ~ div.athlete { 
+    display: flex;
+}
+
+.charsheet input.deflect-feat-toggle { display: none; }
+.charsheet input.deflect-feat-toggle[value*="martial-artist-6"] ~ div.dodge,
+.charsheet input.deflect-feat-toggle[value*="martial-artist-6"] ~ div.parry,
+.charsheet div.deflect { display: none; }
+.charsheet input.deflect-feat-toggle[value*="martial-artist-6"] ~ div.deflect { 
+    display: flex;
+}
+
+.charsheet input.elusive-feat-toggle { display: none; }
+.charsheet input.elusive-feat-toggle[value*="thief-2"] ~ div.evade,
+.charsheet div.elusive { display: none; }
+.charsheet input.elusive-feat-toggle[value*="thief-2"] ~ div.elusive { 
+    display: flex;
+}
+
+.charsheet button.proficiency,
+.charsheet button.reaction {
+    line-height: 12px;
+}
+
+.charsheet .die-controller[value="2d4kl1"] ~ button.proficiency::before,
+.charsheet .die-controller[value="2d4kl1"] ~ button.reaction::before{
     font-family: 'dicefontd4';
     font-size: 24px;
     content: '0 ';
-}.charsheet .die-controller[value="d4"] ~ button.proficiency::before{
+    line-height: 12px;
+}.charsheet .die-controller[value="d4"] ~ button.proficiency::before,
+.charsheet .die-controller[value="d4"] ~ button.reaction::before{
     font-family: 'dicefontd4';
     font-size: 24px;
     content: 'L ';
-}.charsheet .die-controller[value="d6"] ~ button.proficiency::before{
+    line-height: 12px;
+}.charsheet .die-controller[value="d6"] ~ button.proficiency::before,
+.charsheet .die-controller[value="d6"] ~ button.reaction::before{
     font-family: 'dicefontd6';
     font-size: 24px;
     content: 'F ';
-}.charsheet .die-controller[value="d8"] ~ button.proficiency::before{
+    line-height: 12px;
+}.charsheet .die-controller[value="d8"] ~ button.proficiency::before,
+.charsheet .die-controller[value="d8"] ~ button.reaction::before{
     font-family: 'dicefontd8';
     font-size: 24px;
     content: 'H ';
-}.charsheet .die-controller[value="d10"] ~ button.proficiency::before{
+    line-height: 12px;
+}.charsheet .die-controller[value="d10"] ~ button.proficiency::before,
+.charsheet .die-controller[value="d10"] ~ button.reaction::before{
     font-family: 'dicefontd10';
     font-size: 24px;
     content: 'K ';
-}.charsheet .die-controller[value="d12"] ~ button.proficiency::before{
+    line-height: 12px;
+}.charsheet .die-controller[value="d12"] ~ button.proficiency::before,
+.charsheet .die-controller[value="d12"] ~ button.reaction::before{
     font-family: 'dicefontd12';
     font-size: 24px;
     content: 'L ';
+    line-height: 12px;
 }
+
+
+/*--------------------- Switch Between Sheet Types --------------------*/
+.charsheet input.sheet-type { display: none; }
+.charsheet main.character,
+.charsheet main.party {
+   display: none;
+} 
+.charsheet .sheet-type[value="Character"] ~ main.character,
+.charsheet .sheet-type[value="Party"] ~ main.party {
+   display: grid;
+}
+.charsheet .hidden {
+   display: none;
+}
+
+.charsheet section.party-header {
+  grid-area: phd;
+  flex-direction: row;
+  white-space: pre nowrap;
+  background-color: var(--header-bg);
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border: 2px solid var(--border-color);
+}
+.charsheet section.party {
+  grid-area: man;
+  background-color: var(--page-bg);
+  border-left: 1px solid var(--separator-color);
+  border-right: 2px solid var(--border-color);
+  border-top: 0px transparent;
+  border-bottom: 0px transparent;
+}
+.charsheet section.party-desc {
+  grid-area: dsc;
+  background-color: var(--page-bg);
+  border-left: 2px solid var(--border-color);
+  border-right: 0px transparent;
+  border-top: 0px transparent;
+  border-bottom: 0px transparent;
+  padding: 0px !important;
+}
+
+ div.party-line {
+  display: flex;
+  flex-direction: row;
+  width:  100%;
+  height: 30px;
+  border-bottom: 1px --var("separator-color");
+ }
+
+ button.party-char-name {
+  width: 240px;
+  padding: 1px 2px;
+  margin: 2px 4px;
+  border-radius: 8px;
+  border: 2px solid var(--skill-color);
+  background: var(--skill-bg);
+  font-family: var(--font-text);
+  font-size: 15px;
+  color: var(--text-color); 
+ }
+
+ label.party-char-ask {
+  width: 160px;
+  font-family: var(--font-text);
+  font-size: 15px;
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;     
+ }
+
+ select.party-char-skill {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  width: 160px;
+  height: 25px;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+}
+
+input.party-char-dv {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  width: 160px;
+  height: 25px;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+}
+
+ label.party-char-vs {
+  text-align: center;
+  font-family: var(--font-text);
+  font-size: 15px;
+  width: 25px;
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;     
+ }
+ 
+ label.party-char-done {
+  display: inline-block;
+  font-family: var(--font-text);
+  width: 75px;
+  font-size: 15px;
+  color: var(--text-color); 
+  margin: 3px;
+  padding: 3px 0 0 0;     
+ }
+
+
+/*------------------------------------*\
+  #ROLL TEMPLATES
+\*------------------------------------*/
+
+/* SKILL ROLLS */
+
+.sheet-rolltemplate-rolls,
+.sheet-rolltemplate-skills,
+.sheet-rolltemplate-reactions,
+.sheet-rolltemplate-attacks {
+  font-family: var(font-number);
+}
+.sheet-rolltemplate-rolls .sheet-container,
+.sheet-rolltemplate-skills .sheet-container,
+.sheet-rolltemplate-reactions .sheet-container,
+.sheet-rolltemplate-attacks .sheet-container {
+  border: 3px solid black;
+  border-radius: 3px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.sheet-rolltemplate-rolls .sheet-header,
+.sheet-rolltemplate-skills .sheet-header,
+.sheet-rolltemplate-reactions .sheet-header,
+.sheet-rolltemplate-attacks .sheet-header {
+  background: var(--header-bg);
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  font-family: var(--font-number);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 5px;
+  border-bottom: 2px solid black;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.sheet-rolltemplate-skills .sheet-header { background-color: var(--skill-bg-dark); }
+.sheet-rolltemplate-saves .sheet-header { background-color: var(--save-bg-dark); }
+.sheet-rolltemplate-reactions .sheet-header { background-color: var(--save-bg-dark); }
+.sheet-rolltemplate-attacks .sheet-header { background-color: var(--attack-bg-dark); }
+
+.sheet-rolltemplate-rolls .sheet-name,
+.sheet-rolltemplate-skills .sheet-name,
+.sheet-rolltemplate-reactions .sheet-name,
+.sheet-rolltemplate-attacks .sheet-name {
+  font-family: var(--font-number);
+  font-size: 1.1em;
+  line-height: 1.3em;
+  font-weight: bold;
+}
+.sheet-rolltemplate-rolls .sheet-title,
+.sheet-rolltemplate-skills .sheet-title,
+.sheet-rolltemplate-reactions .sheet-title,
+.sheet-rolltemplate-attacks .sheet-title {
+  font-family: var(--font-number);
+  font-size: 1.3em;
+  line-height: 1.4em;
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-rolls .sheet-content,
+.sheet-rolltemplate-skills .sheet-content,
+.sheet-rolltemplate-reactions .sheet-content,
+.sheet-rolltemplate-attacks .sheet-content {
+  font-family: var(--font-number);
+  display: grid;
+  background: var(--input-bg);
+;
+  grid-template-columns: auto auto;
+  font-size: 1.0em;
+  line-height: 1.2em;
+}
+.sheet-rolltemplate-rolls .sheet-content > div,
+.sheet-rolltemplate-skills .sheet-content > div,
+.sheet-rolltemplate-reactions .sheet-content > div,
+.sheet-rolltemplate-attacks .sheet-content > div {
+  font-family: var(--font-number);
+  padding: 5px;
+}
+.sheet-rolltemplate-rolls .sheet-content .sheet-key,
+.sheet-rolltemplate-skills .sheet-content .sheet-key,
+.sheet-rolltemplate-reactions .sheet-content .sheet-key,
+.sheet-rolltemplate-attacks .sheet-content .sheet-key {
+  font-family: var(--font-number);
+  font-weight: bold;
+  font-size: 1.0em;
+  line-height: 1.2em;
+  padding-right: 10px;
+  text-align: right;
+}
+.sheet-rolltemplate-rolls .sheet-content .sheet-value,
+.sheet-rolltemplate-skills .sheet-content .sheet-value,
+.sheet-rolltemplate-reactions .sheet-content .sheet-value,
+.sheet-rolltemplate-attacks .sheet-content .sheet-value {
+  font-family: var(--font-number);
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.sheet-rolltemplate-rolls .sheet-content .sheet-fullwidth,
+.sheet-rolltemplate-skills .sheet-content .sheet-fullwidth,
+.sheet-rolltemplate-reactions .sheet-content .sheet-fullwidth,
+.sheet-rolltemplate-attacks .sheet-content .sheet-fullwidth {
+  grid-column: 1 / span 2;
+  text-align: center;
+  padding: 2px 0px;
+  border-bottom: 1px dotted var(--disabled-bg);
+}
+
+
+.sheet-rolltemplate-rolls .sheet-info,
+.sheet-rolltemplate-skills .sheet-info,
+.sheet-rolltemplate-reactions .sheet-info,
+.sheet-rolltemplate-attacks .sheet-info {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-family: var(--font-number);
+  font-weight: bold;
+  font-size: 1.0em;
+  line-height: 1.2em;
+  background: var(--input-bg);
+}
+
+.sheet-rolltemplate-rolls .sheet-desc,
+.sheet-rolltemplate-skills .sheet-desc,
+.sheet-rolltemplate-reactions .sheet-desc,
+.sheet-rolltemplate-attacks .sheet-desc {
+  width: 100%;
+  display: flex;
+  text-align: left;
+  font-family: var(--font-text);
+  font-size: 1.0em;
+  line-height: 1.2em;
+  background: var(--input-bg);
+}
+
+
+.sheet-rolltemplate-rolls .sheet-content .sheet-key.sheet-green-bg,
+.sheet-rolltemplate-skills .sheet-content .sheet-key.sheet-green-bg,
+.sheet-rolltemplate-reactions .sheet-content .sheet-key.sheet-green-bg,
+.sheet-rolltemplate-attacks .sheet-content .sheet-key.sheet-green-bg,
+.sheet-rolltemplate-rolls .sheet-content .sheet-value.sheet-green-bg,
+.sheet-rolltemplate-skills .sheet-content .sheet-value.sheet-green-bg,
+.sheet-rolltemplate-reactions .sheet-content .sheet-value.sheet-green-bg,
+.sheet-rolltemplate-attacks .sheet-content .sheet-value.sheet-green-bg {
+  background: var(--skill-bg);
+}
+
+.sheet-rolltemplate-rolls .sheet-content .sheet-key.sheet-red-bg,
+.sheet-rolltemplate-skills .sheet-content .sheet-key.sheet-red-bg,
+.sheet-rolltemplate-reactions .sheet-content .sheet-key.sheet-red-bg,
+.sheet-rolltemplate-attacks .sheet-content .sheet-key.sheet-red-bg,
+.sheet-rolltemplate-rolls .sheet-content .sheet-value.sheet-red-bg,
+.sheet-rolltemplate-skills .sheet-content .sheet-value.sheet-red-bg,
+.sheet-rolltemplate-reactions .sheet-content .sheet-value.sheet-red-bg,
+.sheet-rolltemplate-attacks .sheet-content .sheet-value.sheet-red-bg {
+  background: var(--attack-bg);
+}
+
+.sheet-rolltemplate-rolls .sheet-content span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-content span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-content span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-content span.inlinerollresult {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.sheet-rolltemplate-rolls .sheet-info span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-info span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-info span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-info span.inlinerollresult {
+    width: 100%;
+    border-top: 1px solid black;
+    line-height: 1.3em;
+}
+
+.sheet-rolltemplate-skills .sheet-notip span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-notip span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-notip span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-notip span.inlinerollresult {
+    pointer-events: none;
+}
+.sheet-rolltemplate-skills .sheet-d4 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d4 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d4 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d4 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd4';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+.sheet-rolltemplate-skills .sheet-d6 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d6 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d6 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d6 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd6';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+.sheet-rolltemplate-skills .sheet-d8 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d8 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d8 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d8 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd8';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+.sheet-rolltemplate-skills .sheet-d10 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d10 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d10 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d10 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd10';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+.sheet-rolltemplate-skills .sheet-d12 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d12 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d12 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d12 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd12';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+.sheet-rolltemplate-skills .sheet-d20 span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-d20 span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-d20 span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-d20 span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: 'dicefontd20';
+  font-style: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  background: none;
+  border: 0px transparent;
+}
+
+.sheet-rolltemplate-skills .sheet-big span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-big span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-big span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-big span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 2.0em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+.sheet-rolltemplate-reactions .sheet-dv-med span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-dv-med span.inlinerollresult {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  width: 26px;
+  height: 27px;
+  padding: 4px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 1.2em;
+  color: var(--input-bg);
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  border-top-left-radius: 50% 15%;
+  border-top-right-radius: 50% 15%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 3px solid var(--text-color);
+  background-color: var(--text-color);
+}
+
+.sheet-rolltemplate-reactions .sheet-dv-big span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-dv-big span.inlinerollresult {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  width: 30x;
+  height: 30px;
+  padding: 4px;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 1.5em;
+  color: var(--input-bg);
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  border-top-left-radius: 50% 15%;
+  border-top-right-radius: 50% 15%;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  border: 2px solid var(--border-color);
+  background-color: var(--save-color);
+}
+
