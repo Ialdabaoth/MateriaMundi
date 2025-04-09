@@ -1,0 +1,1530 @@
+Alarm
+ First Circle Aetheric Abjuration
+ Cantrip - Hold Portal
+ You set an alarm against unwanted intrusion.
+ Choose a door, a window, or an area within range
+ that is no larger than a 20-foot cube.
+ Until the next sunrise or sunset, an alarm alerts you
+ whenever a tiny or larger creature touches or enters
+ the warded area. When you cast the spell, you can
+ designate creatures that won’t set off the alarm. You
+ also choose whether the alarm is mental or audible.
+ A mental alarm alerts you with a ping in your mind
+ if you are within 1 mile of the warded area. This
+ ping awakens you if you are sleeping. An audible
+ alarm produces the sound of a hand bell for 10
+ seconds that is audible within 10 paces.
+ 
+Alchemy
+ First Circle Elemental Transmutation
+ Cantrip - None
+ When you prepare your spells at dawn or dusk, you
+ may forgo one or more spells to instead brew
+ alchemical formulae. You may brew any Common
+ alchemical formula instead of a First Circle spell, any
+ Uncommon formula instead of a Second Circle spell,
+ or any Rare formula instead of a Third Circle spell.
+ Each formula is its own ritual, taking up the same
+ space as a single spell in your spellbook.
+ You may also perform this spell during any short
+ rest to brew a single Common alchemical formula,
+ or a single Uncommon formula if Transmutation is
+ your school specialization. This spell can only be performed as a ritual.
+ 
+Apport
+ First Circle Aetheric Conjuration
+ Cantrip - Mage Hand
+ As an action, you gesture to an object that you can
+ see within 5 paces, which teleports into your hand.
+ The object must be Tiny and weigh less than 5 lbs,
+ and cannot be held by a creature or secured or
+ attached to any other object or surface.
+ 
+Arcane Bolt
+ First Circle Aetheric Conjuration
+ Cantrip - Magic Missile
+ You use your action to cast this spell,firing a bolt of
+ aetheric energy which automatically inflicts two
+ dice of force damage. Each damage die that rolls an‘8’or higher also inflicts one wound.
+ 
+Arcane Calling
+ First Circle Aetheric Conjuration
+ Cantrip - Silent Whisper
+ You use your action to cast this spell, sending a
+ message of 5 words or less to any one creature
+ within 100 miles that you are familiar with. The
+ target hears the message in their mind and
+ recognizes you as the sender, but cannot respond.
+ As long as the target has an Intelligence score of 1
+ or higher, they will understand the meaning of your
+ message even if they do not normally speak your
+ language. The Arcana of this spell is prepared onto
+ the lips rather than the hands, so it may be cast
+ without requiring a free hand.
+ 
+Arcane Lock
+ First Circle Aetheric Abjuration
+ Cantrip - Hold Portal
+ You use your action or reaction to touch a closed
+ door, window, gate, chest, or other entryway or
+ container with an empty hand, and it becomes
+ locked until this effect is dispelled. All attempts to
+ pick the lock or force it open have disadvantage.
+ You may choose a password when you cast this
+ spell; speaking the password will release the lock
+ and open the entryway for ten minutes.
+ 
+Beguile
+ First Circle Psychic Transmutation
+ Cantrip - Friends
+ You use your action to attempt to beguile a creature
+ within 5 paces that makes eye contact with you or
+ can hear your voice. Make a magic roll vs. its
+ Perception DV; if the creature has more than 2 hit
+ dice, the spell automatically fails. On a failure, they
+ know that you attempted to manipulate their mind,
+ and their attitude degrades by one step. On a
+ success, add your Charisma modifier to this spell’
+s
+ power , then divide by 2; the target’
+s attitude towards
+ you improves by that many steps (up to Loyal) for
+ as long as you maintain concentration.
+ The spell immediately ends if you do anything
+ harmful to the beguiled creature; if they suffer
+ injury from any other source, they immediately
+ attempt to snap out of it.
+ 
+Color Spray
+ First Circle Flame Conjuration
+ Cantrip - Dancing Lights
+ You use your action to emit a dazzling array of
+flashing, colored light from your hand. Make an
+ area magic attack against a cone 3 paces out from
+ you; each affected creature must dodge the attack or
+ be blinded until the end of your next turn.
+ 
+Command
+ First Circle Psychic Transmutation
+ Cantrip - Friends
+ You use your action to make eye contact with a
+ target and speak a single imperative word, such as“jump
+”or“quiet”. Then make a magic roll vs. its
+ Willpower DV; if you succeed, they must follow the
+ command during their next turn. This spell has no
+ effect if the target cannot hear or understand you,
+ and you have disadvantage if your command is
+ obviously and immediately harmful to it.
+ 
+Comprehend Languages
+ First Circle Psychic Divination
+ Cantrip - Gist
+ While you maintain concentration, you understand
+ the literal meaning of any spoken language that you
+ hear. You also understand the meaning of any
+ written language that you see, but you must be
+ touching the surface on which the words are
+ written. Encoded messages and secret glyphs are
+ not decoded by this spell.
+ 
+Continual Light
+ First Circle Flame Conjuration
+ Cantrip - Dancing Lights
+ While you maintain concentration, your hand or
+ one held object emits bright light out to 5 paces and
+ dim light out to 10 paces. If you touch the light
+ directly to a creature sensitive to bright lights and
+ succeed in a melee attack vs. its Reflex DV , it inflicts
+ radiant damage equal to half the spell’
+s power .
+ 
+Counterspell
+ First Circle Aetheric Abjuration
+ Cantrip - Spell Ward
+ You may use your reaction if you have a hand free
+ to target any spell, miracle, or other magical effect
+ as it is being cast. You make a magic roll vs. the
+ caster
+’
+s magic roll or equivalent. On a success, the
+ spell or effect is disrupted as it is being cast, and has
+ no effect.
+ 
+Darkvision
+ First Circle Flame Divination
+ Cantrip - Shadow Play
+ While you maintain concentration, you can see in
+ perfect darkness out to 5 paces. You cannot
+ distinguish color or read fine detail without light,
+ but can see the shape of any objects that are not
+ invisible or obscured.
+ 
+Disguise Self
+ First Circle Psychic Conjuration
+ Cantrip - Minor Image
+ You use your action to make yourself
+–
+ including
+ your clothing, armor, weapons, and other
+ belongings on your person
+–
+ look different while
+ you maintain concentration. You can seem 1 foot
+ shorter or taller and can appear thin, fat, or in
+ between. You can’t change your body type, so you
+ must adopt a form that has the same basic
+ arrangement of limbs. Otherwise, the extent of the
+ illusion is up to you.
+ The changes wrought by this spell fail to hold up to
+ physical inspection. For example, if you use this
+ spell to add a hat to your outfit, objects pass
+ through the hat, and anyone who touches it would
+ feel nothing or would feel your head and hair. If you
+ use this spell to appear thinner than you are, the
+ hand of someone who reaches out to touch you
+ would bump into you while it was seemingly still in
+ midair. To discern that you are disguised, a creature
+ can use its action to inspect your appearance and
+ must succeed on a Deduction saving throw to
+ notice the illusion.
+ 
+Dispel Lesser Magic
+ First Circle Aetheric Abjuration
+ Cantrip - Spell Ward
+ You use your action to choose one first- or
+ Second Circle magical effect on the target while
+ touching them with your hand, then make a magic
+ roll . If it is a magical effect that is actively being
+ maintained by another caster’s concentration, that
+ caster must immediately make a concentration save
+ vs. your roll result. If it is an effect that is not being
+ actively maintained, the DV to dispel it is 12 for a
+First Circle effect, or 15 for a Second Circle effect.
+ 
+Elemental Armor
+ First Circle Elemental Abjuration
+ Cantrip - Elemental Resistance
+ You use your reaction to cast this spell when you
+ would be damaged by an elemental effect or attack
+ that matches the prepared element. You
+ immediately halve all damage from that element for
+ as long as you maintain concentration, and can
+ ignore one die of elemental damage from each
+ attack or damage source.
+ For each die of elemental damage negated by this
+ spell from any one attack, you gain one die of
+ elemental energy. If at any point you have more
+ elemental energy dice than your spellcasting
+ proficiency, or if you lose concentration, this spell
+ immediately ends, and all remaining elemental
+ energy dice are rolled as damage vs. all creatures
+ within 2 paces of you (including yourself). Each
+ such creature may dodge to attempt to halve this
+ damage.
+ Whenever you make a weapon attack, you may
+ consume one or more elemental energy dice to add
+ them to the attack’
+s damage roll. You may also
+ consume one or more elemental energy dice
+ whenever an adjacent creature hits you with a
+ melee attack, to inflict those dice as damage to the
+ attacker.
+ Finally, if you have two or more dice of elemental
+ energy, you can end this spell as you cast another
+First Circle spell of the same element to immediately
+ re-prepare that spell as you cast it; if you have four
+ or more spell dice, you may end this spell as you
+ cast another Second Circle spell of the same element
+ to immediately re-prepare that spell as you cast it; if
+ you have six or more spell dice, you may end this
+ spell as you cast another Third Circle spell of the
+ same element to immediately re-prepare that spell
+ as you cast it.
+ 
+Elemental Cone
+ First Circle Elemental Conjuration
+ Cantrip - Elemental Grasp
+ The damage type of this spell is set when you
+ prepare it, based on the type of elemental materia
+ used:
+ Earth
+- Obsidian Shards (slashing or piercing)
+ Wat
+er
+- Chill Spray (cold), Acid Spray (acid)
+ Wood
+- Poison Cloud (poison)
+Air
+- Arc Burst (lightning), Thunderwave (thunder)
+ Flame
+- Cone of Flame (fire), Sunburst (radiant)
+ You use your action to cast this spell, unleashing a
+ torrent of elemental energy from your empty hand.
+ Make an area attack against a 3-pace cone
+ originating from your hand; all creatures within the
+ area must dodge or take three dice of elemental
+ damage. Each damage die that rolls a
+‘6’
+ or higher
+ inflicts one critical hit effect of the chosen element.
+ 
+Elemental Ray
+ First Circle Elemental Conjuration
+ Cantrip - Elemental Dart
+ The elemental damage type of this spell is
+ determined when it is prepared, based on the type
+ of elemental materia used to prepare it:
+ Earth
+- Obsidian Dagger (slashing or piercing)
+ Wat
+er
+- Freezing Ray (cold), Acid Arrow (acid)
+ Wood
+- Sickening Ray (poison)
+Air
+- Arc Bolt (lightning), Thunderlance (thunder)
+ Flame
+- Scorching Ray (fire), Sunlance (radiant)
+ You use your action to cast this spell,firing a ray of
+ the chosen element at a target within 25 paces.
+ Make a ranged magic attack roll vs. the target’
+s
+ Reflex DV . If you hit, the target takes two dice of
+ elemental damage. Each damage die that rolls a
+‘6’
+ or higher also inflicts one critical hit effect of the
+ chosen element.
+ 
+Enthrall
+ First Circle Psychic Transmutation
+ Cantrip - Friends
+ You use your action to begin moving and speaking
+ hypnotically, and each creature that can see and
+ hear you must immediately attempt to deny the
+ effect. While you maintain concentration and
+ continue speaking, all creatures that failed to deny
+ have disadvantage on Perception tests and saves
+ made to perceive any creature other than you, and
+ must actively use their action to attempt to do so.
+ 
+Feather Fall
+ First Circle Air Transmutation
+ Cantrip - Jump
+ You use your reaction to cast this spell as you or
+ another creature within 10 paces is falling. The
+ creature
+’
+s rate of descent drops to 50 feet per round,
+ and it lands on its feet and takes no damage on
+ landing. The effect ends when the creature lands on
+ a surface that can support its weight.
+ 
+Fit Armor
+ First Circle Earth Transmutation
+Cantrip - None
+ You alter the size and shape of one item of clothing
+ or armor that you are holding so that it perfectly fits
+ a creature within 5 paces of you. This spell can only be performed as a ritual.
+ 
+Floating Hand
+ First Circle Aetheric Conjuration
+ Cantrip - Mage Hand
+ You may conjure a circular, horizontal plane of
+ force in the shape of a cupped hand 3 feet in
+ diameter, that floats 3 feet above the ground in an
+ unoccupied space of your choice that you can see
+ within range. The hand remains for the duration,
+ and can hold up to 500 pounds. If more weight is
+ placed on it, the spell ends, and everything on the
+ hand falls to the ground.
+ The hand is immobile while you are within 5 paces
+ of it, following you within 5 paces as you move
+ further away. It ignores difficult terrain, but it can’t
+ cross elevation changes of 10 feet or more, and the
+ spell ends if it is ever more than 20 paces away.
+ 
+Identify Magic
+ First Circle Aetheric Divination
+ Cantrip - Detect Magic
+ You use your action to cast this spell as you touch a
+ magical object, item or creature with an empty
+ hand.
+ If cast on a magic item, you learn its properties,
+ how many charges it has, and how to activate it. If
+ cast on an object or creature, you learn whether any
+ active spells or other supernatural effects are
+ affecting the creature, their approximate power
+ levels, the nature of those effects (Arcane, Divine,
+ Primal, or Eldritch), and which specific effects if
+ they are Arcane. If cast on an object created or
+ transmuted by magic, you learn the nature of the
+ effect that created or transformed it (Arcane,
+ Divine, Primal, or Eldritch), and which specific
+ effect did so if it was Arcane.
+ If cast targeting a supernatural creature, you learn
+ what magics they have access to (Arcane, Divine, or
+ Primal). If cast on another wizard, you also
+ immediately know which arcane spells they have
+ prepared.
+ 
+Locate Object
+ First Circle Aetheric Divination
+ Cantrip - Point
+ Describe or name an object that is familiar to you.
+ While you maintain concentration, you sense the
+ direction to the object’
+s location and its
+ approximate distance, as long as that object is
+ within one mile of you. If the object is in motion,
+ you know the direction of its movement.
+ The spell can locate a specific object known to you,
+ as long as you have seen it up close
+–
+ within 5 paces
+–
+ at least once. Alternatively, the spell can locate the
+ nearest object of a particular kind, such as a certain
+ kind of apparel, jewelry, furniture, tool, or weapon.
+ This spell can
+’t locate an object if any thickness of
+ orichalc or lead, even a thin sheet, blocks a direct
+ path between you and the object.
+ 
+Mage Armor
+ First Circle Aetheric Abjuration
+ Cantrip - Blade Ward
+ You use your action to touch an unarmored creature
+ as you cast this spell. While it wears no other armor,
+ that creature gains a Defense equal to 10
++
+ this
+ spell’s power
++
+ its Dexterity modifier until the next
+ sunrise or sunset, and halves all wounds received
+ from bashing, slashing, and piercing attacks.
+ 
+Sense Emotions
+ First Circle Psychic Divination
+ Cantrip - Uncanny Insight
+ You tune your senses to pick up the emotions of
+ others while you maintain your concentration. As
+ your action each turn, you can focus your senses on
+ one humanoid you can see within 5 paces of you.
+ You instantly learn the target’
+s prevailing emotion
+-
+ such as love, anger, pain, fear, or calm. If the target
+ isn’t actually humanoid or it is immune to being
+ beguiled, you sense that it is calm. A target that is
+ actively aware that it might be under mental
+ surveillance can spend its reaction each turn to
+ make a Willpower saving throw; if it succeeds, it
+ can mask its actual emotions and project something
+ different instead.
+ 
+Shield
+ First Circle Aetheric Abjuration
+ Cantrip - Blade Ward
+ You use your reaction to cast this spell with a free
+ hand when you would be hit or damaged by a
+ physical attack, or by any effect that deals force
+ damage. An invisible bubble of aetheric energy
+ forms around you, absorbing some of the damage
+ and shielding you from harm. Roll two magic dice
+ and gain that many temporary hit points. While any
+ hit points are remaining, you halve all bashing,
+ slashing, piercing, and force damage that you
+ receive, and you roll and subtract one magic die
+ from any damage roll of these types whenever you
+ are attacked or damaged.
+ 
+Silent Image
+ First Circle Psychic Conjuration
+ Cantrip - Minor Image
+ You use your action to create the image of an
+ object, a creature, or some other visible
+ phenomenon that is no larger than a 15-foot cube.
+ The image appears at a spot within 10 paces and
+ lasts for the duration. The image is purely visual; it
+ isn’t accompanied by sound, smell, or other sensory
+ effects. While you maintain concentration, you can
+ use your action to cause the image to move to any
+ spot within range. As the image changes location,
+ you can alter its appearance so that its movements
+ appear natural for the image. For example, if you
+ create an image of a creature and move it, you can
+ alter the image so that it appears to be walking.
+ Physical interaction with the image reveals it to be
+ an illusion, because things can pass through it. A
+ creature that uses its action to examine the image
+ can determine that it is an illusion with a successful
+ Deduction save. If a creature discerns the illusion
+ for what it is, they can see through the image.
+ When cast as a ritual, you do not need to maintain
+ concentration; instead, the spell’
+s power determines
+ its duration in hours.
+ 
+Sleep
+ First Circle Psychic Conjuration
+ Cantrip - Shadow Play
+ You use your action to make an area attack against
+ all creatures within 10 paces of you; each creature
+ must either resist or deny the effect, or it suffers a
+ number of levels of fatigue equal to the spell’
+s
+ power , immediately forcing a saving throw to stay
+ conscious . A creature cannot resist if it is already
+ unconscious, making this a good spell to use to keep
+ a sleeping creature from waking up.
+ An affected creature will reduce any fatigue inflicted
+ by this spell by 1 for each exploration round it
+ spends sleeping, and will automatically awaken if it
+ has no wounds or fatigue.
+ 
+Spider Climb
+ First Circle Earth Transmutation
+ Cantrip - Jump
+ You use your action to enchant your hands and feet,
+ allowing you to climb any surface like a spider or
+ gecko. While you maintain concentration, you can
+ climb sheer surfaces
+-
+ even hanging upside-down
+ from ceilings. At least one limb must maintain
+ contact with a surface at all times, or you fall.
+ If a creature wishes to pull you off of a surface, it
+ must first grapple you, then succeed at an Athletics
+ attack vs. your spellcasting DV in order to
+ successfully dislodge you. This attack has advantage
+ if only one of your limbs is in contact with a solid
+ surface, or disadvantage if at least three of your
+ limbs are in contact with such surfaces.
+ 
+True Strike
+ First Circle Aetheric Divination
+ Cantrip - Point
+ You use your action to attune yourself to aetheric
+ energies, substituting foresight for true martial
+ prowess. While you maintain concentration, you
+ have familiarity with all weapons (even exotic
+ weapons), and may use your spellcasting
+ proficiency to make weapon attack rolls.
+ 
+Unseen Servant
+ First Circle Aetheric Conjuration
+ Cantrip - None
+ This spell creates an invisible construct of aetheric
+ energy within 30 paces that obeys your commands.
+ This medium creature has a Defense of 10, a
+ Strength of 2, and a Dexterity of 11. It is immediately
+ destroyed if it suffers any hit point damage.
+ On each of your turns, you may command the
+ servant to move and interact with an object. It can
+ perform most simple tasks that a humanoid mortal
+ could, such as fetching objects, cleaning, mending,
+ serving food, and so on. It cannot attack other
+ creatures in any way. The servant lasts until the
+ next sunrise or sunset before dissolving into
+ aetheric energy. This spell can only be cast as a ritual.
+
+Aetheric Dome
+‭ Second Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Blade Ward‬
+‭ A 10-foot-radius immobile dome of force springs‬
+‭ into existence around and above you and remains‬
+‭ stationary for the duration. The spell ends if you‬
+‭ leave its area.‬
+‭ Until the next sunrise or sunset, the sphere has‬
+‭ structure points equal to the spell’‬s‭ power , is‬
+‭ resistant to all non-force damage, and immune to all‬
+‭ non-structure damage. Nine creatures of Medium‬
+‭ size or smaller canfit inside the dome with you. The‬
+‭ spell fails if its area includes a larger creature or‬
+‭ more than nine creatures. Creatures and objects‬
+‭ within the dome when you cast this spell can move‬
+‭ through it freely. All other creatures and objects are‬
+‭ barred from passing through it. Spells and other‬
+‭ magical effects can‬'t‭ extend through the dome or be‬
+‭ cast through it. The atmosphere inside the space is‬
+‭ comfortable and dry, regardless of the weather‬
+‭ outside.‬
+‭ Until the spell ends, you can command the interior‬
+‭ to become dimly lit or dark. The dome is opaque‬
+‭ from the outside, of any color you choose, but it is‬
+‭ transparent from the inside.‬
+‭ ‬
+‭Arcane Sight‬
+‭ Second Circle Aetheric Divination‬
+‭ Can‬trip -‭ Detect Magic‬
+‭ While you maintain concentration, you can see‬
+‭ invisible creatures, magical auras and supernatural‬
+‭ effects as glowing shapes. You may use your action‬
+‭ to make a spellcasting roll to read an individual item‬
+‭ or creature, as if casting Identify Magic on them.‬
+‭ ‬
+‭Blink‬
+‭ Second Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Arcane Evasion‬
+‭ Re-roll this spell’‬s‭ power at the end of each of your‬
+‭ turns while you maintain concentration. On a roll‬
+‭ of 4 or higher, you become invisible and intangible‬
+‭ to Material objects and creatures, but can be‬
+‭ tangibly affected by beings in either Shadow (if the‬
+‭ power roll for this turn was even) or Faerie (if it was‬
+‭ odd). While intangible, you can see and hear the‬
+‭ Material Plane, which is cast in shades of gray, but‬
+‭ you can‬’t see anything more than 10 paces away.
+‭ At the start of your next turn, and when the spell‬
+‭ ends, you return to an unoccupied space of your‬
+‭ choice that you can see within 2 paces of the space‬
+‭ you vanished from. If no unoccupied space is‬
+‭ available within that range, you appear in the‬
+‭ nearest unoccupied space (chosen at random if‬
+‭ more than one space is equally near). You can‬
+‭ dismiss this spell as an action.‬
+‭ ‬
+‭Blur‬
+‭ ‬Second ‭Circle Psychic Transmutation‬
+‭ Can‬trip -‭ Shroud‬
+‭ You use your action to pull a shimmering illusion‬
+‭ over yourself. Your body becomes blurred, shifting‬
+‭ and wavering to all who can see you. While you‬
+‭ maintain concentration, any creature has‬
+‭ disadvantage on attack rolls against you. An‬
+‭ attacker is immune to this effect if it doesn‬'t‭ rely on‬
+‭ sight, as with blindsight, or can see through‬
+‭ illusions, as with truesight.‬
+
+‭ Cloud of Obsidian Daggers‬
+‭ Second Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Elemental Dart (Earth)‬
+‭ Youfill the air with spinning, razor-sharp shards of‬
+‭ crystal in a sphere 5 feet in diameter, centered on a‬
+‭ point you choose within range. While you maintain‬
+‭ concentration, a creature takes two dice of slashing‬
+‭ damage when it starts its turn in the spell’‬s‭ area or‬
+‭ enters that area for the first time on a turn.‬
+‭ ‬
+‭Chromatic Orb‬
+‭ Second Circle Elemental Conjuration‬
+‭ Can‬trip -‭ Elemental Dart (Any)‬
+‭ Chromatic Orb is unique as an Elemental spell, in‬
+‭ that its elemental aspect is chosen at the time of‬
+‭ casting, rather than at preparation. By holding a‬
+‭ small sliver of elemental materia during casting, you‬
+‭ use your action to turn that sliver into a bright bead‬
+‭ of elemental energy, then hurl it at a target within‬
+‭ 10 paces. Make a ranged attack vs. the target’‬s‭ Reflex‬
+‭ DV; on a hit, the target suffers three dice of‬
+‭ elemental damage. Each damage die that rolls a‬ ‘6’‭ or higher inflicts one critical hit effect.‬
+‭ ‬
+‭Darkness‬
+‭ Second Circle Flame Conjuration‬
+‭ Can‬trip -‭ Shadow Play‬
+‭ You use your action to spread magical darkness‬
+‭ from a point you choose within 10 paces tofill a‬
+‭ 15-foot radius sphere for as long as you maintain‬
+‭ concentration. The darkness spreads around‬
+‭ corners. A creature with darkvision can‬’t‭ see‬
+‭ through this darkness, and non-magical light can‬’t
+‭ illuminate it.‬
+‭ ‬
+‭Detect Thoughts‬
+‭ Second Circle Psychic Divination‬
+‭ Can‬trip -‭ Uncanny Insight‬
+‭ While you maintain concentration, you can read‬
+‭ the thoughts of certain creatures. When you cast‬
+‭ the spell and as your action on each turn until the‬
+‭ spell ends, you can detect the presence of thinking‬
+‭ creatures within 5 paces of you with Intelligence‬
+‭ modifiers of‬ -2‭ or higher, even if you can‬’t‭ see them.‬
+‭ The spell can penetrate barriers, but 2 feet of rock, 2‬
+‭ inches of metal other than lead or orichalc, or a thin‬
+‭ sheet of lead or orichalc blocks you. Once you‬
+‭ detect the presence of a creature in this way, you‬
+‭ can read its thoughts as described above, even if you‬
+‭ can‬’t see it, but it must still be within 5 paces.
+‭ You can focus your mind on any one creature‬
+‭ within 5 paces of you that you can see or detect‬
+‭ with this spell. If the creature you choose has an‬
+‭ Intelligence of 3 or lower or doesn‬’t‭ speak any‬
+‭ language, the creature is unaffected.‬
+‭ You initially learn the surface thoughts of the‬
+‭ creature you focus on‬ —
+‭ what is most on its mind in‬
+‭ that moment. As an action, you can either shift‬
+‭ your attention to another creature‬’s‭ thoughts or‬
+‭ attempt to probe deeper into the same creature‬’s
+‭ mind. If you probe deeper, you must make a magic‬
+‭ roll vs. its Willpower DV . If you succeed, you gain‬
+‭ insight into its reasoning (if any), its emotional‬
+‭ state, and something that looms large in its mind‬
+‭ (such as something it worries over, loves, or hates).‬
+‭ If you fail, the spell ends. Either way, the target‬
+‭ knows that you are probing into its mind, and‬
+‭ unless you shift your attention to another creature‬’s
+‭ thoughts, the creature can use its action on its turn‬
+‭ to make a Willpower saving throw to break the‬
+‭ spell.‬
+‭ Questions verbally directed at the target creature‬
+‭ naturally shape the course of its thoughts, so this‬
+‭ spell is particularly effective as part of an‬
+‭ interrogation.‬
+
+‭ Dimensional Pocket‬
+‭ Second Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Arcane Evasion‬
+‭ As your action, you create an invisible entrance in‬
+‭ mid-air within 10 paces of you, to an‬
+‭ extradimensional space. The portal is 3 feet by 5 feet‬
+‭ across and can only be seen with Detect Magic or‬
+‭ similar effects. The space lasts for as long as you‬
+‭ maintain concentration.‬
+‭ If you are holding a rope as you cast the spell, the‬
+‭ rope will rise up until one end of it is secured to the‬
+‭ entrance. The extradimensional space then can be‬
+‭ reached by climbing to the top of the rope. The‬
+‭ space can hold as many as eight Medium or smaller‬
+‭ creatures. The rope can be pulled into the space,‬
+‭ making the rope disappear from view outside the‬
+‭ space.‬
+‭ Attacks and spells can‬’t‭ cross through the entrance‬
+‭ into or out of the extradimensional space, but those‬
+‭ inside can see out of it as if through a‬
+‭ 3-foot-by-5-foot window centered on the rope.‬
+‭ Anything inside the extradimensional space drops‬
+‭ out when the spell ends.‬
+‭ ‬
+‭False Aura‬
+‭ Second Circle Aetheric Transmutation‬
+ Cantrip - None
+‭ You place an illusion on a creature or an object you‬
+‭ touch so that divination spells reveal false‬
+‭ information about it. The target can be a willing‬
+‭ creature or an object that isn‬’t‭ being carried or‬
+‭ worn by another creature.‬
+‭ When you cast the spell, choose one or both of the‬
+‭ following effects. The effect lasts while you‬
+‭ maintain concentration.‬ This spell can only be cast as a ritual.
+\n‭False‬ ‭A‬ura‭ - You change the way the target appears‬
+‭ to spells and magical effects, such as Detect Magic,‬
+‭ that detect magical auras. You can make a‬
+‭ non-magical object appear magical, a magical‬
+‭ object appear non-magical, or change the object’‬s
+‭ magical aura so that it appears to belong to a‬
+‭ specific school of magic that you choose. When you‬
+‭ use this effect on an object, you can make the false‬
+‭ magic apparent to any creature that handles the‬
+‭ item.‬
+‭ ‬\n‭Mask‬
+‭ - You change the way the target appears to‬
+‭ spells and magical effects that detect creature types,‬
+‭ such as a paladin‬’s‭ Divine Sense or the trigger of a‬
+‭ symbol spell. You choose a creature type and other‬
+‭ spells and magical effects treat the target as if it‬
+‭ were a creature of that type or of that alignment.‬
+
+‭ Glyph of Warding‬
+‭ Second Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Hold Portal‬
+‭ You inscribe a glyph that creates a magical effect‬
+‭ triggered by other creatures, either upon a surface‬
+‭ (such as a table or a section offloor or wall) or‬
+‭ within an object that can be closed (such as a book,‬
+‭ a scroll, or a treasure chest) to conceal the glyph.‬
+‭ The glyph can cover an area no larger than 10 feet‬
+‭ in diameter. If the surface or object is moved more‬
+‭ than 10 feet from where you cast this spell, the‬
+‭ glyph is broken, and the spell ends without being‬
+‭ triggered. Make a magic roll as you cast the spell;‬
+‭ the glyph is nearly invisible and requires a‬
+‭ successful Deduction saving throw against your roll‬
+‭ to be found.‬
+‭ You decide what triggers the glyph when you cast‬
+‭ the spell. For glyphs inscribed on a surface, the‬
+‭ most typical triggers include touching or standing‬
+‭ on the glyph, removing another object covering the‬
+‭ glyph, approaching within a certain distance of the‬
+‭ glyph, or manipulating the object on which the‬
+‭ glyph is inscribed. For glyphs inscribed within an‬
+‭ object, the most common triggers include opening‬
+‭ that object, approaching within a certain distance of‬
+‭ the object, or seeing or reading the glyph. Once a‬
+‭ glyph is triggered, the alarm sounds and the spell‬
+‭ ends.‬
+‭ You can further refine the trigger so the spell‬
+‭ activates only under certain circumstances or‬
+‭ according to physical characteristics (such as height‬
+‭ or weight), creature kind (for example, the ward‬
+‭ could be set to affect aberrations or drow), or‬
+‭ alignment. You can also set conditions for creatures‬
+‭ that don‬’t‭ trigger the glyph, such as those who say a‬
+‭ certain password.‬
+‭ If you peerform this spell as a ritual, you may weave‬
+‭ one other spell from your spellbook into the glyph.‬
+‭ When a creature triggers the glyph, the other spell‬
+‭ activates, targeting them or centering on the space‬
+‭ they are in.‬
+
+‭ Hold Person‬
+‭ Second Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Mage Hand‬
+‭ As your action, choose a Large or smaller‬
+‭ humanoid that you can see within 10 paces. Make a‬
+‭ ranged magic attack vs. the target’‬s‭ Athletics DV; if‬
+‭ you hit, the target is restrained for the duration by‬
+‭ ghostlyfilaments of energy. On each of its turns,‬
+‭ the restrained creature can use its action to attempt‬
+‭ to break free.‬
+‭ ‬
+‭Levitate‬
+‭ Second Circle Air Transmutation‬
+‭ Can‬trip -‭ Jump‬
+‭ You use your action to target one creature or loose‬
+‭ object of your choice that you can see within range.‬
+‭ The target rises vertically, up to 20 feet, and remains‬
+‭ suspended there while you maintain Concentration.‬
+‭ The spell can levitate a target that weighs up to 500‬
+‭ pounds. An unwilling creature may brace to be‬
+‭ unaffected by the spell; make a spell roll vs. their‬
+‭ Athletics saving throw result to overcome their‬
+‭ resistance.‬
+‭ The target can move only by pushing or pulling‬
+‭ against afixed object or surface within reach (such‬
+‭ as a wall or a ceiling), which allows it to move as if‬
+‭ it were climbing. You can change the target’‬s
+‭ altitude by up to 20 feet in either direction on your‬
+‭ turn. If you are the target, you can move up or‬
+‭ down as part of your move. Otherwise, you can use‬
+‭ your action to move the target, which must remain‬
+‭ within the spell’‬s range.
+‭ When the spell ends, the targetfloats gently to the‬
+‭ ground if it is still aloft.‬
+
+‭ Locate Creature‬
+‭ Second Circle Aetheric Divination‬
+‭ Can‬trip -‭ Silent Whisper‬
+‭ Describe or name a creature that is familiar to you.‬
+‭ While you maintain concentration, you sense the‬
+‭ direction and approximate distance to the creature‬’s
+‭ location, as long as that creature is within one mile‬
+‭ of you. If the creature is moving, you know the‬
+‭ direction of its movement.‬
+‭ The spell can locate a specific creature known to‬
+‭ you, or the nearest creature of a specific kind (such‬
+‭ as a human or a unicorn), so long as you have seen‬
+‭ such a creature up close‬
+–
+‭ within 30 feet‬
+–
+‭ at least‬
+‭ once. If the creature you described or named is in a‬
+‭ different form, such as being under the effects of a‬
+‭ polymorph spell, this spell doesn‬’t‭ locate the‬
+‭ creature.‬
+‭ This spell can‬’t‭ locate a creature if running water at‬
+‭ least 10 feet wide blocks a direct path between you‬
+‭ and the creature.‬
+
+ ‭Magic Mouth‬
+‭ Second Circle Psychic Conjuration‬
+‭ ‬Cantrip - None
+‭ You implant a message within an object in range, a‬
+‭ message that is uttered when a trigger condition is‬
+‭ met. Choose an object that you can see and that‬
+‭ isn‬’t‭ being worn or carried by another creature.‬
+‭ Then speak the message, which must be 25 words or‬
+‭ less. Finally, determine the circumstance that will‬
+‭ trigger the spell to deliver your message.‬
+‭ When that circumstance occurs, a magical mouth‬
+‭ appears on the object and recites the message in‬
+‭ your voice and at the same volume you spoke. If the‬
+‭ object you chose has a mouth or something that‬
+‭ looks like a mouth (for example, the mouth of a‬
+‭ statue), the magical mouth appears there so that‬
+‭ words appear to come from the object’‬s‭ mouth.‬
+‭ When you cast this spell, you can have the spell end‬
+‭ after it delivers its message, or it can remain and‬
+‭ repeat its message whenever the trigger occurs.‬
+‭ The triggering circumstance can be as general or as‬
+‭ detailed as you like, though it must be based on‬
+‭ visual or audible conditions that occur within 30‬
+‭ feet of the object. For example, you could instruct‬
+‭ the mouth to speak when any creature moves‬
+‭ within 30 feet of the object or when a silver bell‬
+‭ rings within 30 feet of it.‬ This spell can only be cast as a ritual.
+
+‭ Sending‬
+‭ Second Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Silent Whisper‬
+‭ You use your action to cast this spell, sending a‬
+‭ message of 25 words or less to any one creature that‬
+‭ you are familiar with, regardless of distance. The‬
+‭ target hears the message in their mind, recognizes‬
+‭ you as the sender, and may respond in kind if they‬
+‭ desire. As long as the target has an Intelligence‬
+‭ score of 1 or higher, they will understand the‬
+‭ meaning of your message even if they do not‬
+‭ normally speak your language. The Arcana of this‬
+‭ spell is prepared onto the lips rather than the hands,‬
+‭ so it may be cast without requiring a free hand.‬
+‭ You may perform this spell as a ritual to additionally‬
+‭ send a single image that you can see when you cast‬
+‭ it, and to allow you to cast across the Veil between‬
+‭ Worlds that separates Material reality from Faerie‬
+‭ and Shadow. You must focus your eyes intently on‬
+‭ the image to be projected as you cast the spell, and‬
+‭ the receiver only sees the image for a few seconds‬
+‭ before it fades. If the target replies, they may also‬
+‭ choose to send back an image of what they are‬
+‭ currently seeing as part of their reply. If cast across‬
+‭ the Veil, the referee will make a secret saving throw‬
+‭ vs. your spell effect DV to determine whether the‬
+‭ message is lost in transit.‬
+‭ ‬
+‭Shatter‬
+‭ Second Circle Air Conjuration‬
+‭ Can‬trip -‭ Elemental Grasp (Thunder)‬
+‭ You use your action to choose a space within 10‬
+‭ paces, then make an area magic attack in a blast 2‬
+‭ paces around it; each creature and object in the area‬
+‭ resists or takes three dice of thunder damage. Any‬
+‭ creature made of hard inorganic material has‬
+‭ disadvantage on this saving throw. Each‬
+‭ non-magical object that isn‬’t‭ being worn or carried‬
+‭ also takes this damage if it’‬s in the spell’s area.
+
+‭ Silence‬
+‭ Second Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Spell Ward‬
+‭ You use your action to choose a target within 25‬
+‭ paces. While you maintain concentration, no sound‬
+‭ can be created by the target, even when interacting‬
+‭ with the environment. The creature is also‬
+‭ deafened, and is completely immune to thunder‬
+‭ damage. The spell also interferes with the target’‬s
+‭ connection with aetheric energies; while silenced, a‬
+‭ creature may not cast spells, miracles, or other‬
+‭ magics requiring a verbal somatic component.‬
+‭ ‬
+‭Suggestion‬
+‭ Second Circle Psychic Transmutation‬
+‭ Can‬trip -‭ Friends‬
+‭ You use your action to make eye contact with a‬
+‭ target and suggest a course of activity (no more‬
+‭ than a sentence or two), then make a spell roll vs.‬
+‭ their Perception DV . If you hit, the target must‬
+‭ follow the suggestion for as long as you maintain‬
+‭ concentration. This spell has no effect if the target‬
+‭ cannot hear or understand you, and the target has‬
+‭ advantage on their saving throw if your command is‬
+‭ obviously and immediately harmful to it.‬
+
+Aetherwall
+‭ Third Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Blade Ward‬
+‭ You use your action to manifest an invisible wall of‬
+‭ force, which springs into existence at a point you‬
+‭ choose within 10 paces.‬
+‭ The wall manifests in any orientation you choose,‬
+‭ as a horizontal or vertical barrier or at an angle. It‬
+‭ can be freefloating or resting on a solid surface.‬
+‭ You can form it into a hemispherical dome or a‬
+‭ sphere with a radius of up to 2 paces, or you can‬
+‭ shape aflat surface at least 2 paces wide and 2 paces‬
+‭ long, covering no more than 1000 square feet. In any‬
+‭ form, the wall is imperceptibly thin and invisible.‬
+‭ The wall lasts while you maintain concentration. If‬
+‭ the wall cuts through a creature‬'s‭ space when it‬
+‭ appears, the creature is pushed to one side of the‬
+‭ wall; if they successfully dodge vs. your spellcasting‬
+‭ DC, they choose which side, otherwise you do.‬
+‭ While you maintain concentration, the wall has‬
+‭ structure points equal to twice your passive‬
+‭ spellcasting DV , is resistant to all non-force damage,‬
+‭ and immune to all non-structure damage. Nothing‬
+‭ can physically pass through the wall, and it can‬'t‭ be‬
+‭ dispelled by dispel magic. The wall also extends into‬
+‭ Faerie and Shadow, blocking ethereal travel through‬
+‭ the wall.‬
+‭ This spell can be counterspelled as it’‬s‭ being cast,‬
+‭ but can‬'t‭ be dispelled by dispel magic. Any‬
+‭ damaging spell targeting the wall that destroys it‬
+‭ does not harm anything on either side of it; the wall‬
+‭ perfectly absorbs and dissipates all remaining‬
+‭ energy as it shatters.‬
+
+‭ Anchor‬
+‭ Third Circle Aetheric Transmutation‬
+‭ Can‬trip -‭ Spell Ward‬
+‭ As your action, you sacrifice a pinch of appropriate‬
+‭ Materia residue to cause afirst or second circle‬
+‭ arcane spell that you are currently concentrating on‬
+‭ to sustain itself without concentration for a number‬
+‭ of exploration rounds equal to the spell’‬s‭ power . You‬
+‭ cannot resume concentration, make any choices, or‬
+‭ take any actions on the anchored spell once you‬
+‭ have anchored it; the spell must continue for that‬
+‭ many turns, then end.‬
+‭ If you instead sacrifice ½ oz of diamond dust and a‬
+‭ Dragon Pearl of the appropriate aspect and rarity,‬
+‭ the spell becomes permanent until dispelled.‬
+
+‭ Arcane Eye‬
+‭ Third Circle Aetheric Divination‬
+‭ Can‬trip -‭ Detect Magic‬
+‭ You cause an invisible, magical eye to form at your‬
+‭ forehead. You mentally receive visual information‬
+‭ from the eye when you close your own eyes, and‬
+‭ the arcane eye has normal vision and darkvision out‬
+‭ to 5 paces. The arcane eye can look in every‬
+‭ direction.‬
+‭ As an action, you can move the eye up to 5 paces in‬
+‭ any direction. There is no limit to how far away‬
+‭ from you the eye can move, but it can‬’t‭ enter‬
+‭ another plane of existence. A solid barrier blocks‬
+‭ the eye‬’s‭ movement, but the eye can pass through‬
+‭ an opening as small as ¼ inch in diameter.‬
+
+‭ Circle of Protection‬
+‭ Third Circle Aetheric Abjuration‬
+‭ ‬Cantrip - None
+‭ You sprinkle roughly an ounce of aetheric materia,‬
+‭ ground iron dust, and ground silver dust in a‬
+‭ 10-foot-radius circle, pausing every few inches to‬
+‭ inscribe appropriate runes and sigils, to create a‬
+‭ 20-foot-tall cylinder of magical energy. The ground‬
+‭ dust that defines the circle glows with an eerie light‬
+‭ while the spell remains active.‬
+‭ Celestial, elemental, fey, infernal, and undead‬
+‭ creatures can‬’t‭ willingly enter or leave the cylinder‬
+‭ by non-magical means. If the creature tries to use‬
+‭ teleportation or interplanar travel to do so, it must‬ ‭first deny this spell’‬s‭ effects. Each such creature also‬
+‭ has disadvantage on attack rolls against targets on‬
+‭ the other side of the border, and targets on the‬
+‭ other side of the border can‬’t‭ be beguiled,‬
+‭ frightened, or possessed by such a creature. Finally,‬
+‭ all arcane magics within the circle are cast with‬
+‭ advantage, and all non-arcane magics cast within or‬
+‭ across the circle‬’s boundary have disadvantage.
+‭ The circle lasts until the next sunrise or sunset, then‬
+‭ fades into a dusty residue and a lingering faded or‬
+‭ burned-in pattern where the circle was made.‬ This spell can only be cast as a ritual.
+
+‭ Clairvoyance‬
+‭ Third Circle Aetheric Divination‬
+‭ Can‬trip -‭ Point‬
+‭ You create an invisible sensor up to a mile away in a‬
+‭ location familiar to you (a place you have visited or‬
+‭ seen before) or in an obvious location up to 20 paces‬
+‭ away that is unfamiliar to you (such as behind a‬
+‭ door, around a corner, or in a grove of trees). The‬
+‭ sensor remains in place for the duration, and it‬
+‭ can‬’t be attacked or otherwise interacted with.
+‭ When you cast the spell, you choose seeing or‬
+‭ hearing. You can use the chosen sense through the‬
+‭ sensor as if you were in its space. As your action,‬
+‭ you can switch between seeing and hearing. A‬
+‭ creature that can see the sensor (such as a creature‬
+‭ benefitting from see invisibility or truesight) sees a‬
+‭ luminous, intangible orb about the size of your fist.‬
+
+‭ Cone of Cold‬
+‭ Third Circle Flame Conjuration‬
+‭ Can‬trip -‭ Elemental Bolt (Cold)‬
+‭ You use your action to blast a cone of freezing air 40‬
+‭ paces long from your hands. Make an area magic‬
+‭ attack ; each creature in the area must resist or suffer‬
+‭ six dice of cold damage. Each damage die that rolls‬
+‭ a‬‘6’‭ or higher stuns or slows a creature of your‬
+‭ choice that failed its saving throw until it shrugs it‬
+‭ off .‬
+
+‭ Confusion‬
+‭ Third Circle Psychic Transmutation‬
+‭ Can‬trip -‭ Friends‬
+‭ This spell assaults and twists creatures‬’
+‭ minds,‬
+‭ spawning delusions and provoking uncontrolled‬
+‭ actions. Each creature within 3 paces that can hear‬
+‭ you must succeed on a Perception saving throw‬
+‭ when you cast this spell or be affected by it.‬
+‭ An affected target can‬’t‭ take reactions and must roll‬
+‭ a d10 at the start of each of its turns to determine its‬
+‭ behavior for that turn:‬
+‭ 1 - The creature uses all its movement to move in a‬
+‭ random direction. To determine the direction, roll a‬
+‭ d8 and assign a direction to each die face. The‬
+‭ creature doesn‬’t take an action this turn.
+‭ 2 t‬o 6 -‭ the creature does not move or act this turn.‬
+‭ 7‬ to‭ 8 - The creature uses its action to make a melee‬
+‭ attack against a randomly determined creature‬
+‭ within its reach. If there is no creature within its‬
+‭ reach, the creature does nothing this turn.‬
+‭ 9 t‬o 10 -‭ The creature can act and move normally.‬
+‭ At the end of each of its turns, an affected creature‬
+‭ can attempt to snap out of it . If it succeeds, this‬
+‭ effect ends for that target.‬
+‭ ‬
+‭ Dimension Door‬
+‭ Third Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Aetheric Evasion‬
+‭ You teleport yourself from your current location to‬
+‭ any other spot within 100 paces. You arrive at‬
+‭ exactly the spot desired. It can be a place you can‬
+‭ see, one you can visualize, or one you can describe‬
+‭ by stating distance and direction, such as‬ "200‭ feet‬
+‭ straight downward" or‬ "upward‭ to the northwest at‬
+‭ a 45-degree angle, 300 feet"‬.‭ You can bring along‬
+‭ objects as long as their weight doesn‬’t‭ exceed what‬
+‭ you can carry; you can also bring one willing‬
+‭ creature of your size or smaller who is carrying gear‬
+‭ up to its carrying capacity. The creature must be‬
+‭ within 5 feet of you when you cast this spell.‬
+‭ If you would arrive in a place already occupied by‬
+‭ an object or a creature, you and any creature‬
+‭ traveling with you each take 3 dice of force damage,‬
+‭ and the spell fails to teleport you. Each of you must‬
+‭ then resist vs. DV 15 or suffer 1 wound,‬ +1‭ additional‬
+‭ wound per damage die that rolled its maximum‬
+‭ value.‬
+
+ ‭Disintegrate‬
+‭ Third Circle Aetheric Transmutation‬
+‭ Can‬trip -‭ Magic Missile‬
+‭ You use your action to direct an impossibly thin,‬
+‭ vividly purplish-white beam of pure energy at a‬
+‭ target within 25 paces, making a ranged attack vs.‬
+‭ the target’‬s‭ Reflex DV . The beam inflicts six dice of‬
+‭ force damage on a hit; each damage die that rolls a‬ ‘6’
+‭ or higher also inflicts one wound. If killed‬
+‭ outright by this spell, the target is reduced to afine‬
+‭ gray powder.‬
+‭ Against nonliving targets, Disintegrate inflicts three‬
+‭ dice of structure damage; if an object less than 5’‬
+‭ on‬
+‭ a side is destroyed by this spell, it is also reduced to‬
+‭ afine gray powder. An object larger than a 5’‬
+‭ cube‬
+‭ instead has a 5’‬ ‭spherical hole vaporized into it at‬
+‭ the point of impact.‬
+
+‭ Dispel Greater Magic‬
+‭ Third Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Spell Ward‬
+‭ You use your action to choose one magical effect on‬
+‭ the target while touching them with your hand.‬
+‭ Any effect of second circle or less is instantly‬
+‭ dispelled. If you target a Third Circle magical effect‬
+‭ that is actively being maintained by another caster‬’s
+‭ concentration, that caster must immediately make a‬
+‭ concentration save vs. your magic roll result. If it is a‬
+‭ Third Circle effect that is not being actively‬
+‭ maintained, make a magic roll vs. DV 20 to‬
+‭ determine whether it resists being dispelled.‬
+
+‭ Dominate‬
+‭ Third Circle Psychic Transmutation‬
+‭ Can‬trip -‭ Friends‬
+‭ You attempt to beguile a humanoid that you can see‬
+‭ within range. It must deny the effect or be beguiled‬
+‭ by you for the duration. If you or creatures that are‬
+‭ friendly to you arefighting it, it has advantage on‬
+‭ the saving throw.‬
+‭ While the target is beguiled, you have a telepathic‬
+‭ link with it as long as the two of you are on the‬
+‭ same plane of existence. You can use this telepathic‬
+‭ link to issue commands to the creature while you‬
+‭ are conscious (no action required), which it does its‬
+‭ best to obey. You can specify a simple and general‬
+‭ course of action, such as‬ "attack‭ that creature‬", "run
+‭ over there‬",‭ or‬ "fetch‭ that object"‬.‭ If the creature‬
+‭ completes the order and doesn‬’t‭ receive further‬
+‭ direction from you, it defends and preserves itself to‬
+‭ the best of its ability.‬
+‭ You can use your action to take total and precise‬
+‭ control of the target. Until the end of your next‬
+‭ turn, the creature takes only the actions you choose,‬
+‭ and doesn‬’t‭ do anything that you don‬’t‭ allow it to‬
+‭ do. During this time you can also cause the creature‬
+‭ to use a reaction, but this requires you to use your‬
+‭ own reaction as well.‬
+‭ Each time the target takes damage, it makes a new‬
+‭ Willpower saving throw against the spell. If the‬
+‭ saving throw succeeds, the spell ends.‬
+‭ ‬
+‭ Fireball‬
+‭ Third Circle Flame Conjuration‬
+‭ Can‬trip -‭ Elemental Bolt (Fire)‬
+‭ You use your action tofling a glowing red ember at‬
+‭ a space within 30 paces, which detonates into afiery‬
+‭ explosion. Make a blast 4 area magic attack ; each‬
+‭ creature in the area must dodge or suffer six dice of‬
+‭fire damage. Each damage die that rolls a‬‘6’‭ or‬
+‭ higher lights a creature of your choice that failed its‬
+‭ saving throw onfire, inflicting ongoingfire damage‬
+‭ at the start of each of that creature‬’s turns.
+
+‭ Fly‬
+‭ Third Circle Air Transmutation‬
+‭ Can‬trip -‭ Jump‬
+‭ You use your action to gain aflying speed of 15‬
+‭ paces for as long as you maintain concentration.‬
+‭ When the spell ends, you plummet to the ground if‬
+‭ you are still aloft, unless you can stop the fall.‬
+‭ As your action whileflying, you can dash up to 60‬
+‭ paces in a straight line rather than moving 15 paces;‬
+‭ if you pass adjacent to any other creature or‬
+‭ obstacle, you must make a Reflex saving throw as‬
+‭ part of your action to avoid colliding with it.‬
+‭ Flesh To Stone‬
+‭ Third Circle Aetheric Transmutation‬
+‭ Can‬trip -‭ Elemental Dart (Piercing)‬
+‭ Make an attack vs the Fortitude DV of a creature‬
+‭ within 10 paces that can see you. If you miss, the‬
+‭ spell ends and has no effect. If you hit, the target‬
+‭ suffers 2 dice of petrification damage. Each damage‬
+‭ die that rolls a ‘6’‬or higher also inflicts one wound.
+‭ While you maintain concentration, it suffers 2 more‬
+‭ dice of petrification damage at the beginning of‬
+‭ each of your turns. On its turn, the target can use‬
+‭ its action to attempt to break free of the spell,‬
+‭ ending the effect on a successful Fortitude saving‬
+‭ throw.‬
+‭ A creature reduced to 0 hit points by the spell‬
+‭ becomes fully petrified. Only a restoration miracle‬
+‭ or dispel greater magic spell can undo the effect,‬
+‭ returning them to life at zero hit points, in exactly‬
+‭ the condition they were in when petrified.‬
+
+‭ Forceful Hand‬
+‭ Third Circle Aetheric Conjuration‬
+‭ Can‬trip -‭ Mage Hand‬
+‭ You use your action to cast this spell, conjuring a‬
+‭ Large construct of a giantfloating hand that‬
+‭ mirrors the motions of your own hand for as long‬
+‭ as you maintain concentration. The hand has a‬
+‭ Defense of 16, a Strength modifier of‬ +5,‭ and a‬
+‭ Dexterity modifier equal to your Intelligence‬
+‭ modifier. Melee attacks with the hand are resolved‬
+‭ as a spell roll . The hand has hit points equal to your‬
+‭ spell roll result, and all non-force damage dealt to it‬
+‭ from any source is halved.‬
+‭ On your turn, you may move the hand up to 10‬
+‭ paces in any direction as part of your own‬
+‭ movement. You may use the hand as your action to‬
+‭ attack, push, grasp, or block creatures.‬
+ \n‭A‬ttack‭ - You direct the hand to make a melee attack .‬
+‭ If you hit, you deal three dice of force damage, or‬
+‭ one die of structural force damage.‬
+‭ Push - You direct the hand to make a push attack ,‬
+‭ gaining advantage if the target is Medium or‬
+‭ smaller. On a success, the target is pushed a number‬
+‭ of paces equal to the spell’‬s‭ power in a direction that‬
+‭ you choose.‬
+‭ ‬\n‭Grasp - You direct the hand to make a grab attack ,‬
+‭ gaining advantage if the target is Medium or‬
+‭ smaller. On a success, the target is grappled. While‬
+‭ you have a target grappled, you may use your‬
+‭ simple action each round to crush it, inflicting one‬
+‭ die of bashing damage.‬
+‭ ‬\n‭Bl‬ock
+‭ - The hand automatically moves itself‬
+‭ between you and a creature of your choice, and will‬
+‭ continue to do so as a free action until you give it a‬
+‭ different command. You gain half cover, and the‬
+‭ target must make a successful Athletics saving‬
+‭ throw vs. your Arcana DV to attempt to move‬
+‭ through its space. If it succeeds, the space is still‬
+‭ considered difficult terrain. Whenever you are‬
+‭ targeted by a ranged or area attack that passes‬
+‭ through the hand’‬s‭ space, you automatically add‬
+‭ this spell’‬s‭ power to your Defense vs. that attack.‬
+‭ ‬
+‭ Hypnotic Pattern‬
+‭ Third Circle Psychic Conjuration‬
+‭ Can‬trip -‭ Dancing Lights‬
+‭ You use your action to create a twisting pattern of‬
+‭ impossible colors that weaves through the air inside‬
+‭ a 5-pace-wide sphere within 25 paces. Each creature‬
+‭ in the area who sees the pattern must make a‬
+‭ Perception saving throw or become beguiled while‬
+‭ you maintain concentration.‬
+‭ While beguiled by this spell, an affected creature is‬
+‭ unconscious; at the end of its turn, it attempts to‬
+‭ snap out of it. The spell also ends for an affected‬
+‭ creature if it takes any damage, or if someone else‬
+‭ uses their action to shake the creature out of its‬
+‭ stupor.‬
+‭ Invisibility‬
+‭ Third Circle Psychic Transmutation‬
+‭ Can‬trip -‭ Shroud‬
+‭ You use your action to touch a creature or object.‬
+‭ While you maintain concentration, the target is‬
+‭ invisible to normal sight and darkvision. Anything‬
+‭ the target is wearing or carrying is invisible as long‬
+‭ as it is on the target’‬s‭ person. The spell ends if the‬
+‭ target attacks or casts any other magic.‬
+
+‭ Lightning Bolt‬
+‭ Third Circle Air Conjuration‬
+‭ Can‬trip -‭ Elemental Bolt (Lightning)‬
+‭ You use your action to gesture with your hands, and‬
+‭ a stroke of lightning forming a line 20 paces long‬
+‭ and 2 paces wide blasts out from your hands in a‬
+‭ direction you choose. Make an area magic attack ;‬
+‭ each creature along the line must dodge or suffer six‬
+‭ dice of lightning damage. Creatures wearing metal‬
+‭ armor have disadvantage on their saving throw. The‬
+‭ lightning may igniteflammable objects in the area‬
+‭ that aren‬’t‭ being worn or carried. For each damage‬
+‭ die that rolls a‬
+‘6’
+‭ or higher, one affected creature of‬
+‭ your choice that failed to dodge becomes stunned,‬
+‭ and it is disarmed if it is wielding a metal weapon.‬
+
+‭ Major Image‬
+‭ Third Circle Psychic Conjuration‬
+‭ Can‬trip -‭ Minor Image‬
+‭ You use your action to create the image of an‬
+‭ object, a creature, or some other visible‬
+‭ phenomenon that is no larger than a 20-foot cube.‬
+‭ The image appears at a spot that you can see within‬
+‭ 15 paces and lasts while you maintain concentration.‬
+‭ It seems completely real, including sounds, smells,‬
+‭ and temperature appropriate to the thing depicted.‬
+‭ You can‬’t‭ create sufficient heat or cold to cause‬
+‭ damage, a sound loud enough to deal thunder‬
+‭ damage or deafen a creature, or a smell that might‬
+‭ sicken a creature.‬
+‭ As long as you are within range of the illusion, you‬
+‭ can use your action to cause the image to move to‬
+‭ any other spot within range. As the image changes‬
+‭ location, you can alter its appearance so that its‬
+‭ movements appear natural for the image. For‬
+‭ example, if you create an image of a creature and‬
+‭ move it, you can alter the image so that it appears‬
+‭ to be walking. Similarly, you can cause the illusion‬
+‭ to make different sounds at different times, even‬
+‭ making it carry on a conversation.‬
+‭ Physical interaction with the image reveals it to be‬
+‭ an illusion, because things can pass through it. A‬
+‭ creature that uses its action to examine the image‬
+‭ can determine that it is an illusion with a successful‬
+‭ Deduction saving throw. If a creature discerns the‬
+‭ illusion for what it is, the creature can see through‬
+‭ the image, and its other sensory qualities become‬
+‭ obviously fake to the creature.‬
+‭ ‬
+‭ Modify Spell‬
+‭ Third Circle Aetheric Transmutation‬
+‭ ‬Cantrip - None
+‭ Modify Spell allows you to create a new spell by‬
+‭ weaving Arcane metamagics into an existing spell‬
+‭ that you know. Each metamagic woven into the‬
+‭ original spell effect increases the Circle of the new‬
+‭ spell by 1. Performing this ritual costs one full bottle‬
+‭ of magic ink and one Dragon Pearl with a rarity‬
+‭ equal to the circle of the new spell, both of which‬
+‭ are consumed during the ritual.‬
+‭ When youfinish the ritual, you make an Arcana test‬
+‭ vs. the new spell’‬s‭ circle. If you succeed, the new‬
+‭ spell works as intended, and you add it to your‬
+‭ spellbook.‬
+‭ Modifying a spell with multiple metamagics can‬
+‭ produce a spell of fourth or even higher circle; such‬
+‭ spells can only be cast with the aid of powerful‬
+‭ artifacts.‬ This spell can only be cast as a ritual.
+‭ You may choose any of the following metamagics:‬
+‭ ‬\n‭Permanen‬ce‭ - This metamagic requires a‬
+‭ substantial investment in time and resources. The‬
+‭ spell to be made permanent must be cast as a ritual‬
+‭ before each sunrise and sunset for one lunar month,‬
+‭ with a pinch of diamond dust and materia residue‬
+‭ added to the material components of each ritual‬
+‭ casting. Each time you cast a ritual spell with this‬
+‭ metamagic, its effects last until the next sunrise or‬
+‭ sunset without requiring concentration to maintain‬
+‭ it; on the sunset of the last day, the spell becomes‬
+‭ permanent until dispelled if you choose to sacrifice‬
+‭ a Dragon Pearl of the correct element and rarity at‬
+‭ the culmination of the ritual.‬
+‭ Performing this ritual in the hour before sunrise or‬
+‭ sunset halves the total number of spells that you can‬
+‭ prepare at this time; you may use your Arcane‬
+‭ Recovery feat to prepare your remaining spells‬
+‭ throughout the day.‬ 
+ \n‭Caref‬ul ‭Spell‬
+‭ - This metamagic modifies a spell that‬
+‭ forces other creatures to make a saving throw to‬
+‭ protect some of those creatures from the spell'‬s‭ full‬
+‭ force. When you cast the spell, you choose a‬
+‭ number of creatures up to your spellcasting ability‬
+‭ modifier. A chosen creature automatically succeeds‬
+‭ on its saving throw against the spell.‬
+‭ ‬\n‭Distan‬t‭ Spell‬
+‭ - This metamagic doubles a spell’‬s
+‭ range if it has a range of 3 paces or more, or gives it‬
+‭ a range of 5 paces if it normally has a range of‬
+‭ touch or 1 to 2 paces.‬
+‭ ‬\n‭Empo‬wered‭ Spell‬
+‭ - This metamagic increases a‬
+‭ spell’‬s‭ damaging power. When you roll damage for‬
+‭ this spell, you can replace up to half the spell’‬s
+‭ damage dice with their maximum possible values.‬
+‭ ‬\n‭Ro‬bust ‭Spell‬
+‭ - This metamagic causes any attempt‬
+‭ to dispel or counterspell that spell to have‬
+‭ disadvantage.‬
+‭ ‬\n‭Seeking Spell‬
+‭ - This metamagic grants you‬
+‭ advantage on a spell’‬s attack rolls.
+‭ ‬\n‭Q‬uickened‭ Spell‬
+‭ - If a spell uses an action to cast,‬
+‭ you can increase its Circle by two to create a version‬
+‭ that can be cast as your reaction. Attack spells that‬
+‭ can be cast as a reaction may be used to perform‬
+‭ opportunity attacks.‬
+‭ ‬\n‭S‬ubtle‭ Spell‬
+‭ - This metamagic allows you to create a‬
+‭ version of a spell with subdued somatic and verbal‬
+‭ components. You must make an Arcana or Finesse‬
+‭ saving throw (your choice) whenever you cast the‬
+‭ modified spell to perform it correctly without any‬
+‭ somatic or verbal gestures. Any creature whose‬
+‭ Perception DV is less than your check result will not‬
+‭ notice that you are casting the spell, and will thus‬
+‭ be unable to counter it. You may also use this‬
+‭ version of the spell when restrained or unable to‬
+‭ speak, by making the same saving throw.‬
+‭ ‬
+‭ Private Sanctum‬
+‭ Third Circle Aetheric Divination‬
+‭ ‬Cantrip - None
+‭ You make an area within range magically secure‬
+‭ until the next sunrise or sunset. The area is a sphere‬
+‭ that can be as small as 5 feet to as large as 100 feet in‬
+‭ diameter; any walls or natural barriers can be‬
+‭ incorporated to define a non-spherical perimeter.‬
+‭ Sensors created by divination spells can‬’t‭ appear‬
+‭ inside the protected area or pass through the barrier‬
+‭ at its perimeter, and creatures in the area can‬’t‭ be‬
+‭ targeted by divination spells.‬ This spell can only be cast as a ritual.
+
+‭ Resilient Sphere‬
+‭ Third Circle Aetheric Abjuration‬
+‭ Can‬trip -‭ Blade Ward‬
+‭ A sphere of shimmering force encloses a creature or‬
+‭ object of Large size or smaller within 10 paces. An‬
+‭ unwilling creature must dodge or be enclosed until‬
+‭ the sphere is destroyed.‬
+‭ While you maintain concentration, the sphere has‬
+‭ structure points equal to your passive spellcasting‬
+‭ DV , is resistant to all non-force damage, and‬
+‭ immune to all non-structure damage. Nothing‬
+–
+‭ not‬
+‭ physical objects, energy, or other spell effects‬
+–
+‭ can‬
+‭ pass through the barrier, in or out. While the sphere‬
+‭ remains, a creature or object inside can‬’t‭ be‬
+‭ damaged by attacks or effects originating from‬
+‭ outside, nor can a creature inside the sphere‬
+‭ damage anything outside it. Any attempt tofire in‬
+‭ or out automatically deals its damage to the sphere‬
+‭ itself, rather than passing through.‬
+‭ The sphere is weightless and just large enough to‬
+‭ contain the creature or object inside. An enclosed‬
+‭ creature can use its action to push against the‬
+‭ sphere‬’s‭ walls and thus roll the sphere at up to half‬
+‭ the creature‬’s‭ speed. Similarly, the globe can be‬
+‭ picked up and moved by other creatures.‬
+‭ Any damaging spell targeting the globe that‬
+‭ destroys it does not harm anything inside it; the‬
+‭ globe perfectly absorbs and dissipates all remaining‬
+‭ energy as it shatters.‬
+‭ ‬
+ ‭Stinking Cloud‬
+‭ First Circle Arcane Air Conjuration‬
+‭ Can‬trip -‭ Elemental Grasp (poison)‬
+‭ You use your action to summon a 20 foot cloud of‬
+‭ yellowish-green vapor at a space within 10 paces.‬
+‭ While you maintain concentration, each creature in‬
+‭ or adjacent to that area must resist or be stunned and‬
+‭ slowed until they shrug it off , as they retch and gag‬
+‭ from the fumes.‬
+‭ ‬
+‭Summon Elemental‬
+‭ Third Circle Elemental Summons‬
+‭ ‬Cantrip - None
+‭ You summon an Elemental spirit to cross the veil‬
+‭ into the Material and aid you and your allies in‬
+‭ battle. The Elemental is a 3 hd creature with 45 hit‬
+‭ points, a d10 proficiency die, and 5 spell charges ; it‬
+‭ automatically returns to the Elemental Chaos once‬
+‭ either its hit points or its mana are depleted.‬
+‭ The wizard then makes a magic test contested by the‬
+‭ Elemental’‬s‭ Willpower, with a‬
++1‭ bonus for each 100‬
+‭ gp worth of materia of the appropriate element‬
+‭ sacrificed during the ritual; if the Elemental wins‬
+‭ this contest, it immediately goes free and is likely to‬
+‭ be hostile to the summoner. If the Wizard wins, the‬
+‭ Elemental is bound to do the Wizard’‬s‭ bidding for a‬
+‭ number of hours equal to this spell’‬s‭ power , after‬
+‭ which it is automatically banished back to its home‬
+‭ on the Elemental Chaos.‬
+‭ The Elemental is controlled by the referee; it may‬
+‭ use one spell charge to cast anyfirst circle elemental‬
+‭ spell that matches its element, two spell charges to‬
+‭ cast any second circle elemental spell that matches‬
+‭ its element, or three spell charges to cast any third‬
+‭ circle elemental spell that matches its element.‬
+‭ Depending on the type of elemental, it may also‬
+‭ know other spells that it may be willing to cast.‬
+ This spell can only be cast as a ritual.
+‭ ‬
+‭ Telepathic Bond‬
+‭ Third Circle Arcane Psychic Divination‬
+‭ Can‬trip -‭ Uncanny Insight‬
+‭ With an action, you can link the minds of a number‬
+‭ of different adjacent willing creatures up to this‬
+‭ spell’‬s‭ power . While you maintain concentration,‬
+‭ each creature in the link can sense the emotions of‬
+‭ each other creature, and can communicate‬
+‭ telepathically whether or not they share a common‬
+‭ language, regardless of distance.‬
+‭ ‬
+‭Teleportation Circle‬
+‭ Third Circle Aetheric Conjuration‬
+‭ ‬Cantrip - None
+‭ You draw a 10-foot-diameter circle on the ground‬
+‭ inscribed with sigils that link your location to a‬
+‭ permanent teleportation circle of your choice whose‬
+‭ sigil sequence you know. The inscription requires‬
+‭ half an ounce of mithral dust and three spell charges‬
+‭ worth of Aetheric materia residue.‬
+‭ A shimmering portal opens within the circle you‬
+‭ drew and remains open until the end of your next‬
+‭ turn. Any creature that enters the portal instantly‬
+‭ appears within the destination circle. If the‬
+‭ destination circle is occupied, the travelers can‬
+‭ choose for the ritual to fail, or can attempt to push‬
+‭ through‬
+-
+‭ suffering 3 dice of force damage, but‬
+‭ arriving within the circle and pushing any‬
+‭ interposing creatures or material out of the circle in‬
+‭ a random direction.‬
+‭ When you learn this ritual, you also learn the sigil‬
+‭ sequences for two destinations on the Material‬
+‭ Plane, determined by the referee. You can learn‬
+‭ additional sigil sequences during your adventures.‬
+‭ You can commit a new sigil sequence to memory or‬
+‭ write it in your spellbook after studying it for one‬
+‭ exploration round.‬ This spell can only be cast as a ritual.
+
