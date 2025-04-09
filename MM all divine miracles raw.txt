@@ -1,0 +1,497 @@
+Bless
+‭ First Circle Blessing - Any Domain‬
+‭ You use your action to touch an adjacent creature,‬
+‭ blessing it. While you maintain concentration, you‬
+‭ grant that creature a bonus die on each of its saving‬
+‭ throws.‬
+‭ The Bless spell can also be used in a secondary way,‬
+‭ to create a blessed token‬
+-
+‭ a holy symbol, holy water,‬
+‭ blessed incense, sacramental bread, or sacredflame.‬
+‭ A mundane object of the appropriate element‬
+‭ becomes blessed immediately, and loses its blessing‬
+‭ when you end concentration. If you perform the‬
+‭ blessing on a piece of elemental materia, however,‬
+‭ that materia becomes permanently blessed.‬
+‭ A blessed token can be used to grant advantage and‬
+‭ add one bonus die to a saving throw; incense and‬
+‭flame may also create a 5-pace zone of protection‬
+‭ where undead and infernal actions have‬
+‭ disadvantage. Holy water and sacredflame may also‬
+‭ be used to inflict two dice of radiant damage if‬
+‭ thrown onto an unholy creature.‬
+‭ ‬
+‭Calm Emotions‬
+‭ First Circle Blessing or Curse - Freedom Domain‬
+‭ Blessing - You use your action to attempt to‬
+‭ suppress strong emotions in a group of people. Each‬
+‭ mortal within 5 paces of you may attempt to deny‬
+‭ the effect; each creature can choose to fail this‬
+‭ saving throw if they wish. If it fails, you can‬
+‭ suppress any effect causing them to be beguiled,‬
+‭ hostile, or frightened for as long as you maintain‬
+‭ concentration. When used in this way, this spell is‬
+‭ considered a Blessing.‬
+‭ ‬\n‭C‬urse‭ - Alternatively, you can make a target‬
+‭ indifferent about creatures of your choice for as long‬
+‭ as you maintain concentration. This indifference‬
+‭ ends if the target is attacked or harmed by a spell or‬
+‭ if they witness any of their friends being harmed.‬
+‭ When the spell ends, the creature regains its normal‬
+‭ hostility or affinity, unless the referee rules‬
+‭ otherwise. When used in this way, this spell is‬
+‭ considered a Curse.‬
+‭ Cause Fear‬
+
+‭ First Circle Curse - Death Domain‬
+‭ You use your action to instill terror in every living‬
+‭ creature within a 5-pace cone. Each target must‬
+‭ immediately deny the effect, or drop whatever it is‬
+‭ holding and become frightened of you for as long as‬
+‭ you maintain concentration.‬
+‭ While frightened by this spell, a creature must take‬
+‭ the Sprint action and move away from you by the‬
+‭ safest available route on each of its turns, unless‬
+‭ there is nowhere to move. If the creature ends its‬
+‭ turn in a location where it doesn‬’t‭ have line of sight‬
+‭ to you, they may attempt to deny the spell.‬
+‭ ‬
+‭Command‬
+‭ First Circle Curse - Fate Domain‬
+‭ You use your action to make eye contact with a‬
+‭ target within 5 paces that can hear and understand‬
+‭ you, and speak a single imperative word such as‬ “jump”
+‭ or‬ “quiet”.‭ You roll a ranged attack vs. its‬
+‭ Will DV; on a success, it must follow the command‬
+‭ during their next turn. You have disadvantage if‬
+‭ your command is obviously harmful.‬
+‭ If performed as a ritual, you may utter a single‬
+‭ imperative sentence to the target. If your attack‬
+‭ succeeds, it must obey that command while you‬
+‭ maintain concentration.‬
+‭ ‬
+‭Divine Guidance‬
+‭ First Circle Blessing - Truth Domain‬
+‭ You use your action to touch an adjacent creature as‬
+‭ you recite a brief prayer and choose a Skill. While‬
+‭ you maintain concentration, you grant that creature‬
+‭ a bonus die on each of its proficiency checks.‬
+‭ ‬
+‭Heal Minor Wounds‬
+‭ First Circle Blessing - Life Domain‬
+‭ You use your reaction to touch a creature, healing‬
+‭ the target for a number of hit points equal to this‬
+‭ spell’‬s‭ power .‬
+
+‭ Heroism‬
+‭ First Circle Blessing - War Domain‬
+‭ As your action, you may touch a willing creature‬
+‭ and imbue them with bravery. While you maintain‬
+‭ concentration, that creature is immune to being‬
+‭ frightened, and adds a bonus die to each of its‬
+‭ attack rolls.‬
+‭ ‬
+‭Light‬
+‭ First Circle Blessing - Beauty Domain‬
+‭ As your action, you cause the prepared prayer strip‬
+‭ in your hand to grow with bright light out to 5‬
+‭ paces, and dim light out to 10 paces, while you‬
+‭ maintain concentration. Any undead or infernal‬
+‭ beings caught in the bright light suffer disadvantage‬
+‭ to their attack rolls and saving throws.‬
+‭ ‬
+‭Mending‬
+‭ First Circle Blessing - Beauty Domain‬
+‭ You use your action to touch a damaged non-living‬
+‭ object. While you maintain concentration, you may‬
+‭ repair a single break or tear with each of your‬
+‭ actions, such as a broken chain link, two halves of a‬
+‭ broken key, a torn cloak, or a leaking wineskin. As‬
+‭ long as each break or tear is no larger than 1 foot in‬
+‭ any dimension, you mend it, leaving no trace of the‬
+‭ former damage. This spell can physically repair a‬
+‭ magic item or construct, but the spell can‬’t‭ restore‬
+‭ magic to such an object.‬
+‭ ‬
+ ‭Sanctuary‬
+‭ First Circle Blessing - Peace Domain‬
+‭ You use your action or reaction to touch a creature,‬
+‭ warding it against attack. While you maintain‬
+‭ concentration, any creature who targets the warded‬
+‭ creature with an attack or a harmful spell mustfirst‬
+‭ attempt to deny this effect. On a failed save, the‬
+‭ creature must choose a new target or lose the attack‬
+‭ or spell. This spell doesn‬’t‭ protect the warded‬
+‭ creature from area effects, such as the explosion of a‬
+‭fireball.‬
+‭ If the warded creature makes an attack, casts a spell‬
+‭ that affects an enemy, or deals damage to another‬
+‭ creature, this spell ends.‬
+
+‭ Shield of Faith‬
+‭ First Circle Blessing - War Domain‬
+‭ You use your reaction to cast this spell with a free‬
+‭ hand when a creature within 10 paces would be‬
+‭ damaged by an attack or damaging effect. A radiant‬
+‭ aura of divine energy forms around the target,‬
+‭ absorbing some of the damage and shielding them‬
+‭ from harm, granting the target two faith dice worth‬
+‭ of temporary hit points before damage is applied.‬
+
+‭ Smite‬
+‭ First Circle Curse - War Domain‬
+‭ You may perform this miracle without an action as‬
+‭ you hit a creature with a melee weapon attack. If‬
+‭ you do, your weaponflares with white-hot intensity,‬
+‭ and the attack deals two faith dice of radiant damage‬
+‭ to the target, in addition to its normal weapon‬
+‭ damage. Unho‬ly‭ creatures take the maximum‬
+‭ possible amount of damage from both this miracle‬
+‭ and the base weapon attack.‬
+‭ If performed as a ritual, you specify a single‬
+‭ distinguishable creature by name while blessing a‬
+‭ melee weapon. Thefirst time the weapon hits that‬
+‭ creature, its wielder adds the ritual’‬s‭ power as‬
+‭ radiant damage to its normal weapon damage,‬
+‭ which is doubled against an unholy creature.‬
+
+‭ Speak With Dead‬
+‭ First Circle Summons - Death Domain (ritual only)‬
+‭ You call a ghost from the Shadow across the veil,‬
+‭ allowing it to answer the questions you pose. The‬
+‭ ritual fails if the ghost was the target of this ritual‬
+‭ within the last lunar month. You must hold a‬
+‭ portion of the ghost’‬s‭ corpse, or a possession that it‬
+‭ valued in life, as you perform this ritual.‬
+‭ During the ritual, you can ask the ghost a number‬
+‭ of questions equal to the ritual’‬s‭ power . The ghost’‬s
+‭ answers are usually brief, cryptic, and repetitive.‬
+‭ ‬
+‭ Augury‬
+‭ Second Circle Divination - Truth Domain (ritual only)‬
+‭ By casting gem-inlaid sticks, rolling dragon bones,‬
+‭ laying out ornate cards, or employing some other‬
+‭ divining tool, you receive an omen from an‬
+‭ otherworldly entity about the results of a specific‬
+‭ course of action that you plan to take within the‬
+‭ next 30 minutes. The referee chooses from the‬
+‭ following possible omens:‬
+-
+‭ Weal, for good results‬
+-
+‭ Woe, for bad results‬
+-
+‭ Weal and woe, for both good and bad results‬
+-
+‭ Nothing, if results aren‬’t good or bad
+‭ The spell doesn‬’t‭ take into account any possible‬
+‭ circumstances that might change the outcome, such‬
+‭ as the casting of additional spells or the loss or gain‬
+‭ of a companion. If you cast the spell again before‬
+‭ the next sunrise or sunset, there is a cumulative 25‬
+‭ percent chance for each casting after thefirst that‬
+‭ you get a random reading. The referee makes this‬
+‭ roll in secret.‬
+
+‭ Curse Ability‬
+‭ Second Circle Curse - Death Domain‬
+‭ You use your action to make eye contact with a‬
+‭ creature within 5 paces as you recite a brief prayer‬
+‭ and choose an ability. While you maintain‬
+‭ concentration, you inflict a penalty to that‬
+‭ creature‬’s‭ chosen ability modifier equal to half this‬
+‭ curse‬’s‭ power.‬
+
+‭ Divine Censure‬
+‭ Second Circle Curse - Fate Domain‬
+‭ You use your action to choose a creature that you‬
+‭ can see within 25 paces. While you maintain‬
+‭ concentration, this curse interferes with the target’‬s
+‭ connection with aetheric energies; while censured,‬
+‭ a creature may not cast spells, perform miracles, or‬
+‭ generate other magical effects of any kind.‬
+
+‭ Divine Rebuke‬
+‭ Second Circle Curse - Freedom Domain‬
+‭ You use your reaction as another creature casts a‬
+‭first-circle spell, miracle, or other supernatural‬
+‭ effect. If they make a roll as part of their effect,‬
+‭ make a Willpower roll vs. their roll result;‬
+‭ otherwise, make a Willpower roll vs. their‬
+‭ spellcasting DV . If you succeed, their effect fails.‬
+‭ Higher Circles - If you perform this prayer as a‬
+‭ second-circle miracle, you may target a‬
+‭ second-circle effect, or your roll vs. afirst-circle‬
+‭ effect has advantage. If you perform this prayer as a‬
+‭ third circle miracle, you may target third-circle‬
+‭ effects, or your roll vs. a second-circle effect has‬
+‭ advantage, or you may automatically counter a‬
+‭first-circle effect without a roll.‬
+
+‭ Enfeeble‬
+‭ Second Circle Curse - Death Domain‬
+‭ As your action, you touch a creature and make a‬
+‭ faith roll vs. its Fortitude DV . If you succeed, it has‬
+‭ disadvantage to all attack rolls and saving throws,‬
+‭ and inflicts half damage with all attacks, until it‬
+‭ shrugs it off .‬
+
+‭ Find Traps‬
+‭ Second Circle Divination - Truth Domain (ritual only)‬
+‭ You sense the presence of any trap within 20 paces‬
+‭ that is within line of sight. A trap, for the purpose‬
+‭ of this spell, includes anything that would inflict a‬
+‭ sudden or unexpected effect you consider harmful‬
+‭ or undesirable, which was specifically intended as‬
+‭ such by its creator. Thus, the spell would sense an‬
+‭ area affected by the alarm spell, a glyph of warding,‬
+‭ or a mechanical pit trap, but it would not reveal a‬
+‭ natural weakness in thefloor, an unstable ceiling, or‬
+‭ a hidden sinkhole.‬
+‭ ‬
+ ‭Enhance Ability‬
+‭ Second Circle Blessing - Various Domains‬
+‭ You use your action to touch an adjacent creature as‬
+‭ you recite a brief prayer and choose an ability.‬
+‭ While you maintain concentration, you grant that‬
+‭ creature a bonus to the chosen ability modifier‬
+‭ equal to half this blessing’‬
+s‭ power .‬
+
+‭ Heal Serious Wounds‬
+‭ Second Circle Blessing - Life Domain‬
+‭ You use your reaction to touch a creature, then roll‬
+‭ two dice and add your Charisma modifier, healing‬
+‭ the target for that many hit points. If the target has‬
+‭ suffered any wounds, you may choose for any die‬
+‭ that rolls a‬
+‘6’
+‭ or higher to convert one wound into‬
+‭ fatigue, instead of healing hit points.‬
+
+‭ Holy Weapon‬
+‭ Second Circle Blessing - War Domain‬
+‭ You use your action to touch a weapon or barefist‬
+‭ and call upon the favor of the Divine. While you‬
+‭ maintain concentration, that weapon adds one die‬
+‭ to all attack and damage rolls. This damage is the‬
+‭ wielder‬’s‭ choice of radiant or force damage, and is‬
+‭ maximized against‬ unholy‭ beings.‬
+
+‭ Merriment‬
+‭ Second Circle Curse - Beauty Domain‬
+‭ You use your action to begin singing a song or‬
+‭ chanting a prayer, calling those around you to join‬
+‭ you in celebration.‬
+‭ While you maintain concentration, each creature‬
+‭ within 5 paces that can hear you must deny the‬
+‭ effect at the beginning of its turn, or be forced to‬
+‭ perform a comic dance‬
+-
+‭ shuffling, tapping its feet,‬
+‭ and capering for the entire turn. While a target is‬
+‭ affected by this curse it is slowed, has disadvantage‬
+‭ on all Reflex saving throws, and other creatures‬
+‭ have advantage on attack rolls against it until the‬
+‭ beginning of its next turn.‬
+‭ If you spend your action guiding the dance during‬
+‭ your turn, you may move each affected creature half‬
+‭ its speed during its next turn.‬
+
+‭ Remove Curse‬
+‭ Second Circle Blessing - Freedom Domain‬
+‭ As your action, you touch an object or willing‬
+‭ creature and offer a prayer of deliverance. The‬
+‭ target may immediately make a saving throw with‬
+‭ advantage to shrug off an ongoing effect, or break a‬
+‭first-circle curse or other supernatural affliction‬
+‭ affecting it, and add this miracle‬’s‭ power as a bonus‬
+‭ to this roll. If used on an object, you make a faith‬
+‭ roll as a saving throw for it.‬
+‭ Higher Circles - If you perform this prayer at third‬
+‭ circle, you may target a second-circle curse or‬
+‭ affliction; if you instead target afirst-circle curse or‬
+‭ affliction, the saving throw has advantage.‬
+
+‭ Tongues‬
+‭ Second Circle Blessing - Peace Domain‬
+‭ You spend your action to touch a creature, granting‬
+‭ it the ability to understand any spoken language it‬
+‭ hears while you maintain concentration. Moreover,‬
+‭ when the target speaks, any creature that knows at‬
+‭ least one language and can hear the target‬
+‭ understands what it says.‬
+
+‭ Zone of Truth‬
+‭ Second Circle Divination - Truth Domain‬
+‭ You create a magical zone that guards against‬
+‭ deception within 5 paces of you. While you‬
+‭ maintain concentration, a creature that enters the‬
+‭ spell’‬s‭ area or starts its turn there must make a‬
+‭ Willpower saving throw. On a failed save, a creature‬
+‭ can‬’t‭ speak a deliberate lie while in the radius, and‬
+‭ any illusions on that creature become dispelled. You‬
+‭ know whether each creature succeeds or fails on its‬
+‭ saving throw.‬
+‭ An affected creature is aware of the spell and can‬
+‭ thus avoid answering questions to which it would‬
+‭ normally respond with a lie. Such creatures can be‬
+‭ evasive in its answers as long as it remains within‬
+‭ the boundaries of the truth.‬
+‭ ‬
+‭ Aura of Life‬
+‭ Third Circle Blessing - Life Domain‬
+‭ Life-preserving energy radiates from you in an aura‬
+‭ with a 5-pace radius. While you maintain‬
+‭ concentration, the aura moves with you, centered‬
+‭ on you. Each non-hostile creature in the aura‬
+‭ (including you) reduces all necrotic damage taken‬
+‭ by half and all wounds received by half, and its hit‬
+‭ point maximum can‬’t‭ be reduced. In addition, each‬
+‭ non-hostile, living creature rolls one die and regains‬
+‭ that many hit points when it starts its turn in the‬
+‭ aura with 0 hit points.‬
+
+‭ Banish the Unnatural‬
+‭ Third Circle Curse - Fate Domain‬
+‭ You use your action to make a faith test vs. the‬
+‭ Willpower of being that is not native to the Material‬
+‭ Plane. If you succeed, that being is banished to its‬
+‭ native plane, and cannot return to the Material for‬
+‭ one lunar month. If you fail, you cannot attempt to‬
+‭ perform this miracle against this being again for‬
+‭ one month.‬
+
+‭ Beacon of Hope‬
+‭ Third Circle Blessing - Peace Domain‬
+‭ You use your action to inspire hope in all nearby‬
+‭ allies. While you maintain concentration, you grant‬
+‭ each creature within 5 paces advantage on all saving‬
+‭ throws, and any dice rolled to determine hit points‬
+‭ healed are considered to have rolled their maximum‬
+‭ amount.‬
+
+‭ Commune‬
+‭ Third Circle Divination - Truth Domain‬
+‭ You contact a Celestial servant of the Divine and‬
+‭ ask one question that can be answered with a yes or‬
+‭ no, or a single question concerning a specific goal,‬
+‭ event, or activity to occur within 7 days. You receive‬
+‭ a correct answer if the answer can be made known‬
+‭ to you. Celestial servants aren‬'t‭ necessarily‬
+‭ omniscient, so you might receive‬ "unclear"
+‭ as an‬
+‭ answer if a question pertains to information that‬
+‭ depends on as-yet unmade decisions.‬
+
+‭ Geas‬
+‭ Third Circle Curse - Fate Domain‬
+‭ You use your action to make a ranged attack vs. the‬
+‭ Will DV of a creature that can see and hear you‬
+‭ within 20 paces. If you succeed, you begin to place a‬
+‭ divine command on the target, forcing them to‬
+‭ carry out some service or refrain from some action‬
+‭ or course of activity as you decide.‬
+‭ You must maintain concentration for a number of‬
+‭ full rounds equal to that creature‬’s‭ Charisma‬
+‭ modifier‬ +‭ half its Willpower proficiency die‬
+‭ maximum, forgoing your action each round to‬
+‭ weave the spell. Once you begin the spell, the target‬
+‭ can continue to hear you even if it moves away‬
+‭ from you.‬
+‭ You can issue any command you choose, short of an‬
+‭ activity that would result in certain death. Should‬
+‭ you issue a suicidal command, the curse does not‬
+‭ take hold. A creature that can‬’t‭ understand you is‬
+‭ unaffected by the spell.‬
+‭ If youfinish describing the geas, the target becomes‬
+‭ beguiled by you for a number of days equal to this‬
+‭ curse‬’s‭ power . While the creature is beguiled, it‬
+‭ takes three dice of psychic damage each time it acts‬
+‭ in a manner directly counter to your instructions,‬
+‭ but no more than once each hour. You can end the‬
+‭ curse early by using an action to dismiss it.‬
+‭ If cast as a ritual, your Geas may be worded so that‬
+‭ only a certain action or circumstance may break it.‬
+‭ If you do this, the Geas becomes permanent until‬
+‭ those conditions are met‬
+-
+‭ not even a Remove Curse‬
+‭ can break it. You cannot undo such a curse once it‬
+‭ is done.‬
+‭ ‬
+ ‭Grace‬
+‭ Third Circle Blessing - Beauty Domain‬
+‭ You touch a target, imbuing them with supernatural‬
+‭ poise and allure. While you maintain concentration,‬
+‭ the affected creature has advantage on all beguile‬
+‭ effects and Charisma-based skill rolls, and other‬
+‭ creatures have disadvantage on all skill rolls‬
+‭ (including saving throws) to oppose their beguile‬
+‭ effects or Charisma-based skill rolls.‬
+‭ Unlike most beguiling magics, the effects of Grace‬
+‭ are extremely subtle‬
+-
+‭ the blessed creature does not‬
+‭ innately seem to be under a magical effect, and its‬
+‭ influence is not perceived as unnatural or forceful.‬
+‭ Detect magic or a similar effect will still show its‬
+‭ influence, however.‬
+
+‭ Hallow‬
+‭ Third Circle Blessing - Peace Domain‬
+‭ As your action, you touch the ground with your‬
+‭ bare hands or feet and infuse an area up to 5 paces‬
+‭ around it with holy power. While you maintain‬
+‭ concentration,‬ unholy‭ creatures can‬'t‭ enter the area,‬
+‭ nor can such creatures beguile, frighten, or possess‬
+‭ creatures within it. Any creature so affected by an‬
+‭ undead or infernal creature is no longer affected‬
+‭ upon entering the area.‬
+‭ If cast as a ritual, the effects of this miracle do not‬
+‭ require concentration, and remain until the next‬
+‭ sunrise or sundown. If cast in the same place at‬
+‭ each sunrise and sundown for a lunar month, the‬
+‭ effects become permanent.‬
+
+‭ Heal Critical Wounds‬
+‭ Third Circle Blessing - Life Domain‬
+‭ You use your reaction to touch a creature, then roll‬
+‭ three dice and add your Charisma modifier, healing‬
+‭ the target for that many hit points.‬
+‭ If the target has suffered any wounds, you may‬
+‭ choose for any die that rolls a‬
+‘4’
+‭ or higher to‬
+‭ convert one wound into fatigue, instead of healing‬
+‭ hit points.‬
+
+‭ Restoration‬
+‭ Third Circle Blessing - Freedom Domain‬
+‭ You lay your hands on an injured, disabled, or‬
+‭ cursed creature, praying for its afflictions to be‬
+‭ lifted. Make a faith test vs. a CoF of 10 as you pray‬
+‭ fervently; if you perform this miracle as a ritual, you‬
+‭ may reduce the CoF by 1 for every 100 gp worth of‬
+‭ sacrifices made.‬
+‭ On a success, you may remove one curse, disease,‬
+‭ or poison that is affecting the creature, or heal one‬
+‭ debilitation or maiming effect even if it is from an‬
+‭ old injury. On a critical success, you may remove a‬
+‭ number of afflictions equal to this miracle‬’s‭ power .‬
+‭ If you fail, the target may not be the subject of this‬
+‭ prayer again for one lunar month.‬
+
+‭ Revive‬
+‭ Third Circle Blessing - Death Domain (ritual only)‬
+‭ You perform this ritual over the corpse of a creature‬
+‭ that died within the last hour, making a faith test vs‬
+‭ a CoF of 10 as you try to call the creature‬’s‭ spirit‬
+‭ back from the afterlife, reduced by 1 for every 100 gp‬
+‭ worth of sacrifices made. If you succeed, the‬
+‭ creature heals one wound, heals a number of hit‬
+‭ points equal to this miracle‬’s‭ power , and returns to‬
+‭ life. If you roll a‬ ‘1’,‭ the creature‬’s‭ corpse reanimates‬
+‭ as an undead monster and immediately attacks the‬
+‭ party.‬

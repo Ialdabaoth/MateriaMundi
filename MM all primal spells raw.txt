@@ -1,0 +1,747 @@
+ Beguile
+‭ First Circle Fey Spell‬
+‭ You use your action to attempt to beguile a creature‬
+‭ within 5 paces that makes eye contact with you or‬
+‭ can hear your voice. Make a magic roll vs. its‬
+‭ Perception DV . On a failure, they know that you‬
+‭ attempted to manipulate their mind, and their‬
+‭ attitude likely degrades by one step. On a success,‬
+‭ add your Charisma modifier to this spell’‬s‭ power‬
+‭ and divide by 2; the target’‬s‭ attitude towards you‬
+‭ improves by that many steps (up to Loyal) for as‬
+‭ long as you maintain concentration.‬
+‭ The spell immediately ends if you do anything‬
+‭ harmful to the beguiled creature; if they suffer‬
+‭ injury from any other source, they immediately‬
+‭ attempt to snap out of it.‬
+
+‭ Brew‬
+‭ First Circle Spell‬
+‭ During an encounter, you may use your action to‬
+‭ accelerate an alchemical reaction, creating a highly‬
+‭ volatile common elixir or potion immediately from‬
+‭ a spell charge of the appropriate materia. The‬
+‭ formula is short-lived, and must be used as part of‬
+‭ the same action before it evaporates.‬
+‭ You may also perform this as a ritual during any‬
+‭ hour-long rest to brew a single Common alchemical‬
+‭ formula, which will stay stable indefinitely.‬
+‭ Se‬cond‭ Circle - if you cast this spell at second circle,‬
+‭ you can instantly brew a volatile Uncommon elixir‬
+‭ or potion; you may also perform this ritual during‬
+‭ any hour-long rest to brew a single stable‬
+‭ Uncommon alchemical formula, forgoing the‬
+‭ replenishment of one mana during that rest.‬
+‭ Third Circle - if you cast this spell at third circle,‬
+‭ you can instantly brew a volatile Rare elixir or‬
+‭ potion; you may also perform this ritual during any‬
+‭ hour-long rest to brew a single stable Rare‬
+‭ alchemical formula, forgoing the replenishment of‬
+‭ two mana during that rest.‬
+
+‭ Call Beasts‬
+‭ First Circle Fey Ritual‬
+‭ During this ritual, you send out a subtle psychic‬
+‭ summons, intermingled with natural sounds and‬
+‭ scents that will attract the attention of any nearby‬
+‭ animals. You may specify a particular kind of‬
+‭ animal as you perform this ritual. Roll your Animal‬
+‭ Ken die and add your Wisdom modifier; a number‬
+‭ of natural or fey beasts whose total hit dice equals‬
+‭ the die result arrive within a number exploration‬
+‭ rounds based on their distance and previous‬
+‭ activities.‬
+‭ If you are a level 2 Druid, you may perform this‬
+‭ ritual in the hour before sunrise or sunset instead of‬
+‭ preparing spell charges to call a specific species of‬
+‭ animal whose hit dice are less than or equal to your‬
+‭ Wild Shape limit, so that you can add its form to‬
+‭ your wild shape library.‬
+‭ When the animals arrive, you must run with the‬
+‭ herd, pack, or individual of that species until the‬
+‭ next sunset or sunrise. At that time, you have‬
+‭ transformed into that animal, and add it to your list‬
+‭ of Wild Shapes known.‬
+‭ If you ever learn more Wild Shapes than your‬
+‭ Animal Ken proficiency (minimum 1), you must‬
+‭ choose a shape to forget as you learn the new shape.‬
+‭ ‬
+‭Cleansing Waters‬
+‭ First Circle Water Spell‬
+‭ As your action, you touch one living creature,‬
+‭ drenching it with cooling water and drawing out‬
+‭ any negative influences. Any ongoing damage or‬
+‭ anyfirst--circle effect that could be ended with a‬
+‭ saving throw is instantly ended. If the target is‬
+‭ under the influence of a higher-circle effect, you‬
+‭ may make a spell roll to attempt to end it.‬
+
+‭ Detect Poison and Disease‬
+‭ First Circle Wood Spell‬
+‭ You use your action to examine an adjacent living‬
+‭ creature that you can see, then make a Medicine‬
+‭ roll with advantage. On a success, you know‬
+‭ whether the subject is suffering from any poisons,‬
+‭ diseases, or other debilitating physical conditions,‬
+‭ whether they are treatable, and what treatments are‬
+‭ likely to be effective. You may also use this spell to‬
+‭ examine an ingestible substance, to determine‬
+‭ whether it is safe to eat or drink.‬
+‭ Dedicate Object‬
+‭ First Circle Elemental Ritual‬
+‭ This ritual is used primarily by shapeshifters. By‬
+ ‘marking’
+‭ a single hand-held or worn object as your‬
+‭ own, you leave a small trace of yourself within it,‬
+‭ and a small trace of itself within you. Whenever you‬
+‭ shapeshift (for example, by use of the Druid’‬s‭ Wild‬
+‭ Shape ability), all marked items that you are‬
+‭ currently wearing or holding shapeshift with you,‬
+‭ merging into your animal form. When you‬
+‭ transform back, these items will shift back with you.‬
+‭ You can mark a total number of items equal to your‬
+‭ spellcasting proficiency. When you are at this limit,‬
+‭ you must un-dedicate one of your items of your‬
+‭ choice whenever you dedicate a new one. You do‬
+‭ not need to be in possession of the old item to‬
+‭ un-dedicate it.‬
+‭ You can only mark items that you crafted yourself,‬
+‭ or that were gifted to you by another Druid that‬
+‭ crafted it themselves. The item cannot contain any‬
+‭ iron or steel anywhere in its construction. Having‬
+‭ too many dedicated items can be dangerous‬
+ –
+‭ when‬
+‭ a dedicated item is not in your possession, you can‬
+‭ close your eyes as an action or reaction to sense‬
+‭ where it is. If it is within 20 paces of you, you know‬
+‭ where it is to within 1 pace; if it is further away, you‬
+‭ know its direction and approximate distance (within‬
+‭ 100 paces, within 1 mile, within 20 miles, further‬
+‭ than 20 miles). While someone else is holding an‬
+‭ item dedicated to you, they have advantage on all‬
+‭ magic rolls and magic rolls that target you, and you‬
+‭ have disadvantage on all saving throws vs any‬
+‭ magics cast by them that target only you.‬
+‭ ‬
+ ‭Elemental Burst‬
+‭ First Circle Elemental Spell‬
+‭ As your action, you create a blast of elemental‬
+‭ energy that pours out from your hands. Each‬
+‭ creature in a 3-pace cone in front of you must resist‬
+‭ or suffer two dice of elemental damage. If any‬
+‭ damage dice roll a‬
+‘6’
+‭ or higher, that creature suffers‬
+‭ an elemental effect until it shakes it off .‬
+‭ Se‬cond‭ Circle - if you cast this spell from a second‬
+‭ circle spell charge, the damage increases to 4 dice.‬
+‭ Third Circle - if you cast this spell from a third‬
+‭ circle spell charge, the damage increases to 6 dice.‬
+
+‭ Elemental Mantle‬
+‭ First Circle Elemental Spell‬
+‭ You can use your reaction to cast this spell when‬
+‭ you would be damaged by an elemental effect or‬
+‭ attack from the same element as one of your‬
+‭ prepared spell charges. You immediately halve all‬
+‭ damage from that element for as long as you‬
+‭ maintain concentration, and can ignore one die of‬
+‭ elemental damage from each attack or damage‬
+‭ source.‬
+‭ If at any point you have more elemental energy dice‬
+‭ than your spellcasting proficiency, or if you lose‬
+‭ concentration, this spell immediately ends, and all‬
+‭ remaining elemental energy dice are rolled as‬
+‭ damage vs. all creatures within 2 paces of you‬
+‭ (including yourself). Each such creature may dodge‬
+‭ to attempt to halve this damage.‬
+‭ Whenever you make a weapon attack, or a magic‬
+‭ attack of the same type as this spell, you may‬
+‭ consume one or more elemental energy dice to add‬
+‭ them to the attack’‬s‭ damage roll. You may also‬
+‭ consume one or more elemental energy dice‬
+‭ whenever an adjacent creature hits you with a‬
+‭ melee attack, to inflict those dice as damage to the‬
+‭ attacker. Finally, you may consume three spell dice‬
+‭ to replenish one expended spell charge of the same‬
+‭ element.‬
+‭ ‬
+‭ Entangle‬
+‭ First Circle Wood Spell‬
+‭ Grasping weeds and vines sprout from the ground‬
+‭ in a 3-pace radius circle starting from a point within‬
+‭ 20 paces. While you hold your spell charge and‬
+‭ maintain concentration, these plants turn the‬
+‭ ground in the area into difficult terrain. Any‬
+‭ creature in the area when you cast the spell must‬
+‭ brace or be restrained by the entangling plants until‬
+‭ the spell ends. A creature restrained by the plants‬
+‭ can use its action to try to break free. On a success,‬
+‭ it frees itself.‬
+‭ While the spell lasts, you can use your action each‬
+‭ turn to lash out with the vines at any creature‬
+‭ within 2 paces of the conjured area. Make a grapple‬
+‭ attack with the vines; on a hit, the target is pulled‬
+‭ into the circle and restrained. When the spell ends,‬
+‭ the conjured plants wilt away.‬
+‭ Se‬cond‭ Circle - if you cast this spell from a second‬
+‭ circle spell charge, you can cause the vines to grow‬
+‭ long, sharp thorns that cause two dice of piercing‬
+‭ damage each time a creature moves one pace within‬
+‭ the area.‬
+
+‭ Fey Glamour‬
+‭ First Circle Fey Spell‬
+‭ You use your action to create the illusion of an‬
+‭ object, a creature, or some other visible‬
+‭ phenomenon that is no larger than a 15-foot cube.‬
+‭ The image appears at a spot within 10 paces and‬
+‭ lasts for the duration. The image is purely visual; it‬
+‭ isn‬’t‭ accompanied by sound, smell, or other sensory‬
+‭ effects.‬
+‭ While you maintain concentration, you can use‬
+‭ your action to cause the image to move to any spot‬
+‭ within range. As the image changes location, you‬
+‭ can alter its appearance so that its movements‬
+‭ appear natural for the image. Physical interaction‬
+‭ with the image reveals it to be an illusion, because‬
+‭ things can pass through it. A creature that uses its‬
+‭ action to examine the image can attempt to‬
+‭ disbelieve.‬
+
+‭ Fog Cloud‬
+‭ First Circle Air Spell‬
+‭ You create a 5-pace-radius sphere of fog that billows‬
+‭ out from a space within 5 paces. The fog spreads‬
+‭ around corners, and its area is heavily obscured.‬
+‭ This spell’‬s‭ power determines how many rounds it‬
+‭ lasts; a wind of moderate or greater speed (at least‬
+‭ 10 miles per hour) will disperse it early. If cast‬
+‭ during combat, its duration is measured in 6-second‬
+‭ combat rounds; if cast as a ritual, its duration is‬
+‭ measured in 10-minute exploration rounds.‬
+
+‭ Purify Food and Drink‬
+‭ First Circle Wood Spell‬
+‭ You may use your action toflush up to 10 lbs x this‬
+‭ spell’‬s‭ power of non-magical food or drink with vital‬
+‭ energy as you touch it, cleansing it of any poisons‬
+‭ or diseases.‬
+‭ When performed as a ritual, you may instead infuse‬
+‭ a smaller amount of food or drink harvested fresh‬
+‭ from the local environment with a lingering healing‬
+‭ energy. Each bite of food or swallow of drink so‬
+‭ enchanted heals 1 hp, and provides enough‬
+‭ nourishment to sustain a medium creature for one‬
+‭ day. This second ritual form of the spell is often‬
+‭ called the good‬ berry ritual‭.‬
+‭ When you perform the goodberry ritual, this spell’‬s
+‭ power determines the number of portions affected.‬
+‭ Each portion will last until the next sunrise or‬
+‭ sunset before becoming a normal, mundane bite of‬
+‭ food or drink.‬
+‭ ‬
+‭ Shape Element‬
+‭ First Circle Elemental Spell‬
+‭ You may cast this spell as your action. For as long as‬
+‭ you maintain concentration, you may use your‬
+‭ action each round to shape one of the natural‬
+‭ elemental forces and materials that surround you‬
+ -
+‭ earth and stone, water and ice, wood and vine, wind‬
+‭ and fog, or light, shadow, andflame. You may‬
+‭ manipulate roughly a 5 foot sphere of any one such‬
+‭ element that is within 5 paces of you, and if such‬
+‭ changes are made to a solid element such as earth,‬
+‭ stone, wood or ice, they will hold their shape if‬
+‭ sturdy enough to do so. You may extend the range‬
+‭ of this effect to 20 paces if you touch a piece of the‬
+‭ appropriate material that is connected by the same‬
+‭ material to the area you wish to effect.‬
+‭ You can use your action each turn to convert a 5‬
+‭ foot patch of solid ground into difficult or smooth‬
+‭ terrain, cause plants to part way or grow to block a‬
+‭ path, increase or decrease the concealment of fog or‬
+‭ smoke, melt ice into water or freeze water into ice,‬
+‭ draw still air into a gust of wind strong enough to‬
+‭ knock creatures over, repair or damage objects‬
+‭ made from natural materials, and so on.‬
+‭ You may also use your action to make melee attacks‬
+‭ with the element as your action, originating from a‬
+‭ space within range that contains the element you‬
+‭ are shaping, each attack deals one die of elemental‬
+‭ damage on a hit. You can also make charging,‬
+‭ shoving or grabbing magic attacks appropriate to‬
+‭ the controlled element. You have advantage on each‬
+‭ of these attack rolls if the element in question is‬
+‭ already surrounding the target before you declare‬
+‭ your attack.‬
+‭ Se‬cond‭ Circle - If you cast this spell at second circle,‬
+‭ the size of the affected area increases to a 2-pace‬
+‭ radius, and any attacks deal 2 dice of damage, and‬
+‭ you can also make area attacks against all creatures‬
+‭ within the spell’‬s radius.
+‭ Third Circle - If you cast this spell at third circle,‬
+‭ the size of the affected area increases to a 3-pace‬
+‭ radius, any attacks deal 3 dice of damage.‬
+
+‭ Shillelagh‬
+‭ First Circle Wood Spell‬
+‭ You grow a large, solid branch from your spell‬
+‭ charge‬’s‭ medicine back, then grip it tightly in your‬
+‭ hand. While you maintain concentration, you may‬
+‭ shape this branch into a quarterstaff, club, or thorny‬
+‭ whip which deals your choice of bashing or piercing‬
+‭ damage. You may make a spell roll rather than a‬
+‭ weapon attack roll to attack with this weapon. If‬
+‭ you lose concentration or drop the weapon, it‬
+‭ withers away within seconds.‬
+
+‭ Speak With Animals‬
+‭ First Circle Fey Spell‬
+‭ As your action, you make eye contact with a natural‬
+‭ animal. While you maintain concentration on this‬
+‭ spell, you may establish an empathic bond between‬
+‭ yourself and that animal, allowing you to‬
+‭ communicate wordlessly with it‬
+ -
+‭ exchanging‬
+‭ simple concepts, emotions, and requests.‬
+‭ Any such animal with an Intelligence modifier of‬
+-3
+‭ or lower can use its action to deny the connection if‬
+‭ it senses ill intent from you; if it fails, it will see you‬
+‭ and your allies as non-hostile until the spell ends or‬
+‭ one of you harms the creature in any way. An‬
+‭ animal with an Intelligence modifier of‬
+-2‭ or higher‬
+‭ can deny the connection without the need for a roll.‬
+
+‭ Thunderwave‬
+‭ First Circle Air Spell‬
+‭ A blast of hurricane-force wind rushes out from you‬
+‭ in a 5-pace cone. Each creature within the area‬
+‭ must brace or suffer two dice of thunder damage,‬
+‭ and be thrown backwards 2 paces and knocked‬
+‭ prone.‬
+‭ In addition, unsecured objects that are completely‬
+‭ within the area of effect are automatically pushed 2‬
+‭ paces away from you by the spell’‬s effect.
+‭ ‬
+ ‭Animal Messenger‬
+‭ Second Circle Fey Spell‬
+‭ You may spend your action to speak a short‬
+‭ message to a tiny animal within 5 paces that you‬
+‭ can see, while thinking of a location that you have‬
+‭ visited and a description of a person that you expect‬
+‭ to be in that location. The spell weaves its way into‬
+‭ the animal, which remains enchanted for a number‬
+‭ of days equal to the spell’‬s‭ power . The animal then‬
+‭ immediately scurries orflies off at its top speed‬
+‭ towards its destination.‬
+‭ Upon arrival, the animal magically speaks the‬
+‭ message you gave it to thefirst person it sees‬
+‭ matching the description you gave, approximately‬
+‭ duplicating the sound and tone of your voice. If the‬
+‭ spell runs out before the animal canfind a suitable‬
+‭ recipient, the message is lost, and the animal‬
+‭ magicallyfinds its way home as the enchantment‬
+‭ unweaves.‬
+
+‭ Beast Bond‬
+‭ Second Circle Fey Spell‬
+‭ You use your action to beguile a natural animal or‬
+‭ fey beast with fewer hit dice than your own,‬
+‭ maintaining an empathic connection even after eye‬
+‭ contact is broken. Creatures with an Intelligence‬
+‭ modifier of‬
+-3‭ or lower have disadvantage to deny‬
+‭ this spell’‬s effect.
+‭ The beguiled creature will attempt to obey any‬
+‭ command you give it while you maintain‬
+‭ concentration, and you may use your reaction each‬
+‭ turn to‬ “borrow”
+‭ the animal’‬s‭ senses for that turn,‬
+‭ seeing through its eyes and hearing through its ears.‬
+‭ This effect ends immediately if you or your allies‬
+‭ harm the creature in any way.‬
+‭ If you cast this spell on a creature as a ritual at‬
+‭ every sunrise and sunset for a lunar month, and‬
+‭ treat the creature well while it is beguiled, the‬
+‭ creature becomes trained and permanently loyal to‬
+‭ you if you continue to treat them well thereafter,‬
+‭ adding the creature to your menagerie.‬
+
+‭ Earthquake‬
+‭ Second Circle Stone Spell‬
+‭ You cause a short but intense earthquake in the‬
+‭ ground in a 3-pace radius. While you maintain‬
+‭ concentration, you may use your action each round‬
+‭ to force each creature other than you in that area to‬
+‭ dodge or suffer one die of bashing damage and be‬
+‭ knocked prone. If the ground in this area contains‬
+‭ loose earth, stone, or obstacles that can break loose‬
+‭ and fall, the area becomes difficult terrain until‬
+‭ cleared.‬
+
+‭ Find Animal or Plant‬
+‭ 2nd Circle Wood Spell‬
+‭ You use your action to describe or name a specific‬
+‭ kind of beast or plant. Concentrating on the voice‬
+‭ of nature in your surroundings, you learn the‬
+‭ direction and distance to the closest creature of that‬
+‭ kind within 5 miles, if any are present. While you‬
+‭ maintain concentration, you know the target’‬s
+‭ distance and location. If at any point you are more‬
+‭ than 5 miles away from the target, the spell ends.‬
+
+‭ Heat Metal‬
+‭ Second Circle Flame Spell‬
+‭ As your action, you choose one manufactured metal‬
+‭ object‬
+ –
+‭ such as a metal weapon or a suit of heavy‬
+‭ or medium metal armor‬
+ –
+‭ that you can see within 10‬
+‭ paces. You cause the object to glow red-hot. Any‬
+‭ creature in physical contact with the object‬
+‭ immediately takes one die of fire damage.‬
+‭ While you maintain concentration, you can use‬
+‭ your action or reaction on each of your subsequent‬
+‭ turns to cause this damage again. If a creature is‬
+‭ holding or wearing the object and takes the damage‬
+‭ from it, the creature must resist or drop the object if‬
+‭ it can. If it doesn‬’t‭ or can‬’t‭ drop the object, it has‬
+‭ disadvantage on attack rolls and saving throws until‬
+‭ the start of your next turn.‬
+‭ Third Circle - if you cast this spell at third circle,‬
+‭ you may target all metal objects within 5 paces of‬
+‭ you.‬
+‭ ‬
+‭ Lifesense‬
+‭ Second Circle Wood Spell‬
+‭ While you maintain concentration, you can see all‬
+‭ living beings in your line of sight, whether invisible,‬
+‭ concealed, or camouflaged. You effectively have‬
+‭ Darkvision out as far as you can see, but it can only‬
+‭ show you the shapes of living beings. For each‬
+‭ living creature that you can see, you know its‬
+‭ species, size, sex, and state of health.‬
+‭ You can use your action to determine the detailed‬
+‭ health of a single living being that you can see‬
+‭ within 2 paces, immediately discerning if it is‬
+‭ poisoned or diseased, whether it is at full hit points,‬
+‭ above or below half its hit points, or at 0 hit points,‬
+‭ and what physical conditions are affecting it.‬
+
+‭ Misty Step‬
+‭ Second Circle Fey Spell‬
+‭ On your turn instead of moving, you conjure a‬
+‭ silvery mist from Faerie, which quickly dissipates as‬
+‭ you teleport up to 6 paces into an unoccupied space‬
+‭ that you can see.‬
+‭ If cast as a ritual at sunrise or sunset, Misty Step‬
+‭ can instead open a portal directly between Faerie‬
+‭ and the Material, which remains open until the next‬
+‭ sunrise or sunset.‬
+‭ Nature’s Ally‬
+‭ Second Circle Elemental Spell‬
+‭ As your action, you coax an elemental Numen in‬
+‭ your medicine bag to grow in size and manifest‬
+‭ before you as a fey elemental, awakened plant, or‬
+‭ fey beast appropriate to its elemental nature. The‬
+‭ shape chosen determines the creature‬’s‭ ability‬
+‭ modifiers and hit points, and must have fewer hit‬
+‭ dice than your own.‬
+‭ The creature is under the referee‬’s‭ control, but is‬
+‭ loyal to you and will obey your commands. You may‬
+‭ use one Mana to re-roll this spell’‬s‭ power and heal it‬
+‭ for that many hit points so long as you can see or‬
+‭ hear it. Once its hit points drop to zero, the numen‬
+‭ shrinks back to Tiny size andfinds its way back into‬
+‭ your pouch.‬
+
+‭ Traceless Passage‬
+‭ Second Circle Elemental Spell‬
+‭ By weaving a pattern that includes allfive elements,‬
+‭ a veil of shadows and silence radiates from you,‬
+‭ masking you and your companions from detection.‬
+‭ While you maintain concentration, each creature‬
+‭ you choose within 5 paces of you (including you)‬
+‭ ignores difficult terrain, has a bonus die on all‬
+‭ Stealth checks and saving throws equal to this‬
+‭ spell’‬s‭ power , and can‬’t‭ be tracked except by‬
+‭ magical means. A creature that receives this bonus‬
+‭ leaves behind no tracks or other traces of its‬
+‭ passage.‬
+
+‭ Verdant Growth‬
+‭ Second Circle Wood Spell‬
+‭ This spell channels vitality into plants within a‬
+‭ specific area. As your action, you choose a point‬
+‭ within range. All normal plants in a 20-pace radius‬
+‭ centered on that point become thick and‬
+‭ overgrown. You can exclude one or more areas of‬
+‭ any size within the spell’‬s area from being affected.
+‭ A creature must spend its action and make an‬
+‭ Athletics test to attempt to move forward one pace‬
+‭ through the area, or must attempt to hack it down‬
+‭ by attacking it with slashing weapons. Each 5-foot‬
+‭ patch of the area has structural hit points equal to‬
+‭ the spell’‬s‭ power , and halves all damage inflicted on‬
+‭ it that isn‬’t slashing or fire damage.
+‭ When cast as a ritual, you may alternatively use this‬
+‭ spell to channel vitality into plants within a specific‬
+‭ area with long-term benefits, enriching the land. All‬
+‭ plants in a half-mile radius centered on you become‬
+‭ enriched for one year, multiplying their harvest by‬
+‭ this spell’‬s‭ power.‬
+‭ ‬
+‭ Awaken‬
+‭ Third Circle Wood Ritual‬
+‭ This ritual allows a Druid to imbue a natural animal‬
+‭ or plant with intelligence and free will.‬
+‭ When you successfully awaken a plant or beast, the‬
+‭ newly-awakened creature is beguiled by you until‬
+‭ the next sunrise or sunset, or until you and your‬
+‭ companions do anything harmful to it. When the‬
+‭ beguiled condition ends, the awakened creature‬
+‭ chooses whether to remain friendly to you, based‬
+‭ on how you treated it while it was beguiled.‬
+
+ \n‭A‬waken ‭Beast‬
+‭ - You touch a natural animal with 3‬
+‭ or fewer hit dice and a‬
+-4‭ or lower Intelligence‬
+‭ modifier. The target gains a bonus to its Intelligence‬
+‭ modifier equal to this spell’‬
+s‭ power , to a minimum‬
+‭ Intelligence modifier of‬
+-3‭ and maximum of‬
++0.‭ The‬
+‭ creature also gains the ability to speak one language‬
+‭ that you know.‬
+ \n‭A‬waken ‭Plan‬t
+‭ - You can also use this ritual to‬
+‭ Awaken a plant, granting it motion and‬
+‭ intelligence. You touch a Huge or smaller natural‬
+‭ plant, ganting it an Intelligence score equal to the‬
+‭ spell’‬s‭ power . Repeat this process for each ability‬
+‭ score, re-rolling the spell’‬s‭ power for each ability.‬
+‭ The awakened plant also gains the ability to speak‬
+‭ one language that you know.‬
+‭ The plant gains the ability to move its limbs, roots,‬
+‭ vines, creepers, and so forth, and it gains senses‬
+‭ similar to a human‬’s.‭ Your referee chooses statistics‬
+‭ and ability modifiers appropriate for the awakened‬
+‭ plant, based on its species and size.‬
+
+‭ Call Storm‬
+‭ Third Circle Air or Water Spell‬
+‭ You may cast this spell as your action while‬
+‭ outdoors in a heavy storm. For as long as you‬
+‭ maintain concentration, you may use your action‬
+‭ each round to influence the storm for 25 paces‬
+‭ around you. You must be outdoors to cast this spell.‬
+‭ Moving to a place where you don‬’t‭ have a clear path‬
+‭ to the sky ends the spell early.‬
+‭ Winds can be used to push affected creatures up to 3‬
+‭ paces in a direction of your choice; one full action‬
+‭ may be spent to push any creatures within a circle‬
+‭ 10 paces wide or a cone 40 paces deep. Each creature‬
+‭ within the affected area must brace with advantage‬
+‭ or be knocked prone; on a critical success, that‬
+‭ creature also manages to avoid being moved.‬
+‭ Lightning called from the clouds inflicts three dice‬
+‭ of damage to each creature within one pace of the‬
+‭ strike point that fails to dodge the strike; creatures‬
+‭ in metal armor have disadvantage to their dodge‬
+‭ saving throw. Strikes against trees orflammable‬
+‭ objects may ignite them at the referee‬’s discretion.
+‭ Hail and sleet strikes a much wider area, dealing‬
+‭ one die of cold damage to each creature within the‬
+‭ entire 25-pace area. Each creature affected can resist‬
+‭ to halve the damage; well-insulated clothing can‬
+‭ provide advantage to this saving throw at the‬
+‭ referee‬’s discretion.
+‭ If you cast this spell as a ritual, you may conjure a‬
+‭ storm from a clear sky over the course of an hour,‬
+‭ rolling the spell’‬s‭ power to determine the number of‬
+‭ hours that the storm will last. You may alternatively‬
+‭ use this ritual to calm a storm in progress,‬
+‭ dissipating it into clear skies. If two druids each‬
+‭ perform this ritual at cross-purposes within a mile‬
+‭ of each other, a Nature test determines which ritual‬
+‭ succeeds.‬
+‭ ‬
+‭ Druid Grove‬
+‭ Third Circle Fey Ritual‬
+‭ During this ritual, you sanctify a circular area up to‬
+‭ 30 paces in radius, bringing Faerie and the Material‬
+‭ closer together within it. Some kind of border‬
+‭ marker, usually a ring of mushrooms or a wild‬
+‭ thorny hedge, will spring out of the ground around‬
+‭ the borders as you complete the ritual.‬
+‭ Within the grove, all spellcasting rolls for druidic‬
+‭ and fey magic have advantage, and all spellcasting‬
+‭ rolls for other forms of magic have disadvantage.‬
+‭ Any creature enchanted within the grove by the‬
+‭ Awaken Beast or Awaken Plant rituals may be‬
+‭ tasked with defending the grove indefinitely, rather‬
+‭ than serving you directly. Other rituals, such as Call‬
+‭ Storm, Entangle, Heat Metal, Leyline Travel,‬
+‭ Mirage, Nature‬’s‭ Wrath, Summon Elemental, or‬
+‭ Verdant Growth, may be woven into the grove‬’s
+‭ defenses and features as well.‬
+‭ If you cast this ritual in the same place each sunrise‬
+‭ and sunset for one lunar month, and leave at least‬
+‭ one numen of each elemental aspect within the area‬
+‭ to tend to the grove, the effects of this ritual become‬
+‭ permanent until dispelled, along with any other‬
+‭ defensive rituals woven into it. Druids who maintain‬
+‭ a permanent Druid Grove usually continue to‬
+‭ perform the necessary rituals at each sunrise and‬
+‭ sunset, weaving their magic deeper and deeper into‬
+‭ the bones of the earth. Each additional consecutive‬
+‭ lunar month that the rituals continue to be‬
+‭ performed each sunrise and sunset, the difficulty to‬
+‭ dispel the grove‬’s‭ magics increase by 1; missing a‬
+‭ day reduces the difficulty to dispel by 1 each month‬
+‭ until it is reduced to a minimum CoF of 1.‬
+
+‭ Leyline Travel‬
+‭ Third Circle Fey Spell‬
+‭ As an action, you touch a surface made of living‬
+‭ plant matter‬
+ -
+‭ such as a tree or vine-covered wall‬
+ -
+‭ and a portal opens through the veil into Faerie.‬
+‭ When you step through, an identical portal appears‬
+‭ on another such surface that you can see within 60‬
+‭ paces, which you instantly step out of back into the‬
+‭ Material world. You may choose to keep the portal‬
+‭ open while you maintain concentration, allowing‬
+‭ others to follow you.‬
+‭ If cast as a ritual, you may attempt to link to any‬
+‭ large tree or natural living archway that you have‬
+‭ seen, even at great distance. Make a Nature test‬
+‭ with a CoF equal to the number of leagues of‬
+‭ distance between the two portals; on a failure, you‬
+‭ step out of a portal somewhere in between,‬
+‭ determined randomly by the referee.‬
+
+‭ Meld With Earth‬
+‭ Third Circle Stone Spell‬
+‭ You step into a natural stone or earthen object or‬
+‭ surface large enough to fully contain your body,‬
+‭ melding yourself and all dedicated equipment with‬
+‭ the earth for as long as you maintain concentration.‬
+‭ Using your movement, you step into the earth at a‬
+‭ point you can touch. Nothing of your presence‬
+‭ remains visible or otherwise detectable by‬
+‭ non-magical senses.‬
+‭ While merged with the earth, you can‬’t‭ see what‬
+‭ occurs outside it, and any Perception checks you‬
+‭ make to hear sounds outside it are made with‬
+‭ disadvantage. You remain aware of the passage of‬
+‭ time and can cast spells on yourself while merged in‬
+‭ the earth. You can use your movement to leave the‬
+‭ earth where you entered it, which ends the spell.‬
+‭ You otherwise can‬’t move.
+‭ Minor physical damage to the earth doesn‬’t‭ harm‬
+‭ you, but its destruction or a change in its shape or‬
+‭ substance (to the extent that it is no longer natural‬
+‭ earth or you no longerfit within it) expels you and‬
+‭ deals 3d6 bashing damage to you. If expelled, you‬
+‭ fall prone in an unoccupied space closest to where‬
+‭ you first entered.‬
+‭ ‬
+‭ Mirage‬
+‭ Third Circle Fey Ritual‬
+‭ You cast this ritual to make the terrain around you‬
+‭ look, sound, and smell like some other sort of‬
+‭ natural terrain. The ritual’‬s‭ effectflows out from‬
+‭ you in a sphere that grows one pace per minute in‬
+‭ radius to a maximum of 60 paces in every direction,‬
+‭ transforming your surroundings as the wave of‬
+‭ magic passes over them. Openfields can be made to‬
+‭ resemble difficult or impassable terrain. A pond can‬
+‭ be made to seem like a grassy meadow, a precipice‬
+‭ like a gentle slope, or a rock-strewn gully like a wide‬
+‭ and smooth valley. Manufactured structures,‬
+‭ equipment, and creatures within the area aren‬’t
+‭ changed in appearance.‬
+‭ The tactile characteristics of the terrain are‬
+‭ unchanged, so creatures entering the area are likely‬
+‭ to see through the illusion. If the difference isn‬’t
+‭ obvious by touch, a creature carefully examining‬
+‭ the illusion can attempt to disbelieve it.‬
+
+‭ Nature’s Wrath‬
+‭ Third Circle Wood Spell‬
+‭ You call out to the spirits of nature to rouse them‬
+‭ against your enemies. The spirits cause trees, roots,‬
+‭ vines, and grasses within 5 paces of you to become‬
+‭ animated while you maintain concentration and‬
+‭ remain within the area.‬
+‭ Grasses and Undergro‬wth‭ - Any area of ground in‬
+‭ the cube that is covered by grass or undergrowth is‬
+‭ difficult terrain for your enemies.‬
+‭ ‬\n‭Trees - At the start of each of your turns, each of‬
+‭ your enemies within 10 feet of any tree in the area‬
+‭ must dodge or take four dice of slashing damage‬
+‭ from whipping branches.‬
+‭ ‬\n‭Roo‬ts‭ and Vines - At the end of each of your turns,‬
+‭ one creature of your choice that is on the ground in‬
+‭ the cube must brace or become restrained or‬
+‭ knocked prone (your choice) until the spell ends. A‬
+‭ restrained creature can use an action to attempt to‬
+‭ break free.‬
+
+‭ Polymorph‬
+‭ Third Circle Wood Spell‬
+‭ You use your action to touch another creature,‬
+‭ transforming them instantly into a natural animal‬
+‭ or fey beast with 3 or fewer hit dice. The creature‬
+‭ remains transformed while you maintain‬
+‭ concentration, replacing their racial features and‬
+‭ ability modifiers with those of the species you have‬
+‭ chosen. This includes mental ability modifiers; a‬
+‭ transformed creature with an Intelligence modifier‬
+‭ of -4 or lower is no longer considered intelligent.‬
+‭ The creature is limited in the actions it can perform‬
+‭ by the nature of its new form, and it can‬’t‭ speak,‬
+‭ cast spells, or take any other action that requires‬
+‭ hands or speech if the new form is incapable of‬
+‭ them.‬
+‭ Clothing and other equipment worn by the‬
+‭ transformed creature is not affected unless that‬
+‭ creature previously performed the dedicate object‬
+‭ ritual on it; the transformation might damage such‬
+‭ equipment if the creature‬’s‭ new size is significantly‬
+‭ larger than its old.‬
+
+‭ Primal Oath‬
+‭ Third Circle Fey Ritual‬
+‭ Like the Divine, the magic of Faerie can also‬
+‭ sanctify oaths. Oaths sworn before faerie need not‬
+‭ be made in earnest with a pure heart, but faerie is‬
+ ‭fickle and treacherous, and will bind the swearer to‬
+‭ the letter of their words rather than the spirit.‬
+‭ Blessings sworn before faerie tend to be easier to‬
+‭ break accidentally, and the curses thus imparted‬
+‭ tend to be far more vicious and ironic.‬
+‭ The Fair Folk themselves can bind a primal oath as‬
+‭ an action, without the need of an elaborate ritual.‬
+‭ All that is needed is that someone make a promise‬
+‭ or a boast in their presence, and any witnessing Fair‬
+‭ Folk is likely to bind the speaker to their “‬word”.
+‭ Clerics tend to be adamant in their terminology,‬
+‭ distinguishing between divinely sworn oaths (which‬
+‭ are‬ “sanctified”)‭ and primal oaths (which are‬
+“bound”).‭ Nevertheless, the blessings available are‬
+‭ identical, manifesting as Divine blessing effects‬
+‭ appropriate to the oath’s wording.‬

@@ -798,6 +798,549 @@
 				"Cantrip": "None",
 				"Content": "You draw a 10-foot-diameter circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know. The inscription requires half an ounce of mithral dust and three spell charges worth of Aetheric materia residue. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within the destination circle. If the destination circle is occupied, the travelers can choose for the ritual to fail, or can attempt to push through - suffering 3 dice of force damage, but arriving within the circle and pushing any interposing creatures or material out of the circle in a random direction. When you learn this ritual, you also learn the sigil sequences for two destinations on the Material Plane, determined by the referee. You can learn additional sigil sequences during your adventures. You can commit a new sigil sequence to memory or write it in your spellbook after studying it for one exploration round. This spell can only be cast as a ritual."
 			},
+			"Bless": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Any Domain",
+				"Content": "You use your action to touch an adjacent creature, blessing it. While you maintain concentration, you grant that creature a bonus die on each of its saving throws. The Bless spell can also be used in a secondary way, to create a blessed token - a holy symbol, holy water, blessed incense, sacramental bread, or sacredflame. A mundane object of the appropriate element becomes blessed immediately, and loses its blessing when you end concentration. If you perform the blessing on a piece of elemental materia, however, that materia becomes permanently blessed. A blessed token can be used to grant advantage and add one bonus die to a saving throw; incense and flame may also create a 5-pace zone of protection where undead and infernal actions have disadvantage. Holy water and sacredflame may also be used to inflict two dice of radiant damage if thrown onto an unholy creature."
+			},
+
+			"Calm Emotions": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing or Curse - Freedom Domain",
+				"Content": "Blessing - You use your action to attempt to suppress strong emotions in a group of people. Each mortal within 5 paces of you may attempt to deny the effect; each creature can choose to fail this saving throw if they wish. If it fails, you can suppress any effect causing them to be beguiled, hostile, or frightened for as long as you maintain concentration. When used in this way, this spell is considered a Blessing. \nCurse - Alternatively, you can make a target indifferent about creatures of your choice for as long as you maintain concentration. This indifference ends if the target is attacked or harmed by a spell or if they witness any of their friends being harmed. When the spell ends, the creature regains its normal hostility or affinity, unless the referee rules otherwise. When used in this way, this spell is considered a Curse. Cause Fear"
+			},
+
+			"First Circle Curse - Death Domain": {
+				"Speed": "Action",
+				"Spell Level": "You Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "your action to instill terror in every living",
+				"Content": "creature within a 5-pace cone. Each target must immediately deny the effect, or drop whatever it is holding and become frightened of you for as long as you maintain concentration. While frightened by this spell, a creature must take the Sprint action and move away from you by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn’t have line of sight to you, they may attempt to deny the spell."
+			},
+
+			"Command": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Fate Domain",
+				"Content": "You use your action to make eye contact with a target within 5 paces that can hear and understand you, and speak a single imperative word such as “jump” or “quiet”. You roll a ranged attack vs. its Will DV; on a success, it must follow the command during their next turn. You have disadvantage if your command is obviously harmful. If performed as a ritual, you may utter a single imperative sentence to the target. If your attack succeeds, it must obey that command while you maintain concentration."
+			},
+
+			"Divine Guidance": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Truth Domain",
+				"Content": "You use your action to touch an adjacent creature as you recite a brief prayer and choose a Skill. While you maintain concentration, you grant that creature a bonus die on each of its proficiency checks."
+			},
+
+			"Heal Minor Wounds": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Life Domain",
+				"Content": "You use your reaction to touch a creature, healing the target for a number of hit points equal to this spell’s power ."
+			},
+
+			"Heroism": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - War Domain",
+				"Content": "As your action, you may touch a willing creature and imbue them with bravery. While you maintain concentration, that creature is immune to being frightened, and adds a bonus die to each of its attack rolls."
+			},
+
+			"Light": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Beauty Domain",
+				"Content": "As your action, you cause the prepared prayer strip in your hand to grow with bright light out to 5 paces, and dim light out to 10 paces, while you maintain concentration. Any undead or infernal beings caught in the bright light suffer disadvantage to their attack rolls and saving throws."
+			},
+
+			"Mending": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Beauty Domain",
+				"Content": "You use your action to touch a damaged non-living object. While you maintain concentration, you may repair a single break or tear with each of your actions, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as each break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage. This spell can physically repair a magic item or construct, but the spell can’t restore magic to such an object."
+			},
+
+			"Sanctuary": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Peace Domain",
+				"Content": "You use your action or reaction to touch a creature, warding it against attack. While you maintain concentration, any creature who targets the warded creature with an attack or a harmful spell mustfirst attempt to deny this effect. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn’t protect the warded creature from area effects, such as the explosion of a fireball. If the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends."
+			},
+
+			"Shield of Faith": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - War Domain",
+				"Content": "You use your reaction to cast this spell with a free hand when a creature within 10 paces would be damaged by an attack or damaging effect. A radiant aura of divine energy forms around the target, absorbing some of the damage and shielding them from harm, granting the target two faith dice worth of temporary hit points before damage is applied."
+			},
+
+			"Smite": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - War Domain",
+				"Content": "You may perform this miracle without an action as you hit a creature with a melee weapon attack. If you do, your weaponflares with white-hot intensity, and the attack deals two faith dice of radiant damage to the target, in addition to its normal weapon damage. Unholy creatures take the maximum possible amount of damage from both this miracle and the base weapon attack. If performed as a ritual, you specify a single distinguishable creature by name while blessing a melee weapon. Thefirst time the weapon hits that creature, its wielder adds the ritual’s power as radiant damage to its normal weapon damage, which is doubled against an unholy creature."
+			},
+
+			"Speak With Dead": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Summons - Death Domain (ritual only)",
+				"Content": "You call a ghost from the Shadow across the veil, allowing it to answer the questions you pose. The ritual fails if the ghost was the target of this ritual within the last lunar month. You must hold a portion of the ghost’s corpse, or a possession that it valued in life, as you perform this ritual. During the ritual, you can ask the ghost a number of questions equal to the ritual’s power . The ghost’s answers are usually brief, cryptic, and repetitive."
+			},
+
+			"Augury": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Divination - Truth Domain (ritual only)",
+				"Content": "By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The referee chooses from the following possible omens: - Weal, for good results - Woe, for bad results - Weal and woe, for both good and bad results - Nothing, if results aren’t good or bad The spell doesn’t take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion. If you cast the spell again before the next sunrise or sunset, there is a cumulative 25 percent chance for each casting after thefirst that you get a random reading. The referee makes this roll in secret."
+			},
+
+			"Curse Ability": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Death Domain",
+				"Content": "You use your action to make eye contact with a creature within 5 paces as you recite a brief prayer and choose an ability. While you maintain concentration, you inflict a penalty to that creature’s chosen ability modifier equal to half this curse’s power."
+			},
+
+			"Divine Censure": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Fate Domain",
+				"Content": "You use your action to choose a creature that you can see within 25 paces. While you maintain concentration, this curse interferes with the target’s connection with aetheric energies; while censured, a creature may not cast spells, perform miracles, or generate other magical effects of any kind."
+			},
+
+			"Divine Rebuke": {
+				"Speed": "Reaction",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Freedom Domain",
+				"Content": "You use your reaction as another creature casts a first-circle spell, miracle, or other supernatural effect. If they make a roll as part of their effect, make a Willpower roll vs. their roll result; otherwise, make a Willpower roll vs. their spellcasting DV . If you succeed, their effect fails. Higher Circles - If you perform this prayer as a second-circle miracle, you may target a second-circle effect, or your roll vs. afirst-circle effect has advantage. If you perform this prayer as a third circle miracle, you may target third-circle effects, or your roll vs. a second-circle effect has advantage, or you may automatically counter a first-circle effect without a roll."
+			},
+
+			"Enfeeble": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Death Domain",
+				"Content": "As your action, you touch a creature and make a faith roll vs. its Fortitude DV . If you succeed, it has disadvantage to all attack rolls and saving throws, and inflicts half damage with all attacks, until it shrugs it off ."
+			},
+
+			"Find Traps": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Divination - Truth Domain (ritual only)",
+				"Content": "You sense the presence of any trap within 20 paces that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the alarm spell, a glyph of warding, or a mechanical pit trap, but it would not reveal a natural weakness in thefloor, an unstable ceiling, or a hidden sinkhole."
+			},
+
+			"Enhance Ability": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Various Domains",
+				"Content": "You use your action to touch an adjacent creature as you recite a brief prayer and choose an ability. While you maintain concentration, you grant that creature a bonus to the chosen ability modifier equal to half this blessing’ s power ."
+			},
+
+			"Heal Serious Wounds": {
+				"Speed": "Reaction",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Life Domain",
+				"Content": "You use your reaction to touch a creature, then roll two dice and add your Charisma modifier, healing the target for that many hit points. If the target has suffered any wounds, you may choose for any die that rolls a ‘6’ or higher to convert one wound into fatigue, instead of healing hit points."
+			},
+
+			"Holy Weapon": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - War Domain",
+				"Content": "You use your action to touch a weapon or barefist and call upon the favor of the Divine. While you maintain concentration, that weapon adds one die to all attack and damage rolls. This damage is the wielder’s choice of radiant or force damage, and is maximized against unholy beings."
+			},
+
+			"Merriment": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Beauty Domain",
+				"Content": "You use your action to begin singing a song or chanting a prayer, calling those around you to join you in celebration. While you maintain concentration, each creature within 5 paces that can hear you must deny the effect at the beginning of its turn, or be forced to perform a comic dance - shuffling, tapping its feet, and capering for the entire turn. While a target is affected by this curse it is slowed, has disadvantage on all Reflex saving throws, and other creatures have advantage on attack rolls against it until the beginning of its next turn. If you spend your action guiding the dance during your turn, you may move each affected creature half its speed during its next turn."
+			},
+
+			"Remove Curse": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Freedom Domain",
+				"Content": "As your action, you touch an object or willing creature and offer a prayer of deliverance. The target may immediately make a saving throw with advantage to shrug off an ongoing effect, or break a first-circle curse or other supernatural affliction affecting it, and add this miracle’s power as a bonus to this roll. If used on an object, you make a faith roll as a saving throw for it. Higher Circles - If you perform this prayer at third circle, you may target a second-circle curse or affliction; if you instead target afirst-circle curse or affliction, the saving throw has advantage."
+			},
+
+			"Tongues": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Peace Domain",
+				"Content": "You spend your action to touch a creature, granting it the ability to understand any spoken language it hears while you maintain concentration. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says."
+			},
+
+			"Zone of Truth": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Divination - Truth Domain",
+				"Content": "You create a magical zone that guards against deception within 5 paces of you. While you maintain concentration, a creature that enters the spell’s area or starts its turn there must make a Willpower saving throw. On a failed save, a creature can’t speak a deliberate lie while in the radius, and any illusions on that creature become dispelled. You know whether each creature succeeds or fails on its saving throw. An affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such creatures can be evasive in its answers as long as it remains within the boundaries of the truth."
+			},
+
+			"Aura of Life": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Life Domain",
+				"Content": "Life-preserving energy radiates from you in an aura with a 5-pace radius. While you maintain concentration, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) reduces all necrotic damage taken by half and all wounds received by half, and its hit point maximum can’t be reduced. In addition, each non-hostile, living creature rolls one die and regains that many hit points when it starts its turn in the aura with 0 hit points."
+			},
+
+			"Banish the Unnatural": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Fate Domain",
+				"Content": "You use your action to make a faith test vs. the Willpower of being that is not native to the Material Plane. If you succeed, that being is banished to its native plane, and cannot return to the Material for one lunar month. If you fail, you cannot attempt to perform this miracle against this being again for one month."
+			},
+
+			"Beacon of Hope": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Peace Domain",
+				"Content": "You use your action to inspire hope in all nearby allies. While you maintain concentration, you grant each creature within 5 paces advantage on all saving throws, and any dice rolled to determine hit points healed are considered to have rolled their maximum amount."
+			},
+
+			"Commune": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Divination - Truth Domain",
+				"Content": "You contact a Celestial servant of the Divine and ask one question that can be answered with a yes or no, or a single question concerning a specific goal, event, or activity to occur within 7 days. You receive a correct answer if the answer can be made known to you. Celestial servants aren't necessarily omniscient, so you might receive \"unclear\" as an answer if a question pertains to information that depends on as-yet unmade decisions."
+			},
+
+			"Geas": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Curse - Fate Domain",
+				"Content": "You use your action to make a ranged attack vs. the Will DV of a creature that can see and hear you within 20 paces. If you succeed, you begin to place a divine command on the target, forcing them to carry out some service or refrain from some action or course of activity as you decide. You must maintain concentration for a number of full rounds equal to that creature’s Charisma modifier + half its Willpower proficiency die maximum, forgoing your action each round to weave the spell. Once you begin the spell, the target can continue to hear you even if it moves away from you. You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the curse does not take hold. A creature that can’t understand you is unaffected by the spell. If youfinish describing the geas, the target becomes beguiled by you for a number of days equal to this curse’s power . While the creature is beguiled, it takes three dice of psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each hour. You can end the curse early by using an action to dismiss it. If cast as a ritual, your Geas may be worded so that only a certain action or circumstance may break it. If you do this, the Geas becomes permanent until those conditions are met - not even a Remove Curse can break it. You cannot undo such a curse once it is done."
+			},
+
+			"Grace": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Beauty Domain",
+				"Content": "You touch a target, imbuing them with supernatural poise and allure. While you maintain concentration, the affected creature has advantage on all beguile effects and Charisma-based skill rolls, and other creatures have disadvantage on all skill rolls (including saving throws) to oppose their beguile effects or Charisma-based skill rolls. Unlike most beguiling magics, the effects of Grace are extremely subtle - the blessed creature does not innately seem to be under a magical effect, and its influence is not perceived as unnatural or forceful. Detect magic or a similar effect will still show its influence, however."
+			},
+
+			"Hallow": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Peace Domain",
+				"Content": "As your action, you touch the ground with your bare hands or feet and infuse an area up to 5 paces around it with holy power. While you maintain concentration, unholy creatures can't enter the area, nor can such creatures beguile, frighten, or possess creatures within it. Any creature so affected by an undead or infernal creature is no longer affected upon entering the area. If cast as a ritual, the effects of this miracle do not require concentration, and remain until the next sunrise or sundown. If cast in the same place at each sunrise and sundown for a lunar month, the effects become permanent."
+			},
+
+			"Heal Critical Wounds": {
+				"Speed": "Reaction",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Life Domain",
+				"Content": "You use your reaction to touch a creature, then roll three dice and add your Charisma modifier, healing the target for that many hit points. If the target has suffered any wounds, you may choose for any die that rolls a ‘4’ or higher to convert one wound into fatigue, instead of healing hit points."
+			},
+
+			"Restoration": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Divine",
+				"Miracle Subtype": "Blessing - Freedom Domain",
+				"Content": "You lay your hands on an injured, disabled, or cursed creature, praying for its afflictions to be lifted. Make a faith test vs. a CoF of 10 as you pray fervently; if you perform this miracle as a ritual, you may reduce the CoF by 1 for every 100 gp worth of sacrifices made. On a success, you may remove one curse, disease, or poison that is affecting the creature, or heal one debilitation or maiming effect even if it is from an old injury. On a critical success, you may remove a number of afflictions equal to this miracle’s power . If you fail, the target may not be the subject of this prayer again for one lunar month."
+			},
+
+			"Beguile": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "You use your action to attempt to beguile a creature within 5 paces that makes eye contact with you or can hear your voice. Make a magic roll vs. its Perception DV . On a failure, they know that you attempted to manipulate their mind, and their attitude likely degrades by one step. On a success, add your Charisma modifier to this spell’s power and divide by 2; the target’s attitude towards you improves by that many steps (up to Loyal) for as long as you maintain concentration. The spell immediately ends if you do anything harmful to the beguiled creature; if they suffer injury from any other source, they immediately attempt to snap out of it."
+			},
+
+			"Brew": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Spell",
+				"Content": "During an encounter, you may use your action to accelerate an alchemical reaction, creating a highly volatile common elixir or potion immediately from a spell charge of the appropriate materia. The formula is short-lived, and must be used as part of the same action before it evaporates. You may also perform this as a ritual during any hour-long rest to brew a single Common alchemical formula, which will stay stable indefinitely. Second Circle - if you cast this spell at second circle, you can instantly brew a volatile Uncommon elixir or potion; you may also perform this ritual during any hour-long rest to brew a single stable Uncommon alchemical formula, forgoing the replenishment of one mana during that rest. Third Circle - if you cast this spell at third circle, you can instantly brew a volatile Rare elixir or potion; you may also perform this ritual during any hour-long rest to brew a single stable Rare alchemical formula, forgoing the replenishment of two mana during that rest."
+			},
+
+			"Call Beasts": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Ritual",
+				"Content": "During this ritual, you send out a subtle psychic summons, intermingled with natural sounds and scents that will attract the attention of any nearby animals. You may specify a particular kind of animal as you perform this ritual. Roll your Animal Ken die and add your Wisdom modifier; a number of natural or fey beasts whose total hit dice equals the die result arrive within a number exploration rounds based on their distance and previous activities. If you are a level 2 Druid, you may perform this ritual in the hour before sunrise or sunset instead of preparing spell charges to call a specific species of animal whose hit dice are less than or equal to your Wild Shape limit, so that you can add its form to your wild shape library. When the animals arrive, you must run with the herd, pack, or individual of that species until the next sunset or sunrise. At that time, you have transformed into that animal, and add it to your list of Wild Shapes known. If you ever learn more Wild Shapes than your Animal Ken proficiency (minimum 1), you must choose a shape to forget as you learn the new shape."
+			},
+
+			"Cleansing Waters": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Water Spell",
+				"Content": "As your action, you touch one living creature, drenching it with cooling water and drawing out any negative influences. Any ongoing damage or anyfirst--circle effect that could be ended with a saving throw is instantly ended. If the target is under the influence of a higher-circle effect, you may make a spell roll to attempt to end it."
+			},
+
+			"Detect Poison and Disease": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You use your action to examine an adjacent living creature that you can see, then make a Medicine roll with advantage. On a success, you know whether the subject is suffering from any poisons, diseases, or other debilitating physical conditions, whether they are treatable, and what treatments are likely to be effective. You may also use this spell to examine an ingestible substance, to determine whether it is safe to eat or drink. Dedicate Object First Circle Elemental Ritual This ritual is used primarily by shapeshifters. By ‘marking’ a single hand-held or worn object as your own, you leave a small trace of yourself within it, and a small trace of itself within you. Whenever you shapeshift (for example, by use of the Druid’s Wild Shape ability), all marked items that you are currently wearing or holding shapeshift with you, merging into your animal form. When you transform back, these items will shift back with you. You can mark a total number of items equal to your spellcasting proficiency. When you are at this limit, you must un-dedicate one of your items of your choice whenever you dedicate a new one. You do not need to be in possession of the old item to un-dedicate it. You can only mark items that you crafted yourself, or that were gifted to you by another Druid that crafted it themselves. The item cannot contain any iron or steel anywhere in its construction. Having too many dedicated items can be dangerous – when a dedicated item is not in your possession, you can close your eyes as an action or reaction to sense where it is. If it is within 20 paces of you, you know where it is to within 1 pace; if it is further away, you know its direction and approximate distance (within 100 paces, within 1 mile, within 20 miles, further than 20 miles). While someone else is holding an item dedicated to you, they have advantage on all magic rolls and magic rolls that target you, and you have disadvantage on all saving throws vs any magics cast by them that target only you."
+			},
+
+			"Elemental Burst": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Elemental Spell",
+				"Content": "As your action, you create a blast of elemental energy that pours out from your hands. Each creature in a 3-pace cone in front of you must resist or suffer two dice of elemental damage. If any damage dice roll a ‘6’ or higher, that creature suffers an elemental effect until it shakes it off . Second Circle - if you cast this spell from a second circle spell charge, the damage increases to 4 dice. Third Circle - if you cast this spell from a third circle spell charge, the damage increases to 6 dice."
+			},
+
+			"Elemental Mantle": {
+				"Speed": "Reaction",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Elemental Spell",
+				"Content": "You can use your reaction to cast this spell when you would be damaged by an elemental effect or attack from the same element as one of your prepared spell charges. You immediately halve all damage from that element for as long as you maintain concentration, and can ignore one die of elemental damage from each attack or damage source. If at any point you have more elemental energy dice than your spellcasting proficiency, or if you lose concentration, this spell immediately ends, and all remaining elemental energy dice are rolled as damage vs. all creatures within 2 paces of you (including yourself). Each such creature may dodge to attempt to halve this damage. Whenever you make a weapon attack, or a magic attack of the same type as this spell, you may consume one or more elemental energy dice to add them to the attack’s damage roll. You may also consume one or more elemental energy dice whenever an adjacent creature hits you with a melee attack, to inflict those dice as damage to the attacker. Finally, you may consume three spell dice to replenish one expended spell charge of the same element."
+			},
+
+			"Entangle": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "Grasping weeds and vines sprout from the ground in a 3-pace radius circle starting from a point within 20 paces. While you hold your spell charge and maintain concentration, these plants turn the ground in the area into difficult terrain. Any creature in the area when you cast the spell must brace or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to try to break free. On a success, it frees itself. While the spell lasts, you can use your action each turn to lash out with the vines at any creature within 2 paces of the conjured area. Make a grapple attack with the vines; on a hit, the target is pulled into the circle and restrained. When the spell ends, the conjured plants wilt away. Second Circle - if you cast this spell from a second circle spell charge, you can cause the vines to grow long, sharp thorns that cause two dice of piercing damage each time a creature moves one pace within the area."
+			},
+
+			"Fey Glamour": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "You use your action to create the illusion of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot cube. The image appears at a spot within 10 paces and lasts for the duration. The image is purely visual; it isn’t accompanied by sound, smell, or other sensory effects. While you maintain concentration, you can use your action to cause the image to move to any spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can attempt to disbelieve."
+			},
+
+			"Fog Cloud": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Air Spell",
+				"Content": "You create a 5-pace-radius sphere of fog that billows out from a space within 5 paces. The fog spreads around corners, and its area is heavily obscured. This spell’s power determines how many rounds it lasts; a wind of moderate or greater speed (at least 10 miles per hour) will disperse it early. If cast during combat, its duration is measured in 6-second combat rounds; if cast as a ritual, its duration is measured in 10-minute exploration rounds."
+			},
+
+			"Purify Food and Drink": {
+				"Speed": "Ritual",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You may use your action toflush up to 10 lbs x this spell’s power of non-magical food or drink with vital energy as you touch it, cleansing it of any poisons or diseases. When performed as a ritual, you may instead infuse a smaller amount of food or drink harvested fresh from the local environment with a lingering healing energy. Each bite of food or swallow of drink so enchanted heals 1 hp, and provides enough nourishment to sustain a medium creature for one day. This second ritual form of the spell is often called the good berry ritual. When you perform the goodberry ritual, this spell’s power determines the number of portions affected. Each portion will last until the next sunrise or sunset before becoming a normal, mundane bite of food or drink."
+			},
+
+			"Shape Element": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Elemental Spell",
+				"Content": "You may cast this spell as your action. For as long as you maintain concentration, you may use your action each round to shape one of the natural elemental forces and materials that surround you - earth and stone, water and ice, wood and vine, wind and fog, or light, shadow, andflame. You may manipulate roughly a 5 foot sphere of any one such element that is within 5 paces of you, and if such changes are made to a solid element such as earth, stone, wood or ice, they will hold their shape if sturdy enough to do so. You may extend the range of this effect to 20 paces if you touch a piece of the appropriate material that is connected by the same material to the area you wish to effect. You can use your action each turn to convert a 5 foot patch of solid ground into difficult or smooth terrain, cause plants to part way or grow to block a path, increase or decrease the concealment of fog or smoke, melt ice into water or freeze water into ice, draw still air into a gust of wind strong enough to knock creatures over, repair or damage objects made from natural materials, and so on. You may also use your action to make melee attacks with the element as your action, originating from a space within range that contains the element you are shaping, each attack deals one die of elemental damage on a hit. You can also make charging, shoving or grabbing magic attacks appropriate to the controlled element. You have advantage on each of these attack rolls if the element in question is already surrounding the target before you declare your attack. Second Circle - If you cast this spell at second circle, the size of the affected area increases to a 2-pace radius, and any attacks deal 2 dice of damage, and you can also make area attacks against all creatures within the spell’s radius. Third Circle - If you cast this spell at third circle, the size of the affected area increases to a 3-pace radius, any attacks deal 3 dice of damage."
+			},
+
+			"Shillelagh": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You grow a large, solid branch from your spell charge’s medicine back, then grip it tightly in your hand. While you maintain concentration, you may shape this branch into a quarterstaff, club, or thorny whip which deals your choice of bashing or piercing damage. You may make a spell roll rather than a weapon attack roll to attack with this weapon. If you lose concentration or drop the weapon, it withers away within seconds."
+			},
+
+			"Speak With Animals": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "As your action, you make eye contact with a natural animal. While you maintain concentration on this spell, you may establish an empathic bond between yourself and that animal, allowing you to communicate wordlessly with it - exchanging simple concepts, emotions, and requests. Any such animal with an Intelligence modifier of -3 or lower can use its action to deny the connection if it senses ill intent from you; if it fails, it will see you and your allies as non-hostile until the spell ends or one of you harms the creature in any way. An animal with an Intelligence modifier of -2 or higher can deny the connection without the need for a roll."
+			},
+
+			"Thunderwave": {
+				"Speed": "Action",
+				"Spell Level": "First Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Air Spell",
+				"Content": "A blast of hurricane-force wind rushes out from you in a 5-pace cone. Each creature within the area must brace or suffer two dice of thunder damage, and be thrown backwards 2 paces and knocked prone. In addition, unsecured objects that are completely within the area of effect are automatically pushed 2 paces away from you by the spell’s effect."
+			},
+
+			"Animal Messenger": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "You may spend your action to speak a short message to a tiny animal within 5 paces that you can see, while thinking of a location that you have visited and a description of a person that you expect to be in that location. The spell weaves its way into the animal, which remains enchanted for a number of days equal to the spell’s power . The animal then immediately scurries orflies off at its top speed towards its destination. Upon arrival, the animal magically speaks the message you gave it to thefirst person it sees matching the description you gave, approximately duplicating the sound and tone of your voice. If the spell runs out before the animal canfind a suitable recipient, the message is lost, and the animal magicallyfinds its way home as the enchantment unweaves."
+			},
+
+			"Beast Bond": {
+				"Speed": "Reaction",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "You use your action to beguile a natural animal or fey beast with fewer hit dice than your own, maintaining an empathic connection even after eye contact is broken. Creatures with an Intelligence modifier of -3 or lower have disadvantage to deny this spell’s effect. The beguiled creature will attempt to obey any command you give it while you maintain concentration, and you may use your reaction each turn to “borrow” the animal’s senses for that turn, seeing through its eyes and hearing through its ears. This effect ends immediately if you or your allies harm the creature in any way. If you cast this spell on a creature as a ritual at every sunrise and sunset for a lunar month, and treat the creature well while it is beguiled, the creature becomes trained and permanently loyal to you if you continue to treat them well thereafter, adding the creature to your menagerie."
+			},
+
+			"Earthquake": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Stone Spell",
+				"Content": "You cause a short but intense earthquake in the ground in a 3-pace radius. While you maintain concentration, you may use your action each round to force each creature other than you in that area to dodge or suffer one die of bashing damage and be knocked prone. If the ground in this area contains loose earth, stone, or obstacles that can break loose and fall, the area becomes difficult terrain until cleared."
+			},
+
+			"Find Animal or Plant": {
+				"Speed": "Action",
+				"Spell Level": "2nd Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You use your action to describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature of that kind within 5 miles, if any are present. While you maintain concentration, you know the target’s distance and location. If at any point you are more than 5 miles away from the target, the spell ends."
+			},
+
+			"Heat Metal": {
+				"Speed": "Reaction",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Flame Spell",
+				"Content": "As your action, you choose one manufactured metal object – such as a metal weapon or a suit of heavy or medium metal armor – that you can see within 10 paces. You cause the object to glow red-hot. Any creature in physical contact with the object immediately takes one die of fire damage. While you maintain concentration, you can use your action or reaction on each of your subsequent turns to cause this damage again. If a creature is holding or wearing the object and takes the damage from it, the creature must resist or drop the object if it can. If it doesn’t or can’t drop the object, it has disadvantage on attack rolls and saving throws until the start of your next turn. Third Circle - if you cast this spell at third circle, you may target all metal objects within 5 paces of you."
+			},
+
+			"Lifesense": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "While you maintain concentration, you can see all living beings in your line of sight, whether invisible, concealed, or camouflaged. You effectively have Darkvision out as far as you can see, but it can only show you the shapes of living beings. For each living creature that you can see, you know its species, size, sex, and state of health. You can use your action to determine the detailed health of a single living being that you can see within 2 paces, immediately discerning if it is poisoned or diseased, whether it is at full hit points, above or below half its hit points, or at 0 hit points, and what physical conditions are affecting it."
+			},
+
+			"Misty Step": {
+				"Speed": "Ritual",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "On your turn instead of moving, you conjure a silvery mist from Faerie, which quickly dissipates as you teleport up to 6 paces into an unoccupied space that you can see. If cast as a ritual at sunrise or sunset, Misty Step can instead open a portal directly between Faerie and the Material, which remains open until the next sunrise or sunset. Nature’s Ally Second Circle Elemental Spell As your action, you coax an elemental Numen in your medicine bag to grow in size and manifest before you as a fey elemental, awakened plant, or fey beast appropriate to its elemental nature. The shape chosen determines the creature’s ability modifiers and hit points, and must have fewer hit dice than your own. The creature is under the referee’s control, but is loyal to you and will obey your commands. You may use one Mana to re-roll this spell’s power and heal it for that many hit points so long as you can see or hear it. Once its hit points drop to zero, the numen shrinks back to Tiny size andfinds its way back into your pouch."
+			},
+
+			"Traceless Passage": {
+				"Speed": "Action",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Elemental Spell",
+				"Content": "By weaving a pattern that includes allfive elements, a veil of shadows and silence radiates from you, masking you and your companions from detection. While you maintain concentration, each creature you choose within 5 paces of you (including you) ignores difficult terrain, has a bonus die on all Stealth checks and saving throws equal to this spell’s power , and can’t be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage."
+			},
+
+			"Verdant Growth": {
+				"Speed": "Ritual",
+				"Spell Level": "Second Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "This spell channels vitality into plants within a specific area. As your action, you choose a point within range. All normal plants in a 20-pace radius centered on that point become thick and overgrown. You can exclude one or more areas of any size within the spell’s area from being affected. A creature must spend its action and make an Athletics test to attempt to move forward one pace through the area, or must attempt to hack it down by attacking it with slashing weapons. Each 5-foot patch of the area has structural hit points equal to the spell’s power , and halves all damage inflicted on it that isn’t slashing or fire damage. When cast as a ritual, you may alternatively use this spell to channel vitality into plants within a specific area with long-term benefits, enriching the land. All plants in a half-mile radius centered on you become enriched for one year, multiplying their harvest by this spell’s power."
+			},
+
+			"Awaken": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Ritual",
+				"Content": "This ritual allows a Druid to imbue a natural animal or plant with intelligence and free will. When you successfully awaken a plant or beast, the newly-awakened creature is beguiled by you until the next sunrise or sunset, or until you and your companions do anything harmful to it. When the beguiled condition ends, the awakened creature chooses whether to remain friendly to you, based on how you treated it while it was beguiled."
+			},
+
+			"\nAwaken Beast": {
+				"Speed": "Ritual",
+				"Spell Level": "- Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "touch a natural animal with 3",
+				"Content": "or fewer hit dice and a -4 or lower Intelligence modifier. The target gains a bonus to its Intelligence modifier equal to this spell’ s power , to a minimum Intelligence modifier of -3 and maximum of +0. The creature also gains the ability to speak one language that you know. \nAwaken Plant - You can also use this ritual to Awaken a plant, granting it motion and intelligence. You touch a Huge or smaller natural plant, ganting it an Intelligence score equal to the spell’s power . Repeat this process for each ability score, re-rolling the spell’s power for each ability. The awakened plant also gains the ability to speak one language that you know. The plant gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to a human’s. Your referee chooses statistics and ability modifiers appropriate for the awakened plant, based on its species and size."
+			},
+
+			"Call Storm": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Air or Water Spell",
+				"Content": "You may cast this spell as your action while outdoors in a heavy storm. For as long as you maintain concentration, you may use your action each round to influence the storm for 25 paces around you. You must be outdoors to cast this spell. Moving to a place where you don’t have a clear path to the sky ends the spell early. Winds can be used to push affected creatures up to 3 paces in a direction of your choice; one full action may be spent to push any creatures within a circle 10 paces wide or a cone 40 paces deep. Each creature within the affected area must brace with advantage or be knocked prone; on a critical success, that creature also manages to avoid being moved. Lightning called from the clouds inflicts three dice of damage to each creature within one pace of the strike point that fails to dodge the strike; creatures in metal armor have disadvantage to their dodge saving throw. Strikes against trees orflammable objects may ignite them at the referee’s discretion. Hail and sleet strikes a much wider area, dealing one die of cold damage to each creature within the entire 25-pace area. Each creature affected can resist to halve the damage; well-insulated clothing can provide advantage to this saving throw at the referee’s discretion. If you cast this spell as a ritual, you may conjure a storm from a clear sky over the course of an hour, rolling the spell’s power to determine the number of hours that the storm will last. You may alternatively use this ritual to calm a storm in progress, dissipating it into clear skies. If two druids each perform this ritual at cross-purposes within a mile of each other, a Nature test determines which ritual succeeds."
+			},
+
+			"Druid Grove": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Ritual",
+				"Content": "During this ritual, you sanctify a circular area up to 30 paces in radius, bringing Faerie and the Material closer together within it. Some kind of border marker, usually a ring of mushrooms or a wild thorny hedge, will spring out of the ground around the borders as you complete the ritual. Within the grove, all spellcasting rolls for druidic and fey magic have advantage, and all spellcasting rolls for other forms of magic have disadvantage. Any creature enchanted within the grove by the Awaken Beast or Awaken Plant rituals may be tasked with defending the grove indefinitely, rather than serving you directly. Other rituals, such as Call Storm, Entangle, Heat Metal, Leyline Travel, Mirage, Nature’s Wrath, Summon Elemental, or Verdant Growth, may be woven into the grove’s defenses and features as well. If you cast this ritual in the same place each sunrise and sunset for one lunar month, and leave at least one numen of each elemental aspect within the area to tend to the grove, the effects of this ritual become permanent until dispelled, along with any other defensive rituals woven into it. Druids who maintain a permanent Druid Grove usually continue to perform the necessary rituals at each sunrise and sunset, weaving their magic deeper and deeper into the bones of the earth. Each additional consecutive lunar month that the rituals continue to be performed each sunrise and sunset, the difficulty to dispel the grove’s magics increase by 1; missing a day reduces the difficulty to dispel by 1 each month until it is reduced to a minimum CoF of 1."
+			},
+
+			"Leyline Travel": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Spell",
+				"Content": "As an action, you touch a surface made of living plant matter - such as a tree or vine-covered wall - and a portal opens through the veil into Faerie. When you step through, an identical portal appears on another such surface that you can see within 60 paces, which you instantly step out of back into the Material world. You may choose to keep the portal open while you maintain concentration, allowing others to follow you. If cast as a ritual, you may attempt to link to any large tree or natural living archway that you have seen, even at great distance. Make a Nature test with a CoF equal to the number of leagues of distance between the two portals; on a failure, you step out of a portal somewhere in between, determined randomly by the referee."
+			},
+
+			"Meld With Earth": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Stone Spell",
+				"Content": "You step into a natural stone or earthen object or surface large enough to fully contain your body, melding yourself and all dedicated equipment with the earth for as long as you maintain concentration. Using your movement, you step into the earth at a point you can touch. Nothing of your presence remains visible or otherwise detectable by non-magical senses. While merged with the earth, you can’t see what occurs outside it, and any Perception checks you make to hear sounds outside it are made with disadvantage. You remain aware of the passage of time and can cast spells on yourself while merged in the earth. You can use your movement to leave the earth where you entered it, which ends the spell. You otherwise can’t move. Minor physical damage to the earth doesn’t harm you, but its destruction or a change in its shape or substance (to the extent that it is no longer natural earth or you no longerfit within it) expels you and deals 3d6 bashing damage to you. If expelled, you fall prone in an unoccupied space closest to where you first entered."
+			},
+
+			"Mirage": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Fey Ritual",
+				"Content": "You cast this ritual to make the terrain around you look, sound, and smell like some other sort of natural terrain. The ritual’s effectflows out from you in a sphere that grows one pace per minute in radius to a maximum of 60 paces in every direction, transforming your surroundings as the wave of magic passes over them. Openfields can be made to resemble difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth valley. Manufactured structures, equipment, and creatures within the area aren’t changed in appearance. The tactile characteristics of the terrain are unchanged, so creatures entering the area are likely to see through the illusion. If the difference isn’t obvious by touch, a creature carefully examining the illusion can attempt to disbelieve it."
+			},
+
+			"Nature’s Wrath": {
+				"Speed": "Action",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You call out to the spirits of nature to rouse them against your enemies. The spirits cause trees, roots, vines, and grasses within 5 paces of you to become animated while you maintain concentration and remain within the area. Grasses and Undergrowth - Any area of ground in the cube that is covered by grass or undergrowth is difficult terrain for your enemies. \nTrees - At the start of each of your turns, each of your enemies within 10 feet of any tree in the area must dodge or take four dice of slashing damage from whipping branches. \nRoots and Vines - At the end of each of your turns, one creature of your choice that is on the ground in the cube must brace or become restrained or knocked prone (your choice) until the spell ends. A restrained creature can use an action to attempt to break free."
+			},
+
+			"Polymorph": {
+				"Speed": "Ritual",
+				"Spell Level": "Third Circle",
+				"Spell Type": "Primal",
+				"Spell Subtype": "Wood Spell",
+				"Content": "You use your action to touch another creature, transforming them instantly into a natural animal or fey beast with 3 or fewer hit dice. The creature remains transformed while you maintain concentration, replacing their racial features and ability modifiers with those of the species you have chosen. This includes mental ability modifiers; a transformed creature with an Intelligence modifier of -4 or lower is no longer considered intelligent. The creature is limited in the actions it can perform by the nature of its new form, and it can’t speak, cast spells, or take any other action that requires hands or speech if the new form is incapable of them. Clothing and other equipment worn by the transformed creature is not affected unless that creature previously performed the dedicate object ritual on it; the transformation might damage such equipment if the creature’s new size is significantly larger than its old."
+			},
 
 		}
 	}

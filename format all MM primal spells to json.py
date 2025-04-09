@@ -32,7 +32,7 @@
 #4. Read body line-by-line. Save as content var. If keywords reaction or ritual are detected, set speed var.
 
 import re
-filename = 'MM all arcane spells raw.txt'
+filename = 'MM all primal spells raw.txt'
 
 
 CLEANL = re.compile('‭') 
@@ -83,10 +83,10 @@ def printSubtype(line):
 		spellSubtypeLine = '\t"Spell Subtype": "' + ' '.join(subtypeList) + '",'
 		print(spellSubtypeLine)
 	elif SPELLTYPE == "Divine":
-		miracleSubtypeLine = '\t"Miracle Subtype": "' +   +   '",'
+		miracleSubtypeLine = '\t"Miracle Subtype": "' + ' '.join(subtypeList) + '",'
 		print(miracleSubtypeLine)
 	elif SPELLTYPE == "Primal":
-		spellSubtypeLine = '\t"Spell Subtype": "' + subtype + '",'
+		spellSubtypeLine = '\t"Spell Subtype": "' + ' '.join(subtypeList) + '",'
 		print(spellSubtypeLine)
 
 
@@ -103,7 +103,7 @@ def printContent(content):
 
 
 spellName = ""
-SPELLTYPE = "Arcane"
+SPELLTYPE = "Primal"
 speed=""
 spellLevel = ""
 subtype = ""
