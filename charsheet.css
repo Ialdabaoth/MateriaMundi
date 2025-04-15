@@ -1459,6 +1459,14 @@ input.party-char-dv {
   font-weight: bold;
 }
 
+.sheet-rolltemplate-skills .sheet-title span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-title span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-title span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-title span.inlinerollresult {
+  pointer-events: none;
+  background: none;
+  border: 0px transparent;
+}
 .sheet-rolltemplate-rolls .sheet-content,
 .sheet-rolltemplate-skills .sheet-content,
 .sheet-rolltemplate-reactions .sheet-content,
