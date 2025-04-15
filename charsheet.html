@@ -390,6 +390,7 @@
         <option data-i18n="berserker" value="berserker">Berserker</option>
         <option data-i18n="thief" value="thief">Thief</option>
         <option data-i18n="alchemist" value="alchemist">Alchemist</option>
+        <option data-i18n="ranger" value="ranger">Ranger</option>
         <option data-i18n="bard" value="bard">Bard</option>
         <option data-i18n="wizard" value="wizard">Wizard</option>
         <option data-i18n="cleric" value="cleric">Cleric</option>
@@ -483,27 +484,27 @@
     </div> 
     <input type="hidden" name="attr_level" class="character-level" >
     <div class="f-row f-center">
-      <span class="rollbox">
+      <span class="rollbox"><input type="hidden" class="die-controller" name="attr_hd1_max">
         <button class="proficiency" type="roll" name="roll_hd1" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd1}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd1}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd1_max"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l4">
+      <span class="rollbox show-l4"><input type="hidden" class="die-controller" name="attr_hd2_max">
         <button class="proficiency req-l4" type="roll" name="roll_hd2" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd2}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd2}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd2_max"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l7">
+      <span class="rollbox show-l7"><input type="hidden" class="die-controller" name="attr_hd3_max">
         <button class="proficiency req-l7" type="roll" name="roll_hd3" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd3}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd3}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd3_max"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l10">
+      <span class="rollbox show-l10"><input type="hidden" class="die-controller" name="attr_hd4_max">
         <button class="proficiency req-l10" type="roll" name="roll_hd4" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd4}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd4}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd4_max"></span></label>
       </span>
     </div>   </div panel-travel>
@@ -531,27 +532,27 @@
     </div> 
     <input type="hidden" name="attr_level" class="character-level" >
     <div class="f-row f-center">
-      <span class="rollbox">
+      <span class="rollbox"><input type="hidden" class="die-controller" name="attr_hd1_max">
         <button class="proficiency" type="roll" name="roll_hd1" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd1}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd1}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd1"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l4">
+      <span class="rollbox show-l4"><input type="hidden" class="die-controller" name="attr_hd2_max">
         <button class="proficiency req-l4" type="roll" name="roll_hd2" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd2}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd2}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd2"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l7">
+      <span class="rollbox show-l7"><input type="hidden" class="die-controller" name="attr_hd3_max">
         <button class="proficiency req-l7" type="roll" name="roll_hd3" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd3}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd3}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd3"></span></label>
       </span>
       &nbsp;
-      <span class="rollbox show-l10">
+      <span class="rollbox show-l10"><input type="hidden" class="die-controller" name="attr_hd4_max">
         <button class="proficiency req-l10" type="roll" name="roll_hd4" 
-          value="&{template:rolls} {{subtitle=Hit Die (@{hd4}@{con})}} {{title=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
+          value="&{template:rolls} {{title=Hit Die (@{hd4}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
         </button><label class="proficiency-die"><span name="attr_hd4"></span></label>
       </span>
     </div>
@@ -1265,6 +1266,8 @@
     on("change:race", function(eventInfo) { setupRace(); });
     on("change:class", function(eventInfo) { setupClass(); });
     on("change:level", function(eventInfo) { validate(); });
+    on(`change:fatigue`, function(eventInfo) { recalcWounds() });
+    on(`change:wounds`, function(eventInfo) { recalcWounds() });
     
     on("sheet:opened", function() {
       initialize();    
@@ -1275,7 +1278,6 @@
           validate();
           abilities.forEach(ability => { updatemod(ability); });
           saves.forEach(save => { updatedv(save); });
-          setupActions();
         }
       });
     });
@@ -1288,6 +1290,11 @@
     var raceTable2 = [];
     var raceData = {};
     var classData = {};
+
+    const untrained = "", untrainedDie = "0";
+    const rules_dv_levels = "?{Difficulty|None,0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|Custom,?{Enter DV}}";
+    const rules_cof_levels = "?{Chance of Failure|None,0|Easy,2|Average,4|Hard,6|Extreme,8|Legendary,10|Custom,?{Enter CoF}}";//"?{Chance of Failure|None,0|Easy,2d4kh1[2]|Average,2d6kh1[3]|Hard,2d8kh1[4]|Extreme,2d10kh1[5]|Legendary,2d12kh1[6]|Custom,?{Enter CoF}}";
+
     function initialize() {
         console.log("---=== initializing race and class data ===---");
         
@@ -1401,10 +1408,10 @@
         loadClass["l4feat"] = "expert-4";
         loadClass["l5feat"] = "thief-5";
         loadClass["l6feat"] = "thief-6";
-        loadClass["l7feat"] = "thief-7";
+        loadClass["l7feat"] = "expert-7";
         loadClass["l8feat"] = "expert-8";
         loadClass["l9feat"] = "thief-9";
-        loadClass["l10feat"] = "thief-10";
+        loadClass["l10feat"] = "expert-10";
         loadClass["l1feat_max"] = "reflex, stealth, finesse, perception, choose(reflex, stealth, finesse, perception)";
         loadClass["l2feat_max"] = "choose(any), choose(any)";
         loadClass["l3feat_max"] = "choose(any), choose(any)";
@@ -1422,20 +1429,25 @@
         loadClass["l2feat"] = "alchemist-2";
         loadClass["l5feat"] = "alchemist-5";
         loadClass["l6feat"] = "alchemist-6";
-        loadClass["l7feat"] = "alchemist-7";
         loadClass["l9feat"] = "alchemist-9";
-        loadClass["l10feat"] = "alchemist-10";
         loadClass["l1feat_max"] = "arcana, crafting, finesse, medicine, choose(arcana, crafting, finesse, medicine)";
         classData["alchemist"] = JSON.parse(JSON.stringify(loadClass));
+
+        loadClass["class_max"] = "ranger";
+        loadClass["l1feat"] = "expert-1, ranger-1";
+        loadClass["l2feat"] = "ranger-2";
+        loadClass["l5feat"] = "ranger-5";
+        loadClass["l6feat"] = "ranger-6";
+        loadClass["l9feat"] = "ranger-9";
+        loadClass["l1feat_max"] = "nature, animal-ken, stealth, perception,  choose(nature, animal-ken, stealth, perception)";
+        classData["ranger"] = JSON.parse(JSON.stringify(loadClass));
 
         loadClass["class_max"] = "bard";
         loadClass["l1feat"] = "expert-1, bard-1";
         loadClass["l2feat"] = "bard-2";
         loadClass["l5feat"] = "bard-5";
         loadClass["l6feat"] = "bard-6";
-        loadClass["l7feat"] = "bard-7";
         loadClass["l9feat"] = "bard-9";
-        loadClass["l10feat"] = "bard-10";
         loadClass["l1feat_max"] = "charm, wit, finesse, lore, choose(charm, wit, finesse, lore)";
         classData["bard"] = JSON.parse(JSON.stringify(loadClass));
 
@@ -1451,22 +1463,22 @@
         loadClass["l9feat"] = "druid-9";
         loadClass["l10feat"] = "druid-10";
         loadClass["l1feat_max"] = "nature, animal-ken";
-        loadClass["l2feat_max"] = "choose(crafting, fortitude, lore, medicine, perception)";
+        loadClass["l2feat_max"] = "choose(willpower, fortitude, lore, medicine, perception)";
         loadClass["l3feat_max"] = "choose(nature, animal-ken)";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "choose(nature, animal-ken)";
-        loadClass["l6feat_max"] = "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)";
+        loadClass["l6feat_max"] = "choose(nature, animal-ken, willpower, fortitude, lore, medicine, perception)";
         loadClass["l7feat_max"] = "choose(nature, animal-ken)";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "choose(nature, animal-ken)";
-        loadClass["l10feat_max"] = "choose(nature, animal-ken, crafting, fortitude, lore, medicine, perception)";
+        loadClass["l10feat_max"] = "choose(nature, animal-ken, willpower, fortitude, lore, medicine, perception)";
         classData["druid"] = JSON.parse(JSON.stringify(loadClass));
         
         loadClass["class_max"] = "wizard";
-        loadClass["hd1"] = "d6";
-        loadClass["hd2"] = "d6";
-        loadClass["hd3"] = "d6";
-        loadClass["hd4"] = "d6";
+        loadClass["hd1"] = "d4";
+        loadClass["hd2"] = "d4";
+        loadClass["hd3"] = "d4";
+        loadClass["hd4"] = "d4";
         loadClass["l1feat"] = "wizard-1";
         loadClass["l2feat"] = "wizard-2";
         loadClass["l3feat"] = "wizard-3";
@@ -1478,15 +1490,15 @@
         loadClass["l9feat"] = "wizard-9";
         loadClass["l10feat"] = "wizard-10";
         loadClass["l1feat_max"] = "arcana, deduction";
-        loadClass["l2feat_max"] = "choose(crafting, lore, medicine, perception)";
+        loadClass["l2feat_max"] = "choose(willpower, lore, finesse, perception)";
         loadClass["l3feat_max"] = "arcana";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "arcana";
-        loadClass["l6feat_max"] = "choose(deduction, crafting, lore, medicine, perception)";
+        loadClass["l6feat_max"] = "choose(deduction, willpower, lore, finesse, perception)";
         loadClass["l7feat_max"] = "arcana";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "arcana";
-        loadClass["l10feat_max"] = "choose(deduction, crafting, lore, medicine, perception)";
+        loadClass["l10feat_max"] = "choose(deduction, willpower, lore, finesse, perception)";
         classData["wizard"] = JSON.parse(JSON.stringify(loadClass));
 
 
@@ -1503,14 +1515,14 @@
         loadClass["l10feat"] = "cleric-10";
         loadClass["l1feat_max"] = "willpower, perception";
         loadClass["l2feat_max"] = "choose(charm, fortitude, lore, medicine)";
-        loadClass["l3feat_max"] = "willpower";
+        loadClass["l3feat_max"] = "willpower, choose(perception, charm, fortitude, lore, medicine, arcana, athletics, deduction, nature, reflex)";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "willpower";
-        loadClass["l6feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
+        loadClass["l6feat_max"] = "choose(perception, charm, fortitude, lore, medicine, *domain)";
         loadClass["l7feat_max"] = "willpower";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "willpower";
-        loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine)";
+        loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine, *domain)";
         classData["cleric"] = JSON.parse(JSON.stringify(loadClass));
     }
     
@@ -1593,7 +1605,6 @@
    find the first matching choose(...) block, and replace it with 
    that choice.
 */
-    const untrained = "", untrainedDie = "2df";
     function validate() {
         getAttrs(["character_name"], function(values) {
             console.log("---=== validating " + values["character_name"] + " ===---");
@@ -1606,16 +1617,22 @@
             let level = values["level"];
             let hitDice = Math.floor(level/3+.667);
             console.log("level " + level + " " + values["class"] + " (" + hitDice + "hd)");
+
             // work out maximum HP for this class and level
-            let maxHP = 1.0*values["constitution"];
+            let hpBonus = die2dv(values["hd1"]) + 1.0*values["con"];
+            if(hpBonus < 1) hpBonus = 1;
+            let maxHP = Math.floor(0.5*values["constitution"]) + hpBonus * level;
+            /*
+            let maxHP = Math.floor(0.5*values["constitution"]);
             for(let i = 1; i <= hitDice; i++) {
                 let hpBonus = die2dv(values["hd"+i]) + 1.0*values["con"];
                 if(hpBonus < 1) hpBonus = 1;
                 console.log("hd" + i + ":"+ values["hd"+i] + values["con"] + " (" + hpBonus + ")");
                 maxHP += hpBonus;
-            }
+            }*/
             console.log("max hitpoints: " + maxHP);
             let power = "";
+            let domainSkill = "";
             let feats = values["l1feat"];
             let skillList = values["l1feat_max"];
             let skillOptions = "";
@@ -1632,16 +1649,49 @@
                 
                 // level 3 feats always grant a class's encounter power, except for wizards.
                 if(power == "" && feat.includes("-3") && !(feat == "wizard-3")) power = feat;
-
+                
                 // many class levels allow for a skill choice, while others simply grant specific skills
                 if(skill.includes("choose(")) {
+                    if(skill.includes("*domain") && domainSkill > "") {
+                        skill = skill.replace("*domain", domainSkill); 
+                        setAttrs({ ["l"+i+"feat_max"]: skill });
+                    }
+                    
                     let splitArray = skill.split("choose(");
                     if(splitArray[0] > "") skillList += ", " + splitArray[0];
                     for(let i=1; i<splitArray.length; i++) {
                         if(skillOptions > "") skillOptions += ", ";
                         skillOptions += "choose(" + splitArray[i];
                     }
-                } else { skillList += ", " + skill; } // keep a running tally of all granted and chosen skills
+                } else { // keep a running tally of all granted and chosen skills
+                    skillList += ", " + skill;
+                    if(feat.includes("cleric-3")) { // choose() has already been chosen; this determines our Domain
+                        domainSkill = skill.split(", ")[1];
+                        console.log("domain skill: " + domainSkill);
+                        if(domainSkill == "perception") {
+                            domainFeat = "cleric-3-peace";
+                        } else if(domainSkill == "athletics") {
+                            domainFeat = "cleric-3-war";
+                        } else if(domainSkill == "medicine") {
+                            domainFeat = "cleric-3-death";
+                        } else if(domainSkill == "fortitude") {
+                            domainFeat = "cleric-3-life";
+                        } else if(domainSkill == "charm") {
+                            domainFeat = "cleric-3-beauty";
+                        } else if(domainSkill == "deduction") {
+                            domainFeat = "cleric-3-truth";
+                        } else if(domainSkill == "lore") {
+                            domainFeat = "cleric-3-fate";
+                        } else if(domainSkill == "reflex") {
+                            domainFeat = "cleric-3-freedom";
+                        } else if(domainSkill == "nature") {
+                            domainFeat = "cleric-3-nature";
+                        } else if(domainSkill == "arcana") {
+                            domainFeat = "cleric-3-artifice";
+                        }
+                        setAttrs({ ["l"+i+"feat"]: domainFeat });
+                    }
+                } 
             }
             console.log(feats);
             console.log(skillList);
@@ -1689,43 +1739,30 @@
                 skillData["reflex_max"]     = biggerDie(skillData["reflex_max"], attackDie);
                 skillData["fortitude_max"]  = biggerDie(skillData["fortitude_max"], attackDie);
             }
-            
-            if(feats.includes("wizard-3")) { // wizards use arcana for spells, so they go up every 2 levels
-                if(feats.includes("wizard-9"))      skillData["arcana_max"] = "d12";
-                else if(feats.includes("wizard-7")) skillData["arcana_max"] = "d10";
-                else if(feats.includes("wizard-5")) skillData["arcana_max"] = "d8";
-                else                                skillData["arcana_max"] = "d6"; 
-            }  
-            if(feats.includes("cleric-3")) { // clerics use willpower for miracles, so they go up every 2 levels
-                if(feats.includes("cleric-9"))      skillData["willpower_max"] = "d12";
-                else if(feats.includes("cleric-7")) skillData["willpower_max"] = "d10";
-                else if(feats.includes("cleric-5")) skillData["willpower_max"] = "d8";
-                else                                skillData["willpower_max"] = "d6"; 
-            } 
-            
+       
             var maxDie;
-            if(feats.includes("bard-10")
-            || feats.includes("alchemist-10")
-            || feats.includes("thief-10")
-            || feats.includes("druid-9")) { 
-                maxDie = "d12"; // druids reach a d12 skill cap at level 9, while experts reach it at level 10
-            } else if(feats.includes("bard-7")
-            || feats.includes("alchemist-7")
-            || feats.includes("thief-7")
-            || feats.includes("druid-7")) { 
-                maxDie = "d10"; // druids and experts both reach a d10 skill cap at level 7
-            } else if(feats.includes("expert-4")
-            || feats.includes("druid-5") 
+            if(feats.includes("expert-10")
             || feats.includes("wizard-9")
             || feats.includes("cleric-9")
+            || feats.includes("druid-9")) { 
+                maxDie = "d12"; // magic-users reach a d12 skill cap at level 9, while experts reach it at level 10
+            } else if(feats.includes("expert-7")
+            || feats.includes("wizard-7")
+            || feats.includes("cleric-7")
+            || feats.includes("druid-7")) { 
+                maxDie = "d10"; // magic-users and experts both reach a d10 skill cap at level 7
+            } else if(feats.includes("expert-4")
+            || feats.includes("druid-5") 
+            || feats.includes("wizard-5")
+            || feats.includes("cleric-5")
             || feats.includes("warrior-9")) {
-                maxDie = "d8"; // experts reach a d8 skill cap at level 4, while druids reach it at level 5, and everyone else at level 9.
+                maxDie = "d8"; // experts reach a d8 skill cap at level 4, while magic-users reach it at level 5, and warriors at level 9.
             } else if(feats.includes("expert-1") 
             || feats.includes("druid-3") 
-            || feats.includes("wizard-5") 
-            || feats.includes("cleric-5") 
-            || feats.includes("warrior-5")) { 
-                maxDie = "d6"; // experts start with a d6 skill cap, while druids reach it at level 3, and everyone else at level 5.
+            || feats.includes("wizard-3") 
+            || feats.includes("cleric-3") 
+            || feats.includes("warrior-3")) { 
+                maxDie = "d6"; // experts start with a d6 skill cap, while magic-users reach it at level 3, and warriors else at level 5.
             } else {
                 maxDie = "d4"; // magic-users and warriors start with a skill cap at d4.
             }
@@ -1816,17 +1853,15 @@
       if(mod >= 0) mod = "+" + mod; 
     }
     console.log("  " + ability + " (" + score + ") => " + modname + " (" + mod + ")");
-    setAttrs({ [modname]: mod });
+    setAttrs({  
+        [modname]: mod,
+        [modname+'_max']: mod
+        
+    });
 
     if(String(modname).toLowerCase() == "con") {
-        let modN = mod * 1.0;
-        setAttrs({ wounds_max: (modN + 5) });
-        if(mod > 1) 
-            setAttrs({ fatigue_max: mod });
-        else 
-            setAttrs({ fatigue_max: 1 });
-            
         recalcHitPoints();
+        recalcWounds();
     }
     // update the associated saving throw dv for this ability
     updatedv(mod2save(modname));
@@ -1843,16 +1878,29 @@
         let hitDice = Math.floor(level/3+.667);
         console.log("level " + level + " " + values["class"] + " (" + hitDice + "hd)");
         // work out maximum HP for this class and level
-        let maxHP = 1.0*values["constitution"];
-        for(let i = 1; i <= hitDice; i++) {
-            let hpBonus = die2dv(values["hd"+i]) + 1.0*values["con"];
-            if(hpBonus < 1) hpBonus = 1;
-            console.log("hd" + i + ":"+ values["hd"+i] + values["con"] + " (" + hpBonus + ")");
-            maxHP += hpBonus;
-        }
+        let hpBonus = die2dv(values["hd1"]) + 1.0*values["con"];
+        if(hpBonus < 1) hpBonus = 1;
+        let maxHP = Math.floor(0.5*values["constitution"]) + hpBonus * level;
         console.log("max hitpoints: " + maxHP);
+        setAttrs({ hitpoints_max : maxHP });
+
     });
  }
+ 
+ function recalcWounds() {
+    getAttrs(["wounds", "fatigue", "str_max", "dex_max", "con_max", "int_max", "wis_max", "cha_max"], function(values) {
+        let con = Math.floor(values["con_max"] * 1.0);
+        let threshold = con > 0 ? con : 0;
+        let hindrance = Math.floor(1.0*values["wounds"]) + Math.floor(1.0*values["fatigue"]);
+        let penalty = (threshold > hindrance ? 0: hindrance - threshold);
+        let modData = [];
+        modData["wounds_max"] = con + 5;
+        modData["fatigue_max"] = threshold;
+        modData["condition_max"] = penalty;
+        setAttrs(modData);
+    });
+ }
+ 
  function train(skill) {
 
     // each skill is either 0, or a die size between d4 and d12. 
@@ -1879,8 +1927,6 @@
 
       // see if we've changed the die size
       if(die != values[skill]) {
-        console.log("  " + skill + " => " + die + " (max "+max + ")");
-        setAttrs({ [skill]: die });
         // now find the first matching choose(...) in the l#feat_max 
         // level-up list, and replace that choose(...) with the name
         // of the chosen skill. 
@@ -1897,24 +1943,26 @@
               // come before any choose(...) options
               let skillList = splitArray[0]; 
               for(let i = 1; i < splitArray.length; i++) {
-                if(skillList > "") skillList += ", ";
-                if( splitArray[i].includes("any") || splitArray[i].includes(skill) ) { 
+               if( splitArray[i].includes("any") || splitArray[i].includes(skill) ) { 
                   // this is our first match, so replace it
                   skillList += skill; 
                   // only replace the first matching choice that we find;
                   // this means adding back all the remaining choices.
                   for(i++; i < splitArray.length; i++) { 
+                    if(skillList > "") skillList += ", ";
                     skillList += "choose(" + splitArray[i];  
                   }
                 } else { 
                   // it's not a match, so add it back
+                  if(skillList > "") skillList += ", ";
                   skillList += "choose(" + splitArray[i]; 
                 }
               }
               // we've now made our replacement, so we don't need to continue
               // traipsing through the level list willy-nilly
+              console.log("  " + skill + " => " + die + " (max "+max + ")");
               console.log("   (replaces level " + level + " choice: ["+values["l"+level+"feat_max"]+"] -> ["+skillList+"])");
-              setAttrs({ ["l"+level+"feat_max"]: skillList });
+              setAttrs({ [skill]: die, ["l"+level+"feat_max"]: skillList });
               validate();
               return; // only replace the first matching choice level that we find
             }
@@ -1924,18 +1972,168 @@
     });
  }
  
- function setupActions() {
+ // converting dice to their corresponding dv bonuses
+// lets us compare them numerically, and return
+// whichever one is bigger.
+ function biggerDie(a, b) {
+    if(die2dv(a) >= die2dv(b)) return a;
+    return b;
+ }
+ 
+// a die adds half its maximum roll size to its saving throw dv,
+// or any other static bonus (such as maximum hit points).
+ function die2dv(d) {
+    if(d.length == 0 || d[0] != "d") return 0;
+    return Math.floor(d.substring(1,3)*0.5);
+ }
+ 
+// B/X ability modifiers are superior to 
+// those used by 3.5e/4e/5e/5.5e/Pathfinder,
+// especially since we aren't using the d20
+// for exploration skill tests.
+ function a2mod(a) {
+  if(a==3) return "-3";
+  if(a<6) return "-2";
+  if(a<9) return "-1";
+  if(a==18) return "+3";
+  if(a>15) return "+2";
+  if(a>12) return "+1";
+  return "+0";
+ }
+ 
+// which ability mod does this save use?
+ function save2mod(save) {
+    if(save == "athletics") return "str";
+    if(save == "reflex") return "dex";
+    if(save == "fortitude") return "con";
+    if(save == "deduction") return "int";
+    if(save == "perception") return "wis";
+    if(save == "willpower") return "cha";
+    return "";
+ }
+ 
+  function skill2mod(skill) {
+    if(skill == "athletics") return "str";
+    if(skill == "reflex" || skill == "stealth" || skill == "finesse" ) return "dex";
+    if(skill == "fortitude") return "con";
+    if(skill == "deduction" || skill == "arcana" || skill == "crafting" || skill == "lore" ) return "int";
+    if(skill == "perception" || skill == "animal-ken" || skill == "nature" || skill == "medicine" ) return "wis";
+    if(skill == "willpower" || skill == "charm" || skill == "wit" ) return "cha";
+    return "";
+ }
 
-    getAttrs(["sheet_type", "character_name", "attack1_action", "attack2_action"], function(values) {
-        let sheetType = String(values["sheet_type"]).toLowerCase();
-        if(sheetType.includes("character")) {
+// which save uses this ability mod?
+ function mod2save(mod) {
+    if(mod == "str") return "athletics";
+    if(mod == "dex") return "reflex";
+    if(mod == "con") return "fortitude";
+    if(mod == "int") return "deduction";
+    if(mod == "wis") return "perception";
+    if(mod == "cha") return "willpower";
+    return "";
+ }
+ 
+ // which ability score is this mod from?
+ function mod2score(mod) {
+    if(mod == "str") return "strength";
+    if(mod == "dex") return "dexterity";
+    if(mod == "con") return "constitution";
+    if(mod == "int") return "intelligence";
+    if(mod == "wis") return "wisdom";
+    if(mod == "cha") return "charisma";
+    return "";
+ }
+ 
+//simple regexp tally for how many times
+//one string shows up inside another.
+//primarily used for the skill validator
+ function countMatches(str, test) {
+    let regex = new RegExp(test, "g"); 
+    return (str.match(regex ) || []).length;
+ }
 
-		  var attrsToChange = {};
-		  attrsToChange["attack1_action"] = "%{" + values["character_name"] + "|attack1}";
-		  attrsToChange["attack2_action"] = "%{" + values["character_name"] + "|attack2}";
-		  setAttrs(attrsToChange);
+
+// just roll a d6
+ function rollD6() {
+   return Math.floor(Math.random()*6+1);
+ }
+ 
+// 3d6, in order. 
+// Contemplate this on the tree of woe.
+ function rollAbility(ability) {
+   return rollD6()+rollD6()+rollD6();
+ }
+ 
+ function rollSkill(skill) {
+  let rawmod = skill2mod(skill); 
+  let ability = mod2score(rawmod);  
+  getAttrs([skill, ability, rawmod, "power", "featlist", "d20"], function(values) {
+    let featlist = values["featlist"];
+    let abilityScore = Math.floor(1.0*values[ability]);
+    let proficiency = Math.floor(2.0*die2dv(values[skill]));
+    let maxRoll = values[rawmod] + Math.floor(2 * proficiency);
+    let d20 = values["d20"];
+    if(d20 == undefined) {
+      d20 = "";
+      if(proficiency == 0) d20 = "2d20kl1";
+    }
+    let rollString = `&{template:skills} {{name=@{character_name} }} `;
+    rollString    += `{{skill=${skill}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
+    if(d20 > "") {
+      rollString  += ` {{d20=[[ ${d20} ]]}} `;
+      rollString  += ` {{cof=[[ ${rules_dv_levels} ]]}}`;
+    } else {
+      rollString  += ` {{cof=[[ ${rules_cof_levels} ]]}}`;
+    }
+    if(proficiency > 0) {
+      rollString  += ` {{die=@{${skill}}}} {{roll=[[ @{${skill}} ]]}}`;
+      if(featlist.includes("expert-3")) {
+        rollString += ` {{score=@{${ability}}}} {{ability=[[ @{${ability}}}} ]]}} {{proficiency=[[ ${proficiency} ]]}}`
+        rollString += ` {{talent=[[ 0 ]]}} {{total1a=[[ 0 ]]}} {{total1p=[[ 0 ]]}} {{total2=[[ 0 ]]}}`;
+      }
+    }
+    rollString    += ` {{mod=[[ @{${rawmod}} ]]}}`;
+    rollString    += ` {{total=[[ 0 ]]}}`;// {{effects=[[ 0 ]]}}`;
+    console.log(rollString);
+    
+    startRoll(rollString, data => {
+      const results = data.results;
+      const mod = Math.floor(1.0*results.mod.result);
+      const cof = results.cof.result;
+      const roll = (results.roll == undefined) ? 0 : results.roll.result;
+      const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
+      const rollResult = d20 + roll + mod;
+      let talentResult = 0;
+      let abilityResult = 0;
+      let proficiencyResult = 0;
+      let bothResult = 0;
+
+      if(featlist.includes("expert-3")) {
+        if( d20 > 1 && d20 < abilityScore) {
+            abilityResult = abilityScore + roll + mod;
+            talentResult++;
         }
-	});
+        if( roll > 1 && roll < proficiency) {
+            proficiencyResult = d20 + proficiency + mod; 
+            talentResult++;
+        }
+        if(talentResult == 2) {
+            bothResult = abilityScore + proficiency + mod;
+        }
+      }
+      console.log(talentResult);
+      finishRoll(data.rollId, {
+        d20:     String.fromCharCode(64 + d20),  
+        roll:    String.fromCharCode(64 + roll),  
+        talent:  talentResult,
+        total:   rollResult,
+        total1a: abilityResult,
+        total1p: proficiencyResult,
+        total2:  bothResult
+      });
+      console.log(skill + " (" + values[skill] + "+" + mod + "): " + rollResult + " vs " + cof + "(" + results.cof.expression + ")");
+    });
+  });
  }
  
  function rollAttack(attacktype) {
@@ -2061,148 +2259,8 @@
       console.log(rollResult);   
     });
  }
+ 
 
- function rollSkill(skill) {
-
-  getAttrs([skill, "power", "featlist", "d20"], function(values) {
-    let rawmod = skill2mod(skill); 
-    let ability = mod2score(rawmod);  
-    let proficiency = die2dv(values[skill]);
-    let d20 = values["d20"];
-    if(d20 == undefined) d20 = "";
-    if(values["featlist"].includes("expert-3")) power = values["power"];
-
-    let rollString = `&{template:skills} {{name=@{character_name} }} `;
-    rollString    += `{{skill=${skill}}} {{die=@{${skill}}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
-    if(d20 > "") {
-      rollString  += ` {{d20=[[ ${d20} ]]}} `;
-      rollString  += ` {{cof=[[ ?{Difficulty|None,0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|Custom,?{Enter DV}} ]]}}`;
-    } else {
-      rollString  += ` {{cof=[[ ?{Chance of Failure|None,0|Easy,2d4kh1[2]|Average,2d6kh1[3]|Hard,2d8kh1[4]|Extreme,2d10kh1[5]|Legendary,2d12kh1[6]|Custom,?{Enter CoF}} ]]}}`;
-    }
-    if(proficiency == 0)
-      rollString  += ` {{roll=[[ ${untrainedDie} ]]}}`;
-    else
-      rollString  += ` {{roll=[[ @{${skill}} ]]}}`;
-    rollString    += ` {{mod=[[ @{${rawmod}} ]]}}`;
-    rollString    += ` {{total=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
-    console.log(rollString);
-    
-    startRoll(rollString, data => {
-      const results = data.results;
-      const roll = results.roll.result;
-      const mod = results.mod.result;
-      const cof = results.cof.result;
-      const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
-      const rollResult = d20 + roll + 1*mod;
-      let successResult = "";//+" (quality: " + roll + 1*mod + ")";
-      
-      if(cof > 0) {
-        if(rollResult > cof + 5) successResult = "Critical success!";
-        else if(rollResult > cof) successResult = "Success!";
-        else if(d20 == 1 && roll == 1) successResult = "Critical Failure!";
-        else successResult = "Failure!";
-      }
-
-      finishRoll(data.rollId, {
-        d20: String.fromCharCode(d20 + 64),  
-        roll: String.fromCharCode(roll + 64),  
-        total: rollResult,
-        effects: successResult
-      });
-      console.log(skill + " (" + values[skill] + "+" + mod + "): " + rollResult + " vs " + cof + "(" + results.cof.expression + ") - " + successResult);
-    });
-  });
- }
-// */
- function rollD6() {
-   return Math.floor(Math.random()*6+1);
- }
- 
-// 3d6, in order. 
-// Contemplate this on the tree of woe.
- function rollAbility(ability) {
-   return rollD6()+rollD6()+rollD6();
- }
- 
-// converting dice to their corresponding dv bonuses
-// lets us compare them numerically, and return
-// whichever one is bigger.
- function biggerDie(a, b) {
-    if(die2dv(a) >= die2dv(b)) return a;
-    return b;
- }
- 
-// a die adds half its maximum roll size to its saving throw dv,
-// or any other static bonus (such as maximum hit points).
- function die2dv(d) {
-    if(d.length == 0 || d[0] != "d") return 0;
-    return Math.floor(d.substring(1,3)*0.5);
- }
- 
-// B/X ability modifiers are superior to 
-// those used by 3.5e/4e/5e/5.5e/Pathfinder,
-// especially since we aren't using the d20
-// for exploration skill tests.
- function a2mod(a) {
-  if(a==3) return "-3";
-  if(a<6) return "-2";
-  if(a<9) return "-1";
-  if(a==18) return "+3";
-  if(a>15) return "+2";
-  if(a>12) return "+1";
-  return "+0";
- }
- 
-// which ability mod does this save use?
- function save2mod(save) {
-    if(save == "athletics") return "str";
-    if(save == "reflex") return "dex";
-    if(save == "fortitude") return "con";
-    if(save == "deduction") return "int";
-    if(save == "perception") return "wis";
-    if(save == "willpower") return "cha";
-    return "";
- }
- 
-  function skill2mod(skill) {
-    if(skill == "athletics") return "str";
-    if(skill == "reflex" || skill == "stealth" || skill == "finesse" ) return "dex";
-    if(skill == "fortitude") return "con";
-    if(skill == "deduction" || skill == "arcana" || skill == "crafting" || skill == "lore" ) return "int";
-    if(skill == "perception" || skill == "animal-ken" || skill == "nature" || skill == "medicine" ) return "wis";
-    if(skill == "willpower" || skill == "charm" || skill == "wit" ) return "cha";
-    return "";
- }
-
-// which save uses this ability mod?
- function mod2save(mod) {
-    if(mod == "str") return "athletics";
-    if(mod == "dex") return "reflex";
-    if(mod == "con") return "fortitude";
-    if(mod == "int") return "deduction";
-    if(mod == "wis") return "perception";
-    if(mod == "cha") return "willpower";
-    return "";
- }
- 
- // which ability score is this mod from?
- function mod2score(mod) {
-    if(mod == "str") return "strength";
-    if(mod == "dex") return "dexterity";
-    if(mod == "con") return "constitution";
-    if(mod == "int") return "intelligence";
-    if(mod == "wis") return "wisdom";
-    if(mod == "cha") return "charisma";
-    return "";
- }
-//simple regexp tally for how many times
-//one string shows up inside another.
-//primarily used for the skill validator
- function countMatches(str, test) {
-    let regex = new RegExp(test, "g"); 
-    return (str.match(regex ) || []).length;
- }
     
 
 </script>
@@ -2214,15 +2272,13 @@
     <div class="sheet-header">
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
       {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
     </div>
     <div class="sheet-content">
-      {{#subtitle}}<div class="sheet-key">{{subtitle}}</div>{{/subtitle}}
-      {{#roll}}<div class="sheet-value">{{roll}}</div>{{/roll}}
-      {{#allprops() title name subtitle roll desc}}
+      {{#roll}}<div class="sheet-value sheet-fullwidth"><span class="sheet-big">{{roll}}</span></div>{{/roll}}
+      {{#allprops() title name roll desc}}
       <div class="sheet-key">{{key}}</div>
       <div class="sheet-value">{{value}}</div>
-      {{/allprops() title name subtitle roll desc}}
+      {{/allprops() title name roll desc}}
       {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
     </div>
   </div>
@@ -2235,14 +2291,55 @@
       {{#skill}}<div class="sheet-title" data-i18n-dynamic>{{skill}}</div>{{/skill}}
     </div>
     <div class="sheet-content">
-      {{#die}}
       <div class="sheet-value sheet-fullwidth">
-          {{#d20}}<span class="sheet-d20">{{computed::d20}}</span> +{{/d20}}
-          <span class="sheet-{{die}}">{{computed::roll}}</span> {{rawmod}} = <span class="sheet-big sheet-notip">{{computed::total}}</span>
+          {{#d20}}<span class="sheet-d20">{{computed::d20}}</span>{{#die}} + {{/die}}{{/d20}}
+          {{#die}}<span class="sheet-{{die}}">{{computed::roll}}</span>{{/die}} {{rawmod}} = 
+          {{#cof}}
+          {{#rollGreater() computed::total cof}}<span class="sheet-big sheet-notip sheet-green">{{/rollGreater() computed::total cof}}
+          {{#^rollGreater() computed::total cof}}<span class="sheet-big sheet-notip sheet-red">{{/^rollGreater() computed::total cof}}
+          {{/cof}}
+          {{#^cof}}<span class="sheet-big sheet-notip">{{/^cof}}{{computed::total}}</span>
       </div>
-      {{/die}}
+    {{#rollGreater() computed::talent 0}}
+      <div class="sheet-value sheet-fullwidth">
+          <!-- [Use Reliable Talent](`#skillroll #var name={{name}}}} #var skill={{skill}}}} #var rawmod={{rawmod}}}} #var d20=[[{{ability}}]]}} #var die={{die}}}} #var roll=[[{{roll}}]]}} #var total=[[{{ability}}+{{roll}}{{rawmod}}]]}}) -->
+          <i>With Reliable Talent:</i>
+      {{#rollGreater() computed::total1a total}} 
+      </div><div class="sheet-key">
+          <span class="sheet-black sheet-small">{{ability}}</span> + 
+          <span class="sheet-{{die}} sheet-smalldice">{{computed::roll}}</span> {{rawmod}} = 
+      </div><div class="sheet-value">
+          {{#cof}}
+          {{#rollGreater() computed::total1a cof}}<span class="sheet-notip sheet-green sheet-small">{{/rollGreater() computed::total1a cof}}
+          {{#^rollGreater() computed::total1a cof}}<span class="sheet-notip sheet-red sheet-small">{{/^rollGreater() computed::total1a cof}}
+          {{/cof}}
+          {{#^cof}}<span class="sheet-notip sheet-smalldice">{{/^cof}}{{computed::total1a}}</span> (x1)
+        {{/rollGreater() computed::total1a total}}
+        {{#rollGreater() computed::total1p total}}
+      </div><div class="sheet-key">
+          {{#d20}}<span class="sheet-d20 sheet-smalldice">{{computed::d20}}</span>{{#die}} + {{/die}}{{/d20}}
+          <span class="sheet-black sheet-small">{{proficiency}}</span> {{rawmod}} = 
+      </div><div class="sheet-value">
+          {{#cof}}
+          {{#rollGreater() computed::total1p cof}}<span class="sheet-notip sheet-green sheet-small">{{/rollGreater() computed::total1p cof}}
+          {{#^rollGreater() computed::total1p cof}}<span class="sheet-notip sheet-red sheet-small">{{/^rollGreater() computed::total1p cof}}
+          {{/cof}}
+          {{#^cof}}<span class="sheet-notip sheet-small">{{/^cof}}{{computed::total1p}}</span> (x1)
+        {{/rollGreater() computed::total1p total}}
+        {{#rollGreater() computed::total2 total}}
+      </div><div class="sheet-key">
+          <span class="sheet-black sheet-small">{{ability}}</span> + 
+          <span class="sheet-black sheet-small">{{proficiency}}</span> {{rawmod}} = 
+      </div><div class="sheet-value">
+          {{#cof}}
+          {{#rollGreater() computed::total2 cof}}<span class="sheet-notip sheet-green sheet-small">{{/rollGreater() computed::total2 cof}}
+          {{#^rollGreater() computed::total2 cof}}<span class="sheet-notip sheet-red sheet-small">{{/^rollGreater() computed::total2 cof}}
+          {{/cof}}
+          {{#^cof}}<span class="sheet-notip sheet-small">{{/^cof}}{{computed::total2}}</span> (x2)
+        {{/rollGreater() computed::total2 total}}
+      </div>
+    {{/rollGreater() computed::talent 0}}
     </div>
-    {{#effects}}<div class="sheet-info sheet-notip">{{computed::effects}}</div>{{/effects}}
     {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
   </div>
 </rolltemplate>
@@ -2254,14 +2351,18 @@
       {{#skill}}<div class="sheet-title" data-i18n-dynamic>{{skill}}</div>{{/skill}}
     </div>
     <div class="sheet-content">
-      {{#die}}
       <div class="sheet-value sheet-fullwidth">
-          {{#d20}}<span class="sheet-d20">{{computed::d20}}</span> +{{/d20}}
-          <span class="sheet-{{die}}">{{computed::roll}}</span> {{rawmod}} = <span class="sheet-big sheet-notip">{{computed::total}}</span>
+          {{#d20}}
+          <span class="sheet-d20">^{ d20.{{d20}} }</span>
+          {{#die}} + {{/die}}{{/d20}}
+          {{#die}}<span class="sheet-{{die}}">{{roll}}</span>{{/die}} {{rawmod}} = 
+          {{#cof}}
+          {{#rollGreater() computed::total cof}}<span class="sheet-big sheet-notip sheet-green">{{/rollGreater() computed::total cof}}
+          {{#^rollGreater() computed::total cof}}<span class="sheet-big sheet-notip sheet-red">{{/^rollGreater() computed::total cof}}
+          {{/cof}}
+          {{#^cof}}<span class="sheet-big sheet-notip">{{/^cof}}{{computed::total}}</span>
       </div>
-      {{/die}}
     </div>
-    {{#effects}}<div class="sheet-info sheet-notip">{{computed::effects}}</div>{{/effects}}
     {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
   </div>
 </rolltemplate>
@@ -2301,7 +2402,7 @@
     <div class="sheet-info sheet-notip">{{computed::effects}}</div>
     {{#rollGreater() computed::hit 0}} 
     <div class="sheet-content">
-      <div class="sheet-key">Damage ({{#rollGreater() computed::bonusdmg 0}}{{computed::bonusdmg}}+{{/rollGreater() computed::bonusdmg 0}}{{dmg}}):</div>
+      <div class="sheet-key">Damage ({{#rollGreater() computed::bonusdmg 0}}<span class="sheet-{{die}} smalldice">{{computed::roll}}</span>+{{/rollGreater() computed::bonusdmg 0}}{{dmg}}):</div>
       <div class="sheet-value">{{computed::damage}}</div>
     </div>
     {{/rollGreater() computed::hit 0}} 
