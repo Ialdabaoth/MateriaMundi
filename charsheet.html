@@ -416,6 +416,16 @@
   </section>
 
   <section class="actions f-col nowrap">
+      
+    <input type="hidden" name="attr_power_max" class="power-max" >
+    <div class="f-row nowrap show-power">
+    <label class="ability"><span name="attr_powername" data-i18n-dynamic ></span></label>
+    <span class="blockbox">
+        <input class="bigbox" type="text" name="attr_power">
+        <span style="font-size: 18px; font-style: bold;"><b>/</b></span>
+        <input class="bigbox" readonly name="attr_power_max"></span>
+    </div>    
+
    <input type="hidden" name="attr_situation" class="situation-toggle">
    <div class="situationPanel">
    <div class="panelHeader">
@@ -734,14 +744,7 @@
       </div panel-react>
       
       <div class="panel-feat">
-        <input type="hidden" name="attr_power_max" class="power-max" >
-        <div class="f-row nowrap show-power">
-        <label class="ability"><span name="attr_powername" data-i18n-dynamic ></span></label>
-        <span class="blockbox">
-            <input class="bigbox" type="text" name="attr_power">
-            <span style="font-size: 18px; font-style: bold;"><b>/</b></span>
-            <input class="bigbox" readonly name="attr_power_max"></span>
-        </div>    
+
       </div panel-feat>
     </div actionPanel>
    </div panel-fight>
@@ -2068,15 +2071,18 @@
   let rawmod = skill2mod(skill); 
   let ability = mod2score(rawmod);  
   getAttrs([skill, ability, rawmod, "power", "featlist", "d20"], function(values) {
-    let featlist = values["featlist"];
-    let abilityScore = Math.floor(1.0*values[ability]);
-    let proficiency = Math.floor(2.0*die2dv(values[skill]));
-    let maxRoll = values[rawmod] + Math.floor(2 * proficiency);
+    const featlist = values["featlist"];
+
+    const die = values[skill];
+    const proficiency = Math.floor(2.0*die2dv(die));
+
     let d20 = values["d20"];
     if(d20 == undefined) {
       d20 = "";
       if(proficiency == 0) d20 = "2d20kl1";
     }
+    const abilityScore = Math.floor(1.0*values[ability]);
+
     let rollString = `&{template:skills} {{name=@{character_name} }} `;
     rollString    += `{{skill=${skill}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
     if(d20 > "") {
@@ -2098,11 +2104,13 @@
     
     startRoll(rollString, data => {
       const results = data.results;
+      
       const mod = Math.floor(1.0*results.mod.result);
       const cof = results.cof.result;
       const roll = (results.roll == undefined) ? 0 : results.roll.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
       const rollResult = d20 + roll + mod;
+      
       let talentResult = 0;
       let abilityResult = 0;
       let proficiencyResult = 0;
@@ -2123,8 +2131,8 @@
       }
       console.log(talentResult);
       finishRoll(data.rollId, {
-        d20:     String.fromCharCode(64 + d20),  
-        roll:    String.fromCharCode(64 + roll),  
+        d20:     die2string(d20),  
+        roll:    die2string(roll, die),  
         talent:  talentResult,
         total:   rollResult,
         total1a: abilityResult,
@@ -2141,7 +2149,7 @@
     let weapon = values["weapon1"];
     let accuracy = values["accuracy1"];  
     let damage = values["damage1"];
-    let attack = values["attack"];  
+    let attackDie = values["attack"];  
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
 
@@ -2189,8 +2197,8 @@
         }
       }
       finishRoll(data.rollId, {
-        d20: String.fromCharCode(d20 + 64),  
-        roll: String.fromCharCode(roll + 64),  
+        d20: die2string(d20),  
+        roll: die2string(roll, attackDie),  
         total: rollResult,
         damage: damageResult,
         bonusdmg: bonusDamage,
@@ -2214,7 +2222,7 @@
       const rollResult = results.defense.result + results.reflex.result;
       let effectsResult = "";
       finishRoll(data.rollId, {
-        reflex: String.fromCharCode(results.reflex.result + 64),  
+        reflex: die2string(results.reflex.result),  
         total: rollResult,
         effects: effectsResult
       });
@@ -2232,7 +2240,7 @@
       const results = data.results;
       const rollResult = results.defense.result + results.parry.result + results.mod.result;
       finishRoll(data.rollId, {
-        parry: String.fromCharCode(results.parry.result + 64),  
+        parry: die2string(results.parry.result),  
         total: rollResult
       });
       console.log(rollResult);   
@@ -2251,8 +2259,8 @@
       const higher = (results.reflex.result > results.parry.result ? results.reflex.result : results.parry.result);
       let effectsResult = "Reduce damage by " + higher; 
       finishRoll(data.rollId, {
-        reflex: String.fromCharCode(results.reflex.result + 64),  
-        parry: String.fromCharCode(results.parry.result + 64),  
+        reflex: die2string(results.reflex.result),  
+        parry: die2string(results.parry.result),  
         total: rollResult,
         effects: effectsResult
       });
@@ -2260,7 +2268,10 @@
     });
  }
  
-
+function die2string(roll, die = "") {
+    // use the '10' face instead of the '0' face on the d10 die font
+    return String.fromCharCode(64 + roll + ((die == "d10" && roll == 10) ? 1: 0));
+}
     
 
 </script>
@@ -2287,8 +2298,8 @@
 <rolltemplate class="sheet-rolltemplate-skills">
   <div class="sheet-container">
     <div class="sheet-header">
-      {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#skill}}<div class="sheet-title" data-i18n-dynamic>{{skill}}</div>{{/skill}}
+      <div class="sheet-name">{{name}}</div>
+      <div class="sheet-title"><span data-i18n-dynamic>{{skill}}</span>{{#cof}} (vs {{cof}}){{/cof}}</div>
     </div>
     <div class="sheet-content">
       <div class="sheet-value sheet-fullwidth">
