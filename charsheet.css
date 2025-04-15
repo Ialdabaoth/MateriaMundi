@@ -227,6 +227,7 @@ div.dialog.largedialog.characterviewer,
   --save-bg-dark: #30407f;
   --skill-bg-dark: #307f40;
   --attack-bg-dark: #7f3030;
+  --header-bg-dark: #706050;
   
   --font-text: "Libre Baskerville";
   --font-number: "Arial";
@@ -882,6 +883,7 @@ end of select boxes */
 } .charsheet input.wounds {
   text-align: center;
   margin: 1px 1px;
+  padding: 0px 2px;
   width: 20px;
   height: 18px;
   font-family: var(--font-number);
@@ -1239,12 +1241,14 @@ select.ability-score {
     line-height: 12px;
 }
 
-.charsheet .die-controller[value="2d4kl1"] ~ button.proficiency::before,
-.charsheet .die-controller[value="2d4kl1"] ~ button.reaction::before{
-    font-family: 'dicefontd4';
-    font-size: 24px;
+.charsheet .die-controller[value=""] ~ button.proficiency::before,
+.charsheet .die-controller[value=""] ~ button.reaction::before,
+.charsheet .die-controller:not([value]) ~ button.proficiency::before,
+.charsheet .die-controller:not([value]) ~ button.reaction::before {
+    font-family: 'dicefontd20';
+    font-size: 20px;
     content: '0 ';
-    line-height: 12px;
+    line-height: 10px;
 }.charsheet .die-controller[value="d4"] ~ button.proficiency::before,
 .charsheet .die-controller[value="d4"] ~ button.reaction::before{
     font-family: 'dicefontd4';
@@ -1289,7 +1293,8 @@ select.ability-score {
    display: grid;
 }
 .charsheet .hidden {
-   display: none;
+   display: none !important;
+   pointer-events: none !important;
 }
 
 .charsheet section.party-header {
@@ -1418,7 +1423,7 @@ input.party-char-dv {
 .sheet-rolltemplate-skills .sheet-header,
 .sheet-rolltemplate-reactions .sheet-header,
 .sheet-rolltemplate-attacks .sheet-header {
-  background: var(--header-bg);
+  background: var(--header-bg-dark);
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
   font-family: var(--font-number);
@@ -1670,6 +1675,37 @@ input.party-char-dv {
   border: 0px transparent;
 }
 
+.sheet-rolltemplate-skills .sheet-smalldice span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-smalldice span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-smalldice span.inlinerollresult {
+  font-size: 2.0em;
+}
+
+.sheet-rolltemplate-skills .sheet-reddice span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-reddice span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-reddice span.inlinerollresult {
+  color: var(--attack-color);
+}
+
+.sheet-rolltemplate-skills .sheet-bluedice span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-bluedice span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-bluedice span.inlinerollresult {
+  color: var(--save-color);
+}
+
+.sheet-rolltemplate-skills .sheet-greendice span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-greendice span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-greendice span.inlinerollresult {
+  color: var(--skill-color);
+}
+
+.sheet-rolltemplate-skills .sheet-greydice span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-greydice span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-greydice span.inlinerollresult {
+  color: var(--disabled-color);
+}
+
+.sheet-rolltemplate-rolls .sheet-big span.inlinerollresult,
 .sheet-rolltemplate-skills .sheet-big span.inlinerollresult,
 .sheet-rolltemplate-saves .sheet-big span.inlinerollresult,
 .sheet-rolltemplate-reactions .sheet-big span.inlinerollresult,
@@ -1677,6 +1713,7 @@ input.party-char-dv {
   text-align: center;
   vertical-align: middle;
   margin: 1px 1px;
+  aspect-ratio: 1 / 1;
   font-family: var(--font-number);
   font-style: bold;
   font-size: 2.0em;
@@ -1684,6 +1721,63 @@ input.party-char-dv {
   color: var(--text-color);
   border-radius: 15px;
   border: 2px solid black;
+}
+
+.sheet-rolltemplate-rolls .sheet-small span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-small span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-small span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-small span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-small span.inlinerollresult {
+  text-align: center;
+  vertical-align: middle;
+  margin: 1px 1px;
+  aspect-ratio: 1 / 1;
+  font-family: var(--font-number);
+  font-style: bold;
+  font-size: 1.0em;
+  line-height: 1.1em;
+  color: var(--text-color);
+  border-radius: 10px;
+  border: 2px solid black;
+}
+.sheet-rolltemplate-rolls .sheet-green span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-green span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-green span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-green span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-green span.inlinerollresult {
+  color: var(--skill-color);
+  background-color: var(--skill-bg);
+  border: 2px solid var(--skill-color);
+}
+
+.sheet-rolltemplate-rolls .sheet-red span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-red span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-red span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-red span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-red span.inlinerollresult {
+  color: var(--attack-color);
+  background-color: var(--attack-bg);
+  border: 2px solid var(--attack-color);
+}
+
+.sheet-rolltemplate-rolls .sheet-black span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-black span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-black span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-black span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-black span.inlinerollresult {
+  color: var(--input-bg);
+  background-color: var(--text-color);
+  border: 2px solid var(--text-color);
+}
+
+.sheet-rolltemplate-rolls .sheet-grey span.inlinerollresult,
+.sheet-rolltemplate-skills .sheet-grey span.inlinerollresult,
+.sheet-rolltemplate-saves .sheet-grey span.inlinerollresult,
+.sheet-rolltemplate-reactions .sheet-grey span.inlinerollresult,
+.sheet-rolltemplate-attacks .sheet-grey span.inlinerollresult {
+  color: var(--input-bg);
+  background-color: var(--disabled-color);
+  border: 2px solid var(--disabled-color);
 }
 
 .sheet-rolltemplate-reactions .sheet-dv-med span.inlinerollresult,
