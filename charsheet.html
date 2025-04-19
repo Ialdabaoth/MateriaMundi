@@ -1,4 +1,4 @@
-<input name="attr_sheet_type" type="hidden" class="sheet-type" value="Character">
+<input type="hidden" class="sheet-type" name="attr_class">
 
 <!--========[ Party Management sheet ]========-->
 
@@ -11,7 +11,7 @@
       <label class="header-label" data-i18n="party-situation">Party's Situation:</label>
       <span><select name="attr_situation">
         <option data-i18n="tab-prepare" selected>Prepare</option>          
-        <option data-i18n="tab-travel">Travel</option>          
+        <option data-i18n="tsb-travel">Travel</option>          
         <option data-i18n="tab-explore">Explore</option>          
         <option data-i18n="tab-fight">Fight</option>          
       </select></span>
@@ -396,10 +396,11 @@
         <option data-i18n="cleric" value="cleric">Cleric</option>
         <option data-i18n="druid" value="druid">Druid</option>
       </select>
-      <span class="character-class" name="attr_class" data-i18n-dynamic></span>
+      <span class="show-class" name="attr_class" data-i18n-dynamic></span>
     </span>
     <span>
       <select name="attr_level" class="character-level">
+          <option value="-1">&#x1F3B2;</option>
           <option value="0">&#x1F513;</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -489,35 +490,10 @@
       <span>
         <button class="action" type="action" name="act_rest"><span data-i18n="rest">Rest</span></button>
       </span>
-      <label class="description" data-i18n="rest-description">Resting spends one <b>hit die</b> to heal hit points and recover all <span name="attr_powername"></span>.<br>
+      <label class="description" data-i18n="rest-description">Resting lets you heal hit points and recover all <span name="attr_powername"></span>.<br>
       </label>
     </div> 
-    <input type="hidden" name="attr_level" class="character-level" >
-    <div class="f-row f-center">
-      <span class="rollbox"><input type="hidden" class="die-controller" name="attr_hd1_max">
-        <button class="proficiency" type="roll" name="roll_hd1" 
-          value="&{template:rolls} {{title=Hit Die (@{hd1}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd1_max"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l4"><input type="hidden" class="die-controller" name="attr_hd2_max">
-        <button class="proficiency req-l4" type="roll" name="roll_hd2" 
-          value="&{template:rolls} {{title=Hit Die (@{hd2}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd2_max"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l7"><input type="hidden" class="die-controller" name="attr_hd3_max">
-        <button class="proficiency req-l7" type="roll" name="roll_hd3" 
-          value="&{template:rolls} {{title=Hit Die (@{hd3}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd3_max"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l10"><input type="hidden" class="die-controller" name="attr_hd4_max">
-        <button class="proficiency req-l10" type="roll" name="roll_hd4" 
-          value="&{template:rolls} {{title=Hit Die (@{hd4}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd4_max"></span></label>
-      </span>
-    </div>   </div panel-travel>
+   </div panel-travel>
    <div class="panel-explore">
     <div class="f-row">
       <span>
@@ -537,35 +513,9 @@
       <span>
         <button class="action" type="action" name="act_rest"><span data-i18n="rest">Rest</span></button>
       </span>
-      <label class="description" data-i18n="rest-description">Resting spends one <b>hit die</b> to heal hit points and recover all <span name="attr_powername"></span>.<br>
+      <label class="description" data-i18n="rest-description">Resting lets you heal hit points and recover all <span name="attr_powername"></span>.<br>
       </label>
     </div> 
-    <input type="hidden" name="attr_level" class="character-level" >
-    <div class="f-row f-center">
-      <span class="rollbox"><input type="hidden" class="die-controller" name="attr_hd1_max">
-        <button class="proficiency" type="roll" name="roll_hd1" 
-          value="&{template:rolls} {{title=Hit Die (@{hd1}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd1}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd1"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l4"><input type="hidden" class="die-controller" name="attr_hd2_max">
-        <button class="proficiency req-l4" type="roll" name="roll_hd2" 
-          value="&{template:rolls} {{title=Hit Die (@{hd2}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd2}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd2"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l7"><input type="hidden" class="die-controller" name="attr_hd3_max">
-        <button class="proficiency req-l7" type="roll" name="roll_hd3" 
-          value="&{template:rolls} {{title=Hit Die (@{hd3}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd3}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd3"></span></label>
-      </span>
-      &nbsp;
-      <span class="rollbox show-l10"><input type="hidden" class="die-controller" name="attr_hd4_max">
-        <button class="proficiency req-l10" type="roll" name="roll_hd4" 
-          value="&{template:rolls} {{title=Hit Die (@{hd4}@{con})}} {{name=@{character_name} }} {{roll= [[{1d1,@{hd4}@{con}}kh1[hit points] ]]}}">
-        </button><label class="proficiency-die"><span name="attr_hd4"></span></label>
-      </span>
-    </div>
    </div panel-explore>
  
    <div class="panel-fight">
@@ -907,6 +857,10 @@
       <label class="action nowrap"><span data-i18n="fatigue">Fatigue</span>+<span data-i18n="wounds">Wounds</span>:</label>
       <label class="action nowrap f-right"><input name="attr_fatigue" type="text" class="wounds alt">+<input name="attr_wounds" type="text" class="wounds"></label>      
     </div>
+    <div class="f-row nowrap">
+      <label class="action nowrap"><span data-i18n="condition">Condition</span>:</label>
+      <label class="action nowrap f-right"><input name="attr_condition" type="text" class="condition"></label>      
+    </div>
   </section>
 
   <section class="int f-col nowrap">
@@ -969,7 +923,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill lore"><span class="skill-trainingbox">
-        <button type="action" class="train-skill skill lore" name="act_train-lore">+</button>
+        <button type="action" class="train-skill" name="act_train-lore">+</button>
       </span>&nbsp;<span data-i18n="lore">Lore</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_lore">
         <button class="proficiency skill lore" type="action" name="act_roll-lore">
@@ -1017,7 +971,7 @@
     <hr class="space">
     <div class="f-row nowrap">
       <label class="skill animal-ken"><span class="skill-trainingbox">
-        <button type="action" class="train-skill skill" name="act_train-animal-ken">+</button>
+        <button type="action" class="train-skill" name="act_train-animal-ken">+</button>
       </span>&nbsp;<span data-i18n="animal-ken">Animal Ken</span></label>
       <span class="rollbox"><input type="hidden" class="die-controller" name="attr_animal-ken">
         <button class="proficiency skill animal-ken" type="action" name="act_roll-animal-ken">
@@ -1241,6 +1195,18 @@
 
 
 /*===== auto-computing fields =====*/
+    on("sheet:opened", function() {
+      initialize();
+      validate();
+    });
+
+    on("change:race", function(eventInfo) { getAttrs(["race"], function(values) { setAttrs({ "race_max": raceData[values["race"]] }); validate(); }); });
+    on("change:class", function(eventInfo) { getAttrs(["class"], function(values) { setClass(values["class"]); validate(); }); });
+    on("change:level", function(eventInfo) { validate(); });
+    
+    on(`change:fatigue`, function(eventInfo) { recalcCondition(); });
+    on(`change:wounds`, function(eventInfo) { recalcCondition(); });
+
     const abilities = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
     abilities.forEach(ability => { on(`change:${ability}`, function() { updatemod(ability); }); });
  
@@ -1265,38 +1231,26 @@
     on(`clicked:roll-parry`, function(eventInfo) { rollParry(); });
     on(`clicked:roll-deflect`, function(eventInfo) { rollDeflect(); });
     
-    on("change:character_name", function(eventInfo) { setupActions(); });
-    on("change:race", function(eventInfo) { setupRace(); });
-    on("change:class", function(eventInfo) { setupClass(); });
-    on("change:level", function(eventInfo) { validate(); });
-    on(`change:fatigue`, function(eventInfo) { recalcWounds() });
-    on(`change:wounds`, function(eventInfo) { recalcWounds() });
-    
-    on("sheet:opened", function() {
-      initialize();    
-      getAttrs(["sheet_type"], function(values) {
-        let sheetType = String(values["sheet_type"]).toLowerCase();
-        if(sheetType.includes("character")) {
-          setupClass();
-          validate();
-          abilities.forEach(ability => { updatemod(ability); });
-          saves.forEach(save => { updatedv(save); });
-        }
-      });
-    });
- 
-    const levelUpData = ["class", "class_max", "level", "featlist", "constitution", "con", "hd1", "hd2", "hd3", "hd4", 
-                        "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
-                        "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
-
+    const races = ["human", "dwarf", "elf", "halfling", "goblin", "lizardfolk", "genasi", "satyr", "centaur", "hen-ge"];
     var raceTable = [];
     var raceTable2 = [];
     var raceData = {};
+    
+    const classes = ["knight", "martial-artist", "berserker", "thief", "alchemist", "ranger", "bard", "wizard", "druid", "cleric"];
     var classData = {};
+    var classPR = [];
+    var classHP = [];
 
+    const levelUpData = ["character_name", "class", "class_max", "level", "featlist",
+                        "str", "dex", "con", "int", "wis", "cha", "constitution", "hitpoints",
+                        "l1feat", "l2feat", "l3feat", "l4feat", "l5feat", "l6feat", "l7feat", "l8feat", "l9feat", "l10feat",
+                        "l1feat_max", "l2feat_max", "l3feat_max", "l4feat_max", "l5feat_max", "l6feat_max", "l7feat_max", "l8feat_max", "l9feat_max", "l10feat_max" ];
     const untrained = "", untrainedDie = "0";
-    const rules_dv_levels = "?{Difficulty|None,0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|Custom,?{Enter DV}}";
-    const rules_cof_levels = "?{Chance of Failure|None,0|Easy,2|Average,4|Hard,6|Extreme,8|Legendary,10|Custom,?{Enter CoF}}";//"?{Chance of Failure|None,0|Easy,2d4kh1[2]|Average,2d6kh1[3]|Hard,2d8kh1[4]|Extreme,2d10kh1[5]|Legendary,2d12kh1[6]|Custom,?{Enter CoF}}";
+    const rules_dv_levels = "?{Difficulty|(None),0|Easy,10|Average,15|Hard,20|Extreme,25|Legendary,30|(Initiative),-1|(Custom),?{Enter DV}}";
+    const rules_cof_levels = "?{Chance of Failure|(None),0|Easy,2|Average,4|Hard,6|Extreme,8|Legendary,10|(Custom),?{Enter CoF}}";//"?{Chance of Failure|None,0|Easy,2d4kh1[2]|Average,2d6kh1[3]|Hard,2d8kh1[4]|Extreme,2d10kh1[5]|Legendary,2d12kh1[6]|Custom,?{Enter CoF}}";
+    const rules_armor_dv = "@{target|defense}"
+    const rules_ahysical_dv = "?{Target|vs Reflex,@{target|reflex_dv}|vs Athletics,@{target|athletics_dv}|vs Fortitude,@{target|fortitude_dv}|(Custom),?{Enter DV}}"
+    const rules_psychic_dv = "?{Target|vs Perception,@{target|perception}|vs Willpower,@{target|willpower}|vs Deduction,@{target|deduction}|(Custom),?{Enter DV} }"
 
     function initialize() {
         console.log("---=== initializing race and class data ===---");
@@ -1308,12 +1262,12 @@
         raceData["dwarf"] = "Con, Str";
         raceData["elf"] = "Dex, Wis";
         raceData["halfling"] = "Dex, Cha";
-        raceData["hen-ge"] = "none";
         raceData["goblin"] = "Dex, Con";
         raceData["lizardfolk"] = "Dex, Str";
-        raceData["centaur"] = "Str, Wis";
+        raceData["genasi"] = "Con, Int";
         raceData["satyr"] = "Cha, Wis";
-        raceData["genasi"] = "Con, Wis";
+        raceData["centaur"] = "Str, Wis";
+        raceData["hen-ge"] = "none";
 
         raceTable[1] = "human";
         raceTable[2] = "human";
@@ -1347,23 +1301,21 @@
         raceTable2[9] = "genasi";
         raceTable2[10] = "genasi";
         raceTable2[11] = "genasi";
-        raceTable2[12] = "hen-ge";
-        raceTable2[13] = "hen-ge";
-        raceTable2[14] = "hen-ge";
-        raceTable2[15] = "satyr";
-        raceTable2[16] = "satyr";
-        raceTable2[17] = "satyr";
-        raceTable2[18] = "centaur";
-        raceTable2[19] = "centaur";
-        raceTable2[20] = "centaur";
+        raceTable2[12] = "satyr";
+        raceTable2[13] = "satyr";
+        raceTable2[14] = "satyr";
+        raceTable2[15] = "centaur";
+        raceTable2[16] = "centaur";
+        raceTable2[17] = "centaur";
+        raceTable2[18] = "hen-ge";
+        raceTable2[19] = "hen-ge";
+        raceTable2[20] = "hen-ge";
         
         
         var loadClass = {};
+        loadClass["class"] = "knight";
         loadClass["class_max"] = "knight";
-        loadClass["hd1"] = "d10";
-        loadClass["hd2"] = "d10";
-        loadClass["hd3"] = "d10";
-        loadClass["hd4"] = "d10";
+        loadClass["hitpoints"] = "5";
         loadClass["l1feat"] = "warrior-1, knight-1";
         loadClass["l2feat"] = "warrior-2";
         loadClass["l3feat"] = "knight-3";
@@ -1376,35 +1328,41 @@
         loadClass["l10feat"] = "warrior-10";
         loadClass["l1feat_max"] = "athletics, fortitude, animal-ken";
         loadClass["l2feat_max"] = "athletics, fortitude, reflex";
-        loadClass["l3feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l3feat_max"] = "choose(any)";
         loadClass["l4feat_max"] = "choose(any)";
-        loadClass["l5feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
-        loadClass["l6feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
-        loadClass["l7feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l5feat_max"] = "choose(any)";
+        loadClass["l6feat_max"] = "choose(any)";
+        loadClass["l7feat_max"] = "choose(any)";
         loadClass["l8feat_max"] = "choose(any)";
-        loadClass["l9feat_max"] = "choose(athletics, fortitude, reflex, animal-ken, perception, willpower)";
+        loadClass["l9feat_max"] = "choose(any)";
         loadClass["l10feat_max"] = "choose(any)";
         classData["knight"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["knight"] = "con";
+        classHP["knight"] = 5;
 
+        loadClass["class"] = "martial-artist";
         loadClass["class_max"] = "martial-artist";
         loadClass["l1feat"] = "warrior-1, martial-artist-1";
         loadClass["l3feat"] = "martial-artist-3";
         loadClass["l6feat"] = "martial-artist-6";
         loadClass["l1feat_max"] = "athletics, reflex, perception";
         classData["martial-artist"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["martial-artist"] = "dex";
+        classHP["martial-artist"] = 5;
         
+        loadClass["class"] = "berserker";
         loadClass["class_max"] = "berserker";
         loadClass["l1feat"] = "warrior-1, berserker-1";
         loadClass["l3feat"] = "berserker-3";
         loadClass["l6feat"] = "berserker-6";
         loadClass["l1feat_max"] = "athletics, reflex, fortitude";
         classData["berserker"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["berserker"] = "str";
+        classHP["berserker"] = 5;
         
+        loadClass["class"] = "thief";
         loadClass["class_max"] = "thief";
-        loadClass["hd1"] = "d8";
-        loadClass["hd2"] = "d8";
-        loadClass["hd3"] = "d8";
-        loadClass["hd4"] = "d8";
+        loadClass["hitpoints"] = "4";
         loadClass["l1feat"] = "expert-1, thief-1";
         loadClass["l2feat"] = "thief-2";
         loadClass["l3feat"] = "expert-3";
@@ -1426,7 +1384,10 @@
         loadClass["l9feat_max"] = "choose(any), choose(any)";
         loadClass["l10feat_max"] = "choose(any), choose(any)";
         classData["thief"] = JSON.parse(JSON.stringify(loadClass));
-
+        classPR["thief"] = "dex";
+        classHP["thief"] = 4;
+        
+        loadClass["class"] = "alchemist";
         loadClass["class_max"] = "alchemist";
         loadClass["l1feat"] = "expert-1, alchemist-1";
         loadClass["l2feat"] = "alchemist-2";
@@ -1435,7 +1396,10 @@
         loadClass["l9feat"] = "alchemist-9";
         loadClass["l1feat_max"] = "arcana, crafting, finesse, medicine, choose(arcana, crafting, finesse, medicine)";
         classData["alchemist"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["alchemist"] = "int";
+        classHP["alchemist"] = 4;
 
+        loadClass["class"] = "ranger";
         loadClass["class_max"] = "ranger";
         loadClass["l1feat"] = "expert-1, ranger-1";
         loadClass["l2feat"] = "ranger-2";
@@ -1444,7 +1408,10 @@
         loadClass["l9feat"] = "ranger-9";
         loadClass["l1feat_max"] = "nature, animal-ken, stealth, perception,  choose(nature, animal-ken, stealth, perception)";
         classData["ranger"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["ranger"] = "wis";
+        classHP["ranger"] = 4;
 
+        loadClass["class"] = "bard";
         loadClass["class_max"] = "bard";
         loadClass["l1feat"] = "expert-1, bard-1";
         loadClass["l2feat"] = "bard-2";
@@ -1453,7 +1420,10 @@
         loadClass["l9feat"] = "bard-9";
         loadClass["l1feat_max"] = "charm, wit, finesse, lore, choose(charm, wit, finesse, lore)";
         classData["bard"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["bard"] = "cha";
+        classHP["bard"] = 4;
 
+        loadClass["class"] = "druid";
         loadClass["class_max"] = "druid";
         loadClass["l1feat"] = "druid-1";
         loadClass["l2feat"] = "druid-2";
@@ -1466,22 +1436,22 @@
         loadClass["l9feat"] = "druid-9";
         loadClass["l10feat"] = "druid-10";
         loadClass["l1feat_max"] = "nature, animal-ken";
-        loadClass["l2feat_max"] = "choose(willpower, fortitude, lore, medicine, perception)";
+        loadClass["l2feat_max"] = "choose(any)";
         loadClass["l3feat_max"] = "choose(nature, animal-ken)";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "choose(nature, animal-ken)";
-        loadClass["l6feat_max"] = "choose(nature, animal-ken, willpower, fortitude, lore, medicine, perception)";
+        loadClass["l6feat_max"] = "choose(any)";
         loadClass["l7feat_max"] = "choose(nature, animal-ken)";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "choose(nature, animal-ken)";
-        loadClass["l10feat_max"] = "choose(nature, animal-ken, willpower, fortitude, lore, medicine, perception)";
+        loadClass["l10feat_max"] = "choose(any)";
         classData["druid"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["druid"] = "wis";
+        classHP["druid"] = 4;
         
+        loadClass["class"] = "wizard";
         loadClass["class_max"] = "wizard";
-        loadClass["hd1"] = "d4";
-        loadClass["hd2"] = "d4";
-        loadClass["hd3"] = "d4";
-        loadClass["hd4"] = "d4";
+        loadClass["hitpoints"] = "2";
         loadClass["l1feat"] = "wizard-1";
         loadClass["l2feat"] = "wizard-2";
         loadClass["l3feat"] = "wizard-3";
@@ -1493,19 +1463,22 @@
         loadClass["l9feat"] = "wizard-9";
         loadClass["l10feat"] = "wizard-10";
         loadClass["l1feat_max"] = "arcana, deduction";
-        loadClass["l2feat_max"] = "choose(willpower, lore, finesse, perception)";
+        loadClass["l2feat_max"] = "choose(any)";
         loadClass["l3feat_max"] = "arcana";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "arcana";
-        loadClass["l6feat_max"] = "choose(deduction, willpower, lore, finesse, perception)";
+        loadClass["l6feat_max"] = "choose(any)";
         loadClass["l7feat_max"] = "arcana";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "arcana";
-        loadClass["l10feat_max"] = "choose(deduction, willpower, lore, finesse, perception)";
+        loadClass["l10feat_max"] = "choose(any)";
         classData["wizard"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["wizard"] = "int";
+        classHP["wizard"] = 2;
 
-
+        loadClass["class"] = "cleric";
         loadClass["class_max"] = "cleric";
+        loadClass["hitpoints"] = "3";
         loadClass["l1feat"] = "cleric-1";
         loadClass["l2feat"] = "cleric-2";
         loadClass["l3feat"] = "cleric-3";
@@ -1517,53 +1490,120 @@
         loadClass["l9feat"] = "cleric-9";
         loadClass["l10feat"] = "cleric-10";
         loadClass["l1feat_max"] = "willpower, perception";
-        loadClass["l2feat_max"] = "choose(charm, fortitude, lore, medicine)";
+        loadClass["l2feat_max"] = "choose(any)";
         loadClass["l3feat_max"] = "willpower, choose(perception, charm, fortitude, lore, medicine, arcana, athletics, deduction, nature, reflex)";
         loadClass["l4feat_max"] = "choose(any)";
         loadClass["l5feat_max"] = "willpower";
-        loadClass["l6feat_max"] = "choose(perception, charm, fortitude, lore, medicine, *domain)";
+        loadClass["l6feat_max"] = "choose(any)";
         loadClass["l7feat_max"] = "willpower";
         loadClass["l8feat_max"] = "choose(any)";
         loadClass["l9feat_max"] = "willpower";
-        loadClass["l10feat_max"] = "choose(perception, charm, fortitude, lore, medicine, *domain)";
+        loadClass["l10feat_max"] = "choose(any)";
         classData["cleric"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["cleric"] = "cha";
+        classHP["cleric"] = 3;
+      
     }
     
-    function setupRace() {
-        getAttrs(["race"], function(values) {
-            setAttrs({ "race_max": raceData[values["race"]] });
-        });
-        validate();
-    }
-    
-    function setupClass() {
-        getAttrs(levelUpData, function(values) {
-            if(values["featlist"]==undefined) {
-                console.log("---=== NEW CHARACTER DETECTED ===---");
-                if(values["class"]==undefined) {
-                    console.log("---=== NO CLASS CHOSEN ===---");
+    function filterClasses(values) {
+        let qualifiedClasses = [];
+        let valid = false;
+        classes.forEach(className => {
+            const mod = Math.floor(1.0*values[classPR[className]]);
+            if(mod > 0) {
+                if(values["class"] == className) {
+                  qualifiedClasses.push({ label: getTranslationByKey(className), value: className, selected: true });
+                  console.log("[" + className + "]");
+                  valid = true;
                 } else {
-                    setAttrs(classData[values["class"]]);
+                  qualifiedClasses.push({ label: getTranslationByKey(className), value: className });
+                  console.log(className);
                 }
             }
-            let level = values["level"];
-            if(level == undefined || level == 0) {
-                newClass = values["class"];
-                console.log("WARNING! Changing class to " + newClass);
-                setAttrs(classData[newClass]);
-            } else if(values["class"] != values["class_max"]) { 
-                // undo the change
-                console.log("WARNING! Changing class back to " + values["class_max"]);
-                //setAttrs({ "class": values["class_max"] });
-            }
         });
-        validate();
-    }
+        populateListOptions({ elemSelector: '.character-class', optionsArray: qualifiedClasses });
+        if(valid)
+          return values["class"];
+        else
+          return qualifiedClasses[0].value;
+    } 
+    
+    function rollCharacter(array) {
+      console.log("rolling race and abilities...");
+      
+      let raceRoll = Math.floor(Math.random()*20+1);
+      array["race"] = raceTable[raceRoll];
+      if(raceRoll == 20) {
+        raceRoll = Math.floor(Math.random()*20+1);
+        array["race"] = raceTable2[raceRoll];
+      } 
+      array["race_max"] = raceData[array["race"]];
+      console.log("race: " + array["race"] + " (" + array["race_max"] + ")");
+    
+      let physical = rollFate() + rollFate() + rollFate();
+      console.log("physical: " + physical);
+      let might = rollFate() + rollFate() + rollFate();
+      console.log("might: " + might);
+      let cunning = rollFate() + rollFate() + rollFate();
+      console.log("cunning: " + cunning);
+      let mental = rollFate() + rollFate() + rollFate();
+      console.log("mental: " + mental);
+      let moxie = rollFate() + rollFate() + rollFate();
+      console.log("moxie: " + moxie);
+    
+      array["strength"] =     physical + might + 9+Math.floor(Math.random()*4);
+      array["constitution"] = physical + might + 9+Math.floor(Math.random()*4);
+      array["dexterity"] =    physical + cunning + 9+Math.floor(Math.random()*4);
+      array["intelligence"] = mental + cunning + 9+Math.floor(Math.random()*4);
+      array["wisdom"] =       mental + moxie + 9+Math.floor(Math.random()*4);
+      array["charisma"] =     mental + moxie + 9+Math.floor(Math.random()*4);
+    
+      let suitable = false;
+      abilities.forEach(ability => {
+        let mod = ability.substring(0, 3);
+        array[mod] = Math.floor(1.0*a2mod(array[ability])) + (array["race_max"].includes(mod) ? 1 : 0);
+        if(array[mod] >= 0) {  
+          if(array[mod] > 0) suitable = true;
+          array[mod] = "+" + array[mod];
+        }
+        console.log(ability + " => " + array[ability] + " (" + array[mod] + ")");
+      }); 
 
+      if(!suitable) {
+        console.log("rerolling unsuitable abilities")
+        array["race"] = "human";
+        array["race_max"] = "none";
+        array["strength"] = 10;
+        array["dexterity"] = 10;
+        array["constitution"] = 10;
+        array["intelligence"] = 10;
+        array["wisdom"] = 10;
+        array["charisma"] = 10;
+        array["str"] = "+0";
+        array["dex"] = "+0";
+        array["con"] = "+0";
+        array["int"] = "+0";
+        array["wis"] = "+0";
+        array["cha"] = "+0";
+        let suitable = rollD6();
+        console.log(abilities[suitable-1] + " => 13 (+1)");
+        array[abilities[suitable-1]] = 13;
+        array[abilities[suitable-1].substring(0, 3)] = "+1";
+      }
+      return array;
+    }
+    
+    function setClass(className) {
+        let newClass = JSON.parse(JSON.stringify(classData[className]));
+        console.log("---=== (initializing class: " + className + "...) ===---");
+        newClass["level"] = 0;
+        setAttrs(newClass);
+    }
+    
 /* -----===== Character Validator ======------ 
    This function contains all the logic for building the character 
    based on level, feat choices, and skill training choices. These
-   choices are recorrded in the l1feat - l10feat attributes -- the
+   choices are recorrded in thejavascript:void(0); l1feat - l10feat attributes -- the
    l#feat stores the class feat choice, and the l#feat_max stores
    the skill training choice(s). 
    
@@ -1609,35 +1649,52 @@
    that choice.
 */
     function validate() {
-        getAttrs(["character_name"], function(values) {
-            console.log("---=== validating " + values["character_name"] + " ===---");
-        });
         getAttrs(levelUpData, function(values) {
-            if(values["l1feat"] == undefined) {
-                console.log("UNINITIALIZED CHARACTER! Aborting validation.");
+            console.log("---=== validating " + values["character_name"] + " ===---");
+            if(values["class"] == "party" || values["class"] == "Party") {
+                console.log("---=== (NOT A CHARACTER; ABORTING) ===---");
                 return;
+            } 
+            
+            if(values["level"] < 0
+            || values["class"] == undefined 
+            || values["level"] == undefined ) {
+                console.log("---=== (initializing race and abilities...) ===---");
+                rollCharacter(values);
+                values["level"] = 0;
+                values["class"] = filterClasses(values);
+                setAttrs(values);
+            }  
+            if(values["level"] < 0
+            || values["class"] == undefined 
+            || values["level"] == undefined ) {
+                console.log("---=== (ABORTING!!!) ===---");
+                return;
+            } else if(values["level"] == 0) {
+                abilities.forEach(ability => { updatemod(ability); });
+                filterClasses(values);
+                if(values["class"] != values["class_max"] 
+                || values["l1feat"] == undefined 
+                || values["l1feat_max"] == undefined ) {
+                    console.log("---=== (initializing class: " + values["class"] + "...) ===---");
+                    setClass(values["class"]);
+                    // fill in new class data here
+                    for(i = 1; i <= 10; i++) {
+                        values["l"+i+"feat"] = classData[className]["l"+i+"feat"];
+                        values["l"+i+"feat_max"] = classData[className]["l"+i+"feat_max"];
+                    }
+                }
             }
-            let level = values["level"];
-            let hitDice = Math.floor(level/3+.667);
-            console.log("level " + level + " " + values["class"] + " (" + hitDice + "hd)");
 
-            // work out maximum HP for this class and level
-            let hpBonus = die2dv(values["hd1"]) + 1.0*values["con"];
-            if(hpBonus < 1) hpBonus = 1;
-            let maxHP = Math.floor(0.5*values["constitution"]) + hpBonus * level;
-            /*
-            let maxHP = Math.floor(0.5*values["constitution"]);
-            for(let i = 1; i <= hitDice; i++) {
-                let hpBonus = die2dv(values["hd"+i]) + 1.0*values["con"];
-                if(hpBonus < 1) hpBonus = 1;
-                console.log("hd" + i + ":"+ values["hd"+i] + values["con"] + " (" + hpBonus + ")");
-                maxHP += hpBonus;
-            }*/
-            console.log("max hitpoints: " + maxHP);
+            let level = values["level"];
+            let CR = Math.floor(level/3+.667);
+            console.log("level " + level + " " + values["class"] + " (CR " + CR + ")");
+
             let power = "";
             let domainSkill = "";
             let feats = values["l1feat"];
             let skillList = values["l1feat_max"];
+            
             let skillOptions = "";
             if(skillList.includes("choose(")) {
                 let splitArray = skillList.split("choose(");
@@ -1700,7 +1757,7 @@
             console.log(skillList);
             console.log(skillOptions);
 
-            let powerMax = hitDice;
+            let powerMax = CR;
             if(power == "") powerMax = 0;
             
             let attacks = 1;
@@ -1729,8 +1786,9 @@
             } else {
                 attackDie = untrained;
             }
-            setAttrs({ featlist: feats, powername: power, power_max: powerMax, attack: attackDie, attack_max: attacks, hitpoints_max: maxHP });
-           
+            
+            setAttrs({ level: level, rests_max: CR, featlist: feats, powername: power, power_max: powerMax, attack: attackDie, attack_max: attacks });
+            
             // clear out the skills, to prepare for running through the tallied skill list
             var skillData = {};
             skills.forEach(skill => { skillData[skill] = untrained; skillData[skill+"_max"] = "d4"; });
@@ -1764,7 +1822,7 @@
             || feats.includes("druid-3") 
             || feats.includes("wizard-3") 
             || feats.includes("cleric-3") 
-            || feats.includes("warrior-3")) { 
+            || feats.includes("warrior-5")) { 
                 maxDie = "d6"; // experts start with a d6 skill cap, while magic-users reach it at level 3, and warriors else at level 5.
             } else {
                 maxDie = "d4"; // magic-users and warriors start with a skill cap at d4.
@@ -1804,6 +1862,7 @@
             });
             // set all the skills and skill caps at once
             setAttrs(skillData);
+            abilities.forEach(ability => { updatemod(ability); });
         });
     }
     
@@ -1829,8 +1888,8 @@
     }
 
  function updatemod(ability) {
-  console.log("updating " + ability ); 
-  getAttrs([ability,"race_max"], function(values) {
+  //console.log("updating " + ability ); 
+  getAttrs([ability,"race_max", "level", "class"], function(values) {
     // most races provide two bonuses; 
     // racial bonuses are always a +1 to the mod
     // (racial bonuses never affect the raw score)
@@ -1856,53 +1915,45 @@
       if(mod >= 0) mod = "+" + mod; 
     }
     console.log("  " + ability + " (" + score + ") => " + modname + " (" + mod + ")");
-    setAttrs({  
-        [modname]: mod,
-        [modname+'_max']: mod
-        
-    });
-
+    
+    let modData = [];
+    modData[modname] = mod;
+    modData[modname + '_max'] = mod;
     if(String(modname).toLowerCase() == "con") {
-        recalcHitPoints();
-        recalcWounds();
+        modData["hitpoints_max"] = maxHitPoints(values["level"], values["class"], mod, score);
+        modData["wounds_max"] = Math.floor(1.0*mod + 5);
+        modData["fatigue_max"] = mod > 0 ? mod : 0;
     }
+    setAttrs(modData);
+
     // update the associated saving throw dv for this ability
     updatedv(mod2save(modname));
+    
   });
  }
  
- function recalcHitPoints() {
-    getAttrs(levelUpData, function(values) {
-        if(values["l1feat"] == undefined) {
-            console.log("UNINITIALIZED CHARACTER! Aborting validation.");
-            return;
-        }
-        let level = values["level"];
-        let hitDice = Math.floor(level/3+.667);
-        console.log("level " + level + " " + values["class"] + " (" + hitDice + "hd)");
-        // work out maximum HP for this class and level
-        let hpBonus = die2dv(values["hd1"]) + 1.0*values["con"];
-        if(hpBonus < 1) hpBonus = 1;
-        let maxHP = Math.floor(0.5*values["constitution"]) + hpBonus * level;
-        console.log("max hitpoints: " + maxHP);
-        setAttrs({ hitpoints_max : maxHP });
+    // work out maximum HP for this class and level
+ function maxHitPoints(level, className, con, constitution) {
+    let hpBonus = Math.floor(1.0*classHP[className] + 1.0*con);
+    if(hpBonus < 1) hpBonus = 1;
+    let maxHP = Math.floor(0.5*constitution) + hpBonus * level;
+    console.log("max hitpoints: " + maxHP);
+    return maxHP;
 
-    });
  }
- 
- function recalcWounds() {
-    getAttrs(["wounds", "fatigue", "str_max", "dex_max", "con_max", "int_max", "wis_max", "cha_max"], function(values) {
+
+ function recalcCondition() {
+    getAttrs(["level", "wounds", "fatigue", "con_max"], function(values) {
         let con = Math.floor(values["con_max"] * 1.0);
         let threshold = con > 0 ? con : 0;
+        let modData = [];
         let hindrance = Math.floor(1.0*values["wounds"]) + Math.floor(1.0*values["fatigue"]);
         let penalty = (threshold > hindrance ? 0: hindrance - threshold);
-        let modData = [];
-        modData["wounds_max"] = con + 5;
-        modData["fatigue_max"] = threshold;
         modData["condition_max"] = penalty;
+        console.log("fatigue penalty: " + penalty);
         setAttrs(modData);
     });
- }
+ } 
  
  function train(skill) {
 
@@ -2056,15 +2107,17 @@
  }
 
 
-// just roll a d6
- function rollD6() {
-   return Math.floor(Math.random()*6+1);
+ function die2string(roll, die = "") {
+    // use the '10' face instead of the '0' face on the d10 die font
+    return String.fromCharCode(64 + roll + ((die == "d10" && roll == 10) ? 1: 0));
  }
- 
-// 3d6, in order. 
-// Contemplate this on the tree of woe.
- function rollAbility(ability) {
-   return rollD6()+rollD6()+rollD6();
+
+ function rollRest(skill) {
+  getAttrs(["rests", "hitpoints", "hitpoints_max", "con", "fortitude", "power", "power_max"], function(values) {
+      if(values["rests"] > 0) {
+          
+      }
+  });
  }
  
  function rollSkill(skill) {
@@ -2116,6 +2169,10 @@
       let proficiencyResult = 0;
       let bothResult = 0;
 
+      if(cof == -1) {// Initiative roll
+        setAttrs({initiative: rollResult});
+        startRoll("@{character_name}'s Initiative -> [[" + rollResult + " &{tracker}]]", data => {finishRoll(data.rollId,{});});
+      }
       if(featlist.includes("expert-3")) {
         if( d20 > 1 && d20 < abilityScore) {
             abilityResult = abilityScore + roll + mod;
@@ -2157,7 +2214,7 @@
     rollString    += ` {{dmg=${damage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
     if(attack = untrained) attack = 0;
     rollString    += ` {{roll=[[ @{attack} ]]}} {{d20=[[ ${d20} ]]}}`;
-    rollString    += ` {{defense=[[ ?{vs Defense} ]]}}`;
+    rollString    += ` {{defense=[[ ${rules_armor_dv} ]]}}`;
     rollString    += ` {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
     rollString    += ` {{damage=[[ ${damage} ]] }} {{bonusdmg=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
     console.log(rollString);
@@ -2268,12 +2325,24 @@
     });
  }
  
-function die2string(roll, die = "") {
-    // use the '10' face instead of the '0' face on the d10 die font
-    return String.fromCharCode(64 + roll + ((die == "d10" && roll == 10) ? 1: 0));
-}
+
     
 
+// just roll a d6
+ function rollD6() {
+   return Math.floor(Math.random()*6+1);
+ }
+ 
+// 3d6, in order. 
+// Contemplate this on the tree of woe.
+ function rollAbility(ability) {
+   return rollD6()+rollD6()+rollD6();
+ }
+ function rollFate() {
+      return Math.floor(Math.random()*3)-1;
+ }
+ 
+ 
 </script>
 
 <!-- roll template -->
@@ -2299,7 +2368,15 @@ function die2string(roll, die = "") {
   <div class="sheet-container">
     <div class="sheet-header">
       <div class="sheet-name">{{name}}</div>
-      <div class="sheet-title"><span data-i18n-dynamic>{{skill}}</span>{{#cof}} (vs {{cof}}){{/cof}}</div>
+      <div class="sheet-title">
+          <span data-i18n-dynamic>{{skill}}</span>
+          {{#rollGreater() cof 0}}
+            vs {{cof}}
+          {{/rollGreater() cof 0}}
+          {{#rollLess() cof 0}}
+            as Initiative
+          {{/rollLess() cof 0}}
+      </div>
     </div>
     <div class="sheet-content">
       <div class="sheet-value sheet-fullwidth">
