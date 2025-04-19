@@ -37,7 +37,8 @@ div.dialog.largedialog.characterviewer,
                       "ftr ftr ftr ftr ftr ftr";
  }
 
- .charsheet .character-class {
+ .charsheet .character-class,
+ .charsheet .show-class {
   width: 335px;
  }
  .charsheet .list-first,
@@ -78,7 +79,8 @@ div.dialog.largedialog.characterviewer,
                       "ftr ftr ftr";
  }
  
- .charsheet .character-class {
+ .charsheet .character-class,
+ .charsheet .show-class {
   width: 247px;
  }
  .charsheet .list-first,
@@ -133,7 +135,8 @@ div.dialog.largedialog.characterviewer,
 
      
  }
- .charsheet .character-class {
+ .charsheet .character-class,
+ .charsheet .show-class {
   width: 177px;
  }
  .charsheet .list-first,
@@ -165,7 +168,7 @@ div.dialog.largedialog.characterviewer,
   height: 2000px;
   grid-gap: 0px;
   grid-template-columns: 250px;
-  grid-template-rows: 70px 540px 160px 145px 145px 170px 170px 145px 295px 300px 20px;
+  grid-template-rows: 70px 540px 160px 145px 170px 170px 170px 145px 295px 300px 20px;
   grid-template-areas:"lvl"
                       "act"
                       "str"
@@ -180,7 +183,8 @@ div.dialog.largedialog.characterviewer,
 
      
  }
- .charsheet .character-class {
+ .charsheet .character-class,
+ .charsheet .show-class {
   width: 177px;
  }
  .charsheet .list-first,
@@ -413,7 +417,8 @@ end of select boxes */
   background-color: var(--input-bg);
   border: 1px solid var(--border-color);
 }
-.charsheet .character-class {
+.charsheet .character-class,
+.charsheet .show-class {
   text-align: center;
   margin: 1px 1px;
   padding: 1px;
@@ -890,6 +895,16 @@ end of select boxes */
   color: var(--text-color);
   background-color: var(--input-bg);
   border: 2px solid var(--border-color);
+} .charsheet input.condition {
+  text-align: center;
+  margin: 1px 1px;
+  padding: 0px 2px;
+  width: 130px;
+  height: 18px;
+  font-family: var(--font-number);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
 }
 
 .charsheet .list-first {
@@ -1191,11 +1206,11 @@ button.opportunity-attack::before{
   background-color: var(--disabled-bg);
 }
 
-span.character-class,
+span.show-class,
 div.ability-score { 
     display: inline-block !important; 
 }
-.charsheet input.character-level[value="0"] ~ span.character-class,
+.charsheet input.character-level[value="0"] ~ span.show-class,
 .charsheet input.character-level[value="0"] ~ div.ability-score{ 
     display: none !important; 
 }
@@ -1283,19 +1298,22 @@ select.ability-score {
 
 
 /*--------------------- Switch Between Sheet Types --------------------*/
-.charsheet input.sheet-type { display: none; }
-.charsheet main.character,
-.charsheet main.party {
-   display: none;
-} 
-.charsheet .sheet-type[value="Character"] ~ main.character,
-.charsheet .sheet-type[value="Party"] ~ main.party {
-   display: grid;
-}
+.charsheet input.sheet-type,
 .charsheet .hidden {
    display: none !important;
    pointer-events: none !important;
 }
+
+.charsheet main.character,
+.charsheet input.sheet-type[value~="Party"] ~ main.party {
+   display: grid;
+}
+
+.charsheet input.sheet-type[value~="Party"] ~ main.character,
+.charsheet main.party {
+   display: none;
+} 
+
 
 .charsheet section.party-header {
   grid-area: phd;
@@ -1428,7 +1446,7 @@ input.party-char-dv {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
   font-family: var(--font-number);
   text-align: center;
-  text-transform: capitalize;
+  /*text-transform: capitalize*/;
   padding: 5px;
   border-bottom: 2px solid black;
   border-top-left-radius: 16px;
