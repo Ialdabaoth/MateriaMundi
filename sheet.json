@@ -1,0 +1,9 @@
+{
+  "html": "mm-charsheet.html",
+  "css": "mm-charsheet.css",
+  "authors": "Hephaistos Fnord / Bakagaijin Productions",
+  "roll20userid": "12023170",
+  "preview": "kitchensink.png",
+  "instructions": "**Materia Mundi is an OSR demiclone.**\n\nMost skills and actions are built into the sheet; click around to see how it all works.",
+  "legacy": false
+}
