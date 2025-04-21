@@ -469,35 +469,45 @@
       <span>
         <button class="action" type="action" name="act_navigate"><span data-i18n="navigate">Navigate</span></button>
       </span>
-      <label class="description">Describe your attempt to gather information about your surroundings, then roll the skill(s) that the referee asks for.</label>
+      <label class="description">Describe your attempt to move through or gather information about your surroundings, then roll the skill(s) that the referee asks for.</label>
     </div> 
     <hr class="line">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_travel"><span data-i18n="travel">Travel</span></button>
+        <button class="action" type="action" name="act_hex-travel"><span data-i18n="travel">Travel</span></button>
       </span>
       <label class="description" data-i18n="travel-description">Attempt to traverse one league of terrain. If there are obstacles, the referee will call for a skill roll to surmount them.</label>
     </div> 
     <hr class="line">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_travel"><span data-i18n="double-time">Double Time</span></button>
+        <button class="action" type="action" name="act_fast-travel"><span data-i18n="double-time">Double Time</span></button>
       </span>
       <label class="description" data-i18n="doubletime-description">Attempt to traverse multiple leagues of terrain in one hour, at the cost of accumulating fatigue.</label>
     </div> 
     <hr class="line">
-    <div class="f-row">
+    <input type="hidden" class="rest-toggle" name="attr_rests">
+    <div class="f-row rest">
       <span>
         <button class="action" type="action" name="act_rest"><span data-i18n="rest">Rest</span></button>
       </span>
-      <label class="description" data-i18n="rest-description">Resting lets you heal hit points and recover all <span name="attr_powername"></span>.<br>
+      <label class="description">
+          <span data-i18n="rest-description">Resting lets you heal hit points.</span>
+          <span data-i18n="rests-remaining" data-i18n-vars="<span name='attr_rests'></span>">You can rest # more times before you need sleep.</span><br>
       </label>
     </div> 
-   </div panel-travel>
+    <div class="f-row sleep">
+      <span>
+        <button class="action" type="action" name="act_sleep"><span data-i18n="sleep">Sleep</span></button>
+      </span>
+      <label class="description">
+          <span data-i18n="rests-depleted"></span><br>
+      </label>
+    </div>    </div panel-travel>
    <div class="panel-explore">
     <div class="f-row">
       <span>
-        <button class="action" type="action" name="act_skill"><span data-i18n="interact">Interact</span></button>
+        <button class="action" type="action" name="act_interact"><span data-i18n="interact">Interact</span></button>
       </span>
       <label class="description" data-i18n="interact-description">Describe what action your character performs, then roll the skill that the referee asks for.</label>
     </div> 
@@ -509,11 +519,22 @@
       <label class="description" data-i18n="watch-description">Keeping Watch helps keep the party safe from ambushes.</label>
     </div> 
     <hr class="line">
-    <div class="f-row">
+    <input type="hidden" class="rest-toggle" name="attr_rests">
+    <div class="f-row rest">
       <span>
         <button class="action" type="action" name="act_rest"><span data-i18n="rest">Rest</span></button>
       </span>
-      <label class="description" data-i18n="rest-description">Resting lets you heal hit points and recover all <span name="attr_powername"></span>.<br>
+      <label class="description">
+          <span data-i18n="rest-description">Resting lets you heal hit points.</span>
+          <span data-i18n="rests-remaining" data-i18n-vars="<span name='attr_rests'></span>">You can rest # more times before you need sleep.</span><br>
+      </label>
+    </div> 
+    <div class="f-row sleep">
+      <span>
+        <button class="action" type="action" name="act_sleep"><span data-i18n="sleep">Sleep</span></button>
+      </span>
+      <label class="description">
+          <span data-i18n="rests-depleted"></span><br>
       </label>
     </div> 
    </div panel-explore>
@@ -535,9 +556,14 @@
       <input name="attr_resistances" type="text" class="resistances">
     </div>
     <hr class="line">
-    <div class="f-row nowrap">
-      <label class="action" data-i18n="last-action">Last Action:</label>
-      <label class="action"><span="attr_lastaction"></span></label>
+    <input type="hidden" class="start-turn-toggle" name="attr_action">
+    <div class="f-row nowrap start-turn">
+      <label class="action" data-i18n="last-action">Last Action</label>
+      <label class="action"> - <span name="attr_action" data-i18n-dynamic></span></label>
+      <button type="action" class="action wide" name="act_start-turn"><span data-i18n="start-turn">Start Turn</span></button>
+    </div>
+    <div class="f-row nowrap your-turn">
+      <label class="action" data-i18n="choose-action">It is your turn. Choose your action:</label>
     </div>
     <input type="hidden" name="attr_actiontab" class="action-toggle">
     <div class="actionPanel">
@@ -547,20 +573,37 @@
           <button class="tab-move" type="action" name="act_move"><span data-i18n="tab-move">Move</span></button>
           <button class="tab-react" type="action" name="act_react"><span data-i18n="tab-react">React</span></button>
           <button class="tab-feat" type="action" name="act_feat"><span data-i18n="tab-feat">Feats</span></button>
-      </div>    
+      </div>
+
       <div class="panel-attack">
         <hr class="space">
         <div class="f-row nowrap">
-          <label class="attacks"><span data-i18n="weapon-attacks">Weapon Attacks</span> (<span name="attr_attack_max"></span><span data-i18n="per-action">/action</span>)</label>
-        <span class="rollbox"><input type="hidden" class="die-controller" name="attr_attack">
+            <label class="attacks"><span data-i18n="weapon-attacks">Weapon Attacks</span> (<span name="attr_attack_max"></span><span data-i18n="per-action">/action</span>)</label>
+            <span class="rollbox"><input type="hidden" class="die-controller" name="attr_attack">
             <button class="proficiency attack" type="action" name="act_roll-attack">
             </button><label class="proficiency-die"><span name="attr_attack"></span></label>
-        </span>
+        </div>
+        <input type="hidden" class="sneakattack-feat-toggle" name="attr_featlist"><div class="f-row nowrap sneak-attack">
+            <label class="attacks"><span data-i18n="sneak-attack">Sneak Attack</span> (+<span name="attr_sneakdice"></span><span name="attr_finesse"></span> damage)</label>
+            <span class="rollbox"><input type="hidden" class="die-controller" name="attr_stealth">
+            <button class="proficiency attack" type="action" name="act_sneak-attack">
+            </button><label class="proficiency-die"><span name="attr_stealth"></span></label>
+        </div>
+        <input type="hidden" class="slayquarry-feat-toggle" name="attr_featlist"><div class="f-row nowrap slay-quarry">
+            <label class="attacks"><span data-i18n="slay-quarry">Slay Quarry</span> (+<span name="attr_quarrydice"></span><span name="attr_perception"></span> damage)</label>
+            <span class="rollbox"><input type="hidden" class="die-controller" name="attr_attack">
+            <button class="proficiency attack" type="action" name="act_slay-quarry">
+            </button><label class="proficiency-die"><span name="attr_attack"></span></label>
+        </div>
+        <input type="hidden" class="reckless-feat-toggle" name="attr_featlist"><div class="f-row nowrap reckless-attack">
+            <button type="action" class="action wide" name="act_reckless-attack"><span data-i18n="reckless-attack">Reckless Attack</span></button>
+            <input type="hidden" class="rage-feat-toggle" name="attr_featlist">
+            <button type="action" class="action rage" name="act_rage"><span data-i18n="rage">Rage</span></button>
         </div>
         <hr class="line">
         <div>
           <div class="f-row nowrap">
-            <input name="attr_activeweapon" type="radio" value="@{attack1_action}">
+            <input name="attr_activeweapon" type="radio" value="1">
             <input name="attr_weapon1" type="text" class="weapon">
             <input name="attr_accuracy1" type="text" class="weapon-accuracy">
           </div>
@@ -574,7 +617,7 @@
         <hr class="line">
         <div>
           <div class="f-row nowrap">
-            <input name="attr_activeweapon" type="radio" value="@{attack2_action}">
+            <input name="attr_activeweapon" type="radio" value="2">
             <input name="attr_weapon2" type="text" class="weapon">
             <input name="attr_accuracy2" type="text" class="weapon-accuracy">
           </div>
@@ -585,8 +628,22 @@
               </button>
           </div>
         </div>
+        <hr class="line">
+        <div>
+          <div class="f-row nowrap">
+            <input name="attr_activeweapon" type="radio" value="0" selected>
+            <input name="attr_weapon0" type="text" class="weapon">
+            <input name="attr_accuracy0" type="text" class="weapon-accuracy">
+          </div>
+          <hr class="space">
+          <div class="f-row nowrap">
+              <label class="damage" data-i18n="damage">Damage:</label><input name="attr_damage0" type="text" class="damage"><button class="damage" type="roll" name="roll_damage0" 
+  	           value="&{template:rolls} {{subtitle=Damage: @{weapon0}}} {{title=@{character_name} }} {{roll= [[@{damage0}[damage] ]]}}">
+              </button>
+          </div>
+        </div>
       </div panel-attack>
-      
+
       <div class="panel-move">
         <hr class="space">
         <div class="f-row">
@@ -619,11 +676,11 @@
             <label class="description"><span data-i18n="jump-description" data-i18n-vars="<span name='attr_jumpspeed'></span>">You may use your action to jump up to {{0}} paces.</span></label>
         </div>
       </div panel-move>
-      
+
       <div class="panel-defend">
         <hr class="space">
         <div class="f-row">
-            <button type="action" class="action" name="act_guard"><span data-i18n="guard">Guard</span></button>
+            <button type="action" class="action" name="act_guard-action"><span data-i18n="guard">Guard</span></button>
             <label class="description">
                 <span data-i18n="defensive-action-description">Use your action to re-roll your initiative. </span>
                 <span data-i18n="guard-description">Regain your reaction whenever you successfully parry or hit with an opportunity attack.</span>
@@ -646,11 +703,11 @@
             <span data-i18n="hide-description">Roll Stealth to become hidden</span></label>
         </div>
         <div class="f-row elusive">
-            <button type="action" class="action" name="act_hide"><span data-i18n="hide-evade">Both</span></button>
+            <button type="action" class="action" name="act_hide-evade-action"><span data-i18n="hide-evade">Both</span></button>
             <label class="description" data-i18n="hide-evade-description">Hide and Evade (this uses your action)</label>
         </div>
         <div class="f-row evade">
-            <button type="action" class="action" name="act_evade"><span data-i18n="evade">Evade</span></button>
+            <button type="action" class="action" name="act_evade-action"><span data-i18n="evade">Evade</span></button>
             <label class="description">
                 <span data-i18n="defensive-action-description">Use your action to re-roll your initiative. </span>
                 <span class="description" data-i18n="evade-description">Regain your reaction after you successfully dodge</span>
@@ -658,18 +715,25 @@
         </div>
         <hr class="line">
         <div class="f-row evade">
-            <button type="action" class="action" name="act_hide"><span data-i18n="hide">Hide</span></button>
+            <button type="action" class="action" name="act_hide-action"><span data-i18n="hide">Hide</span></button>
             <label class="description" data-i18n="hide-description">Roll Stealth to become hidden</label>
         </div>
       </div panel-defend>
-      
+
       <div class="panel-react">
         <hr class="space">
         <div class="f-row"><input type="hidden" class="die-controller" name="attr_attack">
-          <button class="opportunity-attack reaction" type="action" name="act_opp-attack" value="@{activeweapon}"></button>
+          <button class="opportunity-attack reaction" type="action" name="act_opp-attack"></button>
           <label class="description"><b><span data-i18n="opportunity-attack">Opportunity Attack</span></b><br>
           <span data-i18n="opportunity-attack-description">Attack with your current weapon.</span></label>
         </div> 
+        <input type="hidden" class="sneakattack-feat-toggle" name="attr_featlist">
+        <div class="f-row sneak-attack">
+          <input type="hidden" class="die-controller" name="attr_stealth">
+          <button class="opportunity-attack reaction" type="action" name="act_opp-sneak-attack"></button>
+          <label class="description"><b><span data-i18n="sneak-attack">Sneak Attack</span></b><br>
+          <span data-i18n="sneak-attack-description">Sneak attack with your current weapon.</span></label>
+        </div>
         <hr class="line">
         <input type="hidden" class="deflect-feat-toggle" name="attr_featlist">
         <div class="f-row deflect"><input type="hidden" class="die-controller" name="attr_attack">
@@ -692,7 +756,7 @@
           to your Defense vs one melee attack (or vs one ranged attack if you are using a shield).</span></label>
         </div> 
       </div panel-react>
-      
+
       <div class="panel-feat">
 
       </div panel-feat>
@@ -1188,8 +1252,19 @@
                 console.log("  clicked " + tab + "; retrieving " + moveType+"speed (" + values[moveType+"speed"] + ")");
                 attrsToChange["move"] = values[moveType+"speed"];
                 attrsToChange["movement"] = tab;
+                attrsToChange["action"] = tab;
+        		attrsToChange["actiontab"] = "react";
         		setAttrs(attrsToChange);
             });
+        });
+    });
+
+    const travelTabs = ["navigate", "hex-travel", "fast-travel", "rest"];
+    travelTabs.forEach(tab => {
+        on(`clicked:${tab}`, function() {
+            console.log("  clicked " + tab);
+            setAttrs({ action: tab });
+            send2chat("@{character_name} would like to " + tab + "...");
         });
     });
 
@@ -1225,11 +1300,42 @@
 
     });
 
-    on(`clicked:roll-attack`, function(eventInfo) { rollAttack(""); });
-    on(`clicked:opp-attack`, function(eventInfo) { rollAttack("Opportunity"); });
+    on(`clicked:interact`, function(eventInfo) { setAttrs({action: "interact"}); send2chat("@{character_name} would like to interact with something..."); });
+    on(`clicked:watch`, function(eventInfo) { setAttrs({action: "watch"}); send2chat("@{character_name} is keeping watch..."); rollSkill("perception", 0); });
+    on(`clicked:rest`, function(eventInfo) { 
+        setAttrs({action: "rest"}); 
+        rollSkill("fortitude", "rest"); 
+        
+    });
+    on(`clicked:sleep`, function(eventInfo) { 
+        getAttrs(["rests_max"], function(values) { setAttrs({"rests": values["rests_max"], action: "sleep"}); }); 
+        send2chat("@{character_name} falls asleep...");
+    });
+
+    on(`clicked:start-turn`, function(eventInfo) { setAttrs({action: "ready", actiontab: "attack"}); send2chat("@{character_name} is starting their turn..."); });
+    on(`clicked:roll-attack`, function(eventInfo) {
+      getAttrs(["action"], function(values) {
+        let attacktype = "";
+        if(values["action"] == "rage") attacktype = "Rage";
+        else if(values["action"] == "reckless-attack") attacktype = "Reckless Attack";
+        else setAttrs({action: "attack", actiontab: "attack"}); 
+        
+        rollAttack(attacktype); 
+      });
+    });
+    on(`clicked:sneak-attack`, function(eventInfo) { setAttrs({action: "attack", actiontab: "attack"}); rollAttack("Sneak Attack"); });
+    on(`clicked:slay-quarry`, function(eventInfo) { setAttrs({action: "attack", actiontab: "attack"}); rollAttack("Slay Quarry"); });
+    on(`clicked:reckless-attack`, function(eventInfo) { setAttrs({action: "reckless-attack", actiontab: "attack"});  });
+    on(`clicked:rage`, function(eventInfo) { setAttrs({action: "rage", actiontab: "attack"});  });
+    on(`clicked:guard-action`, function(eventInfo) { setAttrs({action: "guard", actiontab: "react"}); rollSkill("perception", "initiative"); });
+    on(`clicked:opp-attack`, function(eventInfo) { rollAttack("Opportunity Attack"); });
+    on(`clicked:opp-sneak-attack`, function(eventInfo) { rollAttack("Sneak Attack"); });
     on(`clicked:roll-dodge`, function(eventInfo) { rollDodge(); });
     on(`clicked:roll-parry`, function(eventInfo) { rollParry(); });
     on(`clicked:roll-deflect`, function(eventInfo) { rollDeflect(); });
+    on(`clicked:guard-action`, function(eventInfo) { setAttrs({action: "guard", actiontab: "react"}); rollSkill("perception", "initiative"); });
+    on(`clicked:evade-action`, function(eventInfo) { setAttrs({action: "evade", actiontab: "react"}); rollSkill("reflex", "initiative"); });
+    on(`clicked:hide-action`, function(eventInfo) { setAttrs({action: "hide", actiontab: "react"}); rollSkill("stealth", "initiative"); });
     
     const races = ["human", "dwarf", "elf", "halfling", "goblin", "lizardfolk", "genasi", "satyr", "centaur", "hen-ge"];
     var raceTable = [];
@@ -1760,23 +1866,30 @@
             let powerMax = CR;
             if(power == "") powerMax = 0;
             
+            var update = {};
+            update["level"] = level;
+            update["rests_max"] = CR;
+            update["featlist"] = feats;
+            update["powername"] = power;
+            update["power_max"] = powerMax;
+
             let attacks = 1;
             if(feats.includes("warrior-9")) attacks =3;
             else if(feats.includes("warrior-5")) attacks =2;
-            
+
             var attackDie; // set Attack Die from best class and level
             if(feats.includes("warrior-10")) { 
                 attackDie = "d12";
             } else if(feats.includes("warrior-7")) { 
                 attackDie = "d10";
             } else if(feats.includes("warrior-4")
-                    || feats.includes("expert-9") 
+                    || feats.includes("ranger-9") 
                     || feats.includes("thief-9") 
                     || feats.includes("bard-9") 
                     || feats.includes("alchemist-9")) { 
                 attackDie = "d8";
             } else if(feats.includes("warrior-1") 
-                    || feats.includes("expert-5") 
+                    || feats.includes("ranger-5") 
                     || feats.includes("thief-5") 
                     || feats.includes("bard-5") 
                     || feats.includes("alchemist-5")) { 
@@ -1787,18 +1900,30 @@
                 attackDie = untrained;
             }
             
-            setAttrs({ level: level, rests_max: CR, featlist: feats, powername: power, power_max: powerMax, attack: attackDie, attack_max: attacks });
+            update["attack"] = attackDie;
+            update["attack_max"] = attacks;
+            console.log("  attack -> " + attackDie);
             
+            if(feats.includes("thief-9")) update["sneakdice"] = 3;
+            else if(feats.includes("thief-5")) update["sneakdice"] = 2;
+            else if(feats.includes("thief-1")) update["sneakdice"] = 1;
+            else update["sneakdice"]="0";
+            console.log("  sneak attack -> " + update["sneakdice"]);
+            
+            if(feats.includes("ranger-9")) update["quarrydice"] = 3;
+            else if(feats.includes("ranger-5")) update["quarrydice"] = 2;
+            else if(feats.includes("ranger-1")) update["quarrydice"] = 1;
+            else update["quarrydice"]="0";
+
             // clear out the skills, to prepare for running through the tallied skill list
-            var skillData = {};
-            skills.forEach(skill => { skillData[skill] = untrained; skillData[skill+"_max"] = "d4"; });
+            skills.forEach(skill => { update[skill] = untrained; update[skill+"_max"] = "d4"; });
             
             // first, work out skill maximums based on highest class and level skill caps
             
             if(feats.includes("warrior-2")) { // Superior Athlete gives warriors better physical saves
-                skillData["athletics_max"]  = biggerDie(skillData["athletics_max"], attackDie);
-                skillData["reflex_max"]     = biggerDie(skillData["reflex_max"], attackDie);
-                skillData["fortitude_max"]  = biggerDie(skillData["fortitude_max"], attackDie);
+                update["athletics_max"]  = biggerDie(update["athletics_max"], attackDie);
+                update["reflex_max"]     = biggerDie(update["reflex_max"], attackDie);
+                update["fortitude_max"]  = biggerDie(update["fortitude_max"], attackDie);
             }
        
             var maxDie;
@@ -1828,29 +1953,29 @@
                 maxDie = "d4"; // magic-users and warriors start with a skill cap at d4.
             }
 
-            console.log("  attack -> " + attackDie);
+            
             
             // now run through the tallied skill list, and assign the appropriate skill levels
             skills.forEach(skill => { 
                 // merge Superior Athlete limits into the normal skill limits
-                skillData[skill+"_max"] = biggerDie(skillData[skill+"_max"], maxDie);
+                update[skill+"_max"] = biggerDie(update[skill+"_max"], maxDie);
                 
                 // count number of times the skill appears in the tallied skill list
                 let skillLevel = countMatches(skillList, skill);
                 if(skillLevel > 0) { // once = d4. twice = d6, 3x = d8, 4x = d10, 5x or more = d12
                     if(skillLevel > 5) skillLevel = 5;
-                    skillData[skill] = "d" + (skillLevel+1)*2;
+                    update[skill] = "d" + (skillLevel+1)*2;
                     
                     // respect the skill caps
-                    if(biggerDie(skillData[skill], skillData[skill+"_max"]) == skillData[skill]) {
-                      skillData[skill] = skillData[skill+"_max"];
+                    if(biggerDie(update[skill], update[skill+"_max"]) == update[skill]) {
+                      update[skill] = update[skill+"_max"];
                     }
                 }
                 
                 // see if there are any pending choices for this skill
                 let opt = "";
                 if((skillOptions.includes(skill) || skillOptions.includes("any")) 
-                && biggerDie(skillData[skill], skillData[skill+"_max"]) != skillData[skill]) {
+                && biggerDie(update[skill], update[skill+"_max"]) != update[skill]) {
                     opt = " - *can train"; 
                     // show the [+] training button next to this skill
                     $20(`button[name=act_train-${skill}]`).removeClass('hidden');
@@ -1858,10 +1983,10 @@
                     // hide the [+] training button next to this skill
                     $20(`button[name=act_train-${skill}]`).addClass('hidden'); 
                 }
-                console.log("  " + skill + " -> " + skillData[skill] + " (max " + skillData[skill+"_max"] + ")" + opt);
+                console.log("  " + skill + " -> " + update[skill] + " (max " + update[skill+"_max"] + ")" + opt);
             });
             // set all the skills and skill caps at once
-            setAttrs(skillData);
+            setAttrs(update);
             abilities.forEach(ability => { updatemod(ability); });
         });
     }
@@ -2120,10 +2245,10 @@
   });
  }
  
- function rollSkill(skill) {
+ function rollSkill(skill, dv = "roll") {
   let rawmod = skill2mod(skill); 
   let ability = mod2score(rawmod);  
-  getAttrs([skill, ability, rawmod, "power", "featlist", "d20"], function(values) {
+  getAttrs([skill, ability, rawmod, "power", "featlist", "d20", "initiative", "hitpoints", "hitpoints_max", "power", "power_max", "rests"], function(values) {
     const featlist = values["featlist"];
 
     const die = values[skill];
@@ -2138,12 +2263,28 @@
 
     let rollString = `&{template:skills} {{name=@{character_name} }} `;
     rollString    += `{{skill=${skill}}} {{modname=${rawmod}}} {{rawmod=@{${rawmod}}}} `;
-    if(d20 > "") {
-      rollString  += ` {{d20=[[ ${d20} ]]}} `;
-      rollString  += ` {{cof=[[ ${rules_dv_levels} ]]}}`;
+
+    if(dv == "initiative") {
+      if(d20 == "") 
+        rollString  += ` {{d20=[[ d20 ]]}} `;
+      else
+        rollString  += ` {{d20=[[ ${d20} ]]}} `;
+      rollString  += ` {{cof=[[ -1 ]]}}`;
+    } else if(dv == "rest") {
+      rollString  += ` {{cof=[[ -2 ]]}}`;
+      if(values["rests"] < 1 || values["rests"] == undefined) return;
+    } else if (dv == 'roll') {
+      if(d20 > "") {
+        rollString  += ` {{d20=[[ ${d20} ]]}} `;
+        rollString  += ` {{cof=[[ ${rules_dv_levels} ]]}}`;
+      } else {
+        rollString  += ` {{cof=[[ ${rules_cof_levels} ]]}}`;
+      }
     } else {
-      rollString  += ` {{cof=[[ ${rules_cof_levels} ]]}}`;
+      if(d20 > "") rollString  += ` {{d20=[[ ${d20} ]]}} `;
+      rollString  += ` {{cof=[[ ${dv} ]]}}`;
     }
+    
     if(proficiency > 0) {
       rollString  += ` {{die=@{${skill}}}} {{roll=[[ @{${skill}} ]]}}`;
       if(featlist.includes("expert-3")) {
@@ -2154,7 +2295,7 @@
     rollString    += ` {{mod=[[ @{${rawmod}} ]]}}`;
     rollString    += ` {{total=[[ 0 ]]}}`;// {{effects=[[ 0 ]]}}`;
     console.log(rollString);
-    
+    let rollResult = 0;
     startRoll(rollString, data => {
       const results = data.results;
       
@@ -2162,16 +2303,40 @@
       const cof = results.cof.result;
       const roll = (results.roll == undefined) ? 0 : results.roll.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
-      const rollResult = d20 + roll + mod;
+      rollResult = d20 + roll + mod;
       
       let talentResult = 0;
       let abilityResult = 0;
       let proficiencyResult = 0;
       let bothResult = 0;
 
-      if(cof == -1) {// Initiative roll
-        setAttrs({initiative: rollResult});
-        startRoll("@{character_name}'s Initiative -> [[" + rollResult + " &{tracker}]]", data => {finishRoll(data.rollId,{});});
+      if(cof == -2) {//Rest roll
+        let hp = rollResult + rollD6();
+        if(hp < 1) hp = 1;
+        if(hp + 1.0*values["hitpoints"] > values["hitpoints_max"]) {
+          hp = 1.0*values["hitpoints_max"] - 1.0*values["hitpoints"];
+          if(values["hitpoints"] >= values["hitpoints_max"]) hp = 0;
+        }
+        if(values["hitpoints"] < values["hitpoints_max"]) {
+            send2chat("@{character_name} recovers " + hp + " hitpoints.");
+            setAttrs({  hitpoints: hp + 1.0*values["hitpoints"], 
+                        power: values["power_max"], 
+                        rests: values["rests"]-1 });
+        } else if(values["power"] < values["power_max"]) {
+            send2chat("@{character_name} is already at full hitpoints.");
+            setAttrs({  hitpoints: hp + 1.0*values["hitpoints"], 
+                        power: values["power_max"], 
+                        rests: values["rests"]-1 });
+        } else {
+            send2chat("@{character_name} doesn't need rest.");
+        }
+      } else if(cof == -1) {// Initiative roll
+        if(values["initiative"] >= rollResult) {
+          send2chat("@{character_name}'s initiative doesn't improve.");   
+        } else {
+          setAttrs({initiative: rollResult});
+          send2chat("@{character_name}'s initiative -> [[" + rollResult + " &{tracker}]]");
+        }
       }
       if(featlist.includes("expert-3")) {
         if( d20 > 1 && d20 < abilityScore) {
@@ -2201,68 +2366,157 @@
   });
  }
  
+ function attackRoll(rollString) {
+     
+ }
+ let attackData = ["activeweapon", "weapon0", "accuracy0", "damage0", "weapon1", "accuracy1", "damage1", "weapon2", "accuracy2", "damage2", 
+                    "featlist", "stealth", "perception", "athletics", "attack", "d20"];
  function rollAttack(attacktype) {
-  getAttrs(["attack", "featlist", "d20", "weapon1", "accuracy1", "damage1"], function(values) {
-    let weapon = values["weapon1"];
-    let accuracy = values["accuracy1"];  
-    let damage = values["damage1"];
+  getAttrs(attackData, function(values) {
+    let feats = values["featlist"];
+    
+    let w =  values["activeweapon"];
+    if(w == undefined || w < 0 || w > 2) w = 0;
+    
+    let weapon = values["weapon"+w];
+    let accuracy = values["accuracy"+w];  
+    let basedamage = values["damage"+w];
+
     let attackDie = values["attack"];  
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
+    let bonusDamage = 0;
+    let bonusAttack = 0;
+    let effectName = "";
 
     let rollString = `&{template:attacks} {{name=@{character_name}}} {{title=${weapon}}} {{attacktype=${attacktype}}}`;
-    rollString    += ` {{dmg=${damage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
+    rollString    += ` {{dmg=${basedamage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
+    
     if(attack = untrained) attack = 0;
+    let addAttack2damage = false;
+    
+    if(attacktype == "Sneak Attack") {
+        effectName = attacktype;
+        if(feats.includes("thief-9")) bonusDamage = "3@{stealth}";
+        else if(feats.includes("thief-5")) bonusDamage = "2@{stealth}";
+        else if(feats.includes("thief-1")) bonusDamage = "@{stealth}";
+        rollString    += `  {{bonusdmgdice=@{stealth} }} {{bonusdmg=[[ ${bonusDamage} ]]}}`;
+        addAttack2damage = true;
+    } else if(attacktype == "Slay Quarry") {
+        effectName = attacktype;
+        bonusDamage = "@{perception}";
+        if(feats.includes("ranger-9")) bonusDamage = "3@{perception}";
+        else if(feats.includes("ranger-5")) bonusDamage = "2@{perception}";
+        else if(feats.includes("ranger-1")) bonusDamage = "@{perception}";
+        rollString    += `  {{bonusdmgdice=@{perception} }} {{bonusdmg=[[ ${bonusDamage} ]]}}`;
+        addAttack2damage = true;
+    } else if(attacktype == "Power Strike") {
+        bonusAttack = values["athletics"];
+        effectName = "Weapon Mastery";
+        rollString    += ` {{bonusatk=@{athletics} }} {{bonusdmg=[[ 0 ]]}}`;
+        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
+        addAttack2damage = true;
+    } else if(attacktype == "Rage") {
+        effectName = "Weapon Mastery";
+        rollString    += ` {{bonusdmgdice=@{athletics} }} {{bonusdmg=[[ @{athletics} ]]}}`;
+        d20 = "2d20kh1";
+        addAttack2damage = true;
+    } else if(attacktype == "Reckless Attack") {
+        effectName = "Weapon Mastery";
+        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
+        d20 = "2d20kh1";
+        addAttack2damage = true;
+    } else if(feats.includes("warrior-1")) {
+        effectName = "Weapon Mastery";
+        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
+        addAttack2damage = true;
+    }
+
     rollString    += ` {{roll=[[ @{attack} ]]}} {{d20=[[ ${d20} ]]}}`;
     rollString    += ` {{defense=[[ ${rules_armor_dv} ]]}}`;
     rollString    += ` {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
-    rollString    += ` {{damage=[[ ${damage} ]] }} {{bonusdmg=[[ 0 ]]}} {{effects=[[ 0 ]]}}`;
+    rollString    += ` {{damage=[[ ${basedamage} ]] }} {{effects=[[ 0 ]]}} {{effectname=${effectName}}} {{crits=[[ 0 ]]}} `;
     console.log(rollString);
     
     startRoll(rollString, data => {
       const results = data.results;
+      console.log(results);
       const roll = results.roll.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
       const defense = results.defense.result;
-
+      const bonusRoll = (results.bonusatk == undefined) ? 0 : results.bonusatk.result;
       let damageResult = (results.damage == undefined) ? 0 : results.damage.result;
-      let bonusDamage = 0; 
+      let bonusDamage = (results.bonusdmg == undefined) ? 0 : results.bonusdmg.result; 
+      let damageDice = (results.damage == undefined) ? [] : results.damage.rolls;
+      let bonusDamageDice = (results.bonusdmg == undefined) ? 0 : results.bonusdmg.rolls; 
+      let damageDiceList = "";
+      /*
+      console.log("dice: " + damageDice.length);
+      console.log(damageDice);
+      damageDice.forEach(die => { 
+          for(let i = 0; i < die.dice; i++) {
+              let n = die.results[i];
+              damageDiceList += die2string(n, die.size);
+          }
+      });*/
+      let crits = (d20 == 20) ? 1 : 0;
+      let effects = 0;
+      bonusDamageDice.forEach(die => { 
+          for(let i = 0; i < die.dice; i++) {
+              let n = die.results[i];
+              damageDiceList += die2string(n, die.sides);
+              if(n>= 6) {
+                  effects++;
+                  if(n >= 10)
+                    crits++;
+              }
+          }
+      });
+      if(addAttack2damage) {
+        bonusDamage += roll;
+        if(roll >= 6) {
+          effects++;
+          if(roll >= 10) crits++;
+        }
+      }
+
       let rollResult = d20 + roll + 1*accuracy;
       let effectsResult = "";
       let hitResult = 0;
-      if(roll ==1 && d20 == 1) {
+      if(roll <= 1 && d20 == 1) {
           effectsResult = "Critical Miss";
           hitResult = -1;
       } else if(rollResult <= defense && d20 < 20) {
           effectsResult = "Miss";
           hitResult = 0;
       } else {
-        if(roll >= 10 || (d20 >= 20 && roll > defense)) {
-            effectsResult = "Critical Hit"; 
+          if(crits > 0) {
+            effectsResult = "Critical Hit";
+            if(crits > 1) effectsResult += " (x" + crits + ")";
             hitResult = 2;
-        } else {
+          } else {
             effectsResult = "Hit";
             hitResult = 1;
+          } 
+          
+          if(effects > 0) {
+            effectsResult += " + " + effectName + " effect";
+            if(effects > 1) effectsResult += " (x" + effects + ")";
         }
-        if(values["featlist"].includes("warrior-1")) {
-          bonusDamage = roll;
-          damageResult += roll;
-          if(roll >= 6) {
-              if(effectsResult > "") effectsResult += " + ";
-              effectsResult += "Weapon Mastery effect";
-          }
-        }
+        damageResult += bonusDamage;
       }
       finishRoll(data.rollId, {
         d20: die2string(d20),  
         roll: die2string(roll, attackDie),  
         total: rollResult,
         damage: damageResult,
-        bonusdmg: bonusDamage,
-        effects: effectsResult,
+        bonusatk: bonusRoll,
+        bonusdmg: damageDiceList,
+        effects: effects,
+        crits: crits,
         hit: hitResult
       });
-      console.log(weapon + " (" + attack + accuracy + "): " + rollResult);   
+      console.log(weapon + " (" + attack + accuracy + "): " + rollResult + " -- " + effectsResult);   
     });
   });
  }
@@ -2342,7 +2596,11 @@
       return Math.floor(Math.random()*3)-1;
  }
  
- 
+ function send2chat(text) {
+     startRoll(text, data => {
+      finishRoll(data.rollId, { });
+    });
+ }
 </script>
 
 <!-- roll template -->
@@ -2373,9 +2631,12 @@
           {{#rollGreater() cof 0}}
             vs {{cof}}
           {{/rollGreater() cof 0}}
-          {{#rollLess() cof 0}}
+          {{#rollTotal() cof -1}}
             as Initiative
-          {{/rollLess() cof 0}}
+          {{/rollTotal() cof -1}}
+          {{#rollTotal() cof -2}}
+            to recover HP
+          {{/rollTotal() cof -2}}
       </div>
     </div>
     <div class="sheet-content">
@@ -2478,7 +2739,7 @@
   <div class="sheet-container">
     <div class="sheet-header">
       {{#name}}<div class="sheet-name">{{name}}</div>{{/name}}
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#title}}<div class="sheet-title">{{title}}{{#attacktype}}<br>{{attacktype}}{{/attacktype}}</div>{{/title}}
     </div>
     
     <div class="sheet-content">
@@ -2487,14 +2748,28 @@
       </div>
       <div class="sheet-value sheet-fullwidth"><span class="sheet-big sheet-notip">{{computed::total}}</span> vs <span class="sheet-dv-big sheet-notip">{{defense}}</span></div>
     </div>
-    <div class="sheet-info sheet-notip">{{computed::effects}}</div>
     {{#rollGreater() computed::hit 0}} 
     <div class="sheet-content">
-      <div class="sheet-key">Damage ({{#rollGreater() computed::bonusdmg 0}}<span class="sheet-{{die}} smalldice">{{computed::roll}}</span>+{{/rollGreater() computed::bonusdmg 0}}{{dmg}}):</div>
+      {{#rollGreater() computed::effects 0}}
+      <div class="sheet-infobar sheet-notip sheet-fullwidth">
+      {{#rollGreater() computed::crits 0}}Critical{{/rollGreater() computed::crits 0}}
+      Hit 
+      {{#rollGreater() computed::crits 1}}(x<span class="sheet-small sheet-notip">{{computed::crits}}</span>){{/rollGreater() computed::crits 1}} 
+      + {{effectname}} effect {{#rollGreater() computed::effects 1}}(x<span class="sheet-small sheet-notip">{{computed::effects}}</span>){{/rollGreater() computed::effects 1}} 
+      </div>
+      {{/rollGreater() computed::effects 0}}
+    </div>
+    <div class="sheet-content">
+      <div class="sheet-value sheet-fullwidth">Damage:</div>
+    </div>
+    <div class="sheet-content">
+      <div class="sheet-key">{{#bonusdmg}}<span class="sheet-{{die}} sheet-smalldice">{{computed::roll}}</span>{{#bonusdmgdice}}<span class="sheet-{{bonusdmgdice}} sheet-smalldice sheet-reddice">{{computed::bonusdmg}}</span>{{/bonusdmgdice}}+{{/bonusdmg}}{{dmg}} = </div>
       <div class="sheet-value">{{computed::damage}}</div>
     </div>
     {{/rollGreater() computed::hit 0}} 
-
+    {{#^rollGreater() computed::hit 0}} 
+    <div class="sheet-infobar sheet-notip">Miss!</div>
+    {{/^rollGreater() computed::hit 0}} 
     {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
   </div>
 </rolltemplate>
