@@ -1026,6 +1026,16 @@ button.opportunity-attack::before{
   border: 2px solid var(--skill-color);
   background: var(--skill-bg);
 }
+.charsheet button.wide {
+  width: 95px;
+}
+.charsheet button.rage {
+  border: 2px solid var(--border-color);
+  background: var(--attack-color);
+  font-family: "arial black";
+  font-weight: bold;
+  color: var(--input-bg);
+}
 
 .charsheet button.reaction {
     display: inline-block;
@@ -1102,6 +1112,20 @@ button.opportunity-attack::before{
   border-bottom: 3px solid var(--page-bg);
 }
 
+.charsheet .start-turn-toggle { display: none; }
+.charsheet .start-turn-toggle[value="ready"] ~ div.start-turn,
+.charsheet .start-turn-toggle:not([value="ready"]) ~ div.your-turn,
+.charsheet .start-turn-toggle:not([value="ready"]) ~ div button.tab-move,
+.charsheet .start-turn-toggle:not([value="ready"]) ~ div button.tab-defend,
+.charsheet .start-turn-toggle:not([value="ready"], [value="attack"], [value="reckless-attack"], [value="rage"]) ~ div button.tab-attack {
+    display: none;
+}
+
+.charsheet .rest-toggle { display: none; }
+.charsheet .rest-toggle[value="0"] ~ div.rest,
+.charsheet .rest-toggle:not([value="0"]) ~ div.sleep {
+    display: none;
+}
 /*--------------------- Level-Specific Elements --------------------*/
 .charsheet input.power-max { display: none; }
 .charsheet input.power-max[value="0"] ~ div.show-power,
@@ -1236,6 +1260,23 @@ select.ability-score {
     display: flex;
 }
 
+.charsheet input.reckless-feat-toggle { display: none; }
+.charsheet div.reckless-attack { display: none; }
+.charsheet input.reckless-feat-toggle[value*="berserker-1"] ~ div.reckless-attack { 
+    display: flex;
+}
+.charsheet input.rage-feat-toggle { display: none; }
+.charsheet div.rage { display: none; }
+.charsheet input.rage-feat-toggle[value*="berserker-2"] ~ div.rage { 
+    display: flex;
+}
+
+.charsheet input.slayquarry-feat-toggle { display: none; }
+.charsheet div.slay-quarry { display: none; }
+.charsheet input.slayquarry-feat-toggle[value*="ranger-1"] ~ div.slay-quarry { 
+    display: flex;
+}
+
 .charsheet input.deflect-feat-toggle { display: none; }
 .charsheet input.deflect-feat-toggle[value*="martial-artist-6"] ~ div.dodge,
 .charsheet input.deflect-feat-toggle[value*="martial-artist-6"] ~ div.parry,
@@ -1244,6 +1285,11 @@ select.ability-score {
     display: flex;
 }
 
+.charsheet input.sneakattack-feat-toggle { display: none; }
+.charsheet div.sneak-attack { display: none; }
+.charsheet input.sneakattack-feat-toggle[value*="thief-1"] ~ div.sneak-attack { 
+    display: flex;
+}
 .charsheet input.elusive-feat-toggle { display: none; }
 .charsheet input.elusive-feat-toggle[value*="thief-2"] ~ div.evade,
 .charsheet div.elusive { display: none; }
@@ -1551,6 +1597,21 @@ input.party-char-dv {
   background: var(--input-bg);
 }
 
+.sheet-rolltemplate-rolls .sheet-infobar,
+.sheet-rolltemplate-skills .sheet-infobar,
+.sheet-rolltemplate-reactions .sheet-infobar,
+.sheet-rolltemplate-attacks .sheet-infobar {
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    line-height: 1.3em;
+    background: var(--border-color);
+    color: var(--input-bg);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
 .sheet-rolltemplate-rolls .sheet-desc,
 .sheet-rolltemplate-skills .sheet-desc,
 .sheet-rolltemplate-reactions .sheet-desc,
@@ -1592,7 +1653,7 @@ input.party-char-dv {
 .sheet-rolltemplate-reactions .sheet-content span.inlinerollresult,
 .sheet-rolltemplate-attacks .sheet-content span.inlinerollresult {
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
 }
 
 .sheet-rolltemplate-rolls .sheet-info span.inlinerollresult,
@@ -1600,7 +1661,7 @@ input.party-char-dv {
 .sheet-rolltemplate-reactions .sheet-info span.inlinerollresult,
 .sheet-rolltemplate-attacks .sheet-info span.inlinerollresult {
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--border-color);
     line-height: 1.3em;
 }
 
@@ -1704,7 +1765,7 @@ input.party-char-dv {
 .sheet-rolltemplate-skills .sheet-smalldice span.inlinerollresult,
 .sheet-rolltemplate-saves .sheet-smalldice span.inlinerollresult,
 .sheet-rolltemplate-attacks .sheet-smalldice span.inlinerollresult {
-  font-size: 2.0em;
+  font-size: 3.0em;
 }
 
 .sheet-rolltemplate-skills .sheet-reddice span.inlinerollresult,
