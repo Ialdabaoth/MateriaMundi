@@ -2381,7 +2381,10 @@
     let weapon = values["weapon"+w];
     let accuracy = values["accuracy"+w];  
     let basedamage = values["damage"+w];
-
+    if(weapon == undefined || accuracy == undefined || accuracy == "" || basedamage == undefined || basedamage == "") {
+        send2chat("@{character_name} wants to attack, but doesn't appear to have a valid weapon...");
+        return
+    }
     let attackDie = values["attack"];  
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
