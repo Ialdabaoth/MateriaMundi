@@ -2299,8 +2299,8 @@
     startRoll(rollString, data => {
       const results = data.results;
       
-      const mod = Math.floor(1.0*results.mod.result);
-      const cof = results.cof.result;
+      const mod = (results.mod == undefined) ? 0 : Math.floor(1.0*results.mod.result);
+      const cof = (results.cof == undefined) ? 0 : results.cof.result;
       const roll = (results.roll == undefined) ? 0 : results.roll.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
       rollResult = d20 + roll + mod;
@@ -2366,9 +2366,6 @@
   });
  }
  
- function attackRoll(rollString) {
-     
- }
  let attackData = ["activeweapon", "weapon0", "accuracy0", "damage0", "weapon1", "accuracy1", "damage1", "weapon2", "accuracy2", "damage2", 
                     "featlist", "stealth", "perception", "athletics", "attack", "d20"];
  function rollAttack(attacktype) {
@@ -2385,75 +2382,71 @@
         send2chat("@{character_name} wants to attack, but doesn't appear to have a valid weapon...");
         return
     }
-    let attackDie = values["attack"];  
-    let attack = attackDie;
-    if(attack = "") attack = 0;
+    
+    let rollString = `&{template:attacks} {{name=@{character_name}}} {{title=${weapon}}} {{attacktype=${attacktype}}}`;
+    rollString    += ` {{accuracy=${accuracy}}} {{dmg=${basedamage}}} {{damage=[[ ${basedamage} ]] }}`
 
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
 
+
     let bonusDamage = 0;
     let bonusAttack = 0;
-    let effectName = "";
 
-    let rollString = `&{template:attacks} {{name=@{character_name}}} {{title=${weapon}}} {{attacktype=${attacktype}}}`;
-    rollString    += ` {{dmg=${basedamage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
 
+    let effectName = attacktype;
     let addAttack2damage = false;
-    if(attacktype == "Sneak Attack") {
-        effectName = attacktype;
+        let attackDie = values["attack"];
+    let attack = attackDie;
+    if(attackDie == undefined || attackDie == "" || attackDie[0] != 'd' ) {
+        attack = 0;
+    } else {
+      rollString    += `  {{die=@{attack}}} {{roll=[[ ${attack} ]]}}`;
+
+      if(attacktype == "Sneak Attack") {
+        addAttack2damage = true;
         if(feats.includes("thief-9")) bonusDamage = "3@{stealth}";
         else if(feats.includes("thief-5")) bonusDamage = "2@{stealth}";
         else if(feats.includes("thief-1")) bonusDamage = "@{stealth}";
-        rollString    += `  {{bonusdmgdice=@{stealth} }} {{bonusdmg=[[ ${bonusDamage} ]]}}`;
-        addAttack2damage = true;
-    } else if(attacktype == "Slay Quarry") {
-        effectName = attacktype;
+        rollString    += `  {{bonusdmgdice=@{stealth} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}}`;
+      } else if(attacktype == "Slay Quarry") {
         bonusDamage = "@{perception}";
         if(feats.includes("ranger-9")) bonusDamage = "3@{perception}";
         else if(feats.includes("ranger-5")) bonusDamage = "2@{perception}";
         else if(feats.includes("ranger-1")) bonusDamage = "@{perception}";
-        rollString    += `  {{bonusdmgdice=@{perception} }} {{bonusdmg=[[ ${bonusDamage} ]]}}`;
+        rollString    += `  {{bonusdmgdice=@{perception} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}}`;
+      } else if(feats.includes("warrior-1")) {
         addAttack2damage = true;
-    } else if(attacktype == "Power Strike") {
-        bonusAttack = values["athletics"];
         effectName = "Weapon Mastery";
-        rollString    += ` {{bonusatk=@{athletics} }} {{bonusdmg=[[ 0 ]]}}`;
-        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
-        addAttack2damage = true;
-    } else if(attacktype == "Rage") {
-        effectName = "Weapon Mastery";
-        rollString    += ` {{bonusdmgdice=@{athletics} }} {{bonusdmg=[[ @{athletics} ]]}}`;
-        d20 = "2d20kh1";
-        addAttack2damage = true;
-    } else if(attacktype == "Reckless Attack") {
-        effectName = "Weapon Mastery";
-        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
-        d20 = "2d20kh1";
-        addAttack2damage = true;
-    } else if(feats.includes("warrior-1")) {
-        effectName = "Weapon Mastery";
-        rollString    += ` {{bonusdmg=[[ 0 ]]}}`;
-        addAttack2damage = true;
+        rollString    += ` {{effectname=Weapon Mastery}}`;
+        if(attacktype == "Power Strike") {
+            bonusAttack = values["athletics"];
+            rollString+= ` {{bonusatk=@{athletics} }} {{bonusdmg=[[ 0 ]]}}`;
+        } else if(attacktype == "Rage") {
+            d20 = "2d20kh1";
+            rollString+= ` {{bonusdmgdice=@{athletics} }} {{bonusdmg=[[ @{athletics} ]]}}`;
+        } else if(attacktype == "Reckless Attack") {
+            d20 = "2d20kh1";
+        }
+      }
     }
 
-    rollString    += ` {{roll=[[ ${attack} ]]}} {{d20=[[ ${d20} ]]}}`;
-    rollString    += ` {{defense=[[ ${rules_armor_dv} ]]}}`;
-    rollString    += ` {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
-    rollString    += ` {{damage=[[ ${basedamage} ]] }} {{effects=[[ 0 ]]}} {{effectname=${effectName}}} {{crits=[[ 0 ]]}} `;
+    rollString    += `  {{d20=[[ ${d20} ]]}} {{defense=[[ ${rules_armor_dv} ]]}} {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
+    rollString    += ` {{effects=[[ 0 ]]}} {{crits=[[ 0 ]]}} `;
     console.log(rollString);
     
     startRoll(rollString, data => {
       const results = data.results;
       console.log(results);
-      const roll = results.roll.result;
+      const roll = (results.roll == undefined) ? 0 : results.roll.result;
       const d20 = (results.d20 == undefined) ? 0 : results.d20.result;
-      const defense = results.defense.result;
+      const defense = (results.defense == undefined) ? 0 : results.defense.result;
       const bonusRoll = (results.bonusatk == undefined) ? 0 : results.bonusatk.result;
+
       let damageResult = (results.damage == undefined) ? 0 : results.damage.result;
       let bonusDamage = (results.bonusdmg == undefined) ? 0 : results.bonusdmg.result; 
       let damageDice = (results.damage == undefined) ? [] : results.damage.rolls;
-      let bonusDamageDice = (results.bonusdmg == undefined) ? 0 : results.bonusdmg.rolls; 
+      let bonusDamageDice = (results.bonusdmg == undefined) ? [] : results.bonusdmg.rolls; 
       let damageDiceList = "";
       /*
       console.log("dice: " + damageDice.length);
@@ -2478,14 +2471,18 @@
           }
       });
       if(addAttack2damage) {
-        bonusDamage += roll;
+        bonusDamage += roll + bonusRoll;
         if(roll >= 6) {
           effects++;
           if(roll >= 10) crits++;
         }
+        if(bonusRoll >= 6) {
+          effects++;
+          if(bonusRoll >= 10) crits++;
+        }
       }
 
-      let rollResult = d20 + roll + 1*accuracy;
+      let rollResult = d20 + roll + bonusRoll + 1*accuracy;
       let effectsResult = "";
       let hitResult = 0;
       if(roll <= 1 && d20 == 1) {
