@@ -2386,18 +2386,20 @@
         return
     }
     let attackDie = values["attack"];  
+    let attack = attackDie;
+    if(attack = "") attack = 0;
+
     let d20 = values["d20"];
     if(d20 == undefined) d20 = "";
+
     let bonusDamage = 0;
     let bonusAttack = 0;
     let effectName = "";
 
     let rollString = `&{template:attacks} {{name=@{character_name}}} {{title=${weapon}}} {{attacktype=${attacktype}}}`;
     rollString    += ` {{dmg=${basedamage}}} {{die=@{attack}}} {{accuracy=${accuracy}}} `
-    
-    if(attack = untrained) attack = 0;
+
     let addAttack2damage = false;
-    
     if(attacktype == "Sneak Attack") {
         effectName = attacktype;
         if(feats.includes("thief-9")) bonusDamage = "3@{stealth}";
@@ -2435,7 +2437,7 @@
         addAttack2damage = true;
     }
 
-    rollString    += ` {{roll=[[ @{attack} ]]}} {{d20=[[ ${d20} ]]}}`;
+    rollString    += ` {{roll=[[ ${attack} ]]}} {{d20=[[ ${d20} ]]}}`;
     rollString    += ` {{defense=[[ ${rules_armor_dv} ]]}}`;
     rollString    += ` {{total=[[ 0 ]]}} {{hit=[[ 0 ]]}}`;
     rollString    += ` {{damage=[[ ${basedamage} ]] }} {{effects=[[ 0 ]]}} {{effectname=${effectName}}} {{crits=[[ 0 ]]}} `;
