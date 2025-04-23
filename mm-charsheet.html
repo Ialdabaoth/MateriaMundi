@@ -578,7 +578,7 @@
       <div class="panel-attack">
         <hr class="space">
         <div class="f-row nowrap">
-            <label class="attacks"><span data-i18n="weapon-attacks">Weapon Attacks</span> (<span name="attr_attack_max"></span><span data-i18n="per-action">/action</span>)</label>
+            <label class="attacks"><span data-i18n="weapon-attacks" data-i18n-vars="<span name='attr_attack_max'></span>">Weapon Attacks</span></label>
             <span class="rollbox"><input type="hidden" class="die-controller" name="attr_attack">
             <button class="proficiency attack" type="action" name="act_roll-attack">
             </button><label class="proficiency-die"><span name="attr_attack"></span></label>
@@ -1264,7 +1264,7 @@
         on(`clicked:${tab}`, function() {
             console.log("  clicked " + tab);
             setAttrs({ action: tab });
-            send2chat("@{character_name} would like to " + tab + "...");
+            send2chat("^{chat-" + tab + "}");//@{character_name} would like to " + tab + "...");
         });
     });
 
@@ -1300,8 +1300,8 @@
 
     });
 
-    on(`clicked:interact`, function(eventInfo) { setAttrs({action: "interact"}); send2chat("@{character_name} would like to interact with something..."); });
-    on(`clicked:watch`, function(eventInfo) { setAttrs({action: "watch"}); send2chat("@{character_name} is keeping watch..."); rollSkill("perception", 0); });
+    on(`clicked:interact`, function(eventInfo) { setAttrs({action: "interact"}); send2chat("^{chat-interact}"); });
+    on(`clicked:watch`, function(eventInfo) { setAttrs({action: "watch"}); send2chat("^{chat-watch}"); rollSkill("perception", 0); });
     on(`clicked:rest`, function(eventInfo) { 
         setAttrs({action: "rest"}); 
         rollSkill("fortitude", "rest"); 
@@ -1309,10 +1309,10 @@
     });
     on(`clicked:sleep`, function(eventInfo) { 
         getAttrs(["rests_max"], function(values) { setAttrs({"rests": values["rests_max"], action: "sleep"}); }); 
-        send2chat("@{character_name} falls asleep...");
+        send2chat("^{chat-sleep}");
     });
 
-    on(`clicked:start-turn`, function(eventInfo) { setAttrs({action: "ready", actiontab: "attack"}); send2chat("@{character_name} is starting their turn..."); });
+    on(`clicked:start-turn`, function(eventInfo) { setAttrs({action: "ready", actiontab: "attack"}); send2chat("^{chat-start}"); });
     on(`clicked:roll-attack`, function(eventInfo) {
       getAttrs(["action"], function(values) {
         let attacktype = "";
@@ -2335,7 +2335,7 @@
           send2chat("@{character_name}'s initiative doesn't improve.");   
         } else {
           setAttrs({initiative: rollResult});
-          send2chat("@{character_name}'s initiative -> [[" + rollResult + " &{tracker}]]");
+          send2chat("@{character_name}'s initiative becomes [[" + rollResult + " &{tracker}]]");
         }
       }
       if(featlist.includes("expert-3")) {
@@ -2379,7 +2379,7 @@
     let accuracy = values["accuracy"+w];  
     let basedamage = values["damage"+w];
     if(weapon == undefined || accuracy == undefined || accuracy == "" || basedamage == undefined || basedamage == "") {
-        send2chat("@{character_name} wants to attack, but doesn't appear to have a valid weapon...");
+        send2chat("^{chat-no-weapon}");
         return
     }
     
