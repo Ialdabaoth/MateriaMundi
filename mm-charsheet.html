@@ -1264,7 +1264,7 @@
         on(`clicked:${tab}`, function() {
             console.log("  clicked " + tab);
             setAttrs({ action: tab });
-            send2chat("^{chat-" + tab + "}");//@{character_name} would like to " + tab + "...");
+            send2chat("chat-" + tab);//@{character_name} would like to " + tab + "...");
         });
     });
 
@@ -1300,8 +1300,8 @@
 
     });
 
-    on(`clicked:interact`, function(eventInfo) { setAttrs({action: "interact"}); send2chat("^{chat-interact}"); });
-    on(`clicked:watch`, function(eventInfo) { setAttrs({action: "watch"}); send2chat("^{chat-watch}"); rollSkill("perception", 0); });
+    on(`clicked:interact`, function(eventInfo) { setAttrs({action: "interact"}); send2chat("chat-interact"); });
+    on(`clicked:watch`, function(eventInfo) { setAttrs({action: "watch"}); send2chat("chat-watch"); rollSkill("perception", 0); });
     on(`clicked:rest`, function(eventInfo) { 
         setAttrs({action: "rest"}); 
         rollSkill("fortitude", "rest"); 
@@ -1309,10 +1309,10 @@
     });
     on(`clicked:sleep`, function(eventInfo) { 
         getAttrs(["rests_max"], function(values) { setAttrs({"rests": values["rests_max"], action: "sleep"}); }); 
-        send2chat("^{chat-sleep}");
+        send2chat("chat-sleep");
     });
 
-    on(`clicked:start-turn`, function(eventInfo) { setAttrs({action: "ready", actiontab: "attack"}); send2chat("^{chat-start}"); });
+    on(`clicked:start-turn`, function(eventInfo) { setAttrs({action: "ready", actiontab: "attack"}); send2chat("chat-start"); });
     on(`clicked:roll-attack`, function(eventInfo) {
       getAttrs(["action"], function(values) {
         let attacktype = "";
@@ -2237,14 +2237,6 @@
     return String.fromCharCode(64 + roll + ((die == "d10" && roll == 10) ? 1: 0));
  }
 
- function rollRest(skill) {
-  getAttrs(["rests", "hitpoints", "hitpoints_max", "con", "fortitude", "power", "power_max"], function(values) {
-      if(values["rests"] > 0) {
-          
-      }
-  });
- }
- 
  function rollSkill(skill, dv = "roll") {
   let rawmod = skill2mod(skill); 
   let ability = mod2score(rawmod);  
@@ -2318,24 +2310,24 @@
           if(values["hitpoints"] >= values["hitpoints_max"]) hp = 0;
         }
         if(values["hitpoints"] < values["hitpoints_max"]) {
-            send2chat("@{character_name} recovers " + hp + " hitpoints.");
+            //send2chat("@{character_name} recovers " + hp + " hitpoints.");
             setAttrs({  hitpoints: hp + 1.0*values["hitpoints"], 
                         power: values["power_max"], 
                         rests: values["rests"]-1 });
         } else if(values["power"] < values["power_max"]) {
-            send2chat("@{character_name} is already at full hitpoints.");
+            //send2chat("@{character_name} is already at full hitpoints.");
             setAttrs({  hitpoints: hp + 1.0*values["hitpoints"], 
                         power: values["power_max"], 
                         rests: values["rests"]-1 });
         } else {
-            send2chat("@{character_name} doesn't need rest.");
+            send2chat("chat-rest-no");
         }
       } else if(cof == -1) {// Initiative roll
         if(values["initiative"] >= rollResult) {
-          send2chat("@{character_name}'s initiative doesn't improve.");   
+          //send2chat("chat-init-no");   
         } else {
           setAttrs({initiative: rollResult});
-          send2chat("@{character_name}'s initiative becomes [[" + rollResult + " &{tracker}]]");
+          //send2chat("@{character_name}'s initiative becomes [[" + rollResult + " &{tracker}]]");
         }
       }
       if(featlist.includes("expert-3")) {
@@ -2379,7 +2371,7 @@
     let accuracy = values["accuracy"+w];  
     let basedamage = values["damage"+w];
     if(weapon == undefined || accuracy == undefined || accuracy == "" || basedamage == undefined || basedamage == "") {
-        send2chat("^{chat-no-weapon}");
+        send2chat("chat-no-weapon");
         return
     }
     
@@ -2599,7 +2591,7 @@
  }
  
  function send2chat(text) {
-     startRoll(text, data => {
+     startRoll(getTranslationByKey(text), data => {
       finishRoll(data.rollId, { });
     });
  }
