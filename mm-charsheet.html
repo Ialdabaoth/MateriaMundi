@@ -387,7 +387,7 @@
       <select name="attr_class" class="character-class">
         <option data-i18n="knight" value="knight">Knight</option>
         <option data-i18n="martial-artist" value="martial-artist">Martial Artist</option>
-        <option data-i18n="berserker" value="berserker">Berserker</option>
+        <option data-i18n="champion" value="champion">Champion</option>
         <option data-i18n="thief" value="thief">Thief</option>
         <option data-i18n="alchemist" value="alchemist">Alchemist</option>
         <option data-i18n="ranger" value="ranger">Ranger</option>
@@ -1342,7 +1342,7 @@
     var raceTable2 = [];
     var raceData = {};
     
-    const classes = ["knight", "martial-artist", "berserker", "thief", "alchemist", "ranger", "bard", "wizard", "druid", "cleric"];
+    const classes = ["knight", "martial-artist", "champion", "thief", "alchemist", "ranger", "bard", "wizard", "druid", "cleric"];
     var classData = {};
     var classPR = [];
     var classHP = [];
@@ -1371,7 +1371,7 @@
         raceData["goblin"] = "Dex, Con";
         raceData["lizardfolk"] = "Dex, Str";
         raceData["genasi"] = "Con, Int";
-        raceData["satyr"] = "Cha, Wis";
+        raceData["faun"] = "Cha, Wis";
         raceData["centaur"] = "Str, Wis";
         raceData["hen-ge"] = "none";
 
@@ -1401,22 +1401,14 @@
         raceTable2[3] = "goblin";
         raceTable2[4] = "goblin";
         raceTable2[5] = "goblin";
-        raceTable2[6] = "lizardfolk";
-        raceTable2[7] = "lizardfolk";
-        raceTable2[8] = "lizardfolk";
-        raceTable2[9] = "genasi";
-        raceTable2[10] = "genasi";
+        raceTable2[6] = "goblin";
+        raceTable2[7] = "faun";
+        raceTable2[8] = "faun";
+        raceTable2[9] = "faun";
+        raceTable2[10] = "centaur";
         raceTable2[11] = "genasi";
-        raceTable2[12] = "satyr";
-        raceTable2[13] = "satyr";
-        raceTable2[14] = "satyr";
-        raceTable2[15] = "centaur";
-        raceTable2[16] = "centaur";
-        raceTable2[17] = "centaur";
-        raceTable2[18] = "hen-ge";
-        raceTable2[19] = "hen-ge";
-        raceTable2[20] = "hen-ge";
-        
+        raceTable2[12] = "hen-ge";
+
         
         var loadClass = {};
         loadClass["class"] = "knight";
@@ -1456,15 +1448,15 @@
         classPR["martial-artist"] = "dex";
         classHP["martial-artist"] = 5;
         
-        loadClass["class"] = "berserker";
-        loadClass["class_max"] = "berserker";
-        loadClass["l1feat"] = "warrior-1, berserker-1";
-        loadClass["l3feat"] = "berserker-3";
-        loadClass["l6feat"] = "berserker-6";
+        loadClass["class"] = "champion";
+        loadClass["class_max"] = "champion";
+        loadClass["l1feat"] = "warrior-1, champion-1";
+        loadClass["l3feat"] = "champion-3";
+        loadClass["l6feat"] = "champion-6";
         loadClass["l1feat_max"] = "athletics, reflex, fortitude";
-        classData["berserker"] = JSON.parse(JSON.stringify(loadClass));
-        classPR["berserker"] = "str";
-        classHP["berserker"] = 5;
+        classData["champion"] = JSON.parse(JSON.stringify(loadClass));
+        classPR["champion"] = "str";
+        classHP["champion"] = 5;
         
         loadClass["class"] = "thief";
         loadClass["class_max"] = "thief";
@@ -1640,7 +1632,7 @@
       let raceRoll = Math.floor(Math.random()*20+1);
       array["race"] = raceTable[raceRoll];
       if(raceRoll == 20) {
-        raceRoll = Math.floor(Math.random()*20+1);
+        raceRoll = Math.floor(Math.random()*12+1);
         array["race"] = raceTable2[raceRoll];
       } 
       array["race_max"] = raceData[array["race"]];
@@ -2014,7 +2006,7 @@
 
  function updatemod(ability) {
   //console.log("updating " + ability ); 
-  getAttrs([ability,"race_max", "level", "class"], function(values) {
+  getAttrs([ability,"race_max", "level", "class", "con", "str"], function(values) {
     // most races provide two bonuses; 
     // racial bonuses are always a +1 to the mod
     // (racial bonuses never affect the raw score)
@@ -2026,6 +2018,8 @@
       score = rollAbility(ability);
       console.log("rolling " + ability + " (3d6): " + score);
       setAttrs({ [ability]: score });
+      //updatemod(ability);
+      return;
     }
     // scores are always referred to by their full name, 
     // while mods are always referred to by their first 3 letters
@@ -2041,13 +2035,22 @@
     }
     console.log("  " + ability + " (" + score + ") => " + modname + " (" + mod + ")");
     
+    let might = (values["con"] > values["str"] ? values["con"]: values["str"]);
     let modData = [];
     modData[modname] = mod;
     modData[modname + '_max'] = mod;
-    if(String(modname).toLowerCase() == "con") {
+    if(String(modname).toLowerCase() == "con" || String(modname).toLowerCase() == "str" )  {
+      if(String(modname).toLowerCase() == "con") {
+        might = (mod > values["str"] ? mod: values["str"]);
+
         modData["hitpoints_max"] = maxHitPoints(values["level"], values["class"], mod, score);
         modData["wounds_max"] = Math.floor(1.0*mod + 5);
         modData["fatigue_max"] = mod > 0 ? mod : 0;
+      } else {
+        might = (mod > values["con"] ? mod: values["con"]);
+
+      }
+      modData["encumbrance_max"] = might+4;
     }
     setAttrs(modData);
 
@@ -2400,17 +2403,17 @@
         if(feats.includes("thief-9")) bonusDamage = "3@{stealth}";
         else if(feats.includes("thief-5")) bonusDamage = "2@{stealth}";
         else if(feats.includes("thief-1")) bonusDamage = "@{stealth}";
-        rollString    += `  {{bonusdmgdice=@{stealth} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}}`;
+        rollString    += `  {{bonusdmgdice=@{stealth} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}} {{attack2dmg=+}} {{dmgbonus=+}}`;
       } else if(attacktype == "Slay Quarry") {
         bonusDamage = "@{perception}";
         if(feats.includes("ranger-9")) bonusDamage = "3@{perception}";
         else if(feats.includes("ranger-5")) bonusDamage = "2@{perception}";
         else if(feats.includes("ranger-1")) bonusDamage = "@{perception}";
-        rollString    += `  {{bonusdmgdice=@{perception} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}}`;
+        rollString    += `  {{bonusdmgdice=@{perception} }} {{bonusdmg=[[ ${bonusDamage} ]]}} {{effectname=${attacktype}}} {{dmgbonus=+}}`;
       } else if(feats.includes("warrior-1")) {
         addAttack2damage = true;
         effectName = "Weapon Mastery";
-        rollString    += ` {{effectname=Weapon Mastery}}`;
+        rollString    += ` {{effectname=Weapon Mastery}} {{attack2dmg=+}} {{dmgbonus=+}}`;
         if(attacktype == "Power Strike") {
             bonusAttack = values["athletics"];
             rollString+= ` {{bonusatk=@{athletics} }} {{bonusdmg=[[ 0 ]]}}`;
@@ -2757,8 +2760,11 @@
       <div class="sheet-value sheet-fullwidth">Damage:</div>
     </div>
     <div class="sheet-content">
-      <div class="sheet-key">{{#bonusdmg}}<span class="sheet-{{die}} sheet-smalldice">{{computed::roll}}</span>{{#bonusdmgdice}}<span class="sheet-{{bonusdmgdice}} sheet-smalldice sheet-reddice">{{computed::bonusdmg}}</span>{{/bonusdmgdice}}+{{/bonusdmg}}{{dmg}} = </div>
-      <div class="sheet-value">{{computed::damage}}</div>
+      <div class="sheet-key">
+      {{#attack2dmg}}<span class="sheet-{{die}} sheet-smalldice">{{computed::roll}}</span>+{{/attack2dmg}}{{#bonusdmgdice}}<span class="sheet-{{bonusdmgdice}} sheet-smalldice sheet-reddice">{{computed::bonusdmg}}</span><br>+{{/bonusdmgdice}}
+      {{dmg}}:
+      </div>
+      <div class="sheet-value"><span class="sheet-big sheet-notip sheet-red">{{computed::damage}}</span></div>
     </div>
     {{/rollGreater() computed::hit 0}} 
     {{#^rollGreater() computed::hit 0}} 
